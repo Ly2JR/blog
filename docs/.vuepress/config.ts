@@ -2,6 +2,7 @@ import { defineUserConfig } from "@vuepress/cli";
 import { DefaultThemeOptions } from "@vuepress/theme-default";
 
 export default defineUserConfig<DefaultThemeOptions>({
+    base:'/',
     locales: {
       '/': {
         lang: 'en-US',
@@ -17,13 +18,20 @@ export default defineUserConfig<DefaultThemeOptions>({
     themeConfig:{
         locales: {
             '/': {
+              logo:'https://v2.vuepress.vuejs.org/images/hero.png',
+              /**
+               * 多语
+               */
               selectLanguageName: 'English', 
               selectLanguageAriaLabel:"Languages",
               selectLanguageText:'Languages',
+              /**
+               * 菜单
+               */
               navbar: [
                 {
                   text:'guide',
-                  link:'#'
+                  link:'/guide/readme.md'
                 },
                 {
                   text: 'live',
@@ -110,18 +118,30 @@ export default defineUserConfig<DefaultThemeOptions>({
                   ],
                 },
               ],
-                // 你也可以直接将它设置为一个 URL
-                repo: 'https://github.com/TgT982474256/blog',
-                repoLabel:'Github'
+              /**
+               * Github
+               */
+              repo: 'https://github.com/TgT982474256/blog',
+              repoLabel:'Github'
             },
             '/zh/': {
+              /**
+               * logo
+               */
+              logo:'https://v2.vuepress.vuejs.org/images/hero.png',
+              /**
+               * 多语
+               */
               selectLanguageName: '简体中文',
               selectLanguageAriaLabel:"选择语言",
               selectLanguageText:'选择语言',
+              /**
+               * 菜单
+               */
               navbar: [
                 {
                   text:'指南',
-                  link:'#'
+                  link:'/guide/readme.md',
                 },
                 {
                   text: '生活',
@@ -207,6 +227,9 @@ export default defineUserConfig<DefaultThemeOptions>({
                   ],
                 },
               ],
+              /**
+               * Github
+               */
               repo: 'https://github.com/TgT982474256/blog',
               repoLabel:'Github'
             },
