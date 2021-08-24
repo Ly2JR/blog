@@ -1,0 +1,15 @@
+{
+    "name": "blog",
+    "version": "1.0.0",
+    "description": "vuepress blog",
+    "main": "index.js",
+    "author": "Tg",
+    "license": "MIT",
+    "dependencies": {
+        "vuepress": "^2.0.0-beta.24"
+    },
+    "scripts": {
+        "docs:dev": "vuepress dev docs",
+        "docs:build": "vuepress build docs"
+    }
+}
