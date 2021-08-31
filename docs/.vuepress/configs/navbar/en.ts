@@ -62,7 +62,7 @@ export const en:NavbarConfig=[
         ],
       },
       {
-        text: 'Grocery store',
+        text: 'Variety Store',
         children: [
           {
             text: 'ERP',

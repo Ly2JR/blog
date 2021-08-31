@@ -65,6 +65,17 @@ export const zh:NavbarConfig=[
         text: '杂货铺',
         children: [
           {
+            text: 'Excel',
+            children:[{
+              text:'考勤统计示例',
+              link:'/zh/varietystore/excel.md'
+            },
+            {
+              text:'函数',
+              link:'/zh/varietystore/excelfun.md'
+            }]
+          },
+          {
             text: 'ERP',
             children:[{
               text:'用友 U8+',
