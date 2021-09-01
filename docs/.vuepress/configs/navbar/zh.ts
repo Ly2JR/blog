@@ -3,7 +3,7 @@ import { NavbarConfig } from "@vuepress/theme-default";
 export const zh:NavbarConfig=[
     {
         text:'指南',
-        link:'/guide/readme.md',
+        link:'/zh/guide/readme.md',
       },
       {
         text: '生活',
@@ -66,13 +66,14 @@ export const zh:NavbarConfig=[
         children: [
           {
             text: 'Excel',
-            children:[{
-              text:'考勤统计示例',
-              link:'/zh/varietystore/excel.md'
-            },
+            children:[
+              {
+                text:'示例',
+                link:'/zh/varietystore/excel/README.md'
+              },
             {
-              text:'函数',
-              link:'/zh/varietystore/excelfun.md'
+              text:'公式参考',
+              link:'/zh/varietystore/excel/macro.md'
             }]
           },
           {
