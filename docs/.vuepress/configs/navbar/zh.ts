@@ -65,21 +65,17 @@ export const zh:NavbarConfig=[
         text: '杂货铺',
         children: [
           {
-            text: 'Excel',
+            text: 'Office',
             children:[
               {
-                text:'示例',
-                link:'/zh/varietystore/excel/README.md'
-              },
-            {
-              text:'公式参考',
-              link:'/zh/varietystore/excel/macro.md'
-            }]
+                text:'Excel',
+                link:'/zh/varietystore/office/excel/README.md'
+              }]
           },
           {
             text: 'ERP',
             children:[{
-              text:'用友 U8+',
+              text:'用友U8+',
               link:'#'
             }]
           },
@@ -87,7 +83,7 @@ export const zh:NavbarConfig=[
             text:'数据库',
             children:[{
               text:'Sql Server',
-              link:'#'
+              link:'/zh/database/sqlserver/README.md'
             },
             {
               text:'MySql',

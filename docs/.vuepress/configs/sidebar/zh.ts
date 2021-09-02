@@ -9,14 +9,25 @@ export const zh:SidebarConfig={
             ]
         }
     ],
-    '/zh/varietystore/':[
+    '/zh/database/sqlserver/':[
         {
-            text:'杂货铺',
+            text:'Sql Server',
             children:[
-                '/zh/varietystore/excel/README.md',
-                '/zh/varietystore/excel/sample1.md',
-                '/zh/varietystore/excel/macro.md',
+                '/zh/database/sqlserver/README.md',
+                '/zh/database/sqlserver/sqlserver_sync_to_mysql.md',
+                '/zh/database/sqlserver/sqlserver_sync_to_oracle.md',
+                '/zh/database/sqlserver/reference.md'
             ]
         }
-    ]
+    ],
+    '/zh/varietystore/office/excel':[
+        {
+            text:'Excel',
+            children:[
+                '/zh/varietystore/office/excel/README.md',
+                '/zh/varietystore/office/excel/macro_sample1.md',
+                '/zh/varietystore/office/excel/reference.md'
+            ]
+        }
+    ],
 };

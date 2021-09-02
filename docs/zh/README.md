@@ -3,10 +3,10 @@ home: true
 title: 主页
 heroImage: 'https://v2.vuepress.vuejs.org/images/hero.png'
 actions:
-  - text: 开始
-    link: /zh/guide/getting-started.html
+  - text: 传送门
+    link: /zh/guide/
     type: primary
-  - text: 介绍
+  - text: 关于
     link: /zh/guide/
     type: secondary
 features:
@@ -20,7 +20,7 @@ features:
     details: 使用Vue、Blazor、Razor、Element-UI进行前端开发
   - title: 数据库
     details: 常用Sql Server,包括不限于MySql、Sqlite...
-  - title: 第三方
+  - title: 杂货铺
     details: 很多好的开源的框架及解决方案，比如ABP、Dapper、Quartz.Net、NLog..
 footer: MIT Licensed | Copyright © 2021-present Tg
 ---
