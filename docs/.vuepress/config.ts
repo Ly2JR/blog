@@ -87,5 +87,20 @@ export default defineUserConfig<DefaultThemeOptions>({
               repoLabel:'Github'
             },
           },
-    }
+    },
+    plugins: [
+      [
+        '@vuepress/plugin-search',
+        {
+          locales: {
+            '/': {
+              placeholder: 'Search',
+            },
+            '/zh/': {
+              placeholder: '搜索',
+            },
+          },
+        },
+      ],
+    ],
 });

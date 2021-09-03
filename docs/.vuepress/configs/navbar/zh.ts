@@ -27,7 +27,7 @@ export const zh:NavbarConfig=[
               link:'https://docs.microsoft.com/zh-cn/dotnet/desktop/wpf/getting-started/?view=netframeworkdesktop-4.8'
             },{
               text:'Prism',
-              link:'#'
+              link:'https://github.com/PrismLibrary/Prism'
             },{
               text:'materialdesigninxaml',
               link:'http://www.materialdesigninxaml.net/'
@@ -43,7 +43,7 @@ export const zh:NavbarConfig=[
               link:'https://uniapp.dcloud.io/'
             },{
               text:'MAUI',
-              link:'#'
+              link:'https://github.com/dotnet/maui'
             }]
           },
           {
@@ -72,7 +72,7 @@ export const zh:NavbarConfig=[
             },
             {
               text:'MySql',
-              link:'#'
+              link:'/'
             }]
           },
           {
@@ -87,7 +87,7 @@ export const zh:NavbarConfig=[
             text: 'ERP',
             children:[{
               text:'用友U8+',
-              link:'#'
+              link:'/'
             }]
           },
           {
@@ -100,8 +100,13 @@ export const zh:NavbarConfig=[
             ]
           },
           {
-            text: 'Github',
-            link: 'www.github.com/TgT982474256/blog',
+            text: 'CLI',
+            children:[
+              {
+                text:'Github',
+                link:'/'
+              }
+            ]
           },
         ],
       },
