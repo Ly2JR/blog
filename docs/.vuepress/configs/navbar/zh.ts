@@ -65,6 +65,17 @@ export const zh:NavbarConfig=[
         text: '杂货铺',
         children: [
           {
+            text:'数据库',
+            children:[{
+              text:'Sql Server',
+              link:'/zh/database/sqlserver/README.md'
+            },
+            {
+              text:'MySql',
+              link:'#'
+            }]
+          },
+          {
             text: 'Office',
             children:[
               {
@@ -80,19 +91,17 @@ export const zh:NavbarConfig=[
             }]
           },
           {
-            text:'数据库',
-            children:[{
-              text:'Sql Server',
-              link:'/zh/database/sqlserver/README.md'
-            },
-            {
-              text:'MySql',
-              link:'#'
-            }]
+            text: '其他',
+            children:[
+              {
+                text:'XML',
+                link:'/zh/varietystore/xml/README.md'
+              }
+            ]
           },
           {
             text: 'Github',
-            link: '/',
+            link: 'www.github.com/TgT982474256/blog',
           },
         ],
       },

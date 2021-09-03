@@ -18,7 +18,7 @@ Q：需要统计出所有员工中午考勤打卡时间情况,考勤时间超过
 
 A：需要先确认中午考勤时间范围，比如中午11:00:00~12:00:00作为午餐时间
 
-## 开发
+## 代码
 
 - **步骤1**: 添加命令按钮
 
@@ -47,7 +47,7 @@ const endHour         = '12:00:00'  //截至时间统计
 
 ::: code-group-item VBA
 
-```Visual Vasic
+```vb
 Const readColCode     As Integer = 1          '工号列
 Const readColTime     As Integer = 7          '打卡时间列
 Const startRow        As Integer = 4          '开始计算行
@@ -74,7 +74,7 @@ let MaxRow = ActiveSheet.UsedRange.Rows.Count;   //最大有效行
 
 ::: code-group-item VBA
 
-```Visual Vasic
+```vb
 dim MaxRow as Long
 MaxRow = ActiveSheet.UsedRange.Rows.Count   '最大有效行
 ```
@@ -95,7 +95,7 @@ let dic=[];     //字典
 
 ::: code-group-item VBA
 
-```Visual Vasic
+```vb
 Dim dic     As Object           '字典
 Set dic = CreateObject("scripting.dictionary")
 ```
@@ -123,7 +123,7 @@ let dataRecord={
 
 ::: code-group-item VBA
 
-```Visual Vasic
+```vb
 public Key    as String
 public Name   as String   '姓名
 public Min    as String   '中午考勤最早时间
@@ -159,7 +159,7 @@ function Check(arr,val)
 
 ::: code-group-item VBA
 
-```Visual Vasic
+```vb
 dic.Exists(curKey)   '因为是标准字典所以直接操作
 ```
 
@@ -197,7 +197,7 @@ function dateDiff(datepart,begindate, enddate) {
 
 ::: code-group-item VBA
 
-```Visual Vasic
+```vb
 DateDiff("n", beginDate, endDate)     'DateDiff是标准函数
 ```
 
@@ -253,7 +253,7 @@ for(let i=startRow;i<maxRow;i++)
 
 ::: code-group-item VBA
 
-```Visual Vasic
+```vb
 For i = startRow To maxRow Step 1
     curCode = ActiveSheet.Cells.Item(i, readColCode).Value2
 
@@ -315,7 +315,7 @@ dic.forEach(function(ele,index){
 
 ::: code-group-item VBA
 
-```Visual Vasic
+```vb
 Dim item as Variant
 i=startRow
 For Each item In dic.Items
