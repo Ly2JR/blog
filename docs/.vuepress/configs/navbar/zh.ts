@@ -91,11 +91,15 @@ export const zh:NavbarConfig=[
             }]
           },
           {
-            text: '其他',
+            text: '数据交换格式',
             children:[
               {
+                text:'JSON',
+                link:'/zh/varietystore/data-exchange-format/json/README.md'
+              },
+              {
                 text:'XML',
-                link:'/zh/varietystore/xml/README.md'
+                link:'/zh/varietystore/data-exchange-format/xml/README.md'
               }
             ]
           },

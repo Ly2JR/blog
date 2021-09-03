@@ -30,14 +30,25 @@ export const zh:SidebarConfig={
             ]
         }
     ],
-    '/zh/varietystore/xml':[
+    '/zh/varietystore/data-exchange-format/json':[
+        {
+            text:'JSON',
+            children:[
+                '/zh/varietystore/data-exchange-format/json/README.md',
+                '/zh/varietystore/data-exchange-format/json/read-json.md',
+                '/zh/varietystore/data-exchange-format/json/write-json.md',
+                '/zh/varietystore/data-exchange-format/json/reference.md'
+            ]
+        }
+    ],
+    '/zh/varietystore/data-exchange-format/xml':[
         {
             text:'XML',
             children:[
-                '/zh/varietystore/xml/README.md',
-                '/zh/varietystore/xml/read-xml.md',
-                '/zh/varietystore/xml/write-xml.md',
-                '/zh/varietystore/xml/reference.md'
+                '/zh/varietystore/data-exchange-format/xml/README.md',
+                '/zh/varietystore/data-exchange-format/xml/read-xml.md',
+                '/zh/varietystore/data-exchange-format/xml/write-xml.md',
+                '/zh/varietystore/data-exchange-format/xml/reference.md'
             ]
         }
     ],
