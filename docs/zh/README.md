@@ -31,9 +31,6 @@ footer: MIT Licensed | Copyright © 2021-present Tg
 
 **欢迎各位大佬各式花样打赏**
 
-<img width="160" height="160" :src="$withBase('/reward.jpg')" alt="reward">
-
-<br/>
-<br/>
+<img width="160" height="160" :src="$withBase('/reward.jpg')" alt="reward"/>
 
 </div>

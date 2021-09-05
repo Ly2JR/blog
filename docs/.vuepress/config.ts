@@ -9,7 +9,7 @@ export default defineUserConfig<DefaultThemeOptions>({
     locales: {
       '/': {
         lang: 'en-US',
-        title: 'Tg Blog',
+        title: 'TgT Blog',
         description: 'Daily record',
       },
       '/zh/': {

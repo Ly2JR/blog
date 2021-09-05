@@ -1,26 +1,36 @@
 ---
 home: true
 title: Home
-heroImage: 'https://v2.vuepress.vuejs.org/images/hero.png'
 actions:
-  - text: Get Started
-    link: /guide/getting-started.html
+  - text: Portal
+    link: /guide/
     type: primary
-  - text: Introduction
+  - text: About
     link: /guide/
     type: secondary
 features:
-  - title: Simplicity First
-    details: Minimal setup with markdown-centered project structure helps you focus on writing.
-  - title: Vue-Powered
-    details: Enjoy the dev experience of Vue, use Vue components in markdown, and develop custom themes with Vue.
-  - title: Performant
-    details: VuePress generates pre-rendered static HTML for each page, and runs as an SPA once a page is loaded.
-  - title: Themes
-    details: Providing a default theme out of the box. You can also choose a community theme or create your own one.
-  - title: Plugins
-    details: Flexible plugin API, allowing plugins to provide lots of plug-and-play features for your site. 
-  - title: Bundlers
-    details: Both Webpack and Vite are supported. Choose the one you like!
+  - title: Daily learning and life records
+    details: The Blog Built Using VurePress
+  - title: .Net
+    details: Primary .NET Core
+  - title: Mobile
+    details: About Kotlin、Xamarin、Uni-App...
+  - title: Web
+    details: About Vue、Blazor、Razor、Element-UI...
+  - title: DataBase
+    details: About Sql Server,MySql、Sqlite...
+  - title: Other
+    details: Many Open source framework in Github，ABout ABP、Dapper、Quartz.Net、NLog..
 footer: MIT Licensed | Copyright © 2021-present Tg
 ---
+
+
+<div style="text-align:center;">
+
+## Reward Code
+
+**Welcome to all kinds of  rewards**
+
+<img width="160" height="160" :src="$withBase('/reward.jpg')" alt="reward"/>
+
+</div>
