@@ -23,7 +23,7 @@ export default defineUserConfig<DefaultThemeOptions>({
         /**
          * logo
          */
-        logo:'https://v2.vuepress.vuejs.org/images/hero.png',
+        logo:"http://47.117.141.19/favious.jpg",
 
         docsDir:'docs',
 

@@ -1,0 +1,86 @@
+# 资产类别
+
+- 资源符
+
+  **capitalassettypes**
+  
+- 操作符
+
+  - **create** <Badge type="tip" text="v1" vertical="top" />
+
+  - **load** <Badge type="tip" text="v2" vertical="top" />
+
+  - **edit** <Badge type="tip" text="v2" vertical="top" />
+
+  - **delete** <Badge type="tip" text="v2" vertical="top" />
+
+- 请求参数说明
+
+|参数				|类型	|参数路径	|是否必填	|描述					|
+|:-					|:-		|:-			|:-			|:-						|
+|assettypeno		|string |			|是			|资产类别编码				|
+|assettypename		|string |			|是			|资产类别名称				|
+|deprmethodnum		|string	|			|是			|折旧方法编码				|
+|deprtype			|string	|			|是			|计提属性编码				|
+|dblbvrate			|string	|			|是			|净残值率				|
+|unit				|string	|			|是			|计量单位				|
+|life				|string	|			|是			|使用年限				|
+|modelid			|string	|			|是			|卡片样式				|
+|assetsubjectnum	|string	|			|是			|固定资产入账科目			|
+|deprtotalsubjectnum|string	|			|是			|累计折旧入账科目			|
+|decpresubjectnum	|string	|			|是			|减值准备入账科目			|
+|bnotcanretdecvalue	|string	|			|是			|不允许转回减值准备		|
+|cleanupsubjectnum	|string	|			|是			|资产清理入账科目			|
+|bnewassetdepr		|string	|			|是			|新增当月计提折旧			|
+|deprsubjectbytype	|string	|			|是			|按资产类别默认折旧科目	|
+
+- 返回参数说明
+
+|参数   |类型     |描述           |
+|:-     |:-       |:-            |
+|errcode|string   |状态码(0:成功) |
+|errmsg |string   |错误描述       |
+|id     |string   |               |
+|tradeid|string   |               |
+
+- 示例
+
+:::: code-group
+::: code-group-item 请求
+
+```json
+{
+    "capitalassettypes": {
+        "assettypeno": "014",
+        "assettypename": "电脑",
+        "deprmethodnum": "3",
+        "deprtype": "0",
+        "life": "99",
+        "modelid": "0",
+        "bnotcanretdecvalue": "1",
+        "bnewassetdepr": "0"
+    }
+}
+```
+
+:::
+
+::: code-group-item 响应
+
+```json
+{
+  "errcode": "0",
+  "errmsg": "",
+  "id": "",
+  "tradeid": "3eb76146-c94b-4b4b-87ef-40ac1087f9ba"
+}
+```
+
+:::
+
+:::
+::::
+
+::: details 查看演示
+[进入传送门](http://47.117.141.19/gif/assets/capitalassettypes.gif)
+:::

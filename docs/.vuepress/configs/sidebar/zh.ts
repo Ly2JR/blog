@@ -20,6 +20,23 @@ export const zh:SidebarConfig={
             ]
         }
     ],
+    '/zh/varietystore/erp/yonyou':[
+        {
+            text:'用友U8+',
+            children:[
+                '/zh/varietystore/erp/yonyou/README.md',
+                '/zh/varietystore/erp/yonyou/apis/README.md',
+                '/zh/varietystore/erp/yonyou/portal/README.md',
+                '/zh/varietystore/erp/yonyou/buttons/README.md',
+                '/zh/varietystore/erp/yonyou/archives/README.md',
+                '/zh/varietystore/erp/yonyou/vouchers/README.md',
+                '/zh/varietystore/erp/yonyou/reports/README.md',
+                '/zh/varietystore/erp/yonyou/times/README.md',
+                '/zh/varietystore/erp/yonyou/alarms/README.md',
+                '/zh/varietystore/erp/yonyou/package/README.md',
+            ]
+        }
+    ],
     '/zh/varietystore/office/excel':[
         {
             text:'Excel',

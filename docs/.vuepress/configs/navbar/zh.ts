@@ -87,7 +87,7 @@ export const zh:NavbarConfig=[
             text: 'ERP',
             children:[{
               text:'用友U8+',
-              link:'/'
+              link:'/zh/varietystore/erp/yonyou/README.md'
             }]
           },
           {

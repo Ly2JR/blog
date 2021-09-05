@@ -1,7 +1,6 @@
 ---
 home: true
 title: 主页
-heroImage: 'https://v2.vuepress.vuejs.org/images/hero.png'
 actions:
   - text: 传送门
     link: /zh/guide/
@@ -24,3 +23,17 @@ features:
     details: 很多好的开源的框架及解决方案，比如ABP、Dapper、Quartz.Net、NLog..
 footer: MIT Licensed | Copyright © 2021-present Tg
 ---
+
+
+<div style="text-align:center;">
+
+## 赞赏码
+
+**欢迎各位大佬各式花样打赏**
+
+<img width="160" height="160" :src="$withBase('/reward.jpg')" alt="reward">
+
+<br/>
+<br/>
+
+</div>

@@ -1,0 +1,91 @@
+# 职位档案
+
+- 资源符
+
+  **job**
+  
+- 操作符
+
+  - **create** <Badge type="tip" text="v1" vertical="top" />
+
+  - **load** <Badge type="tip" text="v2" vertical="top" />
+
+  - **edit** <Badge type="tip" text="v2" vertical="top" />
+
+  - **delete** <Badge type="tip" text="v2" vertical="top" />
+
+- 请求参数说明
+
+|参数				|类型	|参数路径	|是否必填	|描述					|
+|:-					|:-		|:-			|:-			|:-						|
+|jobcode			|string	|			|是			|职位编码				|
+|jobname			|string	|			|是			|职位名称				|
+|depcode			|string	|			|是			|所属部门				|
+|suporior			|string |			|是			|直接上级				|
+|builddate			|string |			|是			|成立日期				|
+|abortdate			|string |			|是			|撤销日期				|
+|jobseries			|string |			|是			|职位序列				|
+|jobrank			|string |			|是			|职位等级				|
+|worksumm			|string |			|是			|工作概要				|
+|jobrankclasscode	|string |			|是			|职级分类				|
+|jobrankbegin		|string |			|是			|职级范围起				|
+|jobrankend			|string |			|是			|职级范围止				|
+|jobrankend			|string |			|是			|职等范围起				|
+|jobgradeend		|string |			|是			|职等范围止				|
+
+- 返回参数说明
+
+|参数   |类型     |描述           |
+|:-     |:-       |:-            |
+|errcode|string   |状态码(0:成功) |
+|errmsg |string   |错误描述       |
+|id     |string   |               |
+|tradeid|string   |               |
+
+- 示例
+
+:::: code-group
+::: code-group-item 请求
+
+```json
+{
+    "job": {
+        "jobcode": "9901",
+        "jobname": "测试",
+        "depcode": "99",
+        "suporior": "",
+        "builddate": "2015-12-01",
+        "abortdate": "",
+        "jobseries": "C",
+        "jobrank": "1",
+        "worksumm": "",
+        "jobrankclasscode": "01",
+        "jobrankbegin": "M1",
+        "jobrankend": "M1",
+        "jobgradebegin": "4",
+        "jobgradeend": "4"
+    }
+}
+```
+
+:::
+
+::: code-group-item 响应
+
+```json
+{
+  "errcode": "0",
+  "errmsg": "",
+  "id": "",
+  "tradeid": "3eb76146-c94b-4b4b-87ef-40ac1087f9ba"
+}
+```
+
+:::
+
+:::
+::::
+
+::: details 查看演示
+[进入传送门](http://47.117.141.19/gif/job.gif)
+:::
