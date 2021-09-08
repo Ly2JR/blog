@@ -108,6 +108,14 @@ export const zh:NavbarConfig=[
             children:[
               {
                 text:'Github',
+                link:'/zh/varietystore/cli/github/README.md'
+              },
+              {
+                text:'YARN',
+                link:'/'
+              },
+              {
+                text:'NPM',
                 link:'/'
               }
             ]

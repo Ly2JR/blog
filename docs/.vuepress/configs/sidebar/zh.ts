@@ -69,4 +69,13 @@ export const zh:SidebarConfig={
             ]
         }
     ],
+    '/zh/varietystore/cli/github':[
+        {
+            text:'Github',
+            children:[
+                '/zh/varietystore/cli/github/README.md',
+                '/zh/varietystore/cli/github/reference.md',
+            ]
+        }
+    ],
 };
