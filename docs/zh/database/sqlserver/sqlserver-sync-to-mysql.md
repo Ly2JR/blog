@@ -99,6 +99,14 @@ GRANT SELECT ON TempDataBase.snap to 'demo'@'192.168.1.121'
 ```
 
 :::
+
+::: code-group-item 刷新权限
+
+```sql
+flush privileges;
+```
+
+:::
 ::::
 
 - 远程访问表
