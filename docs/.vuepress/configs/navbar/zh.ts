@@ -52,8 +52,8 @@ export const zh:NavbarConfig=[
               text:'Vue',
               link:'https://cn.vuejs.org/',
             },{
-              text:'Jquery',
-              link:'https://jquery.com/',
+              text:'JQuery',
+              link:'/zh/jquery/README.md',
             },{
               text:'TypeScript',
               link:'https://www.typescriptlang.org/'

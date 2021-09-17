@@ -9,6 +9,16 @@ export const zh:SidebarConfig={
             ]
         }
     ],
+    '/zh/jquery/':[
+        {
+            text:'JQuery',
+            children:[
+                '/zh/jquery/README.md',
+                '/zh/jquery/tips.md',
+                '/zh/jquery/reference.md'
+            ]
+        }
+    ],
     '/zh/database/sqlserver/':[
         {
             text:'Sql Server',
