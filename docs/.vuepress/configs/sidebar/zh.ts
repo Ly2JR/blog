@@ -90,4 +90,12 @@ export const zh:SidebarConfig={
             ]
         }
     ],
+    '/zh/varietystore/windows/sounds':[
+        {
+            text:'声音',
+            children:[
+                '/zh/varietystore/windows/sounds/README.md'
+            ]
+        }
+    ],
 };

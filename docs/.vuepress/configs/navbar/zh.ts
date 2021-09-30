@@ -62,47 +62,21 @@ export const zh:NavbarConfig=[
         ],
       },
       {
+        text:'数据库',
+        children:[
+           {
+             text:'Sql Server',
+             link:'/zh/database/sqlserver/README.md'
+           },
+           {
+            text:'MySql',
+            link:'/'
+          }
+        ]
+      },
+      {
         text: '杂货铺',
         children: [
-          {
-            text:'数据库',
-            children:[{
-              text:'Sql Server',
-              link:'/zh/database/sqlserver/README.md'
-            },
-            {
-              text:'MySql',
-              link:'/'
-            }]
-          },
-          {
-            text: 'Office',
-            children:[
-              {
-                text:'Excel',
-                link:'/zh/varietystore/office/excel/README.md'
-              }]
-          },
-          {
-            text: 'ERP',
-            children:[{
-              text:'用友U8+',
-              link:'/zh/varietystore/erp/yonyou/README.md'
-            }]
-          },
-          {
-            text: '数据交换格式',
-            children:[
-              {
-                text:'JSON',
-                link:'/zh/varietystore/data-exchange-format/json/README.md'
-              },
-              {
-                text:'XML',
-                link:'/zh/varietystore/data-exchange-format/xml/README.md'
-              }
-            ]
-          },
           {
             text: 'CLI',
             children:[
@@ -120,6 +94,43 @@ export const zh:NavbarConfig=[
               }
             ]
           },
-        ],
+          {
+            text: '数据交换格式',
+            children:[
+              {
+                text:'JSON',
+                link:'/zh/varietystore/data-exchange-format/json/README.md'
+              },
+              {
+                text:'XML',
+                link:'/zh/varietystore/data-exchange-format/xml/README.md'
+              }
+            ]
+          },
+          {
+            text: 'Windows',
+            children:[
+              {
+                text:'声音',
+                link:'/zh/varietystore/windows/sounds/README.md'
+              }
+            ]
+          },
+          {
+            text: 'Office',
+            children:[
+              {
+                text:'Excel',
+                link:'/zh/varietystore/office/excel/README.md'
+              }]
+          },
+          {
+            text: 'ERP',
+            children:[{
+              text:'用友U8+',
+              link:'/zh/varietystore/erp/yonyou/README.md'
+            }]
+          },
+        ]
       },
 ];
