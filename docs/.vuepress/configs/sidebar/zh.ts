@@ -54,7 +54,8 @@ export const zh:SidebarConfig={
             children:[
                 '/zh/varietystore/office/excel/README.md',
                 '/zh/varietystore/office/excel/macro-sample1.md',
-                '/zh/varietystore/office/excel/read-excel.md',
+                '/zh/varietystore/office/excel/read-from-excel.md',
+                '/zh/varietystore/office/excel/write-to-excel.md',
                 '/zh/varietystore/office/excel/reference.md'
             ]
         }
