@@ -62,31 +62,66 @@ export const en:NavbarConfig=[
         ],
       },
       {
+        text:'DataBase',
+        children:[
+          {
+              text:'Sql Server',
+              link:'/'            
+          },
+          {
+            text:'MySql',
+            link:'/'            
+          }
+        ]
+      },
+      {
         text: 'Variety Store',
         children: [
           {
+            text: 'CLI',
+            children:[
+              {
+                text:'Github',
+                link:'/zh/varietystore/cli/github/README.md'
+              },
+              {
+                text:'YARN',
+                link:'/'
+              },
+              {
+                text:'NPM',
+                link:'/'
+              }
+            ]
+          },
+          {
+            text: 'Data-Exchange-Format',
+            children:[
+              {
+                text:'JSON',
+                link:'/zh/varietystore/data-exchange-format/json/README.md'
+              },
+              {
+                text:'XML',
+                link:'/zh/varietystore/data-exchange-format/xml/README.md'
+              }
+            ]
+          },
+          {
+            text: 'Office',
+            children:[
+              {
+                text:'Excel',
+                link:'/zh/varietystore/office/excel/README.md'
+              }]
+          },
+          {
             text: 'ERP',
             children:[{
-              text:'yonyou U8+',
-              link:'#'
+              text:'yonyouU8+',
+              link:'/zh/varietystore/erp/yonyou/README.md'
             }]
-          },
-          {
-            text:'DataBase',
-            children:[{
-              text:'Sql Server',
-              link:'#'
-            },
-            {
-              text:'MySql',
-              link:'#'
-            }]
-          },
-          {
-            text: 'Github',
-            link: '/',
-            children:[]
-          },
+          }
         ],
       },
 ]
