@@ -69,9 +69,13 @@ export const zh:NavbarConfig=[
              link:'/zh/database/sqlserver/README.md'
            },
            {
-            text:'MySql',
-            link:'/'
-          }
+             text:'MySql',
+             link:'/'
+           },
+           {
+             text:'Sqlite',
+             link:'/'
+           }
         ]
       },
       {
