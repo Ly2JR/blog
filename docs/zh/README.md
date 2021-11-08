@@ -34,5 +34,5 @@ footer: MIT Licensed | Copyright © 2021-present Tg
 
 <img width="160" height="160" :src="$withBase('/reward.jpg')" alt="reward"/>
 
-[![reward](https://badgen.net/github/last-commit/TgT982474256/blog/main)](http://http://47.117.141.19/)
+[![reward](https://badgen.net/github/last-commit/TgT982474256/blog/main)](http://47.117.141.19/)
 </div>
