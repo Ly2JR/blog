@@ -21,7 +21,7 @@ features:
     details: About Sql Server,MySql、Sqlite...
   - title: Other
     details: Many Open source framework in Github，ABout ABP、Dapper、Quartz.Net、NLog..
-footer: MIT Licensed | Copyright © 2021-present TgT
+footer: MIT Licensed | Copyright © 2021-present TGL2
 ---
 
 
