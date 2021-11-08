@@ -18,6 +18,4 @@
 
 ## 演示地址
 
-[![TGL2]( https://badgen.net/github/last-commit/micromatch/micromatch)](http://47.117.141.19:8080/)
-
 - [![TGL2](https://badgen.net/badge/TGL2/v0.1.0)](http://47.117.141.19:8080/)

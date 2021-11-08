@@ -25,6 +25,7 @@ footer: MIT Licensed | Copyright © 2021-present Tg
 ---
 
 
+
 <div style="text-align:center;">
 
 ## 赞赏码
@@ -33,4 +34,5 @@ footer: MIT Licensed | Copyright © 2021-present Tg
 
 <img width="160" height="160" :src="$withBase('/reward.jpg')" alt="reward"/>
 
+[![reward](https://badgen.net/github/last-commit/TgT982474256/blog/main)](http://http://47.117.141.19/)
 </div>
