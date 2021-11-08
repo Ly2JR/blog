@@ -50,7 +50,7 @@ export const zh:NavbarConfig=[
             text: 'Web',
             children:[{
               text:'Vue',
-              link:'https://cn.vuejs.org/',
+              link:'/zh/web/vue3/README.md',
             },{
               text:'JQuery',
               link:'/zh/jquery/README.md',
