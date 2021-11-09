@@ -6,20 +6,14 @@
 
 - 概要
 
-:::: code-group
-::: code-group-item shell
-
 ``` shell
-$ git [--version] [--help] [-C <path>] [-c <name>=<value>]
-    [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
-    [-p|--paginate|-P|--no-pager] [--no-replace-objects] [--bare]
-    [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
-    [--super-prefix=<path>] [--config-env=<name>=<envvar>]
-    <command> [<args>]
+$> git [--version] [--help] [-C <path>] [-c <name>=<value>]
+  [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+  [-p|--paginate|-P|--no-pager] [--no-replace-objects] [--bare]
+  [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+  [--super-prefix=<path>] [--config-env=<name>=<envvar>]
+  <command> [<args>]
 ```
-
-:::
-::::
 
 ## Git基础
 
@@ -29,64 +23,45 @@ $ git [--version] [--help] [-C <path>] [-c <name>=<value>]
 
 - 概要
 
-:::: code-group
-::: code-group-item shell
-
 ``` shell
-$ git init [-q | --quiet] [--bare] [--template=<template_directory>]
-        [--separate-git-dir <git dir>] [--object-format=<format>]
-        [-b <branch-name> | --initial-branch=<branch-name>]
-        [--shared[=<permissions>]] [directory]
+$> git init [-q | --quiet] [--bare] [--template=<template_directory>]
+  [--separate-git-dir <git dir>] [--object-format=<format>]
+  [-b <branch-name> | --initial-branch=<branch-name>]
+  [--shared[=<permissions>]] [directory]
 ```
-
-:::
-::::
 
 - 克隆远程仓库
 
 ::: tip
-$ git clone --help 查看详细说明
+$> git clone --help 查看详细说明
 :::
 
 - 概要
 
-:::: code-group
-::: code-group-item shell
-
 ``` shell
-$ git clone [--template=<template_directory>]
-        [-l] [-s] [--no-hardlinks] [-q] [-n] [--bare] [--mirror]
-        [-o <name>] [-b <name>] [-u <upload-pack>] [--reference <repository>]
-        [--dissociate] [--separate-git-dir <git dir>]
-        [--depth <depth>] [--[no-]single-branch] [--no-tags]
-        [--recurse-submodules[=<pathspec>]] [--[no-]shallow-submodules]
-        [--[no-]remote-submodules] [--jobs <n>] [--sparse] [--[no-]reject-shallow]
-        [--filter=<filter>] [--] <repository>
-        [<directory>]
+$> git clone [--template=<template_directory>]
+    [-l] [-s] [--no-hardlinks] [-q] [-n] [--bare] [--mirror]
+    [-o <name>] [-b <name>] [-u <upload-pack>] [--reference <repository>]
+    [--dissociate] [--separate-git-dir <git dir>]
+    [--depth <depth>] [--[no-]single-branch] [--no-tags]
+    [--recurse-submodules[=<pathspec>]] [--[no-]shallow-submodules]
+    [--[no-]remote-submodules] [--jobs <n>] [--sparse] [--[no-]reject-shallow]
+    [--filter=<filter>] [--] <repository>
+    [<directory>]
 ```
-
-:::
-::::
-
 ### 记录每次更新到仓库
 
 #### 查看文件状态
 
 ::: tip
-$ git add --help 查看详细说明
+$> git add --help 查看详细说明
 :::
 
 - 概要
 
-:::: code-group
-::: code-group-item shell
-
 ``` shell
-$ git status [<options>...][--][<pathspec>...]
+$> git status [<options>...][--][<pathspec>...]
 ```
-
-:::
-::::
 
 - 可选项
 
@@ -105,24 +80,18 @@ M 修改的文件
 git add 命令使用文件或目录的路径作为参数;
 
 ::: tip
-$ git add --help 查看详细说明
+$> git add --help 查看详细说明
 :::
 
 - 概要
 
-:::: code-group
-::: code-group-item shell
-
 ``` shell
-$ git add [--verbose | -v] [--dry-run | -n] [--force | -f] [--interactive | -i] [--patch | -p]
-           [--edit | -e] [--[no-]all | --[no-]ignore-removal | [--update | -u]]
-           [--intent-to-add | -N] [--refresh] [--ignore-errors] [--ignore-missing] [--renormalize]
-           [--chmod=(+|-)x] [--pathspec-from-file=<file> [--pathspec-file-nul]]
-           [--] [<pathspec>…​]
+$> git add [--verbose | -v] [--dry-run | -n] [--force | -f] [--interactive | -i] [--patch | -p]
+    [--edit | -e] [--[no-]all | --[no-]ignore-removal | [--update | -u]]
+    [--intent-to-add | -N] [--refresh] [--ignore-errors] [--ignore-missing] [--renormalize]
+    [--chmod=(+|-)x] [--pathspec-from-file=<file> [--pathspec-file-nul]]
+    [--] [<pathspec>…​]
 ```
-
-:::
-::::
 
 #### 忽略文件
 
@@ -191,50 +160,38 @@ doc/**/*.pdf
 git diff 本身只显示尚未暂存的改动,而不是自上次提交以来所做的所有改动
 
 ::: warning
-$ git diff --help 查看详细说明
+$> git diff --help 查看详细说明
 :::
 
 - 概要
 
-:::: code-group
-::: code-group-item shell
-
 ``` shell
-$ git diff [<options>] [<commit>] [--] [<path>…​]
-$ git diff [<options>] --cached [--merge-base] [<commit>] [--] [<path>…​]
-$ git diff [<options>] [--merge-base] <commit> [<commit>…​] <commit> [--] [<path>…​]
-$ git diff [<options>] <commit>…​<commit> [--] [<path>…​]
-$ git diff [<options>] <blob> <blob>
-$ git diff [<options>] --no-index [--] <path> <path>
+$> git diff [<options>] [<commit>] [--] [<path>…​]
+$> git diff [<options>] --cached [--merge-base] [<commit>] [--] [<path>…​]
+$> git diff [<options>] [--merge-base] <commit> [<commit>…​] <commit> [--] [<path>…​]
+$> git diff [<options>] <commit>…​<commit> [--] [<path>…​]
+$> git diff [<options>] <blob> <blob>
+$> git diff [<options>] --no-index [--] <path> <path>
 ```
-
-:::
-::::
 
 #### 提交更新
 
 ::: tip
-$ git commit --help 查看详细说明
+$> git commit --help 查看详细说明
 :::
 
 - 概要
 
-:::: code-group
-::: code-group-item shell
-
 ``` shell
-$ git commit [-a | --interactive | --patch] [-s] [-v] [-u<mode>] [--amend]
-           [--dry-run] [(-c | -C | --squash) <commit> | --fixup [(amend|reword):]<commit>)]
-           [-F <file> | -m <msg>] [--reset-author] [--allow-empty]
-           [--allow-empty-message] [--no-verify] [-e] [--author=<author>]
-           [--date=<date>] [--cleanup=<mode>] [--[no-]status]
-           [-i | -o] [--pathspec-from-file=<file> [--pathspec-file-nul]]
-           [(--trailer <token>[(=|:)<value>])…​] [-S[<keyid>]]
-           [--] [<pathspec>…​]
+$> git commit [-a | --interactive | --patch] [-s] [-v] [-u<mode>] [--amend]
+    [--dry-run] [(-c | -C | --squash) <commit> | --fixup [(amend|reword):]<commit>)]
+    [-F <file> | -m <msg>] [--reset-author] [--allow-empty]
+    [--allow-empty-message] [--no-verify] [-e] [--author=<author>]
+    [--date=<date>] [--cleanup=<mode>] [--[no-]status]
+    [-i | -o] [--pathspec-from-file=<file> [--pathspec-file-nul]]
+    [(--trailer <token>[(=|:)<value>])…​] [-S[<keyid>]]
+    [--] [<pathspec>…​]
 ```
-
-:::
-::::
 
 - 可选项
 
@@ -245,22 +202,16 @@ $ git commit [-a | --interactive | --patch] [-s] [-v] [-u<mode>] [--amend]
 #### 移除文件
 
 ::: tip
-$ git rm --help 查看详细说明
+$> git rm --help 查看详细说明
 :::
 
 - 概要
 
-:::: code-group
-::: code-group-item shell
-
 ``` shell
-$ git rm [-f | --force] [-n] [-r] [--cached] [--ignore-unmatch]
+$> git rm [-f | --force] [-n] [-r] [--cached] [--ignore-unmatch]
     [--quiet] [--pathspec-from-file=<file> [--pathspec-file-nul]]
     [--] [<pathspec>…​]
 ```
-
-:::
-::::
 
 - 可选项
 
@@ -271,26 +222,20 @@ $ git rm [-f | --force] [-n] [-r] [--cached] [--ignore-unmatch]
 #### 移动文件
 
 ::: tip
-$ git mv --help 查看详细说明
+$> git mv --help 查看详细说明
 :::
-
-:::: code-group
-::: code-group-item shell
 
 ``` shell
-$ git mv <options>…​ <args>…​
+$> git mv <options>…​ <args>…​
 ```
-
-:::
-::::
 
 ::: details git mv
 运行`git mv`相当于运行了下面三条命令
 
 ``` shell
-$ mv README.MD README
-$ git rm README.MD
-$ git add README
+$> mv README.MD README
+$> git rm README.MD
+$> git add README
 ```
 
 :::
@@ -298,20 +243,14 @@ $ git add README
 ### 查看提交历史
 
 ::: tip
-$ git log --help 查看详细说明
+$> git log --help 查看详细说明
 :::
 
 - 概要
 
-:::: code-group
-::: code-group-item shell
-
 ``` shell
-$ git log [<options>] [<revision range>] [[--] <path>…​]
+$> git log [<options>] [<revision range>] [[--] <path>…​]
 ```
-
-:::
-::::
 
 - 可选项
 
@@ -325,7 +264,7 @@ $ git log [<options>] [<revision range>] [[--] <path>…​]
 此时，可以运行带有`--ament`选项的提交命令来重新提交：
 
 ``` shell
-$ git commit --amend
+$> git commit --amend
 ```
 
 这个命令会将暂存区中的文件提交。如果自上次提交以来你还未做任何修改
@@ -334,9 +273,9 @@ $ git commit --amend
 例如，你提交后发现忘记了暂存某些需要的修改，可以像下面这样操作：
 
 ``` shell
-$ git commit -m 'initial commit'
-$ git add forgotten_file
-$ git commit --ament
+$> git commit -m 'initial commit'
+$> git add forgotten_file
+$> git commit --ament
 ```
 
 最终你只会有一个提交--第二次提交将代替第一次提交的结果
@@ -344,7 +283,7 @@ $ git commit --ament
 #### 取消暂存的文件
 
 ::: tip
-$ git reset --help 查看详细说明
+$> git reset --help 查看详细说明
 :::
 
 例如，你已经修改了两个文件并且想要将它们作为两次独立的修改提交，
@@ -354,24 +293,18 @@ $ git reset --help 查看详细说明
 
 - 概要
 
-:::: code-group
-::: code-group-item shell
-
 ``` shell
-$ git reset [-q] [<tree-ish>] [--] <pathspec>…​
-$ git reset [-q] [--pathspec-from-file=<file> [--pathspec-file-nul]] [<tree-ish>]
-$ git reset (--patch | -p) [<tree-ish>] [--] [<pathspec>…​]
-$ git reset [--soft | --mixed [-N] | --hard | --merge | --keep] [-q] [<commit>]
-            DEPRECATED: git reset [-q] [--stdin [-z]] [<tree-ish>]
+$> git reset [-q] [<tree-ish>] [--] <pathspec>…​
+$> git reset [-q] [--pathspec-from-file=<file> [--pathspec-file-nul]] [<tree-ish>]
+$> git reset (--patch | -p) [<tree-ish>] [--] [<pathspec>…​]
+$> git reset [--soft | --mixed [-N] | --hard | --merge | --keep] [-q] [<commit>]
+    DEPRECATED: git reset [-q] [--stdin [-z]] [<tree-ish>]
 ```
-
-:::
-::::
 
 #### 撤销对文件的修改
 
 ::: tip
-$ git checkout --help 查看详细说明
+$> git checkout --help 查看详细说明
 :::
 
 如果你并不想保留对文件的修改怎么办？你该如何方便地撤销修改--将它还原成
@@ -386,9 +319,6 @@ $ git checkout --help 查看详细说明
 
 - 概要
 
-:::: code-group
-::: code-group-item shell
-
 ``` shell
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
@@ -397,26 +327,17 @@ Changes not staged for commit:
     modified:   CONTRIBUTING.md
 ```
 
-:::
-::::
-
 - 概要
 
-:::: code-group
-::: code-group-item shell
-
 ``` shell
-$ git checkout [-q] [-f] [-m] [<branch>]
-$ git checkout [-q] [-f] [-m] --detach [<branch>]
-$ git checkout [-q] [-f] [-m] [--detach] <commit>
-$ git checkout [-q] [-f] [-m] [[-b|-B|--orphan] <new_branch>] [<start_point>]
-$ git checkout [-f|--ours|--theirs|-m|--conflict=<style>] [<tree-ish>] [--] <pathspec>…​
-$ git checkout [-f|--ours|--theirs|-m|--conflict=<style>] [<tree-ish>] --pathspec-from-file=<file> [--pathspec-file-nul]
-$ git checkout (-p|--patch) [<tree-ish>] [--] [<pathspec>…​]
+$> git checkout [-q] [-f] [-m] [<branch>]
+$> git checkout [-q] [-f] [-m] --detach [<branch>]
+$> git checkout [-q] [-f] [-m] [--detach] <commit>
+$> git checkout [-q] [-f] [-m] [[-b|-B|--orphan] <new_branch>] [<start_point>]
+$> git checkout [-f|--ours|--theirs|-m|--conflict=<style>] [<tree-ish>] [--] <pathspec>…​
+$> git checkout [-f|--ours|--theirs|-m|--conflict=<style>] [<tree-ish>] --pathspec-from-file=<file> [--pathspec-file-nul]
+$> git checkout (-p|--patch) [<tree-ish>] [--] [<pathspec>…​]
 ```
-
-:::
-::::
 
 如果你仍然想保留对那个文件做出的修改，但是现在仍然需要撤销，我们将会在`Git 分支`介绍
 保持进度与分支，这通常是更好的做法。
@@ -441,27 +362,21 @@ $ git checkout (-p|--patch) [<tree-ish>] [--] [<pathspec>…​]
 
 - 概要
 
-:::: code-group
-::: code-group-item shell
-
 ``` shell
-$ git remote [-v | --verbose]
-$ git remote add [-t <branch>] [-m <master>] [-f] [--[no-]tags] [--mirror=(fetch|push)] <name> <url>
-$ git remote rename <old> <new>
-$ git remote remove <name>
-$ git remote set-head <name> (-a | --auto | -d | --delete | <branch>)
-$ git remote set-branches [--add] <name> <branch>…​
-$ git remote get-url [--push] [--all] <name>
-$ git remote set-url [--push] <name> <newurl> [<oldurl>]
-$ git remote set-url --add [--push] <name> <newurl>
-$ git remote set-url --delete [--push] <name> <url>
-$ git remote [-v | --verbose] show [-n] <name>…​
-$ git remote prune [-n | --dry-run] <name>…​
-$ git remote [-v | --verbose] update [-p | --prune] [(<group> | <remote>)…​]
+$> git remote [-v | --verbose]
+$> git remote add [-t <branch>] [-m <master>] [-f] [--[no-]tags] [--mirror=(fetch|push)] <name> <url>
+$> git remote rename <old> <new>
+$> git remote remove <name>
+$> git remote set-head <name> (-a | --auto | -d | --delete | <branch>)
+$> git remote set-branches [--add] <name> <branch>…​
+$> git remote get-url [--push] [--all] <name>
+$> git remote set-url [--push] <name> <newurl> [<oldurl>]
+$> git remote set-url --add [--push] <name> <newurl>
+$> git remote set-url --delete [--push] <name> <url>
+$> git remote [-v | --verbose] show [-n] <name>…​
+$> git remote prune [-n | --dry-run] <name>…​
+$> git remote [-v | --verbose] update [-p | --prune] [(<group> | <remote>)…​]
 ```
-
-:::
-::::
 
 #### 添加远程仓库
 
@@ -503,28 +418,16 @@ $ git remote -v
 
 - 概要
 
-:::: code-group
-::: code-group-item shell
-
 ``` shell
-$ git fetch [<options>] [<repository> [<refspec>…​]]
-$ git fetch [<options>] <group>
-$ git fetch --multiple [<options>] [(<repository> | <group>)…​]
-$ git fetch --all [<options>]
+$> git fetch [<options>] [<repository> [<refspec>…​]]
+$> git fetch [<options>] <group>
+$> git fetch --multiple [<options>] [(<repository> | <group>)…​]
+$> git fetch --all [<options>]
 ```
 
-:::
-::::
-
-:::: code-group
-::: code-group-item shell
-
 ``` shell
-$ git pull [<options>] [<repository> [<refspec>…​]]
+$> git pull [<options>] [<repository> [<refspec>…​]]
 ```
-
-:::
-::::
 
 #### 推送到远程仓库
 
@@ -537,15 +440,9 @@ $ git pull [<options>] [<repository> [<refspec>…​]]
 `origin`服务器时(再次说明，克隆时通常会自动设置好那两个名字),
 那么运行这个命令就可以将你所做的备份到服务器:
 
-:::: code-group
-::: code-group-item shell
-
 ``` shell
-$ git pull orgin main
+$> git pull orgin main
 ```
-
-:::
-::::
 
 只有当你有所克隆服务器的写入权限，并且之前没有人推送过时，这条命令才能生效。
 当你和其他人在同一时间克隆，他们先推送到上游然后你再推送到上游，你的推送就会
@@ -553,20 +450,14 @@ $ git pull orgin main
 
 - 概要
 
-:::: code-group
-::: code-group-item shell
-
 ``` shell
-$ git push [--all | --mirror | --tags] [--follow-tags] [--atomic] [-n | --dry-run] [--receive-pack=<git-receive-pack>]
-           [--repo=<repository>] [-f | --force] [-d | --delete] [--prune] [-v | --verbose]
-           [-u | --set-upstream] [-o <string> | --push-option=<string>]
-           [--[no-]signed|--signed=(true|false|if-asked)]
-           [--force-with-lease[=<refname>[:<expect>]] [--force-if-includes]]
-           [--no-verify] [<repository> [<refspec>…​]]
+$> git push [--all | --mirror | --tags] [--follow-tags] [--atomic] [-n | --dry-run] [--receive-pack=<git-receive-pack>]
+  [--repo=<repository>] [-f | --force] [-d | --delete] [--prune] [-v | --verbose]
+  [-u | --set-upstream] [-o <string> | --push-option=<string>]
+  [--[no-]signed|--signed=(true|false|if-asked)]
+  [--force-with-lease[=<refname>[:<expect>]] [--force-if-includes]]
+  [--no-verify] [<repository> [<refspec>…​]]
 ```
-
-:::
-::::
 
 #### 查看某个远程仓库
 
@@ -601,8 +492,8 @@ git remote show origin
 重命名为`Tg-Blog`,可以用`git remote rename`这样做:
 
 ``` shell
-$ git remote rename blog Tg-Blog
-$ git remote
+$> git remote rename blog Tg-Blog
+$> git remote
 origin
 Tg-Blog
 ```
@@ -615,8 +506,8 @@ Tg-Blog
 或`git remote rm`:
 
 ``` shell
-$ git remote remove Tg-Blog
-$ git remote
+$> git remote remove Tg-Blog
+$> git remote
 origin
 ```
 

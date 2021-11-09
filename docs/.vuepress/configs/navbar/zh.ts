@@ -90,7 +90,7 @@ export const zh:NavbarConfig=[
               },
               {
                 text:'YARN',
-                link:'/'
+                link:'/zh/varietystore/cli/yarn/README.md'
               },
               {
                 text:'NPM',

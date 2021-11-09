@@ -91,6 +91,15 @@ export const zh:SidebarConfig={
             ]
         }
     ],
+    '/zh/varietystore/cli/yarn':[
+        {
+            text:'Yarn',
+            children:[
+                '/zh/varietystore/cli/yarn/README.md',
+                '/zh/varietystore/cli/yarn/reference.md',
+            ]
+        }
+    ],
     '/zh/varietystore/windows/sounds':[
         {
             text:'声音',
