@@ -1,6 +1,6 @@
-# 考勤示例一
+# 考勤时间间隔统计
 
-## 示例说明
+## 模板说明
 
 考勤统计显示内容如下:
 
@@ -18,16 +18,9 @@ Q：需要统计出所有员工中午考勤打卡时间情况,考勤时间超过
 
 A：需要先确认中午考勤时间范围，比如中午11:00:00~12:00:00作为午餐时间
 
-## 代码
+## 宏
 
-- **步骤1**: 添加命令按钮
-
-::: tip
-Wps:`开发工具`添加`命令按钮`  
-Office：`开发工具`选择`ActiveX`添加`命令按钮`
-:::
-
-- **步骤2**: 确认关键单元格位置
+- **步骤1**: 确认关键单元格位置
 
 :::: code-group
 ::: code-group-item JS
@@ -61,7 +54,7 @@ Const endHour         As Integer = 12         '截至时间统计
 :::
 ::::
 
-- **步骤3**: 确认最大有效行
+- **步骤2**: 确认最大有效行
 
 :::: code-group
 ::: code-group-item JS
@@ -82,7 +75,7 @@ MaxRow = ActiveSheet.UsedRange.Rows.Count   '最大有效行
 :::
 ::::
 
-- **步骤4**: 统计存储用字典
+- **步骤3**: 统计存储用字典
 
 :::: code-group
 ::: code-group-item JS
@@ -103,7 +96,7 @@ Set dic = CreateObject("scripting.dictionary")
 :::
 ::::
 
-- **步骤5**: 字典存储内容结构
+- **步骤4**: 字典存储内容结构
 
 :::: code-group
 ::: code-group-item JS
@@ -135,7 +128,7 @@ public MaxRow as Integer  '中午考勤最晚时间所在行
 :::
 ::::
 
-- **步骤6**: 关键字是否存在检查
+- **步骤5**: 关键字是否存在检查
 
 :::: code-group
 ::: code-group-item JS
@@ -166,7 +159,7 @@ dic.Exists(curKey)   '因为是标准字典所以直接操作
 :::
 ::::
 
-- **步骤7**: 计算时间差
+- **步骤6**: 计算时间差
 
 :::: code-group
 ::: code-group-item JS
@@ -204,7 +197,7 @@ DateDiff("n", beginDate, endDate)     'DateDiff是标准函数
 :::
 ::::
 
-- **步骤8**: 命令按钮执行
+- **步骤7**: 命令按钮执行
 
 :::: code-group
 ::: code-group-item JS
@@ -296,7 +289,7 @@ Next
 :::
 ::::
 
-- **步骤9**: 将统计结果显示
+- **步骤8**: 将统计结果显示
 
 :::: code-group
 ::: code-group-item JS
