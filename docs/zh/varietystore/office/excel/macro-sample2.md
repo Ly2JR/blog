@@ -101,12 +101,9 @@ MaxRow = ActiveSheet.UsedRange.Rows.Count   '最大有效行
 ```js
 function GetMedian(dataArray,eleSize){
     let temp=0,medianData=0,index=0;
-    for(let i = 0;i<eleSize;i++)
-    {
-        for(let j=i+1;j<eleSize;j++)
-        {
-            if (dataArray[i] > dataArray[j])
-            {
+    for(let i = 0;i<eleSize;i++){
+        for(let j=i+1;j<eleSize;j++){
+            if (dataArray[i] > dataArray[j]){
                 temp = dataArray[i];
                 dataArray[i] = dataArray[j];
                 dataArray[j] = temp;
@@ -114,13 +111,13 @@ function GetMedian(dataArray,eleSize){
         }
     }
 
-    if (eleSize% 2 === 0)    //偶数
-    {
+    if (eleSize% 2 === 0) {
+        //偶数
         index = eleSize / 2;
         medianData = (dataArray[index - 1] + dataArray[index]) / 2;
     }
-    else //奇数
-    {
+    else {
+        //奇数
         index = (eleSize + 1) / 2 - 1;
         medianData = dataArray[index];
     }
@@ -133,11 +130,6 @@ function GetMedian(dataArray,eleSize){
 ::: code-group-item VBA
 
 ```vb
-'***********
-'获取中位数计算
-'data   :存储的元素数组
-'eleSize:元素个数
-'***********
 Private Function GetMedian(ByRef data() As Double, ByVal elSize As Integer) As Double
 Dim i, j, index As Long
 Dim temp As Double
@@ -234,6 +226,7 @@ function MedianStatistics()
 ::: code-group-item VBA
 
 ```vb
+'需要优化
 Private Sub MedianStatistics()
 
 Dim currentKey  As String   '日期值
