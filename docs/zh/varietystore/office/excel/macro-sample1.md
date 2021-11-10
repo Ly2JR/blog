@@ -26,14 +26,14 @@ A：需要先确认中午考勤时间范围，比如中午11:00:00~12:00:00作�
 ::: code-group-item JS
 
 ```js
-const readColCode     = 1           //工号列
-const readColTime     = 7           //打卡时间列
-const startRow        = 4           //开始计算行
-const writeColCode    = 8           //结果工号写入列
-const writeColTime    = 9           //结果时间写入列
-const writeColVal     = 10          //结果时间差异值写入列
-const startHour       = '11:00:00'  //开始时间统计
-const endHour         = '12:00:00'  //截至时间统计
+const readColCode     = 1;           //工号列
+const readColTime     = 7;           //打卡时间列
+const startRow        = 4;           //开始计算行
+const writeColCode    = 8;           //结果工号写入列
+const writeColTime    = 9;           //结果时间写入列
+const writeColVal     = 10;          //结果时间差异值写入列
+const startHour       = '11:00:00';  //开始时间统计
+const endHour         = '12:00:00';  //截至时间统计
 ```
 
 :::
