@@ -167,21 +167,18 @@ End Function
 function MedianStatistics()
 {
     let index =0;
-    let Data1=[];
-    let Data2=[];
-    let Data3=[];
-    let Data4=[];
+    let Data1=[],Data2=[],Data3=[],Data4=[];
     let Data1Val=0,Data2Val=0,Data3Val=0,Data4Val=0;
-    let tempKey='';
-
+    let tempKey=undefined;
     let writeIndex = writeRow;
     let MaxRow = ActiveSheet.UsedRange.Rows.Count+1;
 
     for(let i = readRow;i<=MaxRow;i++)
     {
         let currentKey = ActiveSheet.Cells.Item(i, readDateCol).Value2;
-
-        if((tempKey!=='' && tempKey!==currentKey)||i===MaxRow) {
+        if(i===MaxRow||(tempKey!==undefined && tempKey!==currentKey)) {
+        	if(tempKey===undefined) continue;
+        	tempKey = Application.WorksheetFunction.Text(tempKey, "MM/dd");
             ActiveSheet.Cells.Item(writeIndex, writeDateCol).Value2 = tempKey;
 
             Data1Val = GetMedian(Data1, index);
@@ -199,12 +196,11 @@ function MedianStatistics()
             Data4=[];
 
             writeIndex++;
-            tempKey ='';
+            tempKey =undefined;
             index = 0;
-            continue;
         }
-
-        currentKey = Application.WorksheetFunction.Text(currentKey, "MM/dd");
+		if(currentKey===undefined) continue;
+       
         Data1Val = ActiveSheet.Cells.Item(i, readCol1).Value2;
         Data2Val = ActiveSheet.Cells.Item(i, readCol2).Value2;
         Data3Val = ActiveSheet.Cells.Item(i, readCol3).Value2;
