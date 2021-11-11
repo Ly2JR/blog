@@ -133,10 +133,8 @@ function GetMedian(dataArray,eleSize){
 Private Function GetMedian(ByRef data() As Double, ByVal elSize As Integer) As Double
 Dim i, j, index As Long
 Dim temp As Double
-Dim max As Integer
-max = elSize - 1
-    For i = 0 To max Step 1
-        For j = i + 1 To max Step 1
+    For i = 0 To elSize - 1 Step 1
+        For j = i + 1 To elSize - 1 Step 1
             If (data(i) > data(j)) Then
                 temp = data(i)
                 data(i) = data(j)
@@ -224,20 +222,20 @@ function MedianStatistics()
 ```vb
 '需要优化
 Private Sub MedianStatistics()
+On Error GoTo ErrHandler
 
 Dim currentKey  As String   '日期值
 Dim MaxRow      As Long     '最大有效行
 Dim i           As Long     '当前行
 Dim index       As Long     '统计行
 Dim capacity    As Long     '容量
-Dim Data1() As Double
-Dim Data2() As Double
-Dim Data3() As Double
-Dim Data4() As Double
+Dim Data1()  As Double
+Dim Data2()  As Double
+Dim Data3()  As Double
+Dim Data4()  As Double
 Dim Data1Val, Data2Val, Data3Val, Data4Val As Double
 Dim writeIndex As Long
 Dim tempKey    As String
-Dim bEnd       As Boolean
 
 capacity = 20
 ReDim Data1(capacity)
@@ -246,45 +244,25 @@ ReDim Data3(capacity)
 ReDim Data4(capacity)
 
 writeIndex = writeRow
-MaxRow = ActiveSheet.UsedRange.Rows.Count
+MaxRow = ActiveSheet.UsedRange.Rows.Count + 1
 index = 0
 tempKey = ""
-
+'开始逐行统计数据
 For i = readRow To MaxRow Step 1
 
-    currentKey = ActiveSheet.Cells.Item(i, readDateCol).Value2
-    currentKey = Application.WorksheetFunction.Text(currentKey, "MM/dd")
-    Data1Val = ActiveSheet.Cells.Item(i, readCol1).Value2
-    Data2Val = ActiveSheet.Cells.Item(i, readCol2).Value2
-    Data3Val = ActiveSheet.Cells.Item(i, readCol3).Value2
-    Data4Val = ActiveSheet.Cells.Item(i, readCol4).Value2
-            
-    If currentKey = "" Then
-        bEnd = True
-        GoTo goNext
-    End If
-
-    If tempKey <> "" And tempKey <> currentKey Then
-goNext:
-        If bEnd And Data1Val <> 0 And Data2Val <> 0 And Data3Val <> 0 And Data4Val <> 0 Then
-            Data1(index) = Data1Val
-            Data2(index) = Data2Val
-            Data3(index) = Data3Val
-            Data4(index) = Data4Val
-            index = index + 1
-        End If
-goEnd:
-        ActiveSheet.Cells.Item(writeIndex, writeDateCol).Value2 = tempKey
+    currentKey = ActiveSheet.Cells.item(i, readDateCol).Value2
+    If ((i = MaxRow) Or (tempKey <> "" And tempKey <> currentKey)) Then
+        If (tempKey = "") Then GoTo goNext
+        
+        tempKey = Application.WorksheetFunction.Text(tempKey, "MM/dd")
         Data1Val = Round(GetMedian(Data1, index), 2)
         Data2Val = Round(GetMedian(Data2, index), 2)
         Data3Val = Round(GetMedian(Data3, index), 2)
         Data4Val = Round(GetMedian(Data4, index), 2)
-        If Data1Val <> 0 And Data2Val <> 0 And Data3Val <> 0 And Data4Val <> 0 Then
-            ActiveSheet.Cells.Item(writeIndex, writeCol1).Value2 = Data1Val
-            ActiveSheet.Cells.Item(writeIndex, writeCol2).Value2 = Data2Val
-            ActiveSheet.Cells.Item(writeIndex, writeCol3).Value2 = Data3Val
-            ActiveSheet.Cells.Item(writeIndex, writeCol4).Value2 = Data4Val
-        End If
+        ActiveSheet.Cells.item(writeIndex, writeCol1).Value2 = Data1Val
+        ActiveSheet.Cells.item(writeIndex, writeCol2).Value2 = Data2Val
+        ActiveSheet.Cells.item(writeIndex, writeCol3).Value2 = Data3Val
+        ActiveSheet.Cells.item(writeIndex, writeCol4).Value2 = Data4Val
         
         capacity = 20
         ReDim Data1(capacity)
@@ -295,31 +273,37 @@ goEnd:
         writeIndex = writeIndex + 1
         tempKey = ""
         index = 0
-        bEnd = False
-        Data1(index) = ActiveSheet.Cells.Item(i, readCol1).Value2
-        Data2(index) = ActiveSheet.Cells.Item(i, readCol2).Value2
-        Data3(index) = ActiveSheet.Cells.Item(i, readCol3).Value2
-        Data4(index) = ActiveSheet.Cells.Item(i, readCol4).Value2
-        index = 1
-    Else
-        tempKey = currentKey
-        Data1(index) = ActiveSheet.Cells.Item(i, readCol1).Value2
-        Data2(index) = ActiveSheet.Cells.Item(i, readCol2).Value2
-        Data3(index) = ActiveSheet.Cells.Item(i, readCol3).Value2
-        Data4(index) = ActiveSheet.Cells.Item(i, readCol4).Value2
-        index = index + 1
-        If i = MaxRow Then GoTo goEnd
+        
     End If
+    Data1Val = ActiveSheet.Cells.item(i, readCol1).Value2
+    Data2Val = ActiveSheet.Cells.item(i, readCol2).Value2
+    Data3Val = ActiveSheet.Cells.item(i, readCol3).Value2
+    Data4Val = ActiveSheet.Cells.item(i, readCol4).Value2
     
-    If (index Mod 20 = 0) Then 
+    Data1(index) = Data1Val
+    Data2(index) = Data2Val
+    Data3(index) = Data3Val
+    Data4(index) = Data4Val
+    
+    tempKey = currentKey
+    
+    index = index + 1
+    
+    If (index Mod 20 = 0) Then '超出容量了
         capacity = capacity + 20
         ReDim Preserve Data1(capacity)
         ReDim Preserve Data2(capacity)
         ReDim Preserve Data3(capacity)
         ReDim Preserve Data4(capacity)
     End If
+goNext:
 Next i
-
+finally:
+    MsgBox "计算完成", vbInformation, "提示"
+    Exit Sub
+ErrHandler:
+    MsgBox VBA.Err.Description, vbInformation, "错误"
+GoTo finally:
 End Sub
 ```
 
