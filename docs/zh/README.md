@@ -21,7 +21,7 @@ features:
     details: 常用Sql Server,包括不限于MySql、Sqlite...
   - title: 杂货铺
     details: 很多好的开源的框架及解决方案，比如ABP、Dapper、Quartz.Net、NLog..
-footer: MIT Licensed | Copyright © 2021-present TGL2
+footer: Copyright © 2021 TGL2 All rights reserved. 
 ---
 
 
@@ -32,7 +32,7 @@ footer: MIT Licensed | Copyright © 2021-present TGL2
 
 **欢迎各位大佬各式花样打赏**
 
-<img width="160" height="160" :src="$withBase('/reward.jpg')" alt="reward"/>
+<img width="160" height="160" :src="$withBase('/images/reward.png')" alt="reward"/>
 
 [![reward](https://badgen.net/github/last-commit/TgT982474256/blog/main)](http://47.117.141.19/)
 </div>

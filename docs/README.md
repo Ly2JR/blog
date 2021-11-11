@@ -21,7 +21,7 @@ features:
     details: About Sql Server,MySql、Sqlite...
   - title: Other
     details: Many Open source framework in Github，ABout ABP、Dapper、Quartz.Net、NLog..
-footer: MIT Licensed | Copyright © 2021-present TGL2
+footer: Copyright © 2021 TGL2 All rights reserved.
 ---
 
 
@@ -31,7 +31,7 @@ footer: MIT Licensed | Copyright © 2021-present TGL2
 
 **Welcome to all kinds of  rewards**
 
-<img width="160" height="160" :src="$withBase('/reward.jpg')" alt="reward"/>
+<img width="160" height="160" :src="$withBase('/images/reward.png')" alt="reward"/>
 
 [![reward](https://badgen.net/github/last-commit/TgT982474256/blog/main)](http://47.117.141.19/)
 </div>

@@ -6,6 +6,75 @@ const isProd=process.env.NODE_ENV==='production'
 
 export default defineUserConfig<DefaultThemeOptions>({
     base:'/',
+    head:[
+      [
+        'link',{
+          rel:'icon',
+          type:'image/png',
+          sizes:'16x16',
+          href:`/images/icons/favicon-16x16.png`
+        }
+      ],
+      [
+        'link',{
+          rel:'icon',
+          type:'image/png',
+          sizes:'32x32',
+          href:`/images/icons/favicon-32x32.png`
+        }
+      ],
+      [
+        'link',{
+          rel:'manifest',
+          href:'/manifest.webmanifest'
+        }
+      ],
+      [
+        'meta',{
+          name:'application-name',
+          content:'TGL2 Blog'
+        }
+      ],
+      [
+        'meta',{
+          name:'apple-mobile-web-app-title',
+          content:'TGL2 Blog'
+        }
+      ],
+      [
+        'meta',{
+          name:'apple-mobile-web-app-status-bar-style',
+          content:'black'
+        }
+      ],
+      [
+        'link',{
+          rel:'apple-touch-icon',
+          href:`/images/icons/apple-touch-icon.png`,
+        }
+      ],
+      [
+        'link',{
+          rel:'mask-icon',
+          href:'/images/icons/safari-pinned-tab.svg',
+          color:'#3eaf7c'
+        }
+      ],
+      [
+        'meta',{
+          name:'msapplication-TileColor',
+          content:'#3eaf7c'
+        }
+      ],
+      [
+        'meta',{
+          name:'theme-color',
+          content:'#3eaf7c'
+        }
+      ]
+    ],
+
+    //站点层级语言环境配置
     locales: {
       '/': {
         lang: 'en-US',
@@ -18,16 +87,22 @@ export default defineUserConfig<DefaultThemeOptions>({
         description: '日常记录...',
       },
     },
+    
     themeConfig:{
 
         /**
          * logo
          */
-        logo:"http://47.117.141.19/favious.jpg",
+        logo:"/images/favious.png",
 
         docsDir:'docs',
 
+        //主题层级语言配置
         locales: {
+            /**
+             * 英语资源
+             * 默认的
+             */
             '/': {
 
               navbar:navbar.en,
@@ -41,6 +116,9 @@ export default defineUserConfig<DefaultThemeOptions>({
               repo: 'https://github.com/TgT982474256/blog',
               repoLabel:'Github'
             },
+            /**
+             * 中文语言配置
+             */
             '/zh/': {
               /**
                * 菜单
@@ -102,5 +180,19 @@ export default defineUserConfig<DefaultThemeOptions>({
           },
         },
       ],
-    ],
+      [
+        '@vuepress/plugin-pwa-popup',{
+          locales:{
+            '/':{
+              message:'New content is available.',
+              buttonText:'Refresh'
+            },
+            '/zh/':{
+              message:'发现新内容可用',
+              buttonText:'刷新'
+            }
+          }
+        }
+      ]
+     ],
 });
