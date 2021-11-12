@@ -181,6 +181,11 @@ export default defineUserConfig<DefaultThemeOptions>({
         },
       ],
       [
+        '@vuepress/plugin-pwa',{
+          skipWaiting:true
+        }
+      ],
+      [
         '@vuepress/plugin-pwa-popup',{
           locales:{
             '/':{
