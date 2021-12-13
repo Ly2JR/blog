@@ -21,7 +21,8 @@ features:
     details: 常用Sql Server,包括不限于MySql、Sqlite...
   - title: 杂货铺
     details: 很多好的开源的框架及解决方案，比如ABP、Dapper、Quartz.Net、NLog..
-footer: MIT Licensed | Copyright © 2021-present TGL2
+footerHtml: true
+footer: MIT Licensed | Copyright © 2021-现在 ilyl.life 版权所有  <a href="http://beian.miit.gov.cn" target="_blank">苏ICP备2021053735号</a>
 ---
 
 
