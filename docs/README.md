@@ -20,13 +20,9 @@ features:
   - title: DataBase
     details: About Sql Server,MySql、Sqlite...
   - title: Other
-    details: Many Open source framework in Github，ABout ABP、Dapper、Quartz.Net、NLog..
-<<<<<<< HEAD
+    details: Many Open source framework in Github，e.g ABP、Dapper、Quartz.Net、NLog..
 footerHtml: true
-footer: MIT Licensed | Copyright © 2021-present ilyl.life All Rights Reserved. <a href="http://beian.miit.gov.cn" target="_blank">苏ICP备2021053735号</a>
-=======
-footer: Copyright © 2021 TGL2 All rights reserved.
->>>>>>> ae2415f8e7d08b21380e69cfbe01ce529f00cdb1
+footer: MIT Licensed | Copyright © 2021-present ilyl.life All Rights Reserved. |  <a href="http://beian.miit.gov.cn" target="_blank">苏ICP备2021053735号</a>
 ---
 
 
@@ -38,5 +34,5 @@ footer: Copyright © 2021 TGL2 All rights reserved.
 
 <img width="160" height="160" :src="$withBase('/images/reward.png')" alt="reward"/>
 
-[![reward](https://badgen.net/github/last-commit/TgT982474256/blog/main)](http://47.117.141.19/)
+[![reward](https://badgen.net/github/last-commit/TgT982474256/blog/main)](https://ilyl.life/)
 </div>

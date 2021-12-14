@@ -32,13 +32,13 @@ export default defineUserConfig<DefaultThemeOptions>({
       [
         'meta',{
           name:'application-name',
-          content:'TGL2 Blog'
+          content:'Blog'
         }
       ],
       [
         'meta',{
           name:'apple-mobile-web-app-title',
-          content:'TGL2 Blog'
+          content:'Blog'
         }
       ],
       [
@@ -78,7 +78,7 @@ export default defineUserConfig<DefaultThemeOptions>({
     locales: {
       '/': {
         lang: 'en-US',
-        title: 'TGL2 Blog',
+        title: 'Blog',
         description: 'Daily record',
       },
       '/zh/': {
