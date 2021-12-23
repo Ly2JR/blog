@@ -121,6 +121,13 @@ export const en:NavbarConfig=[
               text:'yonyouU8+',
               link:'/zh/varietystore/erp/yonyou/README.md'
             }]
+          },
+          {
+            text: 'Ladder',
+            children:[{
+              text:'tiyunzong',
+              link:'/varietystore/ladder/README.md'
+            }]
           }
         ],
       },

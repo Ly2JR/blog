@@ -22,7 +22,7 @@ features:
   - title: Other
     details: Many Open source framework in Github，e.g ABP、Dapper、Quartz.Net、NLog..
 footerHtml: true
-footer: MIT Licensed | Copyright © 2021-present ilyl.life All Rights Reserved. |  <a href="http://beian.miit.gov.cn" target="_blank">苏ICP备2021053735号</a>
+footer: MIT Licensed | Copyright © 2021-present ilyl.life All Rights Reserved. |  <a href="http://beian.miit.gov.cn" target="_blank">苏ICP备2021053735号-1</a>
 ---
 
 

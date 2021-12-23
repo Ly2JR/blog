@@ -112,15 +112,6 @@ export const zh:NavbarConfig=[
             ]
           },
           {
-            text: 'Windows',
-            children:[
-              {
-                text:'声音',
-                link:'/zh/varietystore/windows/sounds/README.md'
-              }
-            ]
-          },
-          {
             text: 'Office',
             children:[
               {
@@ -134,6 +125,15 @@ export const zh:NavbarConfig=[
               text:'用友U8+',
               link:'/zh/varietystore/erp/yonyou/README.md'
             }]
+          },
+          {
+            text: '梯子',
+            children:[
+              {
+                text:'梯云纵',
+                link:'/zh/varietystore/ladder/README.md'
+              }
+            ]
           },
         ]
       },

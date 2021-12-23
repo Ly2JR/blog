@@ -17,6 +17,15 @@ export const en:SidebarConfig={
                 '/varietystore/excel/sample1.md',
                 '/varietystore/excel/macro.md',
             ]
-        }
-    ]
+        },
+    ],
+    '/varietystore/ladder':[
+        {
+            text:'TiYunZong',
+            children:[
+                '/varietystore/ladder/sounds/README.md',
+                '/varietystore/ladder/google-recaptcha.md'
+            ]
+        },
+    ],
 };

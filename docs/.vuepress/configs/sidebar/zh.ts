@@ -101,12 +101,13 @@ export const zh:SidebarConfig={
             ]
         }
     ],
-    '/zh/varietystore/windows/sounds':[
+    '/zh/varietystore/ladder':[
         {
-            text:'声音',
+            text:'梯云纵',
             children:[
-                '/zh/varietystore/windows/sounds/README.md'
+                '/zh/varietystore/ladder/sounds/README.md',
+                '/zh/varietystore/ladder/google-recaptcha.md'
             ]
-        }
+        },
     ],
 };
