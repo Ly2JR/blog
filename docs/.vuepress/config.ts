@@ -168,18 +168,33 @@ export default defineUserConfig<DefaultThemeOptions>({
     },
     plugins: [
       [
-        '@vuepress/plugin-search',
+        '@vuepress/plugin-docsearch',
         {
+          apiKey: '',
+          indexName: 'vuepress',
           locales: {
-            '/': {
-              placeholder: 'Search',
+            '/':{
+              placeholder:'Search Document',
             },
             '/zh/': {
-              placeholder: '搜索',
+              placeholder: '搜索文档',
             },
           },
         },
       ],
+      // [
+      //   '@vuepress/plugin-search',
+      //   {
+      //     locales: {
+      //       '/': {
+      //         placeholder: 'Search',
+      //       },
+      //       '/zh/': {
+      //         placeholder: '搜索',
+      //       },
+      //     },
+      //   },
+      // ],
       [
         '@vuepress/plugin-pwa',{
           skipWaiting:true
