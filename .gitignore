@@ -1,6 +1,10 @@
 #node_modules
 node_modules
 
+#images
+
+docs/.vuepress/public/备案图标.png
+
 #VuePress files
 docs/.vuepress/.temp/
 docs/.vuepress/.cache/
