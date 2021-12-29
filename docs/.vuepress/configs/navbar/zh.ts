@@ -9,8 +9,8 @@ export const zh:NavbarConfig=[
         text: '生活',
         children: [
           {
-            text: '鱼',
-            link:'/',
+            text: '书籍',
+            link:'/zh/life/books/README.md',
           },
         ],
       },

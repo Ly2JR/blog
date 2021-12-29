@@ -9,6 +9,15 @@ export const zh:SidebarConfig={
             ]
         }
     ],
+    '/zh/life/':[
+        {
+            text:'生活',
+            children:[
+                '/zh/life/books/README.md',
+                '/zh/life/books/self-study/probability-and-statistics/README.md',
+            ]
+        }
+    ],
     '/zh/jquery/':[
         {
             text:'JQuery',

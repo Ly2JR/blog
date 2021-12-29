@@ -215,4 +215,13 @@ export default defineUserConfig<DefaultThemeOptions>({
         }
       ]
      ],
+
+     /**
+      * markdown扩展
+      * @param md 
+      */
+     extendsMarkdown:md=>{
+       var mathjax3=require('markdown-it-mathjax3');
+       md.use(mathjax3);
+     }
 });
