@@ -1,14 +1,14 @@
 # 概率论与数理统计(二)
 
+[MathJax](https://www.mathjax.org/)
 
+[markdown-it-mathjax3](https://github.com/nzt/markdown-it-mathjax3)
 
 ::: warning
 注意与数学上的混淆
 :::
 
 ::: tip
-
-特殊符号使用Latex Mathematical Symbols，[markdown-it-mathjax3](https://github.com/nzt/markdown-it-mathjax3)
 
 $\phi$:空集
 

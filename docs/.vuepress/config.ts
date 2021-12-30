@@ -1,11 +1,12 @@
 import { defineUserConfig } from "@vuepress/cli";
 import { DefaultThemeOptions } from "@vuepress/theme-default";
+import { ViteBundlerOptions } from "vuepress";
 import {navbar,sidebar} from './configs'
 
 const isProd=process.env.NODE_ENV==='production'
 
-export default defineUserConfig<DefaultThemeOptions>({
-    base:'/',
+export default defineUserConfig<DefaultThemeOptions,ViteBundlerOptions>({
+    base:'/Ly2JR/',
     head:[
       [
         'link',{
@@ -139,6 +140,7 @@ export default defineUserConfig<DefaultThemeOptions>({
 
               editLinkText:'在GitHub上编辑此页',
               lastUpdatedText:'上次更新',
+              contributors:false,
               contributorsText:'贡献者',
              
               tip:'提示',
@@ -197,7 +199,7 @@ export default defineUserConfig<DefaultThemeOptions>({
       ],
       [
         '@vuepress/plugin-pwa',{
-          skipWaiting:true
+          skipWaiting:false
         }
       ],
       [
@@ -213,15 +215,21 @@ export default defineUserConfig<DefaultThemeOptions>({
             }
           }
         }
-      ]
+      ],
      ],
-
+     
      /**
       * markdown扩展
       * @param md 
       */
      extendsMarkdown:md=>{
-       var mathjax3=require('markdown-it-mathjax3');
+       let mathjax3=require('markdown-it-mathjax3');
        md.use(mathjax3);
+     },
+     /**
+      * 打包配置
+      */
+     bundlerConfig:{
+
      }
 });
