@@ -41,13 +41,13 @@ $\overline{H}$
 
   - 1. 事件的包含与相等
 
-    设A，B为两个事件，若A发生**必然**导致B发生，则称**事件B包含事件A，或称事件A包含在事件B中**,记$\mathbf{B}\supset\mathbf{A}$，或$\mathbf{A}\subset\mathbf{B}$。
+    设A，B为两个事件，若A发生**必然**导致B发生，则称**事件B包含事件A，或称事件A包含在事件B中**,记B$\supset$A，或A$\subset$B。
 
     显然有：$\phi\subset\mathbf{A}\subset\Omega$
 
   - 2. 和事件
 
-    称事件“$\mathbf{A}$,$\mathbf{B}$中至少有一共发生”为事件$\mathbf{A}$与事件$\mathbf{B}$的**和事件**,也称**事件$\mathbf{A}$与事件$\mathbf{B}$的并**,记作$\mathbf{A}\cup\mathbf{B}$,$\mathbf{A}\cup\mathbf{B}$发生意味着：或事件$\mathbf{A}$发生，或事件$\mathbf{B}$发生或事件$\mathbf{A}$和事件$\mathbf{B}$都发生.
+    称事件“A,B中至少有一共发生”为事件A与事件B的**和事件**,也称**事件A与事件B的并**,记作A$\cup$B,A$\cup\$B发生意味着：或事件A发生，或事件B发生或事件A和事件B都发生.
 
     显然有:
 
@@ -57,7 +57,7 @@ $\overline{H}$
 
   - 3. 积事件
 
-    称事件“$\mathbf{A}$，$\mathbf{B}$同时发生”为事件$\mathbf{A}$与事件$\mathbf{B}$的**积事件**,也称$\mathbf{A}$与$\mathbf{B}$的**交**,记作$\mathbf{A}\cap\mathbf{B}$,简记$\mathbf{AB}$。事件$\mathbf{AB}$发生意味着事件$\mathbf{A}$发生且事件$\mathbf{B}$也发生，也就是说$\mathbf{A}$，$\mathbf{B}$都发生。
+    称事件“A，B同时发生”为事件A与事件B的**积事件**,也称A与B的**交**,记作A$\cap\$B,简记$\mathbf{AB}$。事件$\mathbf{AB}$发生意味着事件A发生且事件B也发生，也就是说A，B都发生。
 
     显然有：
 
@@ -67,7 +67,7 @@ $\overline{H}$
 
   - 4. 差事件
 
-    称事件“$\mathbf{A}$发生且$\mathbf{B}$不发生”为事件$\mathbf{A}$与事件$\mathbf{B}$的**差事件**,记作$\mathbf{A-B}$。
+    称事件“A发生且B$不发生”为事件A与事件B的**差事件**,记作$\mathbf{A-B}$。
 
     显然有：
 
@@ -77,13 +77,13 @@ $\overline{H}$
 
   - 5. 互不相容
 
-    若事件$\mathbf{A}$与事件$\mathbf{B}$不能同时发生，既$\mathbf{AB=}\phi$，则称事件$\mathbf{A}$与事件$\mathbf{B}$是互不相融的两个事件，检测A与B**互不相容(或互斥)**。
+    若事件A与事件B不能同时发生，既$\mathbf{AB=}\phi$，则称事件A与事件B是互不相融的两个事件，检测A与B**互不相容(或互斥)**。
 
   - 6. 对立事件
 
-    称事件“$\mathbf{A}$不发生”为事件$\mathbf{A}$的**逆事件(或余事件,或对立事件)**，记作$\overline{A}$.
+    称事件“A不发生”为事件A$的**逆事件(或余事件,或对立事件)**，记作$\overline{A}$.
 
-    若事件$\mathbf{A}$与事件$\mathbf{B}$中至少有一共发生，且$\mathbf{A}$与$\mathbf{B}$互不相容，记$\mathbf{A}\cap\mathbf{B=}\Omega$,$\mathbf{AB=}\phi$,则称**A与B互为对立事件**。
+    若事件A与事件B中至少有一个发生，且A与B互不相容，记$\mathbf{A}\cap\mathbf{B=}\Omega$,$\mathbf{AB=}\phi$,则称**A与B互为对立事件**。
 
     显然有:
 
@@ -92,3 +92,7 @@ $\overline{H}$
     2° $\overline{\Omega}\mathbf{=}\phi$,$\overline{\phi}\mathbf{=}\Omega$
 
     3° $\mathbf{A-B=A}\overline{B}=\mathbf{A-AB}$
+
+<ClientOnly>
+  <mjx-container></mjx-container>
+</ClientOnly>

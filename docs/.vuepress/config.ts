@@ -2,6 +2,8 @@ import { defineUserConfig } from "@vuepress/cli";
 import { DefaultThemeOptions } from "@vuepress/theme-default";
 import { ViteBundlerOptions } from "vuepress";
 import {navbar,sidebar} from './configs'
+import { path } from '@vuepress/utils'
+import vue from '@vitejs/plugin-vue'
 
 const isProd=process.env.NODE_ENV==='production'
 
@@ -216,8 +218,22 @@ export default defineUserConfig<DefaultThemeOptions,ViteBundlerOptions>({
           }
         }
       ],
+      // [
+      //   '@vuepress/plugin-register-components',
+      //   {
+      //     componentsDir: path.resolve(__dirname, './components'),
+      //   },
+      // ],
      ],
-     
+    //  markdown: {
+    //   importCode: {
+    //     handleImportPath: (str) =>
+    //       str.replace(
+    //         /^@vuepress/,
+    //         path.resolve(__dirname, '../../packages/@vuepress')
+    //       ),
+    //   },
+    // },
      /**
       * markdown扩展
       * @param md 
@@ -230,6 +246,12 @@ export default defineUserConfig<DefaultThemeOptions,ViteBundlerOptions>({
       * 打包配置
       */
      bundlerConfig:{
-
+        vuePluginOptions:{
+          template:{
+            compilerOptions:{
+              isCustomElement:tag=>tag.startsWith("mjx-")
+            }
+          }
+        }
      }
 });
