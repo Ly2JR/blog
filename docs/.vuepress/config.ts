@@ -1,10 +1,11 @@
 import { defineUserConfig } from "@vuepress/cli";
 import { DefaultThemeOptions } from "@vuepress/theme-default";
+import { ViteBundlerOptions } from "vuepress";
 import {navbar,sidebar} from './configs'
 
 const isProd=process.env.NODE_ENV==='production'
 
-export default defineUserConfig<DefaultThemeOptions>({
+export default defineUserConfig<DefaultThemeOptions,ViteBundlerOptions>({
     base:'/',
     head:[
       [
@@ -167,34 +168,34 @@ export default defineUserConfig<DefaultThemeOptions>({
           },
     },
     plugins: [
-      // [
-      //   '@vuepress/plugin-docsearch',
-      //   {
-      //     apiKey: '',
-      //     indexName: 'vuepress',
-      //     locales: {
-      //       '/':{
-      //         placeholder:'Search Document',
-      //       },
-      //       '/zh/': {
-      //         placeholder: '搜索文档',
-      //       },
-      //     },
-      //   },
-      // ],
       [
-        '@vuepress/plugin-search',
+        '@vuepress/plugin-docsearch',
         {
+          apiKey: '',
+          indexName: 'Ly2',
           locales: {
-            '/': {
-              placeholder: 'Search',
+            '/':{
+              placeholder:'Search Document',
             },
             '/zh/': {
-              placeholder: '搜索',
+              placeholder: '搜索文档',
             },
           },
         },
       ],
+      // [
+      //   '@vuepress/plugin-search',
+      //   {
+      //     locales: {
+      //       '/': {
+      //         placeholder: 'Search',
+      //       },
+      //       '/zh/': {
+      //         placeholder: '搜索',
+      //       },
+      //     },
+      //   },
+      // ],
       [
         '@vuepress/plugin-pwa',{
           skipWaiting:true
@@ -223,5 +224,17 @@ export default defineUserConfig<DefaultThemeOptions>({
      extendsMarkdown:md=>{
        var mathjax3=require('markdown-it-mathjax3');
        md.use(mathjax3);
+     },
+     /**
+      * 打包配置
+      */
+      bundlerConfig:{
+        vuePluginOptions:{
+          template:{
+            compilerOptions:{
+              isCustomElement:tag=>tag.startsWith("mjx-")
+            }
+          }
+        }
      }
 });

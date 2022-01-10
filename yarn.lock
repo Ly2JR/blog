@@ -1326,7 +1326,7 @@
     envinfo "^7.8.1"
     esbuild "^0.13.12"
 
-"@vuepress/client@2.0.0-beta.32":
+"@vuepress/client@2.0.0-beta.32", "@vuepress/client@^2.0.0-beta.32":
   version "2.0.0-beta.32"
   resolved "https://registry.yarnpkg.com/@vuepress/client/-/client-2.0.0-beta.32.tgz#865ba7e4137fdc82f3158b6bda84d9fb0920932b"
   integrity sha512-nSvDsJiWUu+/oqOmI9nv4Tp9ei7+EyAhEaR+vMr7fcbVCGQlNmQo/coxjW6HRvMLR8Xul0Y4SH0Z21WJfZqw3Q==
@@ -1347,7 +1347,7 @@
     gray-matter "^4.0.3"
     toml "^3.0.0"
 
-"@vuepress/markdown@2.0.0-beta.32":
+"@vuepress/markdown@2.0.0-beta.32", "@vuepress/markdown@^2.0.0-beta.32":
   version "2.0.0-beta.32"
   resolved "https://registry.yarnpkg.com/@vuepress/markdown/-/markdown-2.0.0-beta.32.tgz#96da55464fef4e048ee5b6c3cfcfdd4264e210c9"
   integrity sha512-YRkuGuANBzLQuDE8TBDr9NNFXAWl/Qh3dbwVfM960lY5dk5jPxhTqOH5OGj7skLqxBWG6b4TwqjDKkGGciGkDA==
@@ -1570,17 +1570,17 @@
     upath "^2.0.1"
 
 "@vueuse/core@^7.1.2":
-  version "7.4.1"
-  resolved "https://registry.yarnpkg.com/@vueuse/core/-/core-7.4.1.tgz#81ede3f67dfd58af8284c910ac2fee25458892c6"
-  integrity sha512-8UeLPCAieeQLXFHF1/28SIEK6ILLPb/4hp03hR+xkXF00gB/YUp0CEVcRAL9uQ8HTZa3S2T/jTISMc1ZjilM0A==
+  version "7.4.3"
+  resolved "https://registry.yarnpkg.com/@vueuse/core/-/core-7.4.3.tgz#cf5b616605c6d9641715889c462d31da36226e11"
+  integrity sha512-OflPLlQ7eqaDJgKYw9DpRCbtfpkFkg1EqHFq7CFrbIEElB39wIfB9ccNypCar8e5KRDrAbOJLIOOvDZO6aC2Gg==
   dependencies:
-    "@vueuse/shared" "7.4.1"
+    "@vueuse/shared" "7.4.3"
     vue-demi "*"
 
-"@vueuse/shared@7.4.1":
-  version "7.4.1"
-  resolved "https://registry.yarnpkg.com/@vueuse/shared/-/shared-7.4.1.tgz#0aa090147fbd66ba56334ada1ffa2dafab815c1b"
-  integrity sha512-Pzb7XoHIcgPwwBJ5Ow9lZb0HTDyaLDV3pgxKauPGTMN9qvEylG06kUG+VTjJXkPsRtiGu46di8XyFeMw2dongA==
+"@vueuse/shared@7.4.3":
+  version "7.4.3"
+  resolved "https://registry.yarnpkg.com/@vueuse/shared/-/shared-7.4.3.tgz#59ef90ea27a1ee4d08e001be293c821849252f0c"
+  integrity sha512-tNOCbpD3uZyzxNuw2GX5LTVkMB//IZ7GS452F7TwlY07aIoGjPgixi2Yfk/xSR4CcC9iU56zprZW33aEGj1O1Q==
   dependencies:
     vue-demi "*"
 
@@ -1674,16 +1674,16 @@ at-least-node@^1.0.0:
   integrity sha512-+q/t7Ekv1EDY2l6Gda6LLiX14rU9TV20Wa3ofeQmwPFZbOMo9DXrLbOjFaaclkXKWidIaopwAObQDqwWtGUjqg==
 
 autoprefixer@^10.4.0:
-  version "10.4.0"
-  resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-10.4.0.tgz#c3577eb32a1079a440ec253e404eaf1eb21388c8"
-  integrity sha512-7FdJ1ONtwzV1G43GDD0kpVMn/qbiNqyOPMFTX5nRffI+7vgWoFEc6DcXOxHJxrWNDXrZh18eDsZjvZGUljSRGA==
+  version "10.4.1"
+  resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-10.4.1.tgz#1735959d6462420569bc42408016acbc56861c12"
+  integrity sha512-B3ZEG7wtzXDRCEFsan7HmR2AeNsxdJB0+sEC0Hc5/c2NbhJqPwuZm+tn233GBVw82L+6CtD6IPSfVruwKjfV3A==
   dependencies:
-    browserslist "^4.17.5"
-    caniuse-lite "^1.0.30001272"
-    fraction.js "^4.1.1"
+    browserslist "^4.19.1"
+    caniuse-lite "^1.0.30001294"
+    fraction.js "^4.1.2"
     normalize-range "^0.1.2"
     picocolors "^1.0.0"
-    postcss-value-parser "^4.1.0"
+    postcss-value-parser "^4.2.0"
 
 babel-plugin-dynamic-import-node@^2.3.3:
   version "2.3.3"
@@ -1802,15 +1802,15 @@ call-bind@^1.0.0, call-bind@^1.0.2:
     function-bind "^1.1.1"
     get-intrinsic "^1.0.2"
 
-caniuse-lite@^1.0.30001272:
-  version "1.0.30001294"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001294.tgz#4849f27b101fd59ddee3751598c663801032533d"
-  integrity sha512-LiMlrs1nSKZ8qkNhpUf5KD0Al1KCBE3zaT7OLOwEkagXMEDij98SiOovn9wxVGQpklk9vVC/pUSqgYmkmKOS8g==
-
 caniuse-lite@^1.0.30001286:
   version "1.0.30001292"
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001292.tgz#4a55f61c06abc9595965cfd77897dc7bc1cdc456"
   integrity sha512-jnT4Tq0Q4ma+6nncYQVe7d73kmDmE9C3OGTx3MvW7lBM/eY1S1DZTMBON7dqV481RhNiS5OxD7k9JQvmDOTirw==
+
+caniuse-lite@^1.0.30001294:
+  version "1.0.30001294"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001294.tgz#4849f27b101fd59ddee3751598c663801032533d"
+  integrity sha512-LiMlrs1nSKZ8qkNhpUf5KD0Al1KCBE3zaT7OLOwEkagXMEDij98SiOovn9wxVGQpklk9vVC/pUSqgYmkmKOS8g==
 
 chalk@^2.0.0, chalk@^2.4.2:
   version "2.4.2"
@@ -2353,7 +2353,7 @@ fill-range@^7.0.1:
   dependencies:
     to-regex-range "^5.0.1"
 
-fraction.js@^4.1.1:
+fraction.js@^4.1.2:
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/fraction.js/-/fraction.js-4.1.2.tgz#13e420a92422b6cf244dff8690ed89401029fbe8"
   integrity sha512-o2RiJQ6DZaR/5+Si0qJUIy637QMRudSi9kU/FFzx9EZazrIdnBgpU+3sEWCxAVhH2RtxW2Oz+T4p2o8uOPVcgA==
@@ -3134,7 +3134,7 @@ postcss-csso@^5.0.1:
   dependencies:
     csso "^4.0.2"
 
-postcss-value-parser@^4.1.0:
+postcss-value-parser@^4.2.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/postcss-value-parser/-/postcss-value-parser-4.2.0.tgz#723c09920836ba6d3e5af019f92bc0971c02e514"
   integrity sha512-1NNCs6uurfkVbeXG4S8JFT9t19m45ICnif8zWLd5oPSZ50QnwMfK+H3jv408d4jw/7Bttv5axS5IiHoLaVNHeQ==
@@ -3689,9 +3689,9 @@ valid-data-url@^3.0.0:
   integrity sha512-jOWVmzVceKlVVdwjNSenT4PbGghU0SBIizAev8ofZVgivk/TVHXSbNL8LP6M3spZvkR9/QolkyJavGSX5Cs0UA==
 
 vite@^2.7.1:
-  version "2.7.9"
-  resolved "https://registry.yarnpkg.com/vite/-/vite-2.7.9.tgz#c72d8817cdddbb127daed0c8f87fbca4e7754a81"
-  integrity sha512-CyopIJIRrc26Wnbkch5BCHFhQodzeV4jjSegLAEw1RImvXSuoOo2SfpEW9zRVi188WmjJwCqCaoG25C0r4nekw==
+  version "2.7.10"
+  resolved "https://registry.yarnpkg.com/vite/-/vite-2.7.10.tgz#d12c4c10e56a0ecf7890cb529c15996c6111218f"
+  integrity sha512-KEY96ntXUid1/xJihJbgmLZx7QSC2D4Tui0FdS0Old5OokYzFclcofhtxtjDdGOk/fFpPbHv9yw88+rB93Tb8w==
   dependencies:
     esbuild "^0.13.12"
     postcss "^8.4.5"
