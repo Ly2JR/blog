@@ -1347,7 +1347,7 @@
     gray-matter "^4.0.3"
     toml "^3.0.0"
 
-"@vuepress/markdown@2.0.0-beta.32", "@vuepress/markdown@^2.0.0-beta.32":
+"@vuepress/markdown@2.0.0-beta.32":
   version "2.0.0-beta.32"
   resolved "https://registry.yarnpkg.com/@vuepress/markdown/-/markdown-2.0.0-beta.32.tgz#96da55464fef4e048ee5b6c3cfcfdd4264e210c9"
   integrity sha512-YRkuGuANBzLQuDE8TBDr9NNFXAWl/Qh3dbwVfM960lY5dk5jPxhTqOH5OGj7skLqxBWG6b4TwqjDKkGGciGkDA==
@@ -1495,6 +1495,15 @@
     register-service-worker "^1.7.2"
     vue "^3.2.24"
     workbox-build "^6.4.2"
+
+"@vuepress/plugin-register-components@^2.0.0-beta.32":
+  version "2.0.0-beta.32"
+  resolved "https://registry.yarnpkg.com/@vuepress/plugin-register-components/-/plugin-register-components-2.0.0-beta.32.tgz#5d5eeda4aed69588430e29f01803e0a1e11781fc"
+  integrity sha512-FHRxFza0rHI9dEdemFDCDcHvGFlZXQLpjE4/sVsrFROO3BBkj+MxUyFOWbk+wyOT4J1qob8JpRkXhLQ26icZLg==
+  dependencies:
+    "@vuepress/core" "2.0.0-beta.32"
+    "@vuepress/utils" "2.0.0-beta.32"
+    chokidar "^3.5.2"
 
 "@vuepress/plugin-search@^2.0.0-beta.32":
   version "2.0.0-beta.32"

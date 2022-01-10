@@ -2,6 +2,8 @@ import { defineUserConfig } from "@vuepress/cli";
 import { DefaultThemeOptions } from "@vuepress/theme-default";
 import { ViteBundlerOptions } from "vuepress";
 import {navbar,sidebar} from './configs'
+import { path } from '@vuepress/utils'
+import vue from '@vitejs/plugin-vue'
 
 const isProd=process.env.NODE_ENV==='production'
 
@@ -140,6 +142,7 @@ export default defineUserConfig<DefaultThemeOptions,ViteBundlerOptions>({
 
               editLinkText:'在GitHub上编辑此页',
               lastUpdatedText:'上次更新',
+              contributors:false,
               contributorsText:'贡献者',
              
               tip:'提示',
@@ -198,7 +201,7 @@ export default defineUserConfig<DefaultThemeOptions,ViteBundlerOptions>({
       // ],
       [
         '@vuepress/plugin-pwa',{
-          skipWaiting:true
+          skipWaiting:false
         }
       ],
       [
@@ -214,21 +217,35 @@ export default defineUserConfig<DefaultThemeOptions,ViteBundlerOptions>({
             }
           }
         }
-      ]
+      ],
+      // [
+      //   '@vuepress/plugin-register-components',
+      //   {
+      //     componentsDir: path.resolve(__dirname, './components'),
+      //   },
+      // ],
      ],
-
+    //  markdown: {
+    //   importCode: {
+    //     handleImportPath: (str) =>
+    //       str.replace(
+    //         /^@vuepress/,
+    //         path.resolve(__dirname, '../../packages/@vuepress')
+    //       ),
+    //   },
+    // },
      /**
       * markdown扩展
       * @param md 
       */
      extendsMarkdown:md=>{
-       var mathjax3=require('markdown-it-mathjax3');
+       let mathjax3=require('markdown-it-mathjax3');
        md.use(mathjax3);
      },
      /**
       * 打包配置
       */
-      bundlerConfig:{
+     bundlerConfig:{
         vuePluginOptions:{
           template:{
             compilerOptions:{
