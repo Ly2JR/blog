@@ -171,34 +171,34 @@ export default defineUserConfig<DefaultThemeOptions,ViteBundlerOptions>({
           },
     },
     plugins: [
-      [
-        '@vuepress/plugin-docsearch',
-        {
-          apiKey: '',
-          indexName: 'Ly2',
-          locales: {
-            '/':{
-              placeholder:'Search Document',
-            },
-            '/zh/': {
-              placeholder: '搜索文档',
-            },
-          },
-        },
-      ],
       // [
-      //   '@vuepress/plugin-search',
+      //   '@vuepress/plugin-docsearch',
       //   {
+      //     apiKey: '',
+      //     indexName: 'Ly2',
       //     locales: {
-      //       '/': {
-      //         placeholder: 'Search',
+      //       '/':{
+      //         placeholder:'Search Document',
       //       },
       //       '/zh/': {
-      //         placeholder: '搜索',
+      //         placeholder: '搜索文档',
       //       },
       //     },
       //   },
       // ],
+      [
+        '@vuepress/plugin-search',
+        {
+          locales: {
+            '/': {
+              placeholder: 'Search',
+            },
+            '/zh/': {
+              placeholder: '搜索',
+            },
+          },
+        },
+      ],
       [
         '@vuepress/plugin-pwa',{
           skipWaiting:false

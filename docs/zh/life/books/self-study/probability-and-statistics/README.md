@@ -93,6 +93,45 @@ $\overline{H}$
 
     3° $\mathbf{A-B=A}\overline{B}=\mathbf{A-AB}$
 
-<ClientOnly>
-  <mjx-container></mjx-container>
-</ClientOnly>
+### 2、概率
+
+- 2.1 频率与概率
+
+  在相同条件下，进行了n次实验，在这n次实验中，事件A发生的次数$n_A$称为事件A发生的**频数**,而比值$\frac{n_A}{n}$称为事件A发生的**频率**,并记作$f_n(A)$。
+
+  随着试验重复次数n的大量增加,频率$f_n(A)$会逐渐稳定与某一常数，称这个常数为频率的稳定值，这个稳定值就是事件A的概率**P(A)**。
+
+  有频率的定义很容易证明下列基本性质：
+
+  （1） $0\leq{f_n(A)}\leq{1}$
+
+  进行n次试验，事件A发生$n_A$次,$0\leq{n_a}\leq{n}$,则
+  
+  $$0\leq{f_n(A)}=\frac{n_A}{n}\leq{1}$$
+
+  （2） $f_n(\phi)=0,f_n(\Omega)=1$
+
+  进行n次试验，不可能事件$\phi$一次也不发生，既$n_\phi=0$,故
+  
+  $$f_n(\phi)=\frac{n_\phi}{n}=\frac{0}{n}=0$$
+
+  又因为必然事件$\Omega$一定发生n次，既$n_\Omega=n$，从而
+  
+  $$f_n(\Omega)=\frac{n_\Omega}{n}=\frac{n}{n}=1$$
+
+  （3） 若A与B互不相容，则$f_n(A{\cup}B)=f_n(A)+f_n(B)$
+
+  事实上，进行n次试验，事件A发生的次数为$n_A$，事件B发生的次数为$n_B$，因为A与B互不相容，$AB=\phi$，所以
+  $A{\cup}B$发生次数$n_{A{\cup}B}=n_A+n_B$，故
+  
+  $$f_n(A{\cup}B)=\frac{n_{A{\cup}B}}{n}=\frac{n_A+n_B}{n}=\frac{n_A}{n}+\frac{n_B}{n}=f_n(A)+f_n(B)$$
+
+  这个性质可以推广：当$A_1,A_2,\cdots,A_m,\cdots$互不相容时,
+  
+  $$ f_n( \bigcup_{k=1}^{m} A_k)=\sum_{k=1}^{m} f_n(A_k)$$
+
+  其中m是正整数,当$A_1,A_2,\cdots,A_m,\cdots$无不相容时,
+
+  $$ f_n( \bigcup_{k=1}^{\infty} A_k)=\sum_{k=1}^{\infty} f_n(A_k)$$
+
+  由于频率是概率的近似值，因此不难想到概率P(A)也应又类似特征。
