@@ -130,8 +130,8 @@ $\overline{H}$
   
   $$ f_n( \bigcup_{k=1}^{m} A_k)=\sum_{k=1}^{m} f_n(A_k)$$
 
-  其中m是正整数,当$A_1,A_2,\cdots,A_m,\cdots$无不相容时,
+  其中m是正整数,当$A_1,A_2,\cdots,A_m,\cdots$互不相容时,
 
   $$ f_n( \bigcup_{k=1}^{\infty} A_k)=\sum_{k=1}^{\infty} f_n(A_k)$$
 
-  由于频率是概率的近似值，因此不难想到概率P(A)也应又类似特征。
+  由于频率是概率的近似值，因此不难想到概率P(A)也应有类似特征。

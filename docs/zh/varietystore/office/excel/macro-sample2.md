@@ -28,25 +28,27 @@
 
 ## 宏
 
-- **步骤1**: 确认关键单元格位置
+- **步骤1**: 参数
 
 :::: code-group
 ::: code-group-item JS
 
 ```js
-const readDateCol      = 1;          //日期所在列
-const readCol1         = 3;          //Data1读取列
-const readCol2         = 4;          //Data2读取列
-const readCol3         = 5;          //Data3读取列
-const readCol4         = 6;          //Data4读取列
-const readRow          = 4;         //第几行开始计算
+const options = {
+	rDateCol: 1;    //日期所在列
+	rCol1: 3;       //Data1读取列
+	rCol2: 4;       //Data2读取列
+	rCol3: 5;       //Data3读取列
+	rCol4: 6;       //Data4读取列
+	startRow: 4;    //第几行开始计算
+	wRow: 2;        //第几行开始结果写入
+	wDateCol: 8;    //日期结果所在列
+	wCol1: 9;       //Data1统计结果列
+	wCol2: 10;      //Data2统计结果列
+	wCol3: 11;      //Data3结果列
+	wCol4: 12;      //Data4结果列
+}
 
-const writeRow         = 2;          //第几行开始结果写入
-const writeDateCol     = 8;          //日期结果所在列
-const writeCol1        = 9;          //Data1统计结果列
-const writeCol2        = 10;         //Data2统计结果列
-const writeCol3        = 11;         //Data3结果列
-const writeCol4        = 12;         //Data4结果列
 ```
 
 :::
@@ -54,46 +56,24 @@ const writeCol4        = 12;         //Data4结果列
 ::: code-group-item VBA
 
 ```vb
-Const readDateCol      As Integer = 1          '日期所在列
-Const readCol1         As Integer = 3          'Data1读取列
-Const readCol2         As Integer = 4          'Data2读取列
-Const readCol3         As Integer = 5          'Data3读取列
-Const readCol4         As Integer = 6          'Data4读取列
-Const readRow          As Integer = 4          '第几行开始计算
-
-Const writeRow         As Integer = 2          '第几行开始结果写入
-Const writeDateCol     As Integer = 8          '日期结果所在列
-Const writeCol1        As Integer = 9          'Data1统计结果列
-Const writeCol2        As Integer = 10         'Data2统计结果列
-Const writeCol3        As Integer = 11         'Data3结果列
-Const writeCol4        As Integer = 12         'Data4结果列
+Const rDateCol     As Integer = 1          '日期所在列
+Const rCol1        As Integer = 3          'Data1读取列
+Const rCol2        As Integer = 4          'Data2读取列
+Const rCol3        As Integer = 5          'Data3读取列
+Const rCol4        As Integer = 6          'Data4读取列
+Const startRow     As Integer = 4          '第几行开始计算
+Const wRow         As Integer = 2          '第几行开始结果写入
+Const wDateCol     As Integer = 8          '日期结果所在列
+Const wCol1        As Integer = 9          'Data1统计结果列
+Const wCol2        As Integer = 10         'Data2统计结果列
+Const wCol3        As Integer = 11         'Data3结果列
+Const wCol4        As Integer = 12         'Data4结果列
 ```
 
 :::
 ::::
 
-- **步骤2**: 确认最大有效行
-
-:::: code-group
-::: code-group-item JS
-
-```js
-let MaxRow = ActiveSheet.UsedRange.Rows.Count;   //最大有效行
-```
-
-:::
-
-::: code-group-item VBA
-
-```vb
-dim MaxRow as Long
-MaxRow = ActiveSheet.UsedRange.Rows.Count   '最大有效行
-```
-
-:::
-::::
-
-- **步骤3**: 中位数统计计算
+- **步骤2**: 赋值方法
 
 :::: code-group
 ::: code-group-item JS
@@ -156,53 +136,53 @@ End Function
 :::
 ::::
 
-- **步骤4**: 统计计算
+- **步骤3**: 统计数据
 
 :::: code-group
 ::: code-group-item JS
 
 ```js
-function MedianStatistics()
+function MedianStatistics(opt)
 {
     let index =0;
     let Data1=[],Data2=[],Data3=[],Data4=[];
     let Data1Val=0,Data2Val=0,Data3Val=0,Data4Val=0;
     let tempKey=undefined;
-    let writeIndex = writeRow;
-    let MaxRow = ActiveSheet.UsedRange.Rows.Count+1;
+    let wIndex = wRow;
+    let maxRow = ActiveSheet.UsedRange.Rows.Count+1;
 
-    for(let i = readRow;i<=MaxRow;i++)
+    for(let i = startRow;i<=maxRow;i++)
     {
-        let currentKey = ActiveSheet.Cells.Item(i, readDateCol).Value2;
+        let currentKey = ActiveSheet.Cells.Item(i, opt.rDateCol).Value2;
         if(i===MaxRow||(tempKey!==undefined && tempKey!==currentKey)) {
         	if(tempKey===undefined) continue;
         	tempKey = Application.WorksheetFunction.Text(tempKey, "MM/dd");
-            ActiveSheet.Cells.Item(writeIndex, writeDateCol).Value2 = tempKey;
+            ActiveSheet.Cells.Item(wIndex, opt.wDateCol).Value2 = tempKey;
 
             Data1Val = GetMedian(Data1, index);
             Data2Val = GetMedian(Data2, index);
             Data3Val = GetMedian(Data3, index);
             Data4Val = GetMedian(Data4, index);
-            ActiveSheet.Cells.Item(writeIndex, writeCol1).Value2 = parseFloat(Data1Val).toFixed(2);
-            ActiveSheet.Cells.Item(writeIndex, writeCol2).Value2 = parseFloat(Data2Val).toFixed(2);
-            ActiveSheet.Cells.Item(writeIndex, writeCol3).Value2 = parseFloat(Data3Val).toFixed(2);
-            ActiveSheet.Cells.Item(writeIndex, writeCol4).Value2 = parseFloat(Data4Val).toFixed(2);
+            ActiveSheet.Cells.Item(wIndex, opt.wCol1).Value2 = parseFloat(Data1Val).toFixed(2);
+            ActiveSheet.Cells.Item(wIndex, opt.wCol2).Value2 = parseFloat(Data2Val).toFixed(2);
+            ActiveSheet.Cells.Item(wIndex, opt.wCol3).Value2 = parseFloat(Data3Val).toFixed(2);
+            ActiveSheet.Cells.Item(wIndex, opt.wCol4).Value2 = parseFloat(Data4Val).toFixed(2);
 
             Data1=[];
             Data2=[];
             Data3=[];
             Data4=[];
 
-            writeIndex++;
+            wIndex++;
             tempKey =undefined;
             index = 0;
         }
 		if(currentKey===undefined) continue;
        
-        Data1Val = ActiveSheet.Cells.Item(i, readCol1).Value2;
-        Data2Val = ActiveSheet.Cells.Item(i, readCol2).Value2;
-        Data3Val = ActiveSheet.Cells.Item(i, readCol3).Value2;
-        Data4Val = ActiveSheet.Cells.Item(i, readCol4).Value2;
+        Data1Val = ActiveSheet.Cells.Item(i, opt.rCol1).Value2;
+        Data2Val = ActiveSheet.Cells.Item(i, opt.rCol2).Value2;
+        Data3Val = ActiveSheet.Cells.Item(i, opt.rCol3).Value2;
+        Data4Val = ActiveSheet.Cells.Item(i, opt.rCol4).Value2;
 
         Data1.push(Data1Val);
         Data2.push(Data2Val);
@@ -220,22 +200,11 @@ function MedianStatistics()
 ::: code-group-item VBA
 
 ```vb
-'需要优化
-Private Sub MedianStatistics()
-On Error GoTo ErrHandler
-
-Dim currentKey  As String   '日期值
-Dim MaxRow      As Long     '最大有效行
-Dim i           As Long     '当前行
-Dim index       As Long     '统计行
-Dim capacity    As Long     '容量
-Dim Data1()  As Double
-Dim Data2()  As Double
-Dim Data3()  As Double
-Dim Data4()  As Double
-Dim Data1Val, Data2Val, Data3Val, Data4Val As Double
-Dim writeIndex As Long
-Dim tempKey    As String
+Private sub MedianStatistics() 
+Dim currentKey,tempKey                      As String  
+Dim maxRow,i,index,capacity,wIndex          As Long        
+Dim Data1(),Data2(),Data3(),Data4()         As Double
+Dim Data1Val, Data2Val, Data3Val, Data4Val  As Double
 
 capacity = 20
 ReDim Data1(capacity)
@@ -243,52 +212,50 @@ ReDim Data2(capacity)
 ReDim Data3(capacity)
 ReDim Data4(capacity)
 
-writeIndex = writeRow
-MaxRow = ActiveSheet.UsedRange.Rows.Count + 1
+wIndex = writeRow
+maxRow = ActiveSheet.UsedRange.Rows.Count + 1
 index = 0
 tempKey = ""
-'开始逐行统计数据
-For i = readRow To MaxRow Step 1
 
-    currentKey = ActiveSheet.Cells.item(i, readDateCol).Value2
-    If ((i = MaxRow) Or (tempKey <> "" And tempKey <> currentKey)) Then
+For i = startRow To maxRow Step 1
+
+    currentKey = ActiveSheet.Cells.item(i, rDateCol).Value2
+    If ((i = maxRow) Or (tempKey <> "" And tempKey <> currentKey)) Then
         If (tempKey = "") Then GoTo goNext
-        
+
         tempKey = Application.WorksheetFunction.Text(tempKey, "MM/dd")
         Data1Val = Round(GetMedian(Data1, index), 2)
         Data2Val = Round(GetMedian(Data2, index), 2)
         Data3Val = Round(GetMedian(Data3, index), 2)
         Data4Val = Round(GetMedian(Data4, index), 2)
-        ActiveSheet.Cells.item(writeIndex, writeCol1).Value2 = Data1Val
-        ActiveSheet.Cells.item(writeIndex, writeCol2).Value2 = Data2Val
-        ActiveSheet.Cells.item(writeIndex, writeCol3).Value2 = Data3Val
-        ActiveSheet.Cells.item(writeIndex, writeCol4).Value2 = Data4Val
-        
+        ActiveSheet.Cells.item(wIndex, wCol1).Value2 = Data1Val
+        ActiveSheet.Cells.item(wIndex, wCol2).Value2 = Data2Val
+        ActiveSheet.Cells.item(wIndex, wCol3).Value2 = Data3Val
+        ActiveSheet.Cells.item(wIndex, wCol4).Value2 = Data4Val
+
         capacity = 20
         ReDim Data1(capacity)
         ReDim Data2(capacity)
         ReDim Data3(capacity)
         ReDim Data4(capacity)
-        
-        writeIndex = writeIndex + 1
+
+        wIndex = wIndex + 1
         tempKey = ""
         index = 0
-        
     End If
-    Data1Val = ActiveSheet.Cells.item(i, readCol1).Value2
-    Data2Val = ActiveSheet.Cells.item(i, readCol2).Value2
-    Data3Val = ActiveSheet.Cells.item(i, readCol3).Value2
-    Data4Val = ActiveSheet.Cells.item(i, readCol4).Value2
-    
+    Data1Val = ActiveSheet.Cells.item(i, rCol1).Value2
+    Data2Val = ActiveSheet.Cells.item(i, rCol2).Value2
+    Data3Val = ActiveSheet.Cells.item(i, rCol3).Value2
+    Data4Val = ActiveSheet.Cells.item(i, rCol4).Value2
+
     Data1(index) = Data1Val
     Data2(index) = Data2Val
     Data3(index) = Data3Val
     Data4(index) = Data4Val
-    
+
     tempKey = currentKey
-    
     index = index + 1
-    
+
     If (index Mod 20 = 0) Then '超出容量了
         capacity = capacity + 20
         ReDim Preserve Data1(capacity)
@@ -298,12 +265,7 @@ For i = readRow To MaxRow Step 1
     End If
 goNext:
 Next i
-finally:
-    MsgBox "计算完成", vbInformation, "提示"
     Exit Sub
-ErrHandler:
-    MsgBox VBA.Err.Description, vbInformation, "错误"
-GoTo finally:
 End Sub
 ```
 
