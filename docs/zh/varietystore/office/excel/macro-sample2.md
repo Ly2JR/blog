@@ -26,7 +26,7 @@
 |01/01|...|9.34|611.12|8.99|1206.87|
 |01/02|...|9.425|623.57|9.125|1161.795|
 
-## 宏
+## 宏命令
 
 - **步骤1**: 参数
 
@@ -91,13 +91,11 @@ function GetMedian(dataArray,eleSize){
         }
     }
 
-    if (eleSize% 2 === 0) {
-        //偶数
+    if (eleSize% 2 === 0) {//偶数
         index = eleSize / 2;
         medianData = (dataArray[index - 1] + dataArray[index]) / 2;
     }
-    else {
-        //奇数
+    else { //奇数
         index = (eleSize + 1) / 2 - 1;
         medianData = dataArray[index];
     }

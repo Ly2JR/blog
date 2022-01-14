@@ -2,7 +2,7 @@
 
 ## 模板说明
 
-需要统计出所有员工中午考勤情况,比如中午11:00:00~12:00:00作为午餐时间。
+需要统计出所有员工中午考勤情况，比如中午11:00:00~12:00:00作为午餐时间。
 
 考勤统计显示内容如下:
 
@@ -16,7 +16,7 @@
 |0001|...|王一|...|...|...|2021-08-01 20:01:04|
 |...|...|...|...|...|...|...|
 
-## 宏操作
+## 宏命令
 
 - **步骤1**: 参数
 
@@ -93,17 +93,6 @@ public MaxRow as Integer  '中午考勤最晚时间所在行
 ::: code-group-item JS
 
 ```js
-function Check(arr,val)
-{
-  arr.forEach(function(ele,index){
-      if(ele.Key===val)
-      {
-        return true;
-      }
-  })
-  return false;
-};
-
 function dateDiff(datePart,beginDate, endDate) {
   let sDate = Date.parse(beginDate);
   let eDate =Date.parse(endDate);
@@ -130,7 +119,7 @@ function getItem(obj, val) {
 			return obj[i];
 		}
 	}
-	return null;
+	return undefined;
 };
 ```
 
@@ -145,30 +134,29 @@ function getItem(obj, val) {
 ```js
 function getData(opt) {
   let dic=[];
-  let maxRow = ActiveSheet.UsedRange.Rows.Count + 1;
+  let maxRow = ActiveSheet.UsedRange.Rows.Count;
 
-  for (let i = opt.startRow; i < maxRow; i++) {
+  for (let i = opt.startRow; i <= maxRow; i++) {
     let curCode = ActiveSheet.Cells.Item(i, opt.rCodeCol).Value2;
 
     let curDateTime = ActiveSheet.Cells.Item(i, opt.rTimeCol).Value2;
     curDateTime = Application.WorksheetFunction.Text(curDateTime, "yyyy-MM-dd HH:mm:ss");
 
-    let splitDate = curDateTime.split(' ');
+    let splitDate = curDateTime.split(" ");
     let yyyyMMdd = splitDate[0];
-    let startDate = yyyyMMdd + ' ' + startHour;
-    let endDate = yyyyMMdd + ' ' + endHour;
+    let startDate = yyyyMMdd + " " + startHour;
+    let endDate = yyyyMMdd + " " + endHour;
     let curKey = curCode + " " + yyyyMMdd;
 
     if (startDate <= curDateTime && curDateTime <= endDate) {
-      let hasExist = Check(dic, curKey);
-      if (hasExist) {
-        let curVal = getItem(dic, curKey);
-        if (curVal.Min > curDateTime) {
-          curVal.Min = curDateTime;
-          curVal.MinRow = i;
-        } else if (curVal.Max < curDateTime) {
-          curVal.Max = curDateTime;
-          curVal.MaxRow = i;
+      let item = getItem(dic, curKey);
+      if (item!==undefined) {
+        if (item.Min > curDateTime) {
+          item.Min = curDateTime;
+          item.MinRow = i;
+        } else if (item.Max < curDateTime) {
+          item.Max = curDateTime;
+          item.MaxRow = i;
         }
       } else {
         let dataRecord = {};

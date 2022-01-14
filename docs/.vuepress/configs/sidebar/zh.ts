@@ -45,10 +45,10 @@ export const zh:SidebarConfig={
             text:'用友U8+',
             children:[
                 '/zh/varietystore/erp/yonyou/README.md',
-                '/zh/varietystore/erp/yonyou/apis/README.md',
+                '/zh/varietystore/erp/yonyou/archives/README.md',
+                '/zh/varietystore/erp/yonyou/financial/README.md',
                 '/zh/varietystore/erp/yonyou/portal/README.md',
                 '/zh/varietystore/erp/yonyou/buttons/README.md',
-                '/zh/varietystore/erp/yonyou/archives/README.md',
                 '/zh/varietystore/erp/yonyou/vouchers/README.md',
                 '/zh/varietystore/erp/yonyou/reports/README.md',
                 '/zh/varietystore/erp/yonyou/times/README.md',

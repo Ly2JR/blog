@@ -2,7 +2,7 @@
 
 ## 模板说明
 
-需要统计出所有员工考勤打卡迟到或早退的问题，07：54-08：01迟到，19：54-20：01早退。
+需要统计出所有员工考勤打卡迟到或早退的问题，07：54-08：01早班迟到，19：54-20：01晚班迟到。
 
 考勤统计显示内容如下:
 
@@ -16,7 +16,7 @@
 |0001|...|王一|...|...|...|2021-08-01 20:01:04|
 |...|...|...|...|...|...|...|
 
-## 宏操作
+## 宏命令
 
 - **步骤1**: 参数
 
@@ -64,10 +64,8 @@ Const startRow  As Integer = 4    '开始行
 function EoL(time) {
 	let stdTime = [Date.parse("2022-01-13 07:54:00"), Date.parse("2022-01-13 8:02:00"), Date.parse("2022-01-13 19:54:00"), Date.parse("2022-01-13 20:02:00")];
 	let now = Date.parse("2022-01-13 " + time);
-	if (now > stdTime[0] && stdTime[1] > now) {
+	if ((now > stdTime[0] && stdTime[1] > now) || (now > stdTime[2] && stdTime[3] > now)) {
 		return 1;
-	} else if (now > stdTime[2] && stdTime[3] > now) {
-		return 2;
 	}
 	return 0;
 }
@@ -81,22 +79,13 @@ function checkArray(arr, val) {
 	return false;
 }
 
-function checkObj(obj, val) {
-	for (let i = 0; i < obj.length; i++) {
-		if (obj[i].Key === val) {
-			return true;
-		}
-	}
-	return false;
-};
-
 function getItem(obj, val) {
 	for (let i = 0; i < obj.length; i++) {
 		if (obj[i].Key === val) {
 			return obj[i];
 		}
 	}
-	return null;
+	return undefined;
 };
 ```
 
@@ -115,7 +104,6 @@ Private Function EoL(ByVal time As String) As Integer
     End If
     EoL = 0
 End Function
-
 ```
 
 :::
@@ -130,9 +118,9 @@ End Function
 function getData(opt) {
 	let dic = [];
 	let dicTemp = [];
-	let maxRow = ActiveSheet.UsedRange.Rows.Count + 1;
+	let maxRow = ActiveSheet.UsedRange.Rows.Count;
 
-	for (let i = opt.startRow; i < maxRow; i++) {
+	for (let i = opt.startRow; i <= maxRow; i++) {
 		let curJob = ActiveSheet.Cells.Item(i, opt.rJobCol).Value2;
 		if (curJob == "") continue;
 		let hasExits = checkArray(opt.jobs, curJob);
@@ -151,11 +139,10 @@ function getData(opt) {
 		if (curType == 0) continue;
 
 		let isMult = false;
-		let hasExist = checkObj(dic, curKey);
-		if (hasExist) {
-			let temp = getItem(dic, curKey);
-			if (temp.Value <= curTimeValue) {
-				temp.Value = curTimeValue;
+		let itemMain = getItem(dic, curKey);
+		if (itemMain !== undefined) {
+			if (itemMain.Value <= curTimeValue) {
+				itemMain.Value = curTimeValue;
 				isMult = true;
 			}
 		} else {
@@ -164,13 +151,10 @@ function getData(opt) {
 				Value: curTimeValue
 			});
 		}
-		hasExist = checkObj(dicTemp, curName);
-		if (hasExist ) {
-			if(!isMult) {
-				let temp = getItem(dicTemp, curName);
-				++temp.Value;
+		let itemDetail = getItem(dicTemp, curName);
+		if (itemDetail !== undefined) {
+			if (!isMult) {++itemDetail.Value;
 			}
-			
 		} else {
 			let newData = {
 				Key: curName,
@@ -179,7 +163,7 @@ function getData(opt) {
 			dicTemp.push(newData);
 		}
 	}
-	return [dic,dicTemp];
+	return [dic, dicTemp];
 }
 ```
 
@@ -221,7 +205,6 @@ goRun:
     isMult = False
     If (data(0).exists(curKey)) Then
         temp = data(0)(curKey)
-        
         If (temp <= curTimeValue) Then
             data(0)(curKey) = curTimeValue
             isMult = True
@@ -237,7 +220,6 @@ goRun:
     Else
         data(1).Add curName, 1
     End If
-    
 goNext:
 Next i
 
@@ -279,8 +261,8 @@ function setData(source,opt){
 
 ```vb
 Private Sub SetData(ByRef source As Variant)
-Dim item,t As Variant
-Dim i As Long
+Dim item,t 	As Variant
+Dim i 		As Long
 i = startRow
 
 ActiveSheet.Cells.item(i - 1, wNameCol).Value2 = "姓名"
