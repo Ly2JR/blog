@@ -12,6 +12,10 @@ export const zh:NavbarConfig=[
             text: '书籍',
             link:'/zh/life/books/README.md',
           },
+          {
+            text: '音乐',
+            link:'/zh/life/music/README.md',
+          },
         ],
       },
       {

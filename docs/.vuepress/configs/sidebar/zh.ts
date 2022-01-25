@@ -9,12 +9,20 @@ export const zh:SidebarConfig={
             ]
         }
     ],
-    '/zh/life/':[
+    '/zh/life/books':[
         {
-            text:'生活',
+            text:'书籍',
             children:[
                 '/zh/life/books/README.md',
                 '/zh/life/books/self-study/probability-and-statistics/README.md',
+            ]
+        }
+    ],
+    '/zh/life/music':[
+        {
+            text:'音乐',
+            children:[
+                '/zh/life/music/README.md',
             ]
         }
     ],
