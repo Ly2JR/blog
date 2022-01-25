@@ -50,6 +50,11 @@
 
     **WAV>FLAC>APE**
 
+
+
+- 标签
+
+  [mp3tag](https://www.mp3tag.de/)
 ## 歌词制作
 
 - lrc标签
