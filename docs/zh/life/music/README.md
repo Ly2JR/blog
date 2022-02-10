@@ -1,5 +1,11 @@
 # 品味生活，聆听音乐
 
+## 车载音乐
+
+- U盘128GB，格式NTFS
+
+- 无损音乐格式都支持，只是音乐封面，歌词等相关信息不支持WAV格式，支持FLAC格式，是否支持APE格式待确认?
+
 ## 音乐格式
 
 - 无损音乐格式
@@ -326,6 +332,10 @@ BOSSA NOVA是种带 JAZZ味道的巴西音乐， 1950年代作曲家 ANTONIO CAR
 - [mp3tag](https://www.mp3tag.de/)
   
   给音乐加标签的
+
+- [footbar2000](https://www.foobar2000.org/)
+
+  给音乐加封面、歌词等信息
 
 - [封面](https://music.apple.com/cn/browse)
 

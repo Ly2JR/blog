@@ -2,15 +2,19 @@ import { NavbarConfig } from '@vuepress/theme-default'
 
 export const en:NavbarConfig=[
     {
-        text:'guide',
+        text:'Guide',
         link:'/guide/readme.md'
       },
       {
-        text: 'live',
+        text: 'Live',
         children: [
           {
-            text: 'fish',
-            link:''
+            text: 'Books',
+            link:'/'
+          },
+          {
+            text: 'Music',
+            link:'/'
           },
         ],
       },
@@ -25,12 +29,6 @@ export const en:NavbarConfig=[
             },{
               text:'WPF',
               link:'https://docs.microsoft.com/zh-cn/dotnet/desktop/wpf/getting-started/?view=netframeworkdesktop-4.8'
-            },{
-              text:'Prism',
-              link:'#'
-            },{
-              text:'materialdesigninxaml',
-              link:'http://www.materialdesigninxaml.net/'
             }]
           },
           {
@@ -43,7 +41,7 @@ export const en:NavbarConfig=[
               link:'https://uniapp.dcloud.io/'
             },{
               text:'MAUI',
-              link:'#'
+              link:'https://github.com/dotnet/maui'
             }]
           },
           {
@@ -52,11 +50,8 @@ export const en:NavbarConfig=[
               text:'Vue',
               link:'https://cn.vuejs.org/',
             },{
-              text:'Jquery',
-              link:'https://jquery.com/',
-            },{
-              text:'TypeScript',
-              link:'https://www.typescriptlang.org/'
+              text:'Blazor',
+              link:'https://dotnet.microsoft.com/en-us/learn/aspnet/blazor-tutorial/intro',
             }]
           }
         ],
@@ -67,10 +62,6 @@ export const en:NavbarConfig=[
           {
               text:'Sql Server',
               link:'/'            
-          },
-          {
-            text:'MySql',
-            link:'/'            
           }
         ]
       },
@@ -86,11 +77,7 @@ export const en:NavbarConfig=[
               },
               {
                 text:'YARN',
-                link:'/'
-              },
-              {
-                text:'NPM',
-                link:'/'
+                link:'https://yarnpkg.com/'
               }
             ]
           },

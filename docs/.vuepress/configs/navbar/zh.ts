@@ -25,16 +25,10 @@ export const zh:NavbarConfig=[
             text: '.NET',
             children:[{
               text:'ABP',
-              link:'https://www.abp.io/'
+              link:'/zh/donet/abp.vnext/README.md'
             },{
               text:'WPF',
               link:'https://docs.microsoft.com/zh-cn/dotnet/desktop/wpf/getting-started/?view=netframeworkdesktop-4.8'
-            },{
-              text:'Prism',
-              link:'https://github.com/PrismLibrary/Prism'
-            },{
-              text:'materialdesigninxaml',
-              link:'http://www.materialdesigninxaml.net/'
             }]
           },
           {
@@ -56,11 +50,8 @@ export const zh:NavbarConfig=[
               text:'Vue',
               link:'/zh/web/vue3/README.md',
             },{
-              text:'JQuery',
-              link:'/zh/jquery/README.md',
-            },{
-              text:'TypeScript',
-              link:'https://www.typescriptlang.org/'
+              text:'Blazor',
+              link:'https://dotnet.microsoft.com/en-us/learn/aspnet/blazor-tutorial/intro',
             }]
           }
         ],
@@ -71,14 +62,6 @@ export const zh:NavbarConfig=[
            {
              text:'Sql Server',
              link:'/zh/database/sqlserver/README.md'
-           },
-           {
-             text:'MySql',
-             link:'/'
-           },
-           {
-             text:'Sqlite',
-             link:'/'
            }
         ]
       },
@@ -95,10 +78,6 @@ export const zh:NavbarConfig=[
               {
                 text:'YARN',
                 link:'/zh/varietystore/cli/yarn/README.md'
-              },
-              {
-                text:'NPM',
-                link:'/'
               }
             ]
           },

@@ -12,13 +12,13 @@ features:
   - title: 日常学习、生活记录 
     details: 这是使用VuePress搭建的博客
   - title: .Net
-    details: 主要.NET Core
+    details: .NET Core、WPF
   - title: 移动端
-    details: 主要Kotlin开发的APP，包括不限于Xamarin、Uni-App...
+    details: Kotlin,Xamarin,Maui、Uni-App...
   - title: Web
-    details: 使用Vue、Blazor、Razor、Element-UI进行前端开发
+    details: Vue、Blazor...
   - title: 数据库
-    details: 常用Sql Server,包括不限于MySql、Sqlite...
+    details: Sql Server...
   - title: 杂货铺
     details: 很多好的开源的框架及解决方案，比如ABP、Dapper、Quartz.Net、NLog..
 footerHtml: true

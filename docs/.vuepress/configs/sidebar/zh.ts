@@ -26,6 +26,14 @@ export const zh:SidebarConfig={
             ]
         }
     ],
+    '/zh/donet/abp.vnext':[
+        {
+            text:'ABP.vNext',
+            children:[
+                '/zh/donet/abp.vnext/README.md',
+            ],
+        }
+    ],
     '/zh/jquery/':[
         {
             text:'JQuery',
