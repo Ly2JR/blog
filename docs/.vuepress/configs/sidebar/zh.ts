@@ -132,7 +132,9 @@ export const zh:SidebarConfig={
             text:'梯云纵',
             children:[
                 '/zh/varietystore/ladder/sounds/README.md',
-                '/zh/varietystore/ladder/google-recaptcha.md'
+                '/zh/varietystore/ladder/google-recaptcha.md',
+                '/zh/varietystore/ladder/encryption/README.md',
+                '/zh/varietystore/ladder/transform/README.md',
             ]
         },
     ],
