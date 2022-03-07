@@ -31,6 +31,7 @@ export const zh:SidebarConfig={
             text:'ABP.vNext',
             children:[
                 '/zh/donet/abp.vnext/README.md',
+                '/zh/donet/abp.vnext/data-dictionary.md',
             ],
         }
     ],
