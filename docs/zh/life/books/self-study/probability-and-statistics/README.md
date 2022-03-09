@@ -1,6 +1,10 @@
 # 概率论与数理统计(二)
 
-[MathJax](https://www.mathjax.org/)
+<a href="https://www.mathjax.org">
+    <img title="由 MathJax 提供支持"
+    src="https://www.mathjax.org/badge/mj_logo.png"
+    border="0" alt="由 MathJax 提供支持" />
+</a>
 
 [markdown-it-mathjax3](https://github.com/nzt/markdown-it-mathjax3)
 
