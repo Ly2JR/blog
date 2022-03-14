@@ -23,13 +23,7 @@ export const zh:NavbarConfig=[
         children: [
           {
             text: '.NET',
-            children:[{
-              text:'ABP',
-              link:'/zh/donet/abp.vnext/README.md'
-            },{
-              text:'WPF',
-              link:'https://docs.microsoft.com/zh-cn/dotnet/desktop/wpf/getting-started/?view=netframeworkdesktop-4.8'
-            }]
+            link:'/zh/donet/design-pattern.md'
           },
           {
             text: '移动端',

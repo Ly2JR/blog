@@ -27,7 +27,13 @@ export const zh:SidebarConfig={
             ]
         }
     ],
-    '/zh/donet/abp.vnext':[
+    '/zh/donet/':[
+        {
+            text:'Design Pattern',
+            children:[
+                '/zh/donet/design-pattern.md',
+            ],
+        },
         {
             text:'ABP.vNext',
             children:[
