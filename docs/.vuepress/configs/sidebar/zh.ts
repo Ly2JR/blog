@@ -14,6 +14,7 @@ export const zh:SidebarConfig={
             text:'书籍',
             children:[
                 '/zh/life/books/README.md',
+                '/zh/life/books/must-read-books.md',
                 '/zh/life/books/self-study/probability-and-statistics/README.md',
             ]
         }
