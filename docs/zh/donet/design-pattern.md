@@ -2,7 +2,7 @@
 
 ## 创建型
 
-- 单件模式(Singleton Pattern)
+### 单件模式(Singleton Pattern)
 
   单件模式是一种用于确保整个应用程序中只有一个类实例且这个实例所占用资源在整个应用程序中是共享时的程序设计方法
   (根据实际情况，可能需要几个类实例)。
@@ -70,7 +70,7 @@
   ::::
 
 
-- 抽象工厂(Abstract Factory)
+### 抽象工厂(Abstract Factory)
 
   抽象工厂是所有形态的工厂模式中最为抽象和最具有一般性的一种形态。
   抽象工厂是指当有多个抽象角色时使用的一种工厂模式。
@@ -169,7 +169,7 @@
   ```
 
 
-- 建造者模式(Builder)
+### 建造者模式(Builder)
 
   建造者模式是设计模式的一种，将一个复杂的对象的构建于它的表示分离，使得同样的构建过程可以创建不同的表示。
 
@@ -270,7 +270,7 @@
   }
   ```
 
-- 工厂方法模式(Factory Method)
+### 工厂方法模式(Factory Method)
 
   工厂方法模式是一种常用的类创建型设计模式，此模式的核心精神是封装类中变化的部分，提取其中个性化善变的部分为独立类，
   通过依赖注入以达到解耦、复用和方便后期维护扩展的目的。它的核心结构有四个角色，分别是抽象工厂、具体工厂、抽象产品、
@@ -295,7 +295,199 @@
 
   抽象工厂角色：是工厂方法模式的核心，与应用程序无关。任何在模式中创建的对象的工厂类必须实现这个接口。
 
+  具体工厂角色：这是实现抽象工厂接口的具体工厂类，包含与应用程序密切相关的逻辑，并且受到应用程序调用以
+  创建产品对象。在上图中有两个这样的角色：BuldCreator与TubeCreator。
+
+  抽象产品角色：工厂方法模式所创建的对象的超类型，也就是产品对象的共同父类或共同拥有的接口。
+
+  具体产品角色：这个角色实现了抽象产品角色所定义的接口。某具体产品有专门的具体工厂创建，它们之间往往一一对应。
+
+  - 模式应用
+
+  工厂方法经常用在以下两种情况中：
+
+  第一种情况是针对某个产品，调用者清楚地知道应该使用哪个具体工厂服务，实例化该具体工厂，生产出具体的产品来。
+
+  第二种情况，只是需要一种产品，而不想知道也不需要知道究竟是哪个工厂为生产的，即最终选用哪个具体工厂的决定权
+  在生产者一方，它们根据当前系统的情况来实例化一个具体的工厂返回给使用者，而这个决策过程杜宇使用者来说是透明的。
+
+  ```cs
+  using System;
+  class FactoryMethodDemo{
+    public abstract class Food{
+      public abstract void Print();
+    }
+
+    public class TomatoScrambleEggs:Food{
+      public override void Print(){
+         Console.WriteLine("西红柿炒鸡蛋");
+      }
+    }
+
+    public class ShreddedPorkWithPotatoes:Food{
+      public override void Print(){
+        Console.WriteLine("土豆肉丝");
+      }
+    }
+
+    public abstract class Creator{
+      public abstract Food CreateFoodFactory();
+    }
+
+    public class TomatoScrambledEggsFacoty:Creator{
+      public override Food CreateFoodFactory(){
+        return new TomatoScrambledEggs();
+      }
+    }
+
+    public class ShreddedPorkWithPotatoesFacoty:Creator{
+      public override Food CreateFoodFactory(){
+        return new ShreddedPorkWithPotatoes();
+      }
+    }
+
+    static void Main(string[] args){
+       var shreddedPorkWithPotatoesFactory=new ShreddedPorkWithPotatoesFactory();
+       var tomatoScrambledEggsFactory=new TomatoScrambledEggsFactory();
+
+       var tomatoScrambleEggs=tomatoScrambledEggsFactory.CreateFoodFactory();
+       tomatoScrambleEggs.Print();
+
+       var shreddedPorkWithPotatoes=shreddedPorkWithPotatoesFactory.CreateFoodFactory();
+       shreddedPorkWithPatatoes.Print();
+    }
+  }
+  ```
+
 - 原型模式(Prototype)
+
+  用原型实例指定创建对象的种类，并且通过拷贝这些原型创建新的对象。
+
+  原型模式是一种创建型设计模式，Prototype模式允许一个对象再创建另外一个可定制的对象，根本无需知道任何如何创建的细节，
+  工作原理是：通过将一个原型对象传给那个要发动创建的对象，这个要发动创建的对象通过请求原型对象拷贝它们自己来实施创建。
+
+  - 解决问题
+
+  它主要面对的问题是:"某些结构复杂的对象"的创建工作；由于需求的变化，这些对象经常面临着剧烈的变化，但是它们却拥有比较
+  稳定一致的接口。
+
+
+  ```cs
+  :::: code-group
+  ::: code-group-item 浅度复制
+  using System;
+  class PrototypeDemo{
+    public interface IColor{
+      IColor Clone();
+
+      int Red{get;set;}
+
+      int Green{get;set;}
+
+      int Blue{get;set;}
+    }
+
+    public class RedColor:IColor{
+      public int Red{get;set;}
+
+      public int Green{get;set;}
+
+      public int Blue{get;set;}
+
+      public IColor Clone(){
+        return (IColor)this.MemberwiseClone();
+      }
+    }
+
+    static void Main(string[] args){
+      var redColor=new RedColor();
+      redColor.Red=255;
+      Console.WriteLine($"RedColor -Red {redColor.Red}");
+
+      var redColorClone=redColor.Clone();
+      redColorClone.Red=224;
+      Console.WriteLine($"RedColorClone -Red {redColorClone.Red}");
+      Console.WriteLine($"RedColor -Red {redColor.Red}");
+      Console.ReadKey();
+    }
+  }
+  ```
+  :::
+
+  ::: code-group-item 深度复制
+  ```cs
+  using System;
+  using System.IO;
+  using System.Runtime.Serialization.Formatters.Binary;
+  class PrototypeDemo{
+    public interface IColor{
+      IColor Clone();
+
+      int Red{get;set;}
+
+      int Green{get;set;}
+
+      int Blue{get;set;}
+
+      Factory F{get;set;}
+    }
+
+    [Serializable]
+    public class Factory{
+      public string Name{get;set;}
+    }
+
+    [Serializable]
+    public class RedColor:IColor{
+      public int Red{get;set;}
+      public int Green{get;set;}
+      public int Blue{get;set;}
+
+      public IColor Clone(){
+          var serialize=new SerializeHelper();
+          string target=serialize.Serializable(this);
+          return serialize.Derializable(IColor)(target);
+      }
+    }
+
+    public class SerializableHelper{
+      public string Serializable(object target){
+        using(var stream=new MemoryStream()){
+          new BinaryFormatter().Serialize(stream,target);
+          return Convert.ToBase64String(stram.ToArray());
+        }
+      }
+
+      public object Derializablle(string target){
+        var targetArray=Convert.FromBase64String(target);
+        using(var stream=new MemoryStream(targetArray)){
+          return new BinaryFormatter().Deserialize(stream);
+        }
+      }
+
+      public T Derializable<T>(string target){
+        return (T)Derializable(target);
+      }
+    }
+
+    static void Main(string[] args){
+       var redColor=new RedColor();
+       redColor.Red=255;
+       redColor.F=new Factory(){Name="RedColor"};
+       Console.WriteLine($"RedColor - Factory {redColor.F.Name}");
+
+       var redColorClone=redColor.Clone();
+       redColorClone.Red=234;
+       redColorClone.F.Name="RedColorClone";
+       Console.WriteLine($"RedColorClone - Factory {redColorClone.F.Name}");
+       Console.WriteLine($"RedColor - Factory {redColor.F.Name}");
+       Console.ReadKey();
+    }
+  }
+  ```
+
+  :::
+  ::::
 
 ## 结构型
 
