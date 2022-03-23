@@ -1,8 +1,8 @@
-# Sql 语法
+# 基本语法
 
-:::: tip
-最新版[Sql Server 2019](https://www.microsoft.com/zh-cn/sql-server/sql-server-downloads)
-::::
+  :::: tip
+  最新版[Sql Server 2019](https://www.microsoft.com/zh-cn/sql-server/sql-server-downloads)
+  ::::
 
 ## [SELECT](https://docs.microsoft.com/zh-cn/sql/t-sql/queries/select-transact-sql?view=sql-server-ver15)
 
@@ -55,6 +55,7 @@ SELECT * FROM table_name;
 
 - 示例
 
+“WebSites”表数据
 |id|name|url|alexa|country|
 |:-|:-|:-|:-|:-|
 |1|Google|https://www.google.com/|1|USA|
@@ -86,6 +87,7 @@ SELECT DISTINCT column_name(s) FROM table_name;
 
 - 示例
 
+“WebSites”表数据
 |id|name|url|alexa|country|
 |:-|:-|:-|:-|:-|
 |1|Google|https://www.google.com/|1|USA|
@@ -116,6 +118,7 @@ FROM table_name;
 
 - 示例
 
+“WebSites”表数据
 |id|name|url|alexa|country|
 |:-|:-|:-|:-|:-|
 |1|Google|https://www.google.com/|1|USA|
@@ -144,6 +147,41 @@ SELECT TOP 3 * FROM WebSites;
 |2|TaoBao|https://www.taobao.com/|13|CN|
 |3|WeiBo|https://www.weibo.com/|20|CN|
 
+### [SELECT INTO](https://docs.microsoft.com/zh-cn/sql/t-sql/queries/select-into-clause-transact-sql?view=sql-server-ver15)
+
+SELECT...INTO在默认文件组中创建一个新表，并将来自查询的结果行插入该表中。
+
+- 语法
+
+```sql
+SELECT column_name(s)
+INTO newTable
+FROM table_name;
+```
+
+- 示例
+
+“WebSites”表数据
+|id|name|url|alexa|country|
+|:-|:-|:-|:-|:-|
+|1|Google|https://www.google.com/|1|USA|
+|2|TaoBao|https://www.taobao.com/|13|CN|
+|3|WeiBo|https://www.weibo.com/|20|CN|
+|4|Facebook|https://www.facebook.com/|3|USA|
+
+下面语句的SQL语句将“WebSites”表“country”为“CN”值的数据进行备份。
+```sql
+SELECT * 
+INTO WebSitesTemp 
+FROM WebSites 
+Where country='CN';
+```
+输出结果为：
+`SELECT * FROM WebSitesTemp`
+|id|name|url|alexa|country|
+|:-|:-|:-|:-|:-|
+|2|TaoBao|https://www.taobao.com/|13|CN|
+|3|WeiBo|https://www.weibo.com/|20|CN|
 
 ### [ALIAS](https://docs.microsoft.com/zh-cn/sql/t-sql/queries/select-transact-sql?view=sql-server-ver15)
 
@@ -168,6 +206,7 @@ FROM table_name as alias_name
 
 - 示例
 
+“WebSites”表数据
 |id|name|url|alexa|country|
 |:-|:-|:-|:-|:-|
 |1|Google|https://www.google.com/|1|USA|
@@ -175,7 +214,7 @@ FROM table_name as alias_name
 |3|WeiBo|https://www.weibo.com/|20|CN|
 |4|Facebook|https://www.facebook.com/|3|USA|
 
-下面语句的SQL语句从“WebSites”表中将"name"列名改为“n”,将"country"列名改为“c”并查询所有网站
+下面语句的SQL语句从“WebSites”表中将"name"列名改为“n”,将"country"列名改为“c”并查询所有记录
 
 ```sql
 SELECT name AS c,country AS c FROM WebSites;
@@ -218,6 +257,7 @@ SELECT column_name(s) FROM table_name WHERE column_name operator value;
 
 - 示例
 
+“WebSites”表数据
 |id|name|url|alexa|country|
 |:-|:-|:-|:-|:-|
 |1|Google|https://www.google.com/|1|USA|
@@ -225,7 +265,7 @@ SELECT column_name(s) FROM table_name WHERE column_name operator value;
 |3|WeiBo|https://www.weibo.com/|20|CN|
 |4|Facebook|https://www.facebook.com/|3|USA|
 
-下面语句的SQL语句从“WebSites”表中选取"country"列的值为“CN”的所有网站
+下面语句的SQL语句从“WebSites”表中选取"country"列的值为“CN”的所有记录
 ```sql
 SELECT * FROM WebSites WHERE country='CN';
 ```
@@ -245,6 +285,7 @@ AND & OR 运算符用于基于一个以上的条件对记录进行过滤。
 
 - 示例
 
+“WebSites”表数据
 |id|name|url|alexa|country|
 |:-|:-|:-|:-|:-|
 |1|Google|https://www.google.com/|1|USA|
@@ -252,7 +293,7 @@ AND & OR 运算符用于基于一个以上的条件对记录进行过滤。
 |3|WeiBo|https://www.weibo.com/|20|CN|
 |4|Facebook|https://www.facebook.com/|3|USA|
 
-下面语句的SQL语句从“WebSites”表中选取"country"列的值为“CN”且Alexa排名大于等于“20”的所有网站
+下面语句的SQL语句从“WebSites”表中选取"country"列的值为“CN”且Alexa排名大于等于“20”的所有记录
 ```sql
 SELECT * FROM WebSites WHERE country='CN' AND alexa>=20;
 ```
@@ -261,7 +302,7 @@ SELECT * FROM WebSites WHERE country='CN' AND alexa>=20;
 |:-|:-|:-|:-|:-|
 |3|WeiBo|https://www.weibo.com/|20|CN|
 
-下面语句的SQL语句从“WebSites”表中选取"country"列为“CN”或“USA”的所有网站
+下面语句的SQL语句从“WebSites”表中选取"country"列为“CN”或“USA”的所有记录
 ```sql
 SELECT * FROM WebSites WHERE country='CN' OR country='USA';
 ```
@@ -273,7 +314,7 @@ SELECT * FROM WebSites WHERE country='CN' OR country='USA';
 |3|WeiBo|https://www.weibo.com/|20|CN|
 |4|Facebook|https://www.facebook.com/|3|USA|
 
-下面的SQL语句从“Websites”表中选取alexa列排名大于“15”且country列为“CN”或“USA”的所有网站
+下面的SQL语句从“Websites”表中选取alexa列排名大于“15”且country列为“CN”或“USA”的所有记录
 ```sql
 SELECT * FROM WebSites WHERE (country='CN' OR country='USA') AND alexa>15;
 ```
@@ -296,6 +337,7 @@ WHERE column_name in (value1,value2,...)
 
 - 示例
 
+“WebSites”表数据
 |id|name|url|alexa|country|
 |:-|:-|:-|:-|:-|
 |1|Google|https://www.google.com/|1|USA|
@@ -303,7 +345,7 @@ WHERE column_name in (value1,value2,...)
 |3|WeiBo|https://www.weibo.com/|20|CN|
 |4|Facebook|https://www.facebook.com/|3|USA|
 
-下面语句的SQL语句从“WebSites”表中选取“name”列值为“google”或"facebook"的所有网站
+下面语句的SQL语句从“WebSites”表中选取“name”列值为“google”或"facebook"的所有记录
 
 ```sql
 SELECT * FROM WebSites
@@ -334,6 +376,7 @@ WHERE column_name BETWEEN value1 AND value2;
 
 - 示例
 
+“WebSites”表数据
 |id|name|url|alexa|country|
 |:-|:-|:-|:-|:-|
 |1|Google|https://www.google.com/|1|USA|
@@ -341,7 +384,7 @@ WHERE column_name BETWEEN value1 AND value2;
 |3|WeiBo|https://www.weibo.com/|20|CN|
 |4|Facebook|https://www.facebook.com/|3|USA|
 
-下面语句的SQL语句从“WebSites”表中选取“alexa”列值在1和10之间的所有网站
+下面语句的SQL语句从“WebSites”表中选取“alexa”列值在1和10之间的所有记录
 
 ```sql
 SELECT * FROM WebSites
@@ -354,7 +397,7 @@ WHERE alexa BETWEEN 1 AND 10
 |1|Google|https://www.google.com/|1|USA|
 |4|Facebook|https://www.facebook.com/|3|USA|
 
-下面语句的SQL语句从“WebSites”表中选取“alexa”列值不在1和10之间的所有网站
+下面语句的SQL语句从“WebSites”表中选取“alexa”列值不在1和10之间的所有记录
 
 ```sql
 SELECT * FROM WebSites
@@ -367,7 +410,7 @@ WHERE alexa NOT BETWEEN 1 AND 10
 |2|TaoBao|https://www.taobao.com/|13|CN|
 |3|WeiBo|https://www.weibo.com/|20|CN|
 
-下面语句的SQL语句从“WebSites”表中选取“alexa”列值在1和20之间但”country”列值不为“USA”的所有网站
+下面语句的SQL语句从“WebSites”表中选取“alexa”列值在1和20之间但”country”列值不为“USA”的所有记录
 
 ```sql
 SELECT * FROM WebSites
@@ -381,7 +424,7 @@ AND country not in ('USA')
 |2|TaoBao|https://www.taobao.com/|13|CN|
 |3|WeiBo|https://www.weibo.com/|20|CN|
 
-下面语句的SQL语句从“WebSites”表中选取“NAME”列值在字母“A”和“H”之间的所有网站
+下面语句的SQL语句从“WebSites”表中选取“NAME”列值在字母“A”和“H”之间的所有记录
 
 ```sql
 SELECT * FROM WebSites
@@ -394,7 +437,7 @@ WHERE name BETWEEN 'A' AND 'H'
 |1|Google|https://www.google.com/|1|USA|
 |4|Facebook|https://www.facebook.com/|3|USA|
 
-下面语句的SQL语句从“WebSites”表中选取“NAME”列值不在字母“A”和“H”之间的所有网站
+下面语句的SQL语句从“WebSites”表中选取“NAME”列值不在字母“A”和“H”之间的所有记录
 
 ```sql
 SELECT * FROM WebSites
@@ -421,6 +464,7 @@ WHERE column_name LIKE pattern;
 
 - 示例
 
+“WebSites”表数据
 |id|name|url|alexa|country|
 |:-|:-|:-|:-|:-|
 |1|Google|https://www.google.com/|1|USA|
@@ -428,7 +472,7 @@ WHERE column_name LIKE pattern;
 |3|WeiBo|https://www.weibo.com/|20|CN|
 |4|Facebook|https://www.facebook.com/|3|USA|
 
-下面语句的SQL语句从“WebSites”表中选取“name”列值以字母“G”开头的所有网站
+下面语句的SQL语句从“WebSites”表中选取“name”列值以字母“G”开头的所有记录
 
 ```sql
 SELECT * FROM WebSites
@@ -440,7 +484,7 @@ WHERE name LIKE 'G%'
 |:-|:-|:-|:-|:-|
 |1|Google|https://www.google.com/|1|USA|
 
-下面语句的SQL语句从“WebSites”表中选取“name”列值以字母“k”结尾的所有网站
+下面语句的SQL语句从“WebSites”表中选取“name”列值以字母“k”结尾的所有记录
 ```sql
 SELECT * FROM WebSites
 WHERE name LIKE '%k'
@@ -450,7 +494,7 @@ WHERE name LIKE '%k'
 |:-|:-|:-|:-|:-|
 |54|Facebook|https://www.facebook.com/|3|USA|
 
-下面语句的SQL语句从“WebSites”表中选取“name”列值包含字母“oo”的所有网站
+下面语句的SQL语句从“WebSites”表中选取“name”列值包含字母“oo”的所有记录
 ```sql
 SELECT * FROM WebSites
 WHERE name LIKE '%oo%'
@@ -461,7 +505,7 @@ WHERE name LIKE '%oo%'
 |1|Google|https://www.google.com/|1|USA|
 |4|Facebook|https://www.facebook.com/|3|USA|
 
-下面语句的SQL语句从“WebSites”表中选取“name”列值不包含字母“oo”的所有网站
+下面语句的SQL语句从“WebSites”表中选取“name”列值不包含字母“oo”的所有记录
 ```sql
 SELECT * FROM WebSites
 WHERE name NOT LIKE '%oo%'
@@ -486,6 +530,7 @@ WHERE name NOT LIKE '%oo%'
 
 - 示例
 
+“WebSites”表数据
 |id|name|url|alexa|country|
 |:-|:-|:-|:-|:-|
 |1|Google|https://www.google.com/|1|USA|
@@ -493,7 +538,7 @@ WHERE name NOT LIKE '%oo%'
 |3|WeiBo|https://www.weibo.com/|20|CN|
 |4|Facebook|https://www.facebook.com/|3|USA|
 
-下面语句的SQL语句从“WebSites”表中选取“name”列值以一个任意字符开始，然后是“oogle”的所有网站
+下面语句的SQL语句从“WebSites”表中选取“name”列值以一个任意字符开始，然后是“oogle”的所有记录
 
 ```sql
 SELECT * FROM WebSites
@@ -505,7 +550,7 @@ WHERE name LIKE '_oogle'
 |:-|:-|:-|:-|:-|
 |1|Google|https://www.google.com/|1|USA|
 
-下面语句的SQL语句从“WebSites”表中选取“name”列值以字母“G”开始，然后是一个任意字符，然后是“o”，然后是一个任意字符，然后是“le”的所有网站
+下面语句的SQL语句从“WebSites”表中选取“name”列值以字母“G”开始，然后是一个任意字符，然后是“o”，然后是一个任意字符，然后是“le”的所有记录
 ```sql
 SELECT * FROM WebSites
 WHERE name LIKE 'G_o_le'
@@ -515,7 +560,7 @@ WHERE name LIKE 'G_o_le'
 |:-|:-|:-|:-|:-|
 |1|Google|https://www.google.com/|1|USA|
 
-下面语句的SQL语句从“WebSites”表中选取“name”列值以字母”A“到字母”H“开始的所有网站
+下面语句的SQL语句从“WebSites”表中选取“name”列值以字母”A“到字母”H“开始的所有记录
 ```sql
 SELECT * FROM WebSites
 WHERE name LIKE '[A-H]%'
@@ -526,7 +571,7 @@ WHERE name LIKE '[A-H]%'
 |1|Google|https://www.google.com/|1|USA|
 |4|Facebook|https://www.facebook.com/|3|USA|
 
-下面语句的SQL语句从“WebSites”表中选取“name”列值不以字母”A“到字母”H“开始的所有网站
+下面语句的SQL语句从“WebSites”表中选取“name”列值不以字母”A“到字母”H“开始的所有记录
 ```sql
 SELECT * FROM WebSites
 WHERE name LIKE '[^A-H]%'
@@ -554,6 +599,7 @@ ORDER BY column_name,column_name ASC|DESC;
 
 - 示例
 
+“WebSites”表数据
 |id|name|url|alexa|country|
 |:-|:-|:-|:-|:-|
 |1|Google|https://www.google.com/|1|USA|
@@ -561,7 +607,7 @@ ORDER BY column_name,column_name ASC|DESC;
 |3|WeiBo|https://www.weibo.com/|20|CN|
 |4|Facebook|https://www.facebook.com/|3|USA|
 
-下面语句的SQL语句从“WebSites”表中选取所有网站，并按照“alexa”列排序
+下面语句的SQL语句从“WebSites”表中选取所有记录，并按照“alexa”列排序
 ```sql
 SELECT * FROM WebSites ORDER BY alexa;
 ```
@@ -573,7 +619,7 @@ SELECT * FROM WebSites ORDER BY alexa;
 |2|TaoBao|https://www.taobao.com/|13|CN|
 |3|WeiBo|https://www.weibo.com/|20|CN|
 
-下面语句的SQL语句从“WebSites”表中选取所有网站，并按照“alexa”列降序排序
+下面语句的SQL语句从“WebSites”表中选取所有记录，并按照“alexa”列降序排序
 ```sql
 SELECT * FROM WebSites ORDER BY alexa DESC;
 ```
@@ -585,7 +631,7 @@ SELECT * FROM WebSites ORDER BY alexa DESC;
 |4|Facebook|https://www.facebook.com/|3|USA|
 |1|Google|https://www.google.com/|1|USA|
 
-下面语句的SQL语句从“WebSites”表中选取所有网站，并按照“country”和“alexa”列排序
+下面语句的SQL语句从“WebSites”表中选取所有记录，并按照“country”和“alexa”列排序
 ```sql
 SELECT * FROM WebSites ORDER BY country,alexa;
 ```
@@ -639,6 +685,7 @@ VALUES(value1,value2,value3,...);
 
 - 示例
 
+“WebSites”表数据
 |id|name|url|alexa|country|
 |:-|:-|:-|:-|:-|
 |1|Google|https://www.google.com/|1|USA|
@@ -660,6 +707,48 @@ VALUES('BaiDu','https://www.baidu.com/','40','CN');
 |4|Facebook|https://www.facebook.com/|3|USA|
 |5|BaiDu|https://www.baidu.com/|40|CN|
 
+### [INSERT INTO SELECT](https://docs.microsoft.com/zh-cn/sql/t-sql/statements/insert-transact-sql?view=sql-server-ver15#OtherTables)
+
+INSERT INTO SELECT语句从一个表复制数据，然后把结果集插入到一个已存在的表中。目标表中任何已存在的行都不会受影响
+
+- 语法
+
+```sql
+INSERT INTO table_name1(column_name(s))
+SELECT column_names FROM table_name2;
+```
+
+- 示例
+
+“WebSites”表数据
+|id|name|url|alexa|country|
+|:-|:-|:-|:-|:-|
+|1|Google|https://www.google.com/|1|USA|
+|2|TaoBao|https://www.taobao.com/|13|CN|
+|3|WeiBo|https://www.weibo.com/|20|CN|
+|4|Facebook|https://www.facebook.com/|3|USA|
+
+“Apps”表数据
+|id|app_name|url|country|
+|:-|:-|:-|:-|
+|1|QQ APP|https://im.qq.com/|CN|
+|2|TaoBao APP|https://www.taobao.com/|CN|
+
+下面语句的SQL语句将“Apps”表结果插入到“WebSites”表中。
+```sql
+INSERT INTO WebSites(name,url,country)
+SELECT name,url,country FROM Apps;
+```
+输出结果为：`SELECT * FROM WebSites`
+|id|name|url|alexa|country|
+|:-|:-|:-|:-|:-|
+|1|Google|https://www.google.com/|100|USA|
+|2|TaoBao|https://www.taobao.com/|13|CN|
+|3|WeiBo|https://www.weibo.com/|20|CN|
+|4|Facebook|https://www.facebook.com/|3|USA|
+|5|QQ APP|https://im.qq.com/|NULL|CN|
+|6|TaoBao APP|https://www.taobao.com/|NULL|CN|
+
 ## [UPDATE](https://docs.microsoft.com/zh-cn/sql/t-sql/queries/update-transact-sql?view=sql-server-ver15)
 
 UPDATE语句用于更新表中的记录。
@@ -678,6 +767,7 @@ WHERE some_column=some_value;
 
 - 示例
 
+“WebSites”表数据
 |id|name|url|alexa|country|
 |:-|:-|:-|:-|:-|
 |1|Google|https://www.google.com/|1|USA|
@@ -716,6 +806,7 @@ WHERE some_column=some_value;
 
 - 示例
 
+“WebSites”表数据
 |id|name|url|alexa|country|
 |:-|:-|:-|:-|:-|
 |1|Google|https://www.google.com/|1|USA|
@@ -746,7 +837,7 @@ DELETE FROM table_name;
 TRUNCATE FROM table_name;
 ```
 
-## [RELATIONAL](https://docs.microsoft.com/zh-cn/sql/t-sql/queries/from-transact-sql?view=sql-server-ver15)
+## [JOIN](https://docs.microsoft.com/zh-cn/sql/t-sql/queries/from-transact-sql?view=sql-server-ver15)
 
 JOIN用于把来自两个或者多个表的记录集合记录。
 
@@ -766,8 +857,310 @@ JOIN用于把来自两个或者多个表的记录集合记录。
 
 - FULL [OUTER] JOIN
 
-
+  指定在结果集中包括左表或右表中部满足链接条件的行，并将对应于另一个表的输出列设为NULL。这是对通常由INNER JOIN返回的所有行的补充。
 
 - CROSS JOIN
 
-### INNERJOIN
+  :::: warning
+  交叉联接查询中缺少`ON`子句。
+  ::::
+
+  指定两个表的叉积。返回相同的行。
+
+### INNER JOIN
+
+- 语法
+
+```sql
+SELECT column_name(s)
+FROM table1
+INNER JOIN table2
+ON table1.column_name=table2.column_name,...;
+```
+
+- 示例
+
+“WebSites”表数据
+|id|name|url|alexa|country|
+|:-|:-|:-|:-|:-|
+|1|Google|https://www.google.com/|1|USA|
+|2|TaoBao|https://www.taobao.com/|13|CN|
+|3|WeiBo|https://www.weibo.com/|20|CN|
+|4|Facebook|https://www.facebook.com/|3|USA|
+
+“Access_Log”表数据
+|id|siteid|count|latestdate|
+|:-|:-|:-|:-|
+|1|1|50|2015-01-01|
+|2|4|63|2016-01-01|
+|3|2|42|2017-01-01|
+
+下面语句的SQL语句将“WebSites”，“Access_Log”表内联接查询返回所有记录
+```sql
+SELECT WebSites.name,Access_Log.count,Access_Log.latestdate
+FROM WebSites
+INNER JOIN Access_Log
+ON WebSites.id=Access_Log.siteid
+ORDER BY Access_Log.Count;
+```
+输出结果为：
+|name|count|latestdate|
+|:-|:-|:-|
+|TaoBao|42|2017-01-01|
+|Google|50|2015-01-01|
+|Facebook|63|2016-01-01|
+
+### LEFT JOIN
+
+- 语法
+
+```sql
+SELECT column_name(s)
+FROM table1
+LEFT JOIN table2
+ON table1.column_name=table2.column_name,...;
+```
+
+- 示例
+
+“WebSites”表数据
+|id|name|url|alexa|country|
+|:-|:-|:-|:-|:-|
+|1|Google|https://www.google.com/|1|USA|
+|2|TaoBao|https://www.taobao.com/|13|CN|
+|3|WeiBo|https://www.weibo.com/|20|CN|
+|4|Facebook|https://www.facebook.com/|3|USA|
+
+“Access_Log”表数据
+|id|siteid|count|latestdate|
+|:-|:-|:-|:-|
+|1|1|50|2015-01-01|
+|2|4|63|2016-01-01|
+|3|2|42|2017-01-01|
+
+下面语句的SQL语句将“WebSites”，“Access_Log”表左联接查询返回所有记录
+```sql
+SELECT WebSites.name,Access_Log.count,Access_Log.latestdate
+FROM WebSites
+LEFT JOIN Access_Log
+ON WebSites.id=Access_Log.siteid
+ORDER BY Access_Log.Count desc;
+```
+输出结果为：
+|name|count|latestdate|
+|:-|:-|:-|
+|Facebook|63|2016-01-01|
+|Google|50|2015-01-01|
+|TaoBao|42|2017-01-01|
+|WeiBo|null|null|
+
+### RIGHT JOIN
+
+- 语法
+
+```sql
+SELECT column_name(s)
+FROM table1
+RIGHT JOIN table2
+ON table1.column_name=table2.column_name,...;
+```
+
+- 示例
+
+“WebSites”表数据
+|id|name|url|alexa|country|
+|:-|:-|:-|:-|:-|
+|1|Google|https://www.google.com/|1|USA|
+|2|TaoBao|https://www.taobao.com/|13|CN|
+|3|WeiBo|https://www.weibo.com/|20|CN|
+|4|Facebook|https://www.facebook.com/|3|USA|
+
+“Access_Log”表数据
+|id|siteid|count|latestdate|
+|:-|:-|:-|:-|
+|1|1|50|2015-01-01|
+|2|4|63|2016-01-01|
+|3|2|42|2017-01-01|
+
+下面语句的SQL语句将“WebSites”，“Access_Log”表右联接查询返回所有记录
+```sql
+SELECT WebSites.name,Access_Log.count,Access_Log.latestdate
+FROM WebSites
+RIGHT JOIN Access_Log
+ON WebSites.id=Access_Log.siteid
+ORDER BY Access_Log.Count desc;
+```
+输出结果为：
+|name|count|latestdate|
+|:-|:-|:-|
+|Facebook|63|2016-01-01|
+|Google|50|2015-01-01|
+|TaoBao|42|2017-01-01|
+
+### FULL JOIN
+
+- 语法
+
+```sql
+SELECT column_name(s)
+FROM table1
+FULL OUTER JOIN table2
+ON table1.column_name=table2.column_name,...;
+```
+
+- 示例
+
+“WebSites”表数据
+|id|name|url|alexa|country|
+|:-|:-|:-|:-|:-|
+|1|Google|https://www.google.com/|1|USA|
+|2|TaoBao|https://www.taobao.com/|13|CN|
+|3|WeiBo|https://www.weibo.com/|20|CN|
+|4|Facebook|https://www.facebook.com/|3|USA|
+
+“Access_Log”表数据
+|id|siteid|count|latestdate|
+|:-|:-|:-|:-|
+|1|1|50|2015-01-01|
+|2|4|63|2016-01-01|
+|3|2|42|2017-01-01|
+
+下面语句的SQL语句将“WebSites”，“Access_Log”表全联接查询返回所有记录
+```sql
+SELECT WebSites.name,Access_Log.count,Access_Log.latestdate
+FROM WebSites
+FULL OUTER JOIN Access_Log
+ON WebSites.id=Access_Log.siteid
+ORDER BY Access_Log.Count desc;
+```
+输出结果为：
+|name|count|latestdate|
+|:-|:-|:-|
+|Facebook|63|2016-01-01|
+|Google|50|2015-01-01|
+|TaoBao|42|2017-01-01|
+|WeiBo|null|null|
+
+### CROSS JOIN
+
+- 语法
+
+```sql
+SELECT column_name(s)
+FROM table1
+CROSS JOIN table2
+```
+
+- 示例
+
+“WebSites”表数据
+|id|name|url|alexa|country|
+|:-|:-|:-|:-|:-|
+|1|Google|https://www.google.com/|1|USA|
+|2|TaoBao|https://www.taobao.com/|13|CN|
+|3|WeiBo|https://www.weibo.com/|20|CN|
+|4|Facebook|https://www.facebook.com/|3|USA|
+
+“Access_Log”表数据
+|id|siteid|count|latestdate|
+|:-|:-|:-|:-|
+|1|1|50|2015-01-01|
+|2|4|63|2016-01-01|
+|3|2|42|2017-01-01|
+
+下面语句的SQL语句将“WebSites”，“Access_Log”表交叉联接查询返回所有记录
+```sql
+SELECT WebSites.name,Access_Log.count,Access_Log.latestdate
+FROM WebSites
+CROSS JOIN Access_Log
+ON WebSites.id=Access_Log.siteid
+ORDER BY Access_Log.Count desc;
+```
+输出结果为：
+|name|count|latestdate|
+|:-|:-|:-|
+|Google|63|2016-01-01|
+|Google|50|2015-01-01|
+|Google|42|2017-01-01|
+|TaoBao|63|2016-01-01|
+|TaoBao|50|2015-01-01|
+|TaoBao|42|2017-01-01|
+|WeiBo|63|2016-01-01|
+|WeiBo|50|2015-01-01|
+|WeiBo|42|2017-01-01|
+|Facebook|63|2016-01-01|
+|Facebook|50|2015-01-01|
+|Facebook|42|2017-01-01|
+
+## [UNION](https://docs.microsoft.com/zh-cn/sql/t-sql/language-elements/set-operators-union-transact-sql?view=sql-server-ver15)
+
+UNION操作符合并两个或多个SELECT语句的结果集
+
+::::warning
+UNION 内部的每个SELECT语句必须拥有相同数据的列。列也必须拥有相似的数据类型。同时，每个SELECT语句中的列的顺序必须相同
+::::
+
+- 语法
+
+:::: code-group
+::: code-group-item UNION
+```sql
+--结果集不重复
+SELECT column_name(s) FROM table1
+UNION
+SELECT column_name(s) FROM table2;
+```
+:::
+::: code-group-item UNION ALL
+```sql
+--结果集重复
+SELECT column_name(s) FROM table1
+UNION ALL
+SELECT column_name(s) FROM table2;
+```
+:::
+::::
+
+- 示例
+
+“WebSites”表数据
+|id|name|url|alexa|country|
+|:-|:-|:-|:-|:-|
+|1|Google|https://www.google.com/|1|USA|
+|2|TaoBao|https://www.taobao.com/|13|CN|
+|3|WeiBo|https://www.weibo.com/|20|CN|
+|4|Facebook|https://www.facebook.com/|3|USA|
+
+“Apps”表数据
+|id|app_name|url|country|
+|:-|:-|:-|:-|
+|1|QQ APP|https://im.qq.com/|CN|
+|2|TaoBao APP|https://www.taobao.com/|CN|
+
+下面语句的SQL语句将“WebSites”，“Apps”表返回“country”列不同值的所有记录。
+```sql
+SELECT country FROM WebSites
+UNION
+SELECT country FROM Apps
+```
+输出结果为：
+|country|
+|:-|
+|CN|
+|USA|
+
+下面语句的SQL语句将“WebSites”，“Apps”表返回“country”列所有记录。
+```sql
+SELECT country FROM WebSites
+UNION ALL
+SELECT country FROM Apps
+```
+输出结果为：
+|country|
+|:-|
+|USA|
+|CN|
+|USA|
+|CN|
+|CN|
+|CN|

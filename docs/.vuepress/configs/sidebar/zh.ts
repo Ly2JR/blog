@@ -57,6 +57,7 @@ export const zh:SidebarConfig={
             text:'Sql Server',
             children:[
                 '/zh/database/sqlserver/README.md',
+                '/zh/database/sqlserver/advance.md',
                 '/zh/database/sqlserver/sqlserver-sync-to-mysql.md',
                 '/zh/database/sqlserver/sqlserver-sync-to-oracle.md',
                 '/zh/database/sqlserver/tips.md',
