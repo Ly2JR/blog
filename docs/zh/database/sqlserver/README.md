@@ -63,7 +63,7 @@ SELECT * FROM table_name;
 |3|WeiBo|https://www.weibo.com/|20|CN|
 |4|Facebook|https://www.facebook.com/|3|USA|
 
-下面语句的SQL语句从“WebSites”表中选取“name”,"country"列
+下面的SQL语句从“WebSites”表中选取“name”,"country"列
 ```sql
 SELECT NAME,COUNTRY FROM WebSites;
 ```
@@ -95,7 +95,7 @@ SELECT DISTINCT column_name(s) FROM table_name;
 |3|WeiBo|https://www.weibo.com/|20|CN|
 |4|Facebook|https://www.facebook.com/|3|USA|
 
-下面语句的SQL语句从“WebSites”表的“country”列中选取唯一不同的值，也就是去掉“country”列重复值
+下面的SQL语句从“WebSites”表的“country”列中选取唯一不同的值，也就是去掉“country”列重复值
 ```sql
 SELECT DISTINCT COUNTRY FROM WebSites;
 ```
@@ -126,7 +126,7 @@ FROM table_name;
 |3|WeiBo|https://www.weibo.com/|20|CN|
 |4|Facebook|https://www.facebook.com/|3|USA|
 
-下面语句的SQL语句从“WebSites”表中前面百分之50的记录
+下面的SQL语句从“WebSites”表中前面百分之50的记录
 ```sql
 SELECT TOP 50 PERCENT * FROM WebSites;
 ```
@@ -136,7 +136,7 @@ SELECT TOP 50 PERCENT * FROM WebSites;
 |1|Google|https://www.google.com/|1|USA|
 |2|TaoBao|https://www.taobao.com/|13|CN|
 
-下面语句的SQL语句从“WebSites”表中前3条的记录
+下面的SQL语句从“WebSites”表中前3条的记录
 ```sql
 SELECT TOP 3 * FROM WebSites;
 ```
@@ -169,7 +169,7 @@ FROM table_name;
 |3|WeiBo|https://www.weibo.com/|20|CN|
 |4|Facebook|https://www.facebook.com/|3|USA|
 
-下面语句的SQL语句将“WebSites”表“country”为“CN”值的数据进行备份。
+下面的SQL语句将“WebSites”表“country”为“CN”值的数据进行备份。
 ```sql
 SELECT * 
 INTO WebSitesTemp 
@@ -214,7 +214,7 @@ FROM table_name as alias_name
 |3|WeiBo|https://www.weibo.com/|20|CN|
 |4|Facebook|https://www.facebook.com/|3|USA|
 
-下面语句的SQL语句从“WebSites”表中将"name"列名改为“n”,将"country"列名改为“c”并查询所有记录
+下面的SQL语句从“WebSites”表中将"name"列名改为“n”,将"country"列名改为“c”并查询所有记录
 
 ```sql
 SELECT name AS c,country AS c FROM WebSites;
@@ -265,7 +265,7 @@ SELECT column_name(s) FROM table_name WHERE column_name operator value;
 |3|WeiBo|https://www.weibo.com/|20|CN|
 |4|Facebook|https://www.facebook.com/|3|USA|
 
-下面语句的SQL语句从“WebSites”表中选取"country"列的值为“CN”的所有记录
+下面的SQL语句从“WebSites”表中选取"country"列的值为“CN”的所有记录
 ```sql
 SELECT * FROM WebSites WHERE country='CN';
 ```
@@ -293,7 +293,7 @@ AND & OR 运算符用于基于一个以上的条件对记录进行过滤。
 |3|WeiBo|https://www.weibo.com/|20|CN|
 |4|Facebook|https://www.facebook.com/|3|USA|
 
-下面语句的SQL语句从“WebSites”表中选取"country"列的值为“CN”且Alexa排名大于等于“20”的所有记录
+下面的SQL语句从“WebSites”表中选取"country"列的值为“CN”且Alexa排名大于等于“20”的所有记录
 ```sql
 SELECT * FROM WebSites WHERE country='CN' AND alexa>=20;
 ```
@@ -302,7 +302,7 @@ SELECT * FROM WebSites WHERE country='CN' AND alexa>=20;
 |:-|:-|:-|:-|:-|
 |3|WeiBo|https://www.weibo.com/|20|CN|
 
-下面语句的SQL语句从“WebSites”表中选取"country"列为“CN”或“USA”的所有记录
+下面的SQL语句从“WebSites”表中选取"country"列为“CN”或“USA”的所有记录
 ```sql
 SELECT * FROM WebSites WHERE country='CN' OR country='USA';
 ```
@@ -345,7 +345,7 @@ WHERE column_name in (value1,value2,...)
 |3|WeiBo|https://www.weibo.com/|20|CN|
 |4|Facebook|https://www.facebook.com/|3|USA|
 
-下面语句的SQL语句从“WebSites”表中选取“name”列值为“google”或"facebook"的所有记录
+下面的SQL语句从“WebSites”表中选取“name”列值为“google”或"facebook"的所有记录
 
 ```sql
 SELECT * FROM WebSites
@@ -384,7 +384,7 @@ WHERE column_name BETWEEN value1 AND value2;
 |3|WeiBo|https://www.weibo.com/|20|CN|
 |4|Facebook|https://www.facebook.com/|3|USA|
 
-下面语句的SQL语句从“WebSites”表中选取“alexa”列值在1和10之间的所有记录
+下面的SQL语句从“WebSites”表中选取“alexa”列值在1和10之间的所有记录
 
 ```sql
 SELECT * FROM WebSites
@@ -397,7 +397,7 @@ WHERE alexa BETWEEN 1 AND 10
 |1|Google|https://www.google.com/|1|USA|
 |4|Facebook|https://www.facebook.com/|3|USA|
 
-下面语句的SQL语句从“WebSites”表中选取“alexa”列值不在1和10之间的所有记录
+下面的SQL语句从“WebSites”表中选取“alexa”列值不在1和10之间的所有记录
 
 ```sql
 SELECT * FROM WebSites
@@ -410,7 +410,7 @@ WHERE alexa NOT BETWEEN 1 AND 10
 |2|TaoBao|https://www.taobao.com/|13|CN|
 |3|WeiBo|https://www.weibo.com/|20|CN|
 
-下面语句的SQL语句从“WebSites”表中选取“alexa”列值在1和20之间但”country”列值不为“USA”的所有记录
+下面的SQL语句从“WebSites”表中选取“alexa”列值在1和20之间但”country”列值不为“USA”的所有记录
 
 ```sql
 SELECT * FROM WebSites
@@ -424,7 +424,7 @@ AND country not in ('USA')
 |2|TaoBao|https://www.taobao.com/|13|CN|
 |3|WeiBo|https://www.weibo.com/|20|CN|
 
-下面语句的SQL语句从“WebSites”表中选取“NAME”列值在字母“A”和“H”之间的所有记录
+下面的SQL语句从“WebSites”表中选取“NAME”列值在字母“A”和“H”之间的所有记录
 
 ```sql
 SELECT * FROM WebSites
@@ -437,7 +437,7 @@ WHERE name BETWEEN 'A' AND 'H'
 |1|Google|https://www.google.com/|1|USA|
 |4|Facebook|https://www.facebook.com/|3|USA|
 
-下面语句的SQL语句从“WebSites”表中选取“NAME”列值不在字母“A”和“H”之间的所有记录
+下面的SQL语句从“WebSites”表中选取“NAME”列值不在字母“A”和“H”之间的所有记录
 
 ```sql
 SELECT * FROM WebSites
@@ -472,7 +472,7 @@ WHERE column_name LIKE pattern;
 |3|WeiBo|https://www.weibo.com/|20|CN|
 |4|Facebook|https://www.facebook.com/|3|USA|
 
-下面语句的SQL语句从“WebSites”表中选取“name”列值以字母“G”开头的所有记录
+下面的SQL语句从“WebSites”表中选取“name”列值以字母“G”开头的所有记录
 
 ```sql
 SELECT * FROM WebSites
@@ -484,7 +484,7 @@ WHERE name LIKE 'G%'
 |:-|:-|:-|:-|:-|
 |1|Google|https://www.google.com/|1|USA|
 
-下面语句的SQL语句从“WebSites”表中选取“name”列值以字母“k”结尾的所有记录
+下面的SQL语句从“WebSites”表中选取“name”列值以字母“k”结尾的所有记录
 ```sql
 SELECT * FROM WebSites
 WHERE name LIKE '%k'
@@ -494,7 +494,7 @@ WHERE name LIKE '%k'
 |:-|:-|:-|:-|:-|
 |54|Facebook|https://www.facebook.com/|3|USA|
 
-下面语句的SQL语句从“WebSites”表中选取“name”列值包含字母“oo”的所有记录
+下面的SQL语句从“WebSites”表中选取“name”列值包含字母“oo”的所有记录
 ```sql
 SELECT * FROM WebSites
 WHERE name LIKE '%oo%'
@@ -505,7 +505,7 @@ WHERE name LIKE '%oo%'
 |1|Google|https://www.google.com/|1|USA|
 |4|Facebook|https://www.facebook.com/|3|USA|
 
-下面语句的SQL语句从“WebSites”表中选取“name”列值不包含字母“oo”的所有记录
+下面的SQL语句从“WebSites”表中选取“name”列值不包含字母“oo”的所有记录
 ```sql
 SELECT * FROM WebSites
 WHERE name NOT LIKE '%oo%'
@@ -538,7 +538,7 @@ WHERE name NOT LIKE '%oo%'
 |3|WeiBo|https://www.weibo.com/|20|CN|
 |4|Facebook|https://www.facebook.com/|3|USA|
 
-下面语句的SQL语句从“WebSites”表中选取“name”列值以一个任意字符开始，然后是“oogle”的所有记录
+下面的SQL语句从“WebSites”表中选取“name”列值以一个任意字符开始，然后是“oogle”的所有记录
 
 ```sql
 SELECT * FROM WebSites
@@ -550,7 +550,7 @@ WHERE name LIKE '_oogle'
 |:-|:-|:-|:-|:-|
 |1|Google|https://www.google.com/|1|USA|
 
-下面语句的SQL语句从“WebSites”表中选取“name”列值以字母“G”开始，然后是一个任意字符，然后是“o”，然后是一个任意字符，然后是“le”的所有记录
+下面的SQL语句从“WebSites”表中选取“name”列值以字母“G”开始，然后是一个任意字符，然后是“o”，然后是一个任意字符，然后是“le”的所有记录
 ```sql
 SELECT * FROM WebSites
 WHERE name LIKE 'G_o_le'
@@ -560,7 +560,7 @@ WHERE name LIKE 'G_o_le'
 |:-|:-|:-|:-|:-|
 |1|Google|https://www.google.com/|1|USA|
 
-下面语句的SQL语句从“WebSites”表中选取“name”列值以字母”A“到字母”H“开始的所有记录
+下面的SQL语句从“WebSites”表中选取“name”列值以字母”A“到字母”H“开始的所有记录
 ```sql
 SELECT * FROM WebSites
 WHERE name LIKE '[A-H]%'
@@ -571,7 +571,7 @@ WHERE name LIKE '[A-H]%'
 |1|Google|https://www.google.com/|1|USA|
 |4|Facebook|https://www.facebook.com/|3|USA|
 
-下面语句的SQL语句从“WebSites”表中选取“name”列值不以字母”A“到字母”H“开始的所有记录
+下面的SQL语句从“WebSites”表中选取“name”列值不以字母”A“到字母”H“开始的所有记录
 ```sql
 SELECT * FROM WebSites
 WHERE name LIKE '[^A-H]%'
@@ -607,7 +607,7 @@ ORDER BY column_name,column_name ASC|DESC;
 |3|WeiBo|https://www.weibo.com/|20|CN|
 |4|Facebook|https://www.facebook.com/|3|USA|
 
-下面语句的SQL语句从“WebSites”表中选取所有记录，并按照“alexa”列排序
+下面的SQL语句从“WebSites”表中选取所有记录，并按照“alexa”列排序
 ```sql
 SELECT * FROM WebSites ORDER BY alexa;
 ```
@@ -619,7 +619,7 @@ SELECT * FROM WebSites ORDER BY alexa;
 |2|TaoBao|https://www.taobao.com/|13|CN|
 |3|WeiBo|https://www.weibo.com/|20|CN|
 
-下面语句的SQL语句从“WebSites”表中选取所有记录，并按照“alexa”列降序排序
+下面的SQL语句从“WebSites”表中选取所有记录，并按照“alexa”列降序排序
 ```sql
 SELECT * FROM WebSites ORDER BY alexa DESC;
 ```
@@ -631,7 +631,7 @@ SELECT * FROM WebSites ORDER BY alexa DESC;
 |4|Facebook|https://www.facebook.com/|3|USA|
 |1|Google|https://www.google.com/|1|USA|
 
-下面语句的SQL语句从“WebSites”表中选取所有记录，并按照“country”和“alexa”列排序
+下面的SQL语句从“WebSites”表中选取所有记录，并按照“country”和“alexa”列排序
 ```sql
 SELECT * FROM WebSites ORDER BY country,alexa;
 ```
@@ -693,7 +693,7 @@ VALUES(value1,value2,value3,...);
 |3|WeiBo|https://www.weibo.com/|20|CN|
 |4|Facebook|https://www.facebook.com/|3|USA|
 
-下面语句的SQL语句向“WebSites”表中插入一条新记录
+下面的SQL语句向“WebSites”表中插入一条新记录
 ```sql
 INSERT INTO Websites(name,url,alexa,country)
 VALUES('BaiDu','https://www.baidu.com/','40','CN');
@@ -734,7 +734,7 @@ SELECT column_names FROM table_name2;
 |1|QQ APP|https://im.qq.com/|CN|
 |2|TaoBao APP|https://www.taobao.com/|CN|
 
-下面语句的SQL语句将“Apps”表结果插入到“WebSites”表中。
+下面的SQL语句将“Apps”表结果插入到“WebSites”表中。
 ```sql
 INSERT INTO WebSites(name,url,country)
 SELECT name,url,country FROM Apps;
@@ -775,7 +775,7 @@ WHERE some_column=some_value;
 |3|WeiBo|https://www.weibo.com/|20|CN|
 |4|Facebook|https://www.facebook.com/|3|USA|
 
-下面语句的SQL语句将“WebSites”表中当“name”列为“Google”时，把“alexa”排名更新为100，“country”更新为“USA”
+下面的SQL语句将“WebSites”表中当“name”列为“Google”时，把“alexa”排名更新为100，“country”更新为“USA”
 ```sql
 UPDATE Websites
 SET alexa='100',country='USA'
@@ -814,7 +814,7 @@ WHERE some_column=some_value;
 |3|WeiBo|https://www.weibo.com/|20|CN|
 |4|Facebook|https://www.facebook.com/|3|USA|
 
-下面语句的SQL语句将“WebSites”表中当“name”列值为“facebook”时的记录删除
+下面的SQL语句将“WebSites”表中当“name”列值为“facebook”时的记录删除
 ```sql
 DELETE FROM Websites
 WHERE name='facebook';
@@ -826,13 +826,13 @@ WHERE name='facebook';
 |2|TaoBao|https://www.taobao.com/|13|CN|
 |3|WeiBo|https://www.weibo.com/|20|CN|
 
-下面语句的SQL语句在不删除表的情况下，删除“WebSites”表中所有的记录，意味着表结构、属性、索引将保持不变
+下面的SQL语句在不删除表的情况下，删除“WebSites”表中所有的记录，意味着表结构、属性、索引将保持不变
 
 ```sql
 DELETE FROM table_name;
 ```
 
-下面语句的SQL语句在不删除表的情况下，快速删除“WebSites”表中所有的记录，意味着表结构、属性、索引将保持不变
+下面的SQL语句在不删除表的情况下，快速删除“WebSites”表中所有的记录，意味着表结构、属性、索引将保持不变
 ```sql
 TRUNCATE FROM table_name;
 ```
@@ -895,7 +895,7 @@ ON table1.column_name=table2.column_name,...;
 |2|4|63|2016-01-01|
 |3|2|42|2017-01-01|
 
-下面语句的SQL语句将“WebSites”，“Access_Log”表内联接查询返回所有记录
+下面的SQL语句将“WebSites”，“Access_Log”表内联接查询返回所有记录
 ```sql
 SELECT WebSites.name,Access_Log.count,Access_Log.latestdate
 FROM WebSites
@@ -938,7 +938,7 @@ ON table1.column_name=table2.column_name,...;
 |2|4|63|2016-01-01|
 |3|2|42|2017-01-01|
 
-下面语句的SQL语句将“WebSites”，“Access_Log”表左联接查询返回所有记录
+下面的SQL语句将“WebSites”，“Access_Log”表左联接查询返回所有记录
 ```sql
 SELECT WebSites.name,Access_Log.count,Access_Log.latestdate
 FROM WebSites
@@ -982,7 +982,7 @@ ON table1.column_name=table2.column_name,...;
 |2|4|63|2016-01-01|
 |3|2|42|2017-01-01|
 
-下面语句的SQL语句将“WebSites”，“Access_Log”表右联接查询返回所有记录
+下面的SQL语句将“WebSites”，“Access_Log”表右联接查询返回所有记录
 ```sql
 SELECT WebSites.name,Access_Log.count,Access_Log.latestdate
 FROM WebSites
@@ -1025,7 +1025,7 @@ ON table1.column_name=table2.column_name,...;
 |2|4|63|2016-01-01|
 |3|2|42|2017-01-01|
 
-下面语句的SQL语句将“WebSites”，“Access_Log”表全联接查询返回所有记录
+下面的SQL语句将“WebSites”，“Access_Log”表全联接查询返回所有记录
 ```sql
 SELECT WebSites.name,Access_Log.count,Access_Log.latestdate
 FROM WebSites
@@ -1068,7 +1068,7 @@ CROSS JOIN table2
 |2|4|63|2016-01-01|
 |3|2|42|2017-01-01|
 
-下面语句的SQL语句将“WebSites”，“Access_Log”表交叉联接查询返回所有记录
+下面的SQL语句将“WebSites”，“Access_Log”表交叉联接查询返回所有记录
 ```sql
 SELECT WebSites.name,Access_Log.count,Access_Log.latestdate
 FROM WebSites
@@ -1137,7 +1137,7 @@ SELECT column_name(s) FROM table2;
 |1|QQ APP|https://im.qq.com/|CN|
 |2|TaoBao APP|https://www.taobao.com/|CN|
 
-下面语句的SQL语句将“WebSites”，“Apps”表返回“country”列不同值的所有记录。
+下面的SQL语句将“WebSites”，“Apps”表返回“country”列不同值的所有记录。
 ```sql
 SELECT country FROM WebSites
 UNION
@@ -1149,7 +1149,7 @@ SELECT country FROM Apps
 |CN|
 |USA|
 
-下面语句的SQL语句将“WebSites”，“Apps”表返回“country”列所有记录。
+下面的SQL语句将“WebSites”，“Apps”表返回“country”列所有记录。
 ```sql
 SELECT country FROM WebSites
 UNION ALL
