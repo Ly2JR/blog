@@ -61,6 +61,7 @@ export const zh:SidebarConfig={
                 '/zh/database/sqlserver/sqlserver-sync-to-mysql.md',
                 '/zh/database/sqlserver/sqlserver-sync-to-oracle.md',
                 '/zh/database/sqlserver/tips.md',
+                '/zh/database/sqlserver/reference.md',
             ]
         }
     ],
