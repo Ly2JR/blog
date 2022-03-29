@@ -22,7 +22,7 @@ export const zh:NavbarConfig=[
         text: '编程',
         children: [
           {
-            text: '.NET',
+            text: '后端',
             link:'/zh/donet/design-pattern.md'
           },
           {
@@ -39,7 +39,7 @@ export const zh:NavbarConfig=[
             }]
           },
           {
-            text: 'Web',
+            text: '前端',
             children:[{
               text:'Vue',
               link:'/zh/web/vue3/README.md',
@@ -47,17 +47,17 @@ export const zh:NavbarConfig=[
               text:'Blazor',
               link:'https://dotnet.microsoft.com/en-us/learn/aspnet/blazor-tutorial/intro',
             }]
+          },
+          {
+            text:'数据库',
+            children:[
+               {
+                 text:'SQL Server',
+                 link:'/zh/database/sqlserver/README.md'
+               }
+            ]
           }
         ],
-      },
-      {
-        text:'数据库',
-        children:[
-           {
-             text:'Sql Server',
-             link:'/zh/database/sqlserver/README.md'
-           }
-        ]
       },
       {
         text: '杂货铺',

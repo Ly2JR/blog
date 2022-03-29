@@ -53,17 +53,17 @@ export const en:NavbarConfig=[
               text:'Blazor',
               link:'https://dotnet.microsoft.com/en-us/learn/aspnet/blazor-tutorial/intro',
             }]
+          },
+          {
+            text:'DataBase',
+            children:[
+              {
+                  text:'SQL Server',
+                  link:'/'            
+              }
+            ]
           }
         ],
-      },
-      {
-        text:'DataBase',
-        children:[
-          {
-              text:'Sql Server',
-              link:'/'            
-          }
-        ]
       },
       {
         text: 'Variety Store',
