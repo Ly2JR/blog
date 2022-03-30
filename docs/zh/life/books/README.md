@@ -38,13 +38,13 @@
 <p>
  <ruby>
  近 水 知 鱼 性 , 近 山 识 鸟 音 。
- <rp>(</rp><rt> </rt><rp>)</rp>
+ <rp>(</rp><rt>  jìn  shuǐ  zhī  yú  xìng   jìn  shān  shí  niǎo  yīn</rt><rp>)</rp>
  </ruby>
 </p>
 <p>
  <ruby>
  易 涨 易 退 山 溪 水 , 易 反 易 覆 小 人 心 。
- <rp>(</rp><rt> jìn  shuǐ  zhī  yú  xìng   jìn  shān  shí  niǎo  yīn</rt><rp>)</rp>
+ <rp>(</rp><rt>  yì  zhǎng  yì  tuì  shān  xī  shuǐ  , yì  fǎn  yì  fù  xiǎo  rén  xīn</rt><rp>)</rp>
  </ruby>
 </p>
 <p>
@@ -62,13 +62,13 @@
 <p>
  <ruby>
  有 意 栽 花 花 不 发 , 无 心 插 柳 柳 成 阴 。
- <rp>(</rp><rt> </rt><rp>)</rp>
+ <rp>(</rp><rt> yǒu  yì  zāi  huā  huā  bú  fā wú  xīn  chā  liǔ  liǔ  chéng  yīn</rt><rp>)</rp>
  </ruby>
 </p>
 <p>
  <ruby>
  画 虎 画 皮 难 画 骨 , 知 人 知 面 不 知 心 。
- <rp>(</rp><rt> yǒu  yì  zāi  huā  huā  bú  fā wú  xīn  chā  liǔ  liǔ  chéng  yīn</rt><rp>)</rp>
+ <rp>(</rp><rt>  huà  hǔ  huà  pí  nán  huà  gǔ  , zhī  rén  zhī  miàn  bú  zhī  xīn</rt><rp>)</rp>
  </ruby>
 </p>
 <p>
@@ -140,7 +140,7 @@
 <p>
  <ruby>
  相 逢 不 饮 空 归 去 , 洞 口 桃 花 也 笑 人 。
- <rp>(</rp><rt> </rt><rp>)</rp>
+ <rp>(</rp><rt> xiàng  féng  bú  yǐn  kōng  guī  qù  , dòng  kǒu  táo  huā  yě  xiào  rén </rt><rp>)</rp>
  </ruby>
 </p>
 <p>
