@@ -904,6 +904,10 @@ class DecoratorPattern{
   }
 
   static void Main(string[] args){
+    var thirdPartyOne=new ThirdParty();
+    var decorator1=new Decorator1(thirdPartyOne);
+    var decorator2=new Decorator2(decorator1);
+    Console.WriteLine(decorator2.SayMsg());
   }
 }
 ```
