@@ -15,7 +15,13 @@ export const zh:SidebarConfig={
             children:[
                 '/zh/life/books/README.md',
                 '/zh/life/books/must-read-books.md',
+            ]
+        },{
+            text:'概率论与数理统计(二)',
+            children:[
+                '/zh/life/books/self-study/probability-and-statistics/basic-formula.md',
                 '/zh/life/books/self-study/probability-and-statistics/README.md',
+                '/zh/life/books/self-study/probability-and-statistics/summary.md'
             ]
         }
     ],
