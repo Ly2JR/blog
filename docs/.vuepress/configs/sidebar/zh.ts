@@ -27,7 +27,7 @@ export const zh:SidebarConfig={
     ],
     '/zh/life/music':[
         {
-            text:'音乐',
+            text:'品味生活，聆听音乐',
             children:[
                 '/zh/life/music/README.md',
             ]
@@ -98,14 +98,100 @@ export const zh:SidebarConfig={
             text:'用友U8+',
             children:[
                 '/zh/varietystore/erp/yonyou/README.md',
-                '/zh/varietystore/erp/yonyou/archives/README.md',
-                '/zh/varietystore/erp/yonyou/financial/README.md',
+            ]
+        },{
+            text:'基础档案',
+            children:[
+                '/zh/varietystore/erp/yonyou/archives/aa_bank.md',
+                '/zh/varietystore/erp/yonyou/archives/assembly.md',
+                '/zh/varietystore/erp/yonyou/archives/balance-type.md',
+                '/zh/varietystore/erp/yonyou/archives/bank-account.md',
+                '/zh/varietystore/erp/yonyou/archives/bank.md',
+                '/zh/varietystore/erp/yonyou/archives/batch-property.md',
+                '/zh/varietystore/erp/yonyou/archives/capital-asset-types.md',
+                '/zh/varietystore/erp/yonyou/archives/capital-assets.md',
+                '/zh/varietystore/erp/yonyou/archives/code-balance.md',
+                '/zh/varietystore/erp/yonyou/archives/code.md',
+                '/zh/varietystore/erp/yonyou/archives/currency.md',
+                '/zh/varietystore/erp/yonyou/archives/customer-class.md',
+                '/zh/varietystore/erp/yonyou/archives/customer-inventory.md',
+                '/zh/varietystore/erp/yonyou/archives/customer-linker.md',
+                '/zh/varietystore/erp/yonyou/archives/customer.md',
+                '/zh/varietystore/erp/yonyou/archives/department.md',
+                '/zh/varietystore/erp/yonyou/archives/digest.md',
+                '/zh/varietystore/erp/yonyou/archives/district-class.md',
+                '/zh/varietystore/erp/yonyou/archives/dsign.md',
+                '/zh/varietystore/erp/yonyou/archives/duty-level.md',
+                '/zh/varietystore/erp/yonyou/archives/duty-type.md',
+                '/zh/varietystore/erp/yonyou/archives/duty.md',
+                '/zh/varietystore/erp/yonyou/archives/expense-item.md',
+                '/zh/varietystore/erp/yonyou/archives/expitem-class.md',
+                '/zh/varietystore/erp/yonyou/archives/inventory-class.md',
+                '/zh/varietystore/erp/yonyou/archives/inventory-free.md',
+                '/zh/varietystore/erp/yonyou/archives/inventory-position.md',
+                '/zh/varietystore/erp/yonyou/archives/inventory.md',
+                '/zh/varietystore/erp/yonyou/archives/job-grade-set.md',
+                '/zh/varietystore/erp/yonyou/archives/job-type.md',
+                '/zh/varietystore/erp/yonyou/archives/job.md',
+                '/zh/varietystore/erp/yonyou/archives/pay-condition.md',
+                '/zh/varietystore/erp/yonyou/archives/person-type.md',
+                '/zh/varietystore/erp/yonyou/archives/person.md',
+                '/zh/varietystore/erp/yonyou/archives/position.md',
+                '/zh/varietystore/erp/yonyou/archives/purchase-type.md',
+                '/zh/varietystore/erp/yonyou/archives/reason.md',
+                '/zh/varietystore/erp/yonyou/archives/receive-send-type.md',
+                '/zh/varietystore/erp/yonyou/archives/requirement-class.md',
+                '/zh/varietystore/erp/yonyou/archives/sale-type.md',
+                '/zh/varietystore/erp/yonyou/archives/shipping-choice.md',
+                '/zh/varietystore/erp/yonyou/archives/unit-account.md',
+                '/zh/varietystore/erp/yonyou/archives/unit-class.md',
+                '/zh/varietystore/erp/yonyou/archives/unit-doc.md',
+                '/zh/varietystore/erp/yonyou/archives/unit-group.md',
+                '/zh/varietystore/erp/yonyou/archives/unit.md',
+                '/zh/varietystore/erp/yonyou/archives/vendor-class.md',
+                '/zh/varietystore/erp/yonyou/archives/vendor-inventory.md',
+                '/zh/varietystore/erp/yonyou/archives/vendor.md',
+                '/zh/varietystore/erp/yonyou/archives/vouch-rd.md',
+                '/zh/varietystore/erp/yonyou/archives/warehouse.md',
+            ]
+        },{
+            text:'财务模块',
+            children:[
+                '/zh/varietystore/erp/yonyou/financial/accept.md',
+                '/zh/varietystore/erp/yonyou/financial/capital-vouchers.md',
+                '/zh/varietystore/erp/yonyou/financial/ought-pay.md',
+                '/zh/varietystore/erp/yonyou/financial/ought-receive.md',
+                '/zh/varietystore/erp/yonyou/financial/voucher.md',
+            ]
+        },{
+            text:'门户',
+            children:[
                 '/zh/varietystore/erp/yonyou/portal/README.md',
+            ]
+        },{
+            text:'按钮',
+            children:[
                 '/zh/varietystore/erp/yonyou/buttons/README.md',
+            ]
+        },{
+            text:'业务单据',
+            children:[
                 '/zh/varietystore/erp/yonyou/vouchers/README.md',
+            ]
+        },{
+            text:'报表',
+            children:[
                 '/zh/varietystore/erp/yonyou/reports/README.md',
+            ]
+        },{
+            text:'定时与预警',
+            children:[
                 '/zh/varietystore/erp/yonyou/times/README.md',
                 '/zh/varietystore/erp/yonyou/alarms/README.md',
+            ]
+        },{
+            text:'打包',
+            children:[
                 '/zh/varietystore/erp/yonyou/package/README.md',
             ]
         }
