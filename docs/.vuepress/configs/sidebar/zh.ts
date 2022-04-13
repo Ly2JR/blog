@@ -33,20 +33,41 @@ export const zh:SidebarConfig={
             ]
         }
     ],
-    '/zh/donet/':[
+    '/zh/dotnet/':[
         {
             text:'Design Pattern',
             children:[
-                '/zh/donet/design-pattern.md',
+                '/zh/dotnet/design-pattern.md',
             ],
         },
         {
             text:'ABP.vNext',
             children:[
-                '/zh/donet/abp.vnext/README.md',
-                '/zh/donet/abp.vnext/data-dictionary.md',
+                '/zh/dotnet/abp.vnext/README.md',
+                '/zh/dotnet/abp.vnext/data-dictionary.md',
             ],
-        }
+        },
+    ],
+    '/zh/dotnet/wpf':[
+        {
+            text:'WPF',
+            children:[
+                '/zh/dotnet/wpf/README.md',
+                '/zh/dotnet/wpf/download.md'
+            ],
+        },
+        {
+            text:'Prism',
+            children:[
+                '/zh/dotnet/wpf/prism/README.md',
+            ],
+        },
+        {
+            text:'Material Design In Xaml',
+            children:[
+                '/zh/dotnet/wpf/materialdesigninxaml/README.md',
+            ],
+        },
     ],
     '/zh/jquery/':[
         {

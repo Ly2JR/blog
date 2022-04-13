@@ -23,35 +23,20 @@ export const en:NavbarConfig=[
         children: [
           {
             text: '.NET',
-            children:[{
-              text:'ABP',
-              link:'https://www.abp.io/'
-            },{
-              text:'WPF',
-              link:'https://docs.microsoft.com/zh-cn/dotnet/desktop/wpf/getting-started/?view=netframeworkdesktop-4.8'
-            }]
+            link:'/zh/dotnet/design-pattern.md'
           },
           {
-            text: 'Mobile',
+            text: 'Client Server',
             children:[{
-              text:'kotlin',
-              link:'https://kotlinlang.org/'
-            },{
-              text:'uni-app',
-              link:'https://uniapp.dcloud.io/'
-            },{
-              text:'MAUI',
-              link:'https://github.com/dotnet/maui'
+              text:'WPF',
+              link:'/zh/dotnet/wpf/README.md',
             }]
           },
           {
             text: 'Web',
             children:[{
               text:'Vue',
-              link:'https://cn.vuejs.org/',
-            },{
-              text:'Blazor',
-              link:'https://dotnet.microsoft.com/en-us/learn/aspnet/blazor-tutorial/intro',
+              link:'/zh/web/vue3/README.md',
             }]
           },
           {
@@ -59,7 +44,7 @@ export const en:NavbarConfig=[
             children:[
               {
                   text:'SQL Server',
-                  link:'/'            
+                  link:'/zh/database/sqlserver/README.md'            
               }
             ]
           }
@@ -77,7 +62,7 @@ export const en:NavbarConfig=[
               },
               {
                 text:'YARN',
-                link:'https://yarnpkg.com/'
+                link:'/zh/varietystore/cli/yarn/README.md'
               }
             ]
           },
@@ -113,7 +98,7 @@ export const en:NavbarConfig=[
             text: 'Ladder',
             children:[{
               text:'tiyunzong',
-              link:'/varietystore/ladder/README.md'
+              link:'/zh/varietystore/ladder/README.md'
             }]
           }
         ],

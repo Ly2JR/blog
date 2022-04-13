@@ -22,30 +22,23 @@ export const zh:NavbarConfig=[
         text: '编程',
         children: [
           {
-            text: '后端',
-            link:'/zh/donet/design-pattern.md'
+            text: '.NET',
+            link:'/zh/dotnet/design-pattern.md'
           },
           {
-            text: '移动端',
-            children:[{
-              text:'kotlin',
-              link:'https://kotlinlang.org/'
-            },{
-              text:'uni-app',
-              link:'https://uniapp.dcloud.io/'
-            },{
-              text:'MAUI',
-              link:'https://github.com/dotnet/maui'
-            }]
+            text:'客户端',
+            children:[
+              {
+                text:'WPF',
+                link:'/zh/dotnet/wpf/README.md'
+              }
+            ]
           },
           {
-            text: '前端',
+            text: 'Web端',
             children:[{
               text:'Vue',
               link:'/zh/web/vue3/README.md',
-            },{
-              text:'Blazor',
-              link:'https://dotnet.microsoft.com/en-us/learn/aspnet/blazor-tutorial/intro',
             }]
           },
           {
