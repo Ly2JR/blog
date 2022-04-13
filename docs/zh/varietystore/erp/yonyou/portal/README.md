@@ -1,17 +1,21 @@
-# 门户
+# 门户开发
 
-## 单点登录
+- 单点登录
 
-[传送门](/images/erp/portal/portal1.gif)
+::: details 查看演示
+[单点登录](/images/erp/portal/portal1.gif)
+:::
 
-## 客开集成
+- 客开集成
 
-[传送门](/images/erp/portal/portal2.png)
+::: details 查看演示
+[菜单](/images/erp/portal/portal2.png)
 
-[传送门](/images/erp/portal/portal2auth.png)
+[权限](/images/erp/portal/portal2auth.png)
+:::
 
-## 登录开发
+- 登录开发
 
-[传送门](/images/erp/portal/portal3.png)
-
-[传送门](/images/erp/portal/portal3.gif)
+::: details 查看演示
+[登录](/images/erp/portal/portal3.gif)
+:::

@@ -164,7 +164,7 @@ export const zh:SidebarConfig={
                 '/zh/varietystore/erp/yonyou/financial/voucher.md',
             ]
         },{
-            text:'门户',
+            text:'门户集成',
             children:[
                 '/zh/varietystore/erp/yonyou/portal/README.md',
             ]
