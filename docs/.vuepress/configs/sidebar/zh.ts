@@ -21,7 +21,8 @@ export const zh:SidebarConfig={
             children:[
                 '/zh/life/books/self-study/probability-and-statistics/basic-formula.md',
                 '/zh/life/books/self-study/probability-and-statistics/README.md',
-                '/zh/life/books/self-study/probability-and-statistics/summary.md'
+                '/zh/life/books/self-study/probability-and-statistics/course1.md',
+                '/zh/life/books/self-study/probability-and-statistics/course2.md'
             ]
         }
     ],
