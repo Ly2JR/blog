@@ -28,7 +28,9 @@ $\color{red}{【分析:】}$
 
 (2) $P(B)=\frac{C_3^1}{C_9^1}$
 
-定义:设A、B是任何两个事件，$P(A)>0$，则称$\frac{P(AB)}{P(A)}$为A发生的条件下，B发生的条件概率，记作
+**定义**
+
+设A、B是任何两个事件，$P(A)>0$，则称$\frac{P(AB)}{P(A)}$为A发生的条件下，B发生的条件概率，记作
 
 $$P(B|A)=\frac{P(AB)}{P(A)}$$
 
@@ -64,7 +66,7 @@ $A_1$所含基本事件数=4*3+4*2=20
 
 则$P(A_2|A_1)=\frac{P(A_2 A_1)}{P(A_1)}=\frac{12}{20}=\frac{3}{5}$
 
-乘法公式
+**乘法公式**
 
 定理:设$P(A)>0$则$P(AB)=P(A)P(B|A)$.
 
@@ -73,3 +75,37 @@ $A_1$所含基本事件数=4*3+4*2=20
 多个乘积情形  设$P(A_1 A_2\cdots A_n)>0$,则
 
 $P(A_1 A_2\cdots A_n)=P(A_1 A_2\cdots A_{n-1})P(A_n|A_1 \cdots A_{n-1})=P(A_1) P(A_2|A_1)\cdots P(A_{n-1}|A_1\cdots A_{n-2})P(A_n|A_1\cdots A_{n-1})$
+
+$\color{blue}{【题型:】}$
+
+设袋中有10个考签，其中4个难签，按甲、乙、丙先后顺序抽取，求甲乙丙都抽到难签的概率。
+
+$\color{red}{【答案:】0.03}$ 
+
+$\color{red}{【解析:】}$
+
+解:设A、B、C分别表示甲乙丙抽到难签，依题意，
+
+$P(A)=\frac{C_4^1}{C_{10}^1}=\frac{4}{10}$,$P(B|A)=\frac{C_3^1}{C_9^1}=\frac{3}{9}$,$P(C|AB)=\frac{C_2^1}{C_{8}^1}=\frac{2}{8}$
+
+$P(ABC)=P(A)P(B|A)P(C|AB)=\frac{4}{10}*\frac{3}{9}*\frac{2}{8}=0.033$
+
+甲乙丙都抽到难签的概率为0.033.
+
+$\color{blue}{【题型:】}$
+
+设袋中装有r只红球，t只白球，每次从袋中随机取球一只，观察其颜色后放回，并放入$\alpha$个同色球，如此连续取球三次，试求第一、二次取红球且第三次取白球的概率。
+
+$\color{red}{【答案:】} \frac{t}{r+t+2\alpha}*\frac{r+\alpha}{r+t+\alpha}*\frac{r}{r+t}$  
+
+$\color{red}{【解析:】}$
+
+解:设$A_i(i=1,2,3)$分别表示第$i$次取红球，则
+
+$P(A_1)=\frac{C_r^1}{C_{r+t}^1}=\frac{r}{r+t}$
+
+$P(A_2|A_1)=\frac{C_{r+\alpha}^1}{C_{r+t+\alpha}^1}=\frac{r+\alpha}{r+t+\alpha}$
+
+$P(\overline{A_3}|A_1 A_2)=\frac{C_t^1}{C_{r+t+2\alpha}^1}=\frac{t}{r+t+2\alpha}$
+
+$P(A_1 A_2 \overline(A_3))=P(A_1)P(A_2|A_1)P(\overline(A_3)|A_1 A_2)=\frac{t}{r+t+2\alpha}*\frac{r+\alpha}{r+t+\alpha}*\frac{r}{r+t}$
