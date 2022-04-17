@@ -4,6 +4,7 @@ node_modules
 #images
 
 docs/.vuepress/public/备案图标.png
+docs/.vuepress/public/images/
 
 #VuePress files
 docs/.vuepress/.temp/
