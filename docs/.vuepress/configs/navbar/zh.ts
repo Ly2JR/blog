@@ -54,7 +54,15 @@ export const zh:NavbarConfig=[
       },
       {
         text: '杂货铺',
-        children: [
+        children: [ {
+          text:'MarkDown',
+          children:[
+            {
+              text:'Latex',
+              link:'/zh/varietystore/markdown/latex/README.md'
+            }
+          ]
+        },
           {
             text: 'CLI',
             children:[

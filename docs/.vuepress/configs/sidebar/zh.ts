@@ -1,89 +1,92 @@
-import type {SidebarConfig} from '@vuepress/theme-default'
+import type { SidebarConfig } from '@vuepress/theme-default'
 
-export const zh:SidebarConfig={
-    '/zh/guide/':[
+export const zh: SidebarConfig = {
+    '/zh/guide/': [
         {
-            text:'指南',
-            children:[
+            text: '指南',
+            children: [
                 '/zh/guide/README.md',
             ]
         }
     ],
-    '/zh/life/books':[
+    '/zh/life/books': [
         {
-            text:'书籍',
-            children:[
+            text: '书籍',
+            children: [
                 '/zh/life/books/README.md',
                 '/zh/life/books/must-read-books.md',
             ]
-        },{
-            text:'概率论与数理统计(二)',
-            children:[
+        }, {
+            text: '概率论与数理统计(二)',
+            children: [
                 '/zh/life/books/self-study/probability-and-statistics/basic-formula.md',
                 '/zh/life/books/self-study/probability-and-statistics/README.md',
                 '/zh/life/books/self-study/probability-and-statistics/course1.md',
-                '/zh/life/books/self-study/probability-and-statistics/course2.md'
+                '/zh/life/books/self-study/probability-and-statistics/course2.md',
+                '/zh/life/books/self-study/probability-and-statistics/course3.md',
+                '/zh/life/books/self-study/probability-and-statistics/course4.md',
+                '/zh/life/books/self-study/probability-and-statistics/course5.md',
             ]
         }
     ],
-    '/zh/life/music':[
+    '/zh/life/music': [
         {
-            text:'品味生活，聆听音乐',
-            children:[
+            text: '品味生活，聆听音乐',
+            children: [
                 '/zh/life/music/README.md',
             ]
         }
     ],
-    '/zh/dotnet/':[
+    '/zh/dotnet/': [
         {
-            text:'Design Pattern',
-            children:[
+            text: 'Design Pattern',
+            children: [
                 '/zh/dotnet/design-pattern.md',
             ],
         },
         {
-            text:'ABP.vNext',
-            children:[
+            text: 'ABP.vNext',
+            children: [
                 '/zh/dotnet/abp.vnext/README.md',
                 '/zh/dotnet/abp.vnext/data-dictionary.md',
             ],
         },
     ],
-    '/zh/dotnet/wpf':[
+    '/zh/dotnet/wpf': [
         {
-            text:'WPF',
-            children:[
+            text: 'WPF',
+            children: [
                 '/zh/dotnet/wpf/README.md',
                 '/zh/dotnet/wpf/download.md'
             ],
         },
         {
-            text:'Prism',
-            children:[
+            text: 'Prism',
+            children: [
                 '/zh/dotnet/wpf/prism/README.md',
             ],
         },
         {
-            text:'Material Design In Xaml',
-            children:[
+            text: 'Material Design In Xaml',
+            children: [
                 '/zh/dotnet/wpf/materialdesigninxaml/README.md',
             ],
         },
     ],
-    '/zh/jquery/':[
+    '/zh/jquery/': [
         {
-            text:'JQuery',
-            children:[
+            text: 'JQuery',
+            children: [
                 '/zh/jquery/README.md',
                 '/zh/jquery/tips.md',
                 '/zh/jquery/reference.md'
             ]
         }
     ],
-    '/zh/database/sqlserver/':[
+    '/zh/database/sqlserver/': [
         {
-            text:'SQL Server',
-            children:[
+            text: 'SQL Server',
+            children: [
                 '/zh/database/sqlserver/README.md',
                 '/zh/database/sqlserver/advance.md',
                 '/zh/database/sqlserver/function.md',
@@ -94,15 +97,15 @@ export const zh:SidebarConfig={
             ]
         }
     ],
-    '/zh/varietystore/erp/yonyou':[
+    '/zh/varietystore/erp/yonyou': [
         {
-            text:'用友U8+',
-            children:[
+            text: '用友U8+',
+            children: [
                 '/zh/varietystore/erp/yonyou/README.md',
             ]
-        },{
-            text:'基础档案',
-            children:[
+        }, {
+            text: '基础档案',
+            children: [
                 '/zh/varietystore/erp/yonyou/archives/aa_bank.md',
                 '/zh/varietystore/erp/yonyou/archives/assembly.md',
                 '/zh/varietystore/erp/yonyou/archives/balance-type.md',
@@ -155,52 +158,61 @@ export const zh:SidebarConfig={
                 '/zh/varietystore/erp/yonyou/archives/vouch-rd.md',
                 '/zh/varietystore/erp/yonyou/archives/warehouse.md',
             ]
-        },{
-            text:'财务模块',
-            children:[
+        }, {
+            text: '财务模块',
+            children: [
                 '/zh/varietystore/erp/yonyou/financial/accept.md',
                 '/zh/varietystore/erp/yonyou/financial/capital-vouchers.md',
                 '/zh/varietystore/erp/yonyou/financial/ought-pay.md',
                 '/zh/varietystore/erp/yonyou/financial/ought-receive.md',
                 '/zh/varietystore/erp/yonyou/financial/voucher.md',
             ]
-        },{
-            text:'门户集成',
-            children:[
+        }, {
+            text: '门户集成',
+            children: [
                 '/zh/varietystore/erp/yonyou/portal/README.md',
             ]
-        },{
-            text:'按钮',
-            children:[
+        }, {
+            text: '按钮',
+            children: [
                 '/zh/varietystore/erp/yonyou/buttons/README.md',
             ]
-        },{
-            text:'业务单据',
-            children:[
+        }, {
+            text: '业务单据',
+            children: [
                 '/zh/varietystore/erp/yonyou/vouchers/README.md',
             ]
-        },{
-            text:'报表',
-            children:[
+        }, {
+            text: '报表',
+            children: [
                 '/zh/varietystore/erp/yonyou/reports/README.md',
             ]
-        },{
-            text:'定时与预警',
-            children:[
+        }, {
+            text: '定时与预警',
+            children: [
                 '/zh/varietystore/erp/yonyou/times/README.md',
                 '/zh/varietystore/erp/yonyou/alarms/README.md',
             ]
-        },{
-            text:'打包',
-            children:[
+        }, {
+            text: '打包',
+            children: [
                 '/zh/varietystore/erp/yonyou/package/README.md',
             ]
         }
     ],
-    '/zh/varietystore/office/excel':[
+    '/zh/varietystore/markdown/latex': [
         {
-            text:'Excel',
-            children:[
+            text: '公式指导手册',
+            children: [
+                   '/zh/varietystore/markdown/latex/README.md',
+                   '/zh/varietystore/markdown/latex/latex-course1.md',
+            ]
+        }
+    ],
+    '/zh/varietystore/office/excel': [
+        {
+            text: 'Excel',
+            children: [
                 '/zh/varietystore/office/excel/README.md',
                 '/zh/varietystore/office/excel/macro-sample1.md',
                 '/zh/varietystore/office/excel/macro-sample2.md',
@@ -211,10 +223,10 @@ export const zh:SidebarConfig={
             ]
         }
     ],
-    '/zh/varietystore/data-exchange-format/json':[
+    '/zh/varietystore/data-exchange-format/json': [
         {
-            text:'JSON',
-            children:[
+            text: 'JSON',
+            children: [
                 '/zh/varietystore/data-exchange-format/json/README.md',
                 '/zh/varietystore/data-exchange-format/json/read-json.md',
                 '/zh/varietystore/data-exchange-format/json/write-json.md',
@@ -222,10 +234,10 @@ export const zh:SidebarConfig={
             ]
         }
     ],
-    '/zh/varietystore/data-exchange-format/xml':[
+    '/zh/varietystore/data-exchange-format/xml': [
         {
-            text:'XML',
-            children:[
+            text: 'XML',
+            children: [
                 '/zh/varietystore/data-exchange-format/xml/README.md',
                 '/zh/varietystore/data-exchange-format/xml/read-xml.md',
                 '/zh/varietystore/data-exchange-format/xml/write-xml.md',
@@ -233,28 +245,28 @@ export const zh:SidebarConfig={
             ]
         }
     ],
-    '/zh/varietystore/cli/github':[
+    '/zh/varietystore/cli/github': [
         {
-            text:'Github',
-            children:[
+            text: 'Github',
+            children: [
                 '/zh/varietystore/cli/github/README.md',
                 '/zh/varietystore/cli/github/reference.md',
             ]
         }
     ],
-    '/zh/varietystore/cli/yarn':[
+    '/zh/varietystore/cli/yarn': [
         {
-            text:'Yarn',
-            children:[
+            text: 'Yarn',
+            children: [
                 '/zh/varietystore/cli/yarn/README.md',
                 '/zh/varietystore/cli/yarn/reference.md',
             ]
         }
     ],
-    '/zh/varietystore/ladder':[
+    '/zh/varietystore/ladder': [
         {
-            text:'梯云纵',
-            children:[
+            text: '梯云纵',
+            children: [
                 '/zh/varietystore/ladder/machinecode/README.md',
                 '/zh/varietystore/ladder/sounds/README.md',
                 '/zh/varietystore/ladder/google-recaptcha.md',

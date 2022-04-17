@@ -54,6 +54,15 @@ export const en:NavbarConfig=[
         text: 'Variety Store',
         children: [
           {
+            text:'MarkDown',
+            children:[
+              {
+                text:'Latex',
+                link:'/zh/varietystore/markdown/latex/README.md'
+              }
+            ]
+          },
+          {
             text: 'CLI',
             children:[
               {
