@@ -2,12 +2,7 @@ import type { SidebarConfig } from '@vuepress/theme-default'
 
 export const zh: SidebarConfig = {
     '/zh/guide/': [
-        {
-            text: '指南',
-            children: [
-                '/zh/guide/README.md',
-            ]
-        }
+        '/zh/guide/README.md',
     ],
     '/zh/life/books': [
         {
@@ -26,6 +21,7 @@ export const zh: SidebarConfig = {
                 '/zh/life/books/self-study/probability-and-statistics/course3.md',
                 '/zh/life/books/self-study/probability-and-statistics/course4.md',
                 '/zh/life/books/self-study/probability-and-statistics/course5.md',
+                '/zh/life/books/self-study/probability-and-statistics/course6.md',
             ]
         }
     ],
