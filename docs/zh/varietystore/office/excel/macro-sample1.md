@@ -25,14 +25,14 @@
 
 ```js
 const options = {
-	rCodeCol: 1;            //工号列
-	rTimeCol: 7;            //打卡时间列
-	startRow: 4;            //开始计算行
-	wCodeCol: 8;            //结果工号写入列
-	wTimeCol: 9;            //结果时间写入列
-	wValCol: 10;            //结果时间差异值写入列
-	startHour: '11:00:00';  //开始时间统计
-	endHour: '12:00:00';    //截至时间统计
+  rCodeCol: 1;            //工号列
+  rTimeCol: 7;            //打卡时间列
+  startRow: 4;            //开始计算行
+  wCodeCol: 8;            //结果工号写入列
+  wTimeCol: 9;            //结果时间写入列
+  wValCol: 10;            //结果时间差异值写入列
+  startHour: '11:00:00';  //开始时间统计
+  endHour: '12:00:00';    //截至时间统计
 }
 ```
 
@@ -54,7 +54,6 @@ Const endHour         As Integer = 12       '截至时间统计
 :::
 ::::
 
-
 - **步骤2**: 额外数据结构
 
 :::: code-group
@@ -62,12 +61,12 @@ Const endHour         As Integer = 12       '截至时间统计
 
 ```js
 let dataRecord={
-    Key:'',       
-    Name:'',      //姓名
-    Min:'',       //中午考勤最早时间
-    MinRow:0,     //中午考勤最早时间所在行
-    Max:'',       //中午考勤最晚时间
-    MaxRow:0      //中午考勤最晚时间所在行
+  Key:'',       
+  Name:'',      //姓名
+  Min:'',       //中午考勤最早时间
+  MinRow:0,     //中午考勤最早时间所在行
+  Max:'',       //中午考勤最晚时间
+  MaxRow:0      //中午考勤最晚时间所在行
 };
 ```
 
@@ -114,12 +113,12 @@ function dateDiff(datePart,beginDate, endDate) {
 };
 
 function getItem(obj, val) {
-	for (let i = 0; i < obj.length; i++) {
-		if (obj[i].Key === val) {
-			return obj[i];
-		}
-	}
-	return undefined;
+  for (let i = 0; i < obj.length; i++) {
+    if (obj[i].Key === val) {
+      return obj[i];
+    }
+  }
+  return undefined;
 };
 ```
 
@@ -190,45 +189,45 @@ Set dic = CreateObject("scripting.dictionary")
 maxRow = ActiveSheet.UsedRange.Rows.Count '最大有效行
 
 For i = startRow To maxRow Step 1
-    curCode = ActiveSheet.Cells.item(i, codeCol).Value2
+  curCode = ActiveSheet.Cells.item(i, codeCol).Value2
 
-    curDateTime = ActiveSheet.Cells.item(i, timeCol).Value2
-    If curDateTime = "" Then GoTo goNext
+  curDateTime = ActiveSheet.Cells.item(i, timeCol).Value2
+  If curDateTime = "" Then GoTo goNext
 
-    curDateTime = Application.WorksheetFunction.Text(curDateTime, "yyyy-MM-dd HH:mm:ss")
-    curDate = DateValue(curDateTime)
+  curDateTime = Application.WorksheetFunction.Text(curDateTime, "yyyy-MM-dd HH:mm:ss")
+  curDate = DateValue(curDateTime)
 
-    startDate = DateAdd("h", startHour, curDate)
-    endDate = DateAdd("h", endHour, curDate)
-    curDate = CDate(curDateTime)
+  startDate = DateAdd("h", startHour, curDate)
+  endDate = DateAdd("h", endHour, curDate)
+  curDate = CDate(curDateTime)
 
-    key = curCode + " " + Format(curDate, "yyyy-MM-dd")
+  key = curCode + " " + Format(curDate, "yyyy-MM-dd")
 
-    If (startDate <= curDate And curDate <= endDate) Then
-        If (dic.exists(key)) Then
-            Dim curVal As DataRecord
-            Set curVal = dic(key)
-            If (curVal.Min > curDateTime) Then
-                curVal.Min = curDateTime
-                curVal.MinRow = i
-            ElseIf (curVal.Max < curDateTime) Then
-                curVal.Max = curDateTime
-                curVal.MaxRow = i
-            End If
-        Else
-            Dim addData As New DataRecord
-            addData.Name = key
-            addData.Min = curDateTime
-            addData.MinRow = i
-            addData.Max = curDateTime
-            addData.MaxRow = i
-            dic.Add key, addData
-            Set addData = Nothing
-        End If
+  If (startDate <= curDate And curDate <= endDate) Then
+    If (dic.exists(key)) Then
+      Dim curVal As DataRecord
+      Set curVal = dic(key)
+      If (curVal.Min > curDateTime) Then
+          curVal.Min = curDateTime
+          curVal.MinRow = i
+      ElseIf (curVal.Max < curDateTime) Then
+          curVal.Max = curDateTime
+          curVal.MaxRow = i
+      End If
+    Else
+      Dim addData As New DataRecord
+      addData.Name = key
+      addData.Min = curDateTime
+      addData.MinRow = i
+      addData.Max = curDateTime
+      addData.MaxRow = i
+      dic.Add key, addData
+      Set addData = Nothing
     End If
+  End If
 goNext:
 Next
-GetData=dic
+  GetData=dic
 End Function
 ```
 
@@ -243,9 +242,9 @@ End Function
 ```js
 function getData(source,opt){
   source.forEach(function(ele,index){
-      ActiveSheet.Cells.Item(opt.startRow+index, wCodeCol).Value2=ele.Name;
-      ActiveSheet.Cells.Item(opt.startRow+index, wTimeCol).Value2=ele.Min + "~" + ele.Max;
-      ActiveSheet.Cells.Item(opt.startRow+index, wValCol).Value2=dateDiff("n", ele.Min, ele.Max);
+    ActiveSheet.Cells.Item(opt.startRow+index, wCodeCol).Value2=ele.Name;
+    ActiveSheet.Cells.Item(opt.startRow+index, wTimeCol).Value2=ele.Min + "~" + ele.Max;
+    ActiveSheet.Cells.Item(opt.startRow+index, wValCol).Value2=dateDiff("n", ele.Min, ele.Max);
   })
 }
 ```
@@ -259,10 +258,10 @@ private sub setData(source as Variant)
 Dim item as Variant
 i=startRow
 For Each item In source.Items
-    ActiveSheet.Cells.Item(i, wCodeCol).Value2 = item.Name
-    ActiveSheet.Cells.Item(i, wTimeCol).Value2 = item.Min + "~" + item.Max
-    ActiveSheet.Cells.Item(i, wValCol).Value2 = DateDiff("n", item.Min, item.Max)
-    i = i + 1
+  ActiveSheet.Cells.Item(i, wCodeCol).Value2 = item.Name
+  ActiveSheet.Cells.Item(i, wTimeCol).Value2 = item.Min + "~" + item.Max
+  ActiveSheet.Cells.Item(i, wValCol).Value2 = DateDiff("n", item.Min, item.Max)
+  i = i + 1
 Next
 set source=nothing
 End sub

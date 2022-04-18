@@ -29,6 +29,27 @@ export const zh: SidebarConfig = {
             ]
         }
     ],
+    '/zh/life/literature':[
+        {
+            text:'Markdown',
+            children:[
+                '/zh/life/literature/markdown/README.md',
+                '/zh/life/literature/markdown/header.md',
+                '/zh/life/literature/markdown/paragraph.md',
+                '/zh/life/literature/markdown/linebreak.md',
+                '/zh/life/literature/markdown/font.md',
+                '/zh/life/literature/markdown/link.md',
+                '/zh/life/literature/markdown/quote.md',
+            ]
+        },{
+            text:'Latex',
+            children:[
+                '/zh/life/literature/latex/README.md',
+                '/zh/life/literature/latex/latex-course1.md',
+            ]
+                
+        }
+    ],
     '/zh/life/music': [
         {
             text: '品味生活，聆听音乐',

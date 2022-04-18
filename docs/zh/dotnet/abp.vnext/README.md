@@ -10,19 +10,18 @@
 
 - Visual Studio Extensions
 
-    ::::tip Visual Studio 2022
+  ::::tip Visual Studio 2022
 
-    [Bundler & Minifier](https://marketplace.visualstudio.com/items?itemName=Failwyn.BundlerMinifier64)
+  [Bundler & Minifier](https://marketplace.visualstudio.com/items?itemName=Failwyn.BundlerMinifier64)
 
-    [Web Compiler](https://marketplace.visualstudio.com/items?itemName=Failwyn.WebCompiler64)
+  [Web Compiler](https://marketplace.visualstudio.com/items?itemName=Failwyn.WebCompiler64)
 
-    ::::
+  ::::
 
-    ::::tip Visual Studio 20119
+  ::::tip Visual Studio 20119
 
-    - [Bundler & Minifier](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.BundlerMinifier)
+  - [Bundler & Minifier](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.BundlerMinifier)
 
-    - [Web Compiler](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.WebCompiler)
+  - [Web Compiler](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.WebCompiler)
 
-    ::::
-
+  ::::

@@ -30,7 +30,7 @@ $> yarn install
 |:-|:-|
 |-D,--dev|添加一个包作为开发依赖|
 
-### yarn add ...
+### yarn add
 
 从项目中添加依赖项
 
@@ -40,7 +40,7 @@ $> yarn install
 $> yarn add vue@3.2.21
 ```
 
-### yarn remove ...
+### yarn remove
 
 从项目中移除依赖项
 
@@ -50,7 +50,7 @@ $> yarn add vue@3.2.21
 $> yarn remove vue
 ```
 
-### yarn up ...
+### yarn up
 
 升级整个项目的依赖项
 

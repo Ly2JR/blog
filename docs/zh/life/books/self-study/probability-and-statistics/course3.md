@@ -111,10 +111,9 @@
 
 若$A\subset B 且B\subset A$,则称$\color{red}{事件A与事件B相等}$
 
-
 2、事件$A\cup B={x|x\in A 或 x\in B},\color{red}{称为事件A与事件B的和事件}$,当且仅当$A,B$中至少有一共发生时，事件$A\cup B$发生
 
-$\color{red}{推广}$ 
+$\color{red}{推广}$
 $$\bigcup_{k=1}^{n} A_k 为n个事件A_1,A_2,\cdots,A_n的和事件$$
 
 3、事件$A\cap B={x|x\in A且X\in B}$,称为事件A与事件B的积事件，当且仅当A,B同时发生时事件$A\cap B$发生，$A\cap B$也记作$AB$.
@@ -147,7 +146,7 @@ $\color{blue}{【题型:】}$
 
 (1)$A_{i} A_{j}=\phi,(i\neq j,i,j=1,2,\cdots,n)$
 
-(2) 
+(2)
 
 $$\bigcup_{i=1}^{n} A_i =S$$
 
@@ -171,7 +170,7 @@ $\color{red}{【解析:】}$
 
 据定义，事件A,B,C能构成一个互不相容的完备事件组。
 
-**事件间的运算规律**
+$\color{blue}{事件间的运算规律}$
 
 设A,B,C为事件，则有
 

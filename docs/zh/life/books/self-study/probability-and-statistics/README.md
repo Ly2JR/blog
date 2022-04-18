@@ -146,15 +146,11 @@ $\overline{H}$
   （2）每个基本事件发生的可能性相同。
 
   古典概型事件概率的计算公式。设$\Omega$为随机试验$\mathbf{E}$的样本空间，其中所含样本点总数为$\mathbf{n}$,
-  $\mathbf{A}$为一随机事件，其中所含样本点数为$\mathbf
-  {r}$,则有
-  $$ 
-    P(A)=\frac{r}{n}=\frac{A中样本点数}{\Omega中样本点总数},
-  $$
+  $\mathbf{A}$为一随机事件，其中所含样本点数为$\mathbf{r}$,则有
 
-  $$
-    P(A)=\frac{r}{n}=\frac{A所包含的基本事件数}{基本事件总数}
-  $$
+  $$P(A)=\frac{r}{n}=\frac{A中样本点数}{\Omega中样本点总数},$$
+
+  $$P(A)=\frac{r}{n}=\frac{A所包含的基本事件数}{基本事件总数}$$
 
 - 2.3 概率的定义与性质
 
@@ -166,28 +162,21 @@ $\overline{H}$
   2、$P(\Omega)=1$ ;
 
   3、设$A_1,A_2,\cdots,A_m,\cdots$是一列互不相容的事件,则有
-  $$
-    P( \bigcup_{k=1}^{\infty} A_k)=\sum_{k=1}^{\infty}P(A_k)
-  $$
+  $$P( \bigcup_{k=1}^{\infty} A_k)=\sum_{k=1}^{\infty}P(A_k)$$
 
   **性质1**   $0\leq P(A)\leq 1,P(\phi)=0$
 
   **性质2**   对于任意事件A,B有
-  $$
-    P(A\cup B)=P(A)+P(B)-P(AB).
-  $$
+  $$P(A\cup B)=P(A)+P(B)-P(AB).$$
+
   特别地，当A与B互不相容时,
-  $$
-    P(A\cup B)=P(A)+P(B)
-  $$
+  $$P(A\cup B)=P(A)+P(B)$$
+
   性质2可推广：对于任意事件A,B,C有
-  $$
-    P(A\cup B\cup C)=P(A)+P(B)+P(C)-P(AB)-P(AC)-P(BC)+P(ABC),
-  $$
+  $$P(A\cup B\cup C)=P(A)+P(B)+P(C)-P(AB)-P(AC)-P(BC)+P(ABC),$$
+
   当$A_1,A_2,\cdots,A_n$互不相容时,
-  $$
-    P(A_1\cup A_2 \cup \cdots\cup A_n)=P(A_1)+P(A_2)+\cdots+P(A_n)
-  $$
+  $$P(A_1\cup A_2 \cup \cdots\cup A_n)=P(A_1)+P(A_2)+\cdots+P(A_n)$$
   其中$\mathbf{n}$为正整数.
 
   **性质3** P(B-A)=P(B)-P(AB).
@@ -195,3 +184,4 @@ $\overline{H}$
   特别地，当$A \subset B$时,P(B-A)=P(B)-P(A),且$P(A)\leq P(B)$
 
   **性质4** $P(\overline{A})=1-P(A)$.
+  

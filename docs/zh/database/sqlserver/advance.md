@@ -189,16 +189,20 @@ UNIQUE 允许存在`NULL`值，而PRIMARY KEY **不**允许存在`NULL`值
 
 :::: code-group
 ::: code-group-item add Constraint
+
 ```sql
 ALTER TABLE table_name
 ADD CONSTRAINT constraint_name UNIQUE(column_name1,column_name2,...);
 ```
+
 :::
 ::: code-group-item remove Constraint
+
 ```sql
 ALTER TABLE table_name 
 DROP CONSTRAINT constraint_name;
 ```
+
 :::
 ::::
 
@@ -283,7 +287,6 @@ ADD CONSTRAINT pk_id PRIMARY KEY(id);
 ALTER TABLE WebSites 
 ADD CONSTRAINT pk_name_url PRIMARY KEY(id,url);
 ```
-
 
 下面的SQL语句在已存在的“WebSites”表，对已添加的“pk_id”约束进行删除
 
@@ -417,6 +420,7 @@ CREATE INDEX语句用于在表中创建索引。
 
 :::: code-group
 ::: code-group-item index
+
 ```sql
 --在表上创建一个简单的索引。允许使用重复值
 CREATE INDEX index_name
@@ -427,15 +431,19 @@ CREATE INDEX index_name
 ON table_name(column_name)
 WITH(DROP_EXISTING=ON)
 ```
+
 :::
 ::: code-group-item unique index
+
 ```sql
 --在表上创建一个唯一的所应。不允许使用重复的值：唯一的索引意味着两个行不能拥有相同的索引值。
 CREATE UNIQUE INDEX index_name
 ON table_name(column_name);
 ```
+
 :::
 ::: code-group-item drop index
+
 ```sql
 --在表上删除创建的一个索引
 DROP INDEX index_name
@@ -447,6 +455,7 @@ index_name2 ON table_name2,
 ...
 index_namen ON table_namen;
 ```
+
 :::
 ::::
 
@@ -480,25 +489,33 @@ DROP语句，可以轻松地删除索引、表和数据库。
 
 :::: code-group
 ::: code-group-item index
+
 ```sql
 DROP INDEX index_name ON table_name;
 ```
+
 :::
 ::: code-group-item table
+
 ```sql
 DROP TABLE table_name;
 ```
+
 :::
 ::: code-group-item truncate
+
 ```sql
 --快速清除表内的数据
 TRUNCATE TABLE table_name;
 ```
+
 :::
 ::: code-group-item database
+
 ```sql
 DROP DATABASE db_name;
 ```
+
 :::
 ::::
 
@@ -510,6 +527,7 @@ ALTER TABLE语句用于在已有的表中添加、删除或者修改列
 
 :::: code-group
 ::: code-group-item add
+
 ```sql
 --在已有表中添加新的列
 ALTER TABLE table_name
@@ -519,12 +537,15 @@ ADD column_name data_type(data_size);
 ALTER TABLE table_name
 ALTER COLUMN column_name data_type(data_size);
 ```
+
 :::
 :::code-group-item drop
+
 ```sql
 ALTER TABLE table_name
 DROP COLUMN column_name;
 ```
+
 :::
 ::::
 
@@ -533,10 +554,10 @@ DROP COLUMN column_name;
 “WebSites”表数据
 |id|name|url|alexa|country|
 |:-|:-|:-|:-|:-|
-|1|Google|https://www.google.com/|1|USA|
-|2|TaoBao|https://www.taobao.com/|13|CN|
-|3|WeiBo|https://www.weibo.com/|20|CN|
-|4|Facebook|https://www.facebook.com/|3|USA|
+|1|Google|<https://www.google.com/>|1|USA|
+|2|TaoBao|<https://www.taobao.com/>|13|CN|
+|3|WeiBo|<https://www.weibo.com/>|20|CN|
+|4|Facebook|<https://www.facebook.com/>|3|USA|
 
 下面的SQL语句在已有的“WebSites”表中,添加新的“cMemo”列
 
@@ -549,10 +570,10 @@ ADD cMemo nvarchar(255);
 
 |id|name|url|alexa|country|cMemo|
 |:-|:-|:-|:-|:-|:-|
-|1|Google|https://www.google.com/|1|USA|NULL|
-|2|TaoBao|https://www.taobao.com/|13|CN|NULL|
-|3|WeiBo|https://www.weibo.com/|20|CN|NULL|
-|4|Facebook|https://www.facebook.com/|3|USA|NULL|
+|1|Google|<https://www.google.com/>|1|USA|NULL|
+|2|TaoBao|<https://www.taobao.com/>|13|CN|NULL|
+|3|WeiBo|<https://www.weibo.com/>|20|CN|NULL|
+|4|Facebook|<https://www.facebook.com/>|3|USA|NULL|
 
 下面的SQL语句在已存在的“WebSites”表中，改变“cMemo”列的数据类型。
 
@@ -605,6 +626,7 @@ VIEW视图是可视化的表。
 
 :::: code-group
 ::: code-group-item Create
+
 ```sql
 CREATE VIEW view_name
 AS
@@ -613,8 +635,10 @@ AS
     WHERE condition;
 GO
 ```
+
 :::
 ::: code-group-item Alter
+
 ```sql
 ALTER VIEW view_name
 AS
@@ -623,11 +647,14 @@ AS
     WHERE condition;
 GO
 ```
+
 :::
 ::: code-group-item Drop
+
 ```sql
 DROP VIEW view_name;
 ```
+
 :::
 ::::
 
@@ -674,11 +701,11 @@ DROP VIEW vWeb;
 
 |函数|描述
 |:-|:-|
-|[GETDATE()](https://docs.microsoft.com/zh-cn/sql/t-sql/functions/getdate-transact-sql?view=sql-server-ver15)|返回当前的日期和时间|
-|[DATEPART()](https://docs.microsoft.com/zh-cn/sql/t-sql/functions/datepart-transact-sql?view=sql-server-ver15)|返回日期/时间的单独部分|
-|[DATEADD()](https://docs.microsoft.com/zh-cn/sql/t-sql/functions/dateadd-transact-sql?view=sql-server-ver15)|在日期中添加或减去指定的时间间隔|
-|[DATEDIFF()]](https://docs.microsoft.com/zh-cn/sql/t-sql/functions/datediff-transact-sql?view=sql-server-ver15)|返回两个日期之间的时间|
-|[CONVERT]](https://docs.microsoft.com/zh-cn/sql/t-sql/functions/cast-and-convert-transact-sql?view=sql-server-ver15)|用不同的格式显示日期/时间|
+|[GETDATE()](<https://docs.microsoft.com/zh-cn/sql/t-sql/functions/getdate-transact-sql?view=sql-server-ver15>)|返回当前的日期和时间|
+|[DATEPART()](<https://docs.microsoft.com/zh-cn/sql/t-sql/functions/datepart-transact-sql?view=sql-server-ver15>)|返回日期/时间的单独部分|
+|[DATEADD()](<https://docs.microsoft.com/zh-cn/sql/t-sql/functions/dateadd-transact-sql?view=sql-server-ver15>)|在日期中添加或减去指定的时间间隔|
+|[DATEDIFF()]](<https://docs.microsoft.com/zh-cn/sql/t-sql/functions/datediff-transact-sql?view=sql-server-ver15>)|返回两个日期之间的时间|
+|[CONVERT]](<https://docs.microsoft.com/zh-cn/sql/t-sql/functions/cast-and-convert-transact-sql?view=sql-server-ver15>)|用不同的格式显示日期/时间|
 
 - 示例
 
@@ -689,7 +716,6 @@ DROP VIEW vWeb;
 |2|Camembert Pierrot|2008-11-09|2008-11-09 15:45:21|
 |3|Mozzarella di Giovanni|2008-11-11|2008-11-11 11:12:01|
 |4|Mascarpone Faboli|2008-10-29|2008-10-29 14:56:59|
-
 
 下面的SQL语句在已经存在的“Orders”的表，对“OrderDate”列进行查询
 
@@ -715,7 +741,7 @@ SELECT * FROM Orders WHERE OrderDateTime='2008-11-11 00:00:00'
 SELECT * FROM Orders WHERE CONVERT(nvarchar(10),OrderDateTime,121)='2008-11-11'
 ```
 
-## [NULL](https://docs.microsoft.com/zh-cn/sql/t-sql/language-elements/null-and-unknown-transact-sql?view=sql-server-ver15)
+## [NULL](<https://docs.microsoft.com/zh-cn/sql/t-sql/language-elements/null-and-unknown-transact-sql?view=sql-server-ver15>)
 
 NULL值代表遗漏的未知数据。
 
@@ -738,11 +764,11 @@ NULL无法与除本身之外的其他值比较；它们是不等价的。
 “WebSites”表数据
 |id|name|url|alexa|country|
 |:-|:-|:-|:-|:-|
-|1|Google|https://www.google.com/|1|USA|
-|2|TaoBao|https://www.taobao.com/|13|CN|
-|3|WeiBo|https://www.weibo.com/|NULL|CN|
-|4|Facebook|https://www.facebook.com/|3|USA|
-|5|QQ|https://www.QQ.com/|NULL|CN|
+|1|Google|<https://www.google.com/>|1|USA|
+|2|TaoBao|<https://www.taobao.com/>|13|CN|
+|3|WeiBo|<https://www.weibo.com/>|NULL|CN|
+|4|Facebook|<https://www.facebook.com/>|3|USA|
+|5|QQ|<https://www.QQ.com/>|NULL|CN|
 
 下面的SQL语句通过`IS NULL`、`IS NOT NULL`、`ISNULL`方式对”alexa“列进行查询。
 
@@ -754,8 +780,8 @@ SELECT * FROM  WebSites WHERE alexa IS NULL
 结果集如下所示：
 |id|name|url|alexa|country|
 |:-|:-|:-|:-|:-|
-|3|WeiBo|https://www.weibo.com/|NULL|CN|
-|5|QQ|https://www.QQ.com/|NULL|CN|
+|3|WeiBo|<https://www.weibo.com/>|NULL|CN|
+|5|QQ|<https://www.QQ.com/>|NULL|CN|
 
 ```sql
 --IS NOT NULL
@@ -765,9 +791,9 @@ SELECT * FROM  WebSites WHERE alexa IS NOT NULL
 结果集如下所示：
 |id|name|url|alexa|country|
 |:-|:-|:-|:-|:-|
-|1|Google|https://www.google.com/|1|USA|
-|2|TaoBao|https://www.taobao.com/|13|CN|
-|4|Facebook|https://www.facebook.com/|3|USA|
+|1|Google|<https://www.google.com/>|1|USA|
+|2|TaoBao|<https://www.taobao.com/>|13|CN|
+|4|Facebook|<https://www.facebook.com/>|3|USA|
 
 ```sql
 --ISNULL
@@ -777,5 +803,5 @@ SELECT * FROM  WebSites WHERE ISNULL(alexa,0)=0
 结果集如下所示：
 |id|name|url|alexa|country|
 |:-|:-|:-|:-|:-|
-|3|WeiBo|https://www.weibo.com/|NULL|CN|
-|5|QQ|https://www.QQ.com/|NULL|CN|
+|3|WeiBo|<https://www.weibo.com/>|NULL|CN|
+|5|QQ|<https://www.QQ.com/>|NULL|CN|

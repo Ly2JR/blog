@@ -62,30 +62,30 @@ Const startRow  As Integer = 4    '开始行
 
 ```js
 function EoL(time) {
-	let stdTime = [Date.parse("2022-01-13 07:54:00"), Date.parse("2022-01-13 8:02:00"), Date.parse("2022-01-13 19:54:00"), Date.parse("2022-01-13 20:02:00")];
-	let now = Date.parse("2022-01-13 " + time);
-	if ((now > stdTime[0] && stdTime[1] > now) || (now > stdTime[2] && stdTime[3] > now)) {
-		return 1;
-	}
-	return 0;
+  let stdTime = [Date.parse("2022-01-13 07:54:00"), Date.parse("2022-01-13 8:02:00"), Date.parse("2022-01-13 19:54:00"), Date.parse("2022-01-13 20:02:00")];
+  let now = Date.parse("2022-01-13 " + time);
+  if ((now > stdTime[0] && stdTime[1] > now) || (now > stdTime[2] && stdTime[3] > now)) {
+    return 1;
+  }
+  return 0;
 }
 
 function checkArray(arr, val) {
-	for (let i = 0; i < arr.length; i++) {
-		if (arr[i] === val) {
-			return true;
-		}
-	}
-	return false;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === val) {
+      return true;
+    }
+  }
+  return false;
 }
 
 function getItem(obj, val) {
-	for (let i = 0; i < obj.length; i++) {
-		if (obj[i].Key === val) {
-			return obj[i];
-		}
-	}
-	return undefined;
+  for (let i = 0; i < obj.length; i++) {
+    if (obj[i].Key === val) {
+      return obj[i];
+    }
+  }
+  return undefined;
 };
 ```
 
@@ -116,54 +116,55 @@ End Function
 
 ```js
 function getData(opt) {
-	let dic = [];
-	let dicTemp = [];
-	let maxRow = ActiveSheet.UsedRange.Rows.Count;
+  let dic = [];
+  let dicTemp = [];
+  let maxRow = ActiveSheet.UsedRange.Rows.Count;
 
-	for (let i = opt.startRow; i <= maxRow; i++) {
-		let curJob = ActiveSheet.Cells.Item(i, opt.rJobCol).Value2;
-		if (curJob == "") continue;
-		let hasExits = checkArray(opt.jobs, curJob);
-		if (!hasExits) continue;
+  for (let i = opt.startRow; i <= maxRow; i++) {
+    let curJob = ActiveSheet.Cells.Item(i, opt.rJobCol).Value2;
+    if (curJob == "") continue;
+    let hasExits = checkArray(opt.jobs, curJob);
+    if (!hasExits) continue;
 
-		let curName = ActiveSheet.Cells.Item(i, opt.rNameCol).Value2;
+    let curName = ActiveSheet.Cells.Item(i, opt.rNameCol).Value2;
 
-		let curTime = ActiveSheet.Cells.Item(i, opt.rTimeCol).Value2;
-		curTime = Application.WorksheetFunction.Text(curTime, "yyyy-MM-dd HH:mm:ss");
-		let curTimeValue = curTime;
-		let curTimeTemp = Application.WorksheetFunction.Text(curTime, "yyyy-MM-dd HH:00:00");
-		curTime = Application.WorksheetFunction.Text(curTime, "HH:mm:ss");
-		let curKey = curName + "|" + curTimeTemp;
+    let curTime = ActiveSheet.Cells.Item(i, opt.rTimeCol).Value2;
+    curTime = Application.WorksheetFunction.Text(curTime, "yyyy-MM-dd HH:mm:ss");
+    let curTimeValue = curTime;
+    let curTimeTemp = Application.WorksheetFunction.Text(curTime, "yyyy-MM-dd HH:00:00");
+    curTime = Application.WorksheetFunction.Text(curTime, "HH:mm:ss");
+    let curKey = curName + "|" + curTimeTemp;
 
-		let curType = EoL(curTime);
-		if (curType == 0) continue;
+    let curType = EoL(curTime);
+    if (curType == 0) continue;
 
-		let isMult = false;
-		let itemMain = getItem(dic, curKey);
-		if (itemMain !== undefined) {
-			if (itemMain.Value <= curTimeValue) {
-				itemMain.Value = curTimeValue;
-				isMult = true;
-			}
-		} else {
-			dic.push({
-				Key: curKey,
-				Value: curTimeValue
-			});
-		}
-		let itemDetail = getItem(dicTemp, curName);
-		if (itemDetail !== undefined) {
-			if (!isMult) {++itemDetail.Value;
-			}
-		} else {
-			let newData = {
-				Key: curName,
-				Value: 1
-			};
-			dicTemp.push(newData);
-		}
-	}
-	return [dic, dicTemp];
+    let isMult = false;
+    let itemMain = getItem(dic, curKey);
+    if (itemMain !== undefined) {
+      if (itemMain.Value <= curTimeValue) {
+        itemMain.Value = curTimeValue;
+        isMult = true;
+      }
+    } else {
+      dic.push({
+      Key: curKey,
+      Value: curTimeValue
+      });
+    }
+    let itemDetail = getItem(dicTemp, curName);
+    if (itemDetail !== undefined) {
+      if (!isMult) {
+        ++itemDetail.Value;
+      }
+    } else {
+      let newData = {
+      Key: curName,
+      Value: 1
+      };
+      dicTemp.push(newData);
+    }
+  }
+  return [dic, dicTemp];
 }
 ```
 
@@ -185,41 +186,41 @@ Set data(0) = CreateObject("scripting.dictionary")
 Set data(1) = CreateObject("scripting.dictionary")
 
 For i = startRow To maxRow Step 1
-    curJob = ActiveSheet.Cells.item(i, rJobCol).Value2
-    If (curJob = "") Then GoTo goNext
-    matchJob = Filter(jobs, curJob)
-    If UBound(matchJob) = 0 Then GoTo goRun Else GoTo goNext
+  curJob = ActiveSheet.Cells.item(i, rJobCol).Value2
+  If (curJob = "") Then GoTo goNext
+  matchJob = Filter(jobs, curJob)
+  If UBound(matchJob) = 0 Then GoTo goRun Else GoTo goNext
 goRun:
-    curName = ActiveSheet.Cells.item(i, rNameCol).Value2
-    curTime = ActiveSheet.Cells.item(i, rTimeCol).Value2
+  curName = ActiveSheet.Cells.item(i, rNameCol).Value2
+  curTime = ActiveSheet.Cells.item(i, rTimeCol).Value2
 
-    curTime = Application.WorksheetFunction.Text(curTime, "yyyy-MM-dd HH:mm:ss")
-    curTimeValue = curTime
-    curTimeTemp = Format(curTime, "yyyy-MM-dd HH:00:00")
-    curTime = Application.WorksheetFunction.Text(curTime, "HH:mm:ss")
-    curKey = curName + "|" + curTimeTemp
-    
-    curType = EoL(curTime)
-    If curType = 0 Then GoTo goNext
-    
-    isMult = False
-    If (data(0).exists(curKey)) Then
-        temp = data(0)(curKey)
-        If (temp <= curTimeValue) Then
-            data(0)(curKey) = curTimeValue
-            isMult = True
-        End If
-    Else
-        data(0).Add curKey, curTimeValue
+  curTime = Application.WorksheetFunction.Text(curTime, "yyyy-MM-dd HH:mm:ss")
+  curTimeValue = curTime
+  curTimeTemp = Format(curTime, "yyyy-MM-dd HH:00:00")
+  curTime = Application.WorksheetFunction.Text(curTime, "HH:mm:ss")
+  curKey = curName + "|" + curTimeTemp
+
+  curType = EoL(curTime)
+  If curType = 0 Then GoTo goNext
+
+  isMult = False
+  If (data(0).exists(curKey)) Then
+    temp = data(0)(curKey)
+    If (temp <= curTimeValue) Then
+      data(0)(curKey) = curTimeValue
+      isMult = True
     End If
-    
-    If (data(1).exists(curName)) Then
-        If Not isMult Then
-            data(1)(curName) = data(1)(curName) + 1
-        End If
-    Else
-        data(1).Add curName, 1
+  Else
+    data(0).Add curKey, curTimeValue
+  End If
+
+  If (data(1).exists(curName)) Then
+    If Not isMult Then
+      data(1)(curName) = data(1)(curName) + 1
     End If
+  Else
+    data(1).Add curName, 1
+ End If
 goNext:
 Next i
 
@@ -237,21 +238,21 @@ End Function
 
 ```js
 function setData(source,opt){
-	ActiveSheet.Cells.Item(opt.startRow - 1, opt.wNameCol).Value2 = "姓名";
-	ActiveSheet.Cells.Item(opt.startRow - 1, opt.wSCol).Value2 = "异常总次数";
-	ActiveSheet.Cells.Item(opt.startRow - 1, opt.wNameCol1).Value2 = "姓名";
-	ActiveSheet.Cells.Item(opt.startRow - 1, opt.wTimeCol).Value2 = "异常时间";
+  ActiveSheet.Cells.Item(opt.startRow - 1, opt.wNameCol).Value2 = "姓名";
+  ActiveSheet.Cells.Item(opt.startRow - 1, opt.wSCol).Value2 = "异常总次数";
+  ActiveSheet.Cells.Item(opt.startRow - 1, opt.wNameCol1).Value2 = "姓名";
+  ActiveSheet.Cells.Item(opt.startRow - 1, opt.wTimeCol).Value2 = "异常时间";
 
-	source[1].forEach(function(ele, index) {
-		ActiveSheet.Cells.Item(opt.startRow+index, opt.wNameCol).Value2 = ele.Key;
-		ActiveSheet.Cells.Item(opt.startRow+index, opt.wSCol).Value2 = ele.Value;
-	})
+  source[1].forEach(function(ele, index) {
+    ActiveSheet.Cells.Item(opt.startRow+index, opt.wNameCol).Value2 = ele.Key;
+    ActiveSheet.Cells.Item(opt.startRow+index, opt.wSCol).Value2 = ele.Value;
+  })
 
-	source[0].forEach(function(ele, index) {
-		let t = ele.Key.split("|");
-		ActiveSheet.Cells.Item(opt.startRow+index, opt.wNameCol1).Value2 = t[0];
-		ActiveSheet.Cells.Item(opt.startRow+index, opt.wTimeCol).Value2 = ele.Value;
-	})
+  source[0].forEach(function(ele, index) {
+    let t = ele.Key.split("|");
+    ActiveSheet.Cells.Item(opt.startRow+index, opt.wNameCol1).Value2 = t[0];
+    ActiveSheet.Cells.Item(opt.startRow+index, opt.wTimeCol).Value2 = ele.Value;
+  })
 }
 ```
 
@@ -261,8 +262,8 @@ function setData(source,opt){
 
 ```vb
 Private Sub SetData(ByRef source As Variant)
-Dim item,t 	As Variant
-Dim i 		As Long
+Dim item,t As Variant
+Dim i As Long
 i = startRow
 
 ActiveSheet.Cells.item(i - 1, wNameCol).Value2 = "姓名"
@@ -271,16 +272,16 @@ ActiveSheet.Cells.item(i - 1, wNameCol1).Value2 = "姓名"
 ActiveSheet.Cells.item(i - 1, wTimeCol).Value2 = "异常时间"
 
 For Each item In source(1).keys
-    ActiveSheet.Cells.item(i, wNameCol).Value2 = item
-    ActiveSheet.Cells.item(i, wSCol).Value2 = source(1)(item)
-    i = i + 1
+  ActiveSheet.Cells.item(i, wNameCol).Value2 = item
+  ActiveSheet.Cells.item(i, wSCol).Value2 = source(1)(item)
+  i = i + 1
 Next
 i = startRow
 For Each item In source(0).keys
-    t = Split(item, "|")
-    ActiveSheet.Cells.item(i, wNameCol1).Value2 = t(0)
-    ActiveSheet.Cells.item(i, wTimeCol).Value2 = source(0)(item)
-    i = i + 1
+  t = Split(item, "|")
+  ActiveSheet.Cells.item(i, wNameCol1).Value2 = t(0)
+  ActiveSheet.Cells.item(i, wTimeCol).Value2 = source(0)(item)
+  i = i + 1
 Next
 End Sub
 ```

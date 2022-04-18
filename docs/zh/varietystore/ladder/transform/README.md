@@ -15,18 +15,18 @@
 /// <returns></returns>
 public static string parseByte2HexStr(byte[] buf)
 {
-    if (buf == null) return string.Empty;
-    var sb = new StringBuilder();
-    for (var i = 0; i < buf.Length; i++)
+  if (buf == null) return string.Empty;
+  var sb = new StringBuilder();
+  for (var i = 0; i < buf.Length; i++)
+  {
+    var hex = buf[i].ToString("X2");
+    if (hex.Length == 1)
     {
-        var hex = buf[i].ToString("X2");
-        if (hex.Length == 1)
-        {
-            hex = "0" + hex;
-        }
-        sb.Append(hex.ToUpper());
+      hex = "0" + hex;
     }
-    return sb.ToString();
+    sb.Append(hex.ToUpper());
+  }
+  return sb.ToString();
 }
 
 /// <summary>
@@ -36,15 +36,16 @@ public static string parseByte2HexStr(byte[] buf)
 /// <returns></returns>
 public static byte[] parseHexStr2Byte(string hexStr)
 {
-    if (string.IsNullOrWhiteSpace(hexStr)) return null;
-    var result = new byte[hexStr.Length / 2];
-    for (var i = 0; i < hexStr.Length / 2; i++)
-    {
-        result[i] = Convert.ToByte(hexStr.Substring(i * 2, 2), 16);
-    }
-    return result;
+  if (string.IsNullOrWhiteSpace(hexStr)) return null;
+  var result = new byte[hexStr.Length / 2];
+  for (var i = 0; i < hexStr.Length / 2; i++)
+  {
+    result[i] = Convert.ToByte(hexStr.Substring(i * 2, 2), 16);
+  }
+  return result;
 }
 ```
+
 :::
 
 ::: code-group-item JAVA 二进制与十六进制互转
@@ -56,15 +57,15 @@ public static byte[] parseHexStr2Byte(string hexStr)
 * @return 转换后字符串
 */
 public static String parseByte2HexStr(byte buf[]) {
-    StringBuffer sb = new StringBuffer();
-    for (int i = 0; i < buf.length; i++) {
-        String hex = Integer.toHexString(buf[i] & 0xFF);
-        if (hex.length() == 1) {
-            hex = '0' + hex;
-        }
-        sb.append(hex.toUpperCase());
+  StringBuffer sb = new StringBuffer();
+  for (int i = 0; i < buf.length; i++) {
+    String hex = Integer.toHexString(buf[i] & 0xFF);
+    if (hex.length() == 1) {
+        hex = '0' + hex;
     }
-    return sb.toString();
+    sb.append(hex.toUpperCase());
+  }
+  return sb.toString();
 }
 
 /**
@@ -73,16 +74,16 @@ public static String parseByte2HexStr(byte buf[]) {
 * @return 返回二进制字符串
 */
 private static byte[] parseHexStr2Byte(String hexStr) {
-    if (hexStr.length() < 1) return null;
-    byte[] result = new byte[hexStr.length() / 2];
-    for (int i = 0; i < hexStr.length() / 2; i++) {
-        int high = Integer.parseInt(hexStr.substring(i * 2, i * 2 + 1), 16);
-        int low = Integer.parseInt(hexStr.substring(i * 2 + 1, i * 2 + 2), 16);
-        result[i] = (byte) (high * 16 + low);
-    }
-    return result;
+  if (hexStr.length() < 1) return null;
+  byte[] result = new byte[hexStr.length() / 2];
+  for (int i = 0; i < hexStr.length() / 2; i++) {
+    int high = Integer.parseInt(hexStr.substring(i * 2, i * 2 + 1), 16);
+    int low = Integer.parseInt(hexStr.substring(i * 2 + 1, i * 2 + 2), 16);
+    result[i] = (byte) (high * 16 + low);
+  }
+  return result;
 }
 ```
+
 :::
 ::::
-

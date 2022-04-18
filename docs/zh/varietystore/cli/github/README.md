@@ -49,6 +49,7 @@ $> git clone [--template=<template_directory>]
     [--filter=<filter>] [--] <repository>
     [<directory>]
 ```
+
 ### 记录每次更新到仓库
 
 #### 查看文件状态

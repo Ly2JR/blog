@@ -16,26 +16,26 @@
 
 - 请求参数说明
 
-|参数				|类型	|参数路径	|是否必填	|描述					|
-|:-					|:-		|:-			|:-			|:-						|
-|code				|string |			|是			|货位编码				|
-|name				|string |			|是			|货位名称				|
-|grade				|string	|			|是			|编码级次				|
-|end_flag			|string	|			|是			|是否末级				|
-|warehouse_code		|string	|			|是			|仓库编码				|
-|maxcubage			|string	|			|否			|最大体积				|
-|maxweight			|string	|			|否			|最大重量				|
-|remark				|string	|			|否			|备注					|
-|barcode			|string	|			|否			|对应条形码中的编码		|
+|参数|类型|参数路径|是否必填|描述|
+|:-|:-|:-|:-|:-|
+|code|string||是|货位编码|
+|name|string||是|货位名称|
+|grade|string||是|编码级次|
+|end_flag|string||是|是否末级|
+|warehouse_code|string||是|仓库编码|
+|maxcubage|string||否|最大体积|
+|maxweight|string||否|最大重量|
+|remark|string||否|备注|
+|barcode|string||否|对应条形码中的编码|
 
 - 返回参数说明
 
-|参数   |类型     |描述           |
-|:-     |:-       |:-            |
-|errcode|string   |状态码(0:成功) |
-|errmsg |string   |错误描述       |
-|id     |string   |               |
-|tradeid|string   |               |
+|参数|类型|描述|
+|:-|:-|:-|
+|errcode|string|状态码(0:成功)|
+|errmsg|string|错误描述|
+|id|string||
+|tradeid|string||
 
 - 示例
 
@@ -64,10 +64,10 @@
 
 ```json
 {
-  "errcode": "0",
-  "errmsg": "",
-  "id": "",
-  "tradeid": "3eb76146-c94b-4b4b-87ef-40ac1087f9ba"
+    "errcode": "0",
+    "errmsg": "",
+    "id": "",
+    "tradeid": "3eb76146-c94b-4b4b-87ef-40ac1087f9ba"
 }
 ```
 

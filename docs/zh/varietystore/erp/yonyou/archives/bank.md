@@ -2,47 +2,47 @@
 
 - 资源符
 
-  **bank**
+  bank
   
 - 操作符
 
-  - **create** <Badge type="tip" text="v1" vertical="top" />
+  - create <Badge type="tip" text="v1" vertical="top" />
 
-  - **load** <Badge type="tip" text="v2" vertical="top" />
+  - load <Badge type="tip" text="v2" vertical="top" />
 
-  - **edit** <Badge type="tip" text="v2" vertical="top" />
+  - edit <Badge type="tip" text="v2" vertical="top" />
 
-  - **delete** <Badge type="tip" text="v2" vertical="top" />
+  - delete <Badge type="tip" text="v2" vertical="top" />
 
 - 请求参数说明
 
-|参数				|类型	|参数路径	|是否必填	|描述					|
-|:-					|:-		|:-			|:-			|:-						|
-|code				|string |			|是			|银行编号				|
-|name				|string |			|是			|开户银行名称				|
-|account			|string	|			|是			|银行帐号				|
-|flag				|string	|			|是			|暂封标志				|
-|cbankcode			|string	|			|是			|所属银行				|
-|caccname			|string	|			|是			|账户名称				|
-|copenaccaddr		|string	|			|是			|开户银行地址				|
-|cprovincename		|string	|			|是			|省/自治区码				|
-|ccountyname		|string	|			|是			|市/县					|
-|ccurrencyname		|string	|			|是			|币种					|
-|dopenaccdate		|string	|			|是			|开户日期				|
-|ccustomerno		|string	|			|是			|客户编号				|
-|corgno				|string	|			|是			|机构号					|
-|cunionbankno		|string	|			|是			|联行号					|
-|isignflag			|string	|			|是			|签约标志				|
-|bpwdmng			|string	|			|是			|进行密码管理				|
+|参数|类型|参数路径|是否必填|描述|
+|:-|:-|:-|:-|:-|
+|code|string||是|银行编号|
+|name|string||是|开户银行名称|
+|account|string||是|银行帐号|
+|flag|string||是|暂封标志|
+|cbankcode|string||是|所属银行|
+|caccname|string||是|账户名称|
+|copenaccaddr|string||是|开户银行地址|
+|cprovincename|string||是|省/自治区码|
+|ccountyname|string||是|市/县|
+|ccurrencyname|string||是|币种|
+|dopenaccdate|string||是|开户日期|
+|ccustomerno|string||是|客户编号|
+|corgno|string||是|机构号|
+|cunionbankno|string||是|联行号|
+|isignflag|string||是|签约标志|
+|bpwdmng|string||是|进行密码管理|
 
-- 返回参数说明
+-返回参数说明
 
-|参数   |类型     |描述           |
-|:-     |:-       |:-            |
-|errcode|string   |状态码(0:成功) |
-|errmsg |string   |错误描述       |
-|id     |string   |               |
-|tradeid|string   |               |
+|参数|类型|描述|
+|:-|:-|:-|
+|errcode|string|状态码(0:成功)|
+|errmsg|string|错误描述|
+|id|string||
+|tradeid|string||
 
 - 示例
 

@@ -13,6 +13,10 @@ export const zh:NavbarConfig=[
             link:'/zh/life/books/README.md',
           },
           {
+            text:'写作',
+            link:'/zh/life/literature/markdown/README.md'
+          },
+          {
             text: '音乐',
             link:'/zh/life/music/README.md',
           },
@@ -54,15 +58,7 @@ export const zh:NavbarConfig=[
       },
       {
         text: '杂货铺',
-        children: [ {
-          text:'MarkDown',
-          children:[
-            {
-              text:'Latex',
-              link:'/zh/varietystore/markdown/latex/README.md'
-            }
-          ]
-        },
+        children: [
           {
             text: 'CLI',
             children:[

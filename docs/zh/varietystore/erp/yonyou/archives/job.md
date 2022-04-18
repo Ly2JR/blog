@@ -2,45 +2,45 @@
 
 - 资源符
 
-  **job**
+  job
   
 - 操作符
 
-  - **create** <Badge type="tip" text="v1" vertical="top" />
+  - create <Badge type="tip" text="v1" vertical="top" />
 
-  - **load** <Badge type="tip" text="v2" vertical="top" />
+  - load <Badge type="tip" text="v2" vertical="top" />
 
-  - **edit** <Badge type="tip" text="v2" vertical="top" />
+  - edit <Badge type="tip" text="v2" vertical="top" />
 
-  - **delete** <Badge type="tip" text="v2" vertical="top" />
+  - delete <Badge type="tip" text="v2" vertical="top" />
 
 - 请求参数说明
 
-|参数				|类型	|参数路径	|是否必填	|描述					|
-|:-					|:-		|:-			|:-			|:-						|
-|jobcode			|string	|			|是			|职位编码				|
-|jobname			|string	|			|是			|职位名称				|
-|depcode			|string	|			|是			|所属部门				|
-|suporior			|string |			|是			|直接上级				|
-|builddate			|string |			|是			|成立日期				|
-|abortdate			|string |			|是			|撤销日期				|
-|jobseries			|string |			|是			|职位序列				|
-|jobrank			|string |			|是			|职位等级				|
-|worksumm			|string |			|是			|工作概要				|
-|jobrankclasscode	|string |			|是			|职级分类				|
-|jobrankbegin		|string |			|是			|职级范围起				|
-|jobrankend			|string |			|是			|职级范围止				|
-|jobrankend			|string |			|是			|职等范围起				|
-|jobgradeend		|string |			|是			|职等范围止				|
+|参数|类型|参数路径|是否必填|描述|
+|:-|:-|:-|:-|:-|
+|jobcode|string||是|职位编码|
+|jobname|string||是|职位名称|
+|depcode|string||是|所属部门|
+|suporior|string||是|直接上级|
+|builddate|string||是|成立日期|
+|abortdate|string||是|撤销日期|
+|jobseries|string||是|职位序列|
+|jobrank|string||是|职位等级|
+|worksumm|string||是|工作概要|
+|jobrankclasscode|string||是|职级分类|
+|jobrankbegin|string||是|职级范围起|
+|jobrankend|string||是|职级范围止|
+|jobrankend|string||是|职等范围起|
+|jobgradeend|string||是|职等范围止|
 
-- 返回参数说明
+-返回参数说明
 
-|参数   |类型     |描述           |
-|:-     |:-       |:-            |
-|errcode|string   |状态码(0:成功) |
-|errmsg |string   |错误描述       |
-|id     |string   |               |
-|tradeid|string   |               |
+|参数|类型|描述|
+|:-|:-|:-|
+|errcode|string|状态码(0:成功)|
+|errmsg|string|错误描述|
+|id|string||
+|tradeid|string||
 
 - 示例
 
@@ -74,10 +74,10 @@
 
 ```json
 {
-  "errcode": "0",
-  "errmsg": "",
-  "id": "",
-  "tradeid": "3eb76146-c94b-4b4b-87ef-40ac1087f9ba"
+    "errcode": "0",
+    "errmsg": "",
+    "id": "",
+    "tradeid": "3eb76146-c94b-4b4b-87ef-40ac1087f9ba"
 }
 ```
 

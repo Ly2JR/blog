@@ -15,20 +15,21 @@
 |ExtraProperties|nvarchar|max|否||
 
 ::: details 点击查看SQL
+
 ```sql
 CREATE TABLE [dbo].[AbpAuditLogActions](
-	[Id] [uniqueidentifier] NOT NULL,
-	[TenantId] [uniqueidentifier] NULL,
-	[AuditLogId] [uniqueidentifier] NOT NULL,
-	[ServiceName] [nvarchar](256) NULL,
-	[MethodName] [nvarchar](128) NULL,
-	[Parameters] [nvarchar](2000) NULL,
-	[ExecutionTime] [datetime2](7) NOT NULL,
-	[ExecutionDuration] [int] NOT NULL,
-	[ExtraProperties] [nvarchar](max) NULL,
+    [Id] [uniqueidentifier] NOT NULL,
+    [TenantId] [uniqueidentifier] NULL,
+    [AuditLogId] [uniqueidentifier] NOT NULL,
+    [ServiceName] [nvarchar](256) NULL,
+    [MethodName] [nvarchar](128) NULL,
+    [Parameters] [nvarchar](2000) NULL,
+    [ExecutionTime] [datetime2](7) NOT NULL,
+    [ExecutionDuration] [int] NOT NULL,
+    [ExtraProperties] [nvarchar](max) NULL,
  CONSTRAINT [PK_AbpAuditLogActions] PRIMARY KEY CLUSTERED 
 (
-	[Id] ASC
+    [Id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
@@ -41,6 +42,7 @@ GO
 ALTER TABLE [dbo].[AbpAuditLogActions] CHECK CONSTRAINT [FK_AbpAuditLogActions_AbpAuditLogs_AuditLogId]
 GO
 ```
+
 :::
 
 - AbpAuditLogs
@@ -71,35 +73,37 @@ GO
 |ConcurrencyStamp|nvarchar|40|是||
 
 ::: details 点击查看SQL
+
 ```sql
 CREATE TABLE [dbo].[AbpAuditLogs](
-	[Id] [uniqueidentifier] NOT NULL,
-	[ApplicationName] [nvarchar](96) NULL,
-	[UserId] [uniqueidentifier] NULL,
-	[UserName] [nvarchar](256) NULL,
-	[TenantId] [uniqueidentifier] NULL,
-	[TenantName] [nvarchar](max) NULL,
-	[ImpersonatorUserId] [uniqueidentifier] NULL,
-	[ImpersonatorTenantId] [uniqueidentifier] NULL,
-	[ExecutionTime] [datetime2](7) NOT NULL,
-	[ExecutionDuration] [int] NOT NULL,
-	[ClientIpAddress] [nvarchar](64) NULL,
-	[ClientName] [nvarchar](128) NULL,
-	[ClientId] [nvarchar](64) NULL,
-	[CorrelationId] [nvarchar](64) NULL,
-	[BrowserInfo] [nvarchar](512) NULL,
-	[HttpMethod] [nvarchar](16) NULL,
-	[Url] [nvarchar](256) NULL,
-	[Exceptions] [nvarchar](max) NULL,
-	[Comments] [nvarchar](256) NULL,
-	[HttpStatusCode] [int] NULL,
-	[ExtraProperties] [nvarchar](max) NULL,
-	[ConcurrencyStamp] [nvarchar](40) NULL,
+    [Id] [uniqueidentifier] NOT NULL,
+    [ApplicationName] [nvarchar](96) NULL,
+    [UserId] [uniqueidentifier] NULL,
+    [UserName] [nvarchar](256) NULL,
+    [TenantId] [uniqueidentifier] NULL,
+    [TenantName] [nvarchar](max) NULL,
+    [ImpersonatorUserId] [uniqueidentifier] NULL,
+    [ImpersonatorTenantId] [uniqueidentifier] NULL,
+    [ExecutionTime] [datetime2](7) NOT NULL,
+    [ExecutionDuration] [int] NOT NULL,
+    [ClientIpAddress] [nvarchar](64) NULL,
+    [ClientName] [nvarchar](128) NULL,
+    [ClientId] [nvarchar](64) NULL,
+    [CorrelationId] [nvarchar](64) NULL,
+    [BrowserInfo] [nvarchar](512) NULL,
+    [HttpMethod] [nvarchar](16) NULL,
+    [Url] [nvarchar](256) NULL,
+    [Exceptions] [nvarchar](max) NULL,
+    [Comments] [nvarchar](256) NULL,
+    [HttpStatusCode] [int] NULL,
+    [ExtraProperties] [nvarchar](max) NULL,
+    [ConcurrencyStamp] [nvarchar](40) NULL,
  CONSTRAINT [PK_AbpAuditLogs] PRIMARY KEY CLUSTERED 
 (
-	[Id] ASC
+    [Id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
 ```
+
 :::

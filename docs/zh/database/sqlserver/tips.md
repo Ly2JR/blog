@@ -16,7 +16,7 @@ where type ='P' and number <=DATEDIFF(day, '2021-01-01',   '2021-12-31')
 
 ## 分页
 
-- `offset`...` rows fetch next`...`rows only`
+- `offset`...`rows fetch next`...`rows only`
 
 ::: tip
 Sql Server 2012及以上才可以使用
@@ -32,7 +32,7 @@ select * from Persons order by FirstName offset 10 rows fetch next 10 rows only;
 :::
 ::::
 
-- `row_number() over(order by `...`)`
+- `row_number() over(order by`...`)`
 
 :::: code-group
 ::: code-group-item SQL

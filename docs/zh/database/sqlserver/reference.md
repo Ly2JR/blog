@@ -14,24 +14,24 @@
 |smallmoney|-214,748.3648 到 214,748.3647|4字节|
 |tinyint|0到255|1字节|
 
-  - decimal(p[,s])
+- decimal(p[,s])
 
-  带固定精度和小数位数的数值数据类型。Decimal和Numeric是同义词，可互换使用。
+带固定精度和小数位数的数值数据类型。Decimal和Numeric是同义词，可互换使用。
 
-  p(精度)
-  要存储的十进制数字的总数上限。此数目包括小数点的左右两侧。该精度必须是从1到最大精度38之间的值。默认精度为18。
+p(精度)
+要存储的十进制数字的总数上限。此数目包括小数点的左右两侧。该精度必须是从1到最大精度38之间的值。默认精度为18。
 
-  s(小数位数)
+s(小数位数)
 
-  小数点右存储的十进制数字位数。从P中减去此数字可确定小数点左边的最大位数。确定位数值必须介于0和P之间，只能在
-  指定了精度的情况下指定此值。默认小数为0，因此0<=<<=<。最大存储大小基于精度而变化。
+小数点右存储的十进制数字位数。从P中减去此数字可确定小数点左边的最大位数。确定位数值必须介于0和P之间，只能在
+指定了精度的情况下指定此值。默认小数为0，因此0<=<<=<。最大存储大小基于精度而变化。
 
-  |Precision|存储字节数|
-  |:-|:-|
-  |1-9|5|
-  |10-19|9|
-  |20-28|13|
-  |29-38|17|
+|Precision|存储字节数|
+|:-|:-|
+|1-9|5|
+|10-19|9|
+|20-28|13|
+|29-38|17|
 
 - 近似数字
 
@@ -40,29 +40,27 @@
 |float|-1.79E + 308 至 -2.23E - 308、0 以及 2.23E - 308 至 1.79E + 308|
 |real|-3.40E + 38 至 -1.18E - 38、0 以及 1.18E - 38 至 3.40E + 38|
 
-  - float[(n)]
+float[(n)]其中n为用于存储float数值尾数的位数(以科学记数法表示)，因此可以确定精度和存储大小。
+如果指定了n，则它必须介于1和53之间的某个值。n的默认值为53。
 
-  float[(n)]其中n为用于存储float数值尾数的位数(以科学记数法表示)，因此可以确定精度和存储大小。
-  如果指定了n，则它必须介于1和53之间的某个值。n的默认值为53。
-
-  |n值|Precision|存储大小|
-  |:-|:-|:-|
-  |1-24|7位数|4个字节|
-  |25-53|15位数|8个字节|
+|n值|Precision|存储大小|
+|:-|:-|:-|
+|1-24|7位数|4个字节|
+|25-53|15位数|8个字节|
 
 ## Unicode字符串
 
-  - nchar[(n)]
+- nchar[(n)]
 
   固定大小字符串数据。n用于定义字符串大小(以双字节为单位),并且它必须为1到4000之间的值。
   存储大小为n字节的两倍。
 
-  - nvarchar[(n|max)]
+- nvarchar[(n|max)]
 
   可变大小字符串数据。n用于定义字符串大小(以双字节为单位),并且它可能为1到4000之间的值。
   max指示最大存储大小是2^30-1个字符(2GB)。存储大小为n字节的两倍+2个字节。
 
-  - ntext
+- ntext
 
   长度可变的Unicode数据，字符串最大长度为2^30-1（1073741823）个字节。
   存储大小是所输入字符串长度的两倍(以字节为单位)。
@@ -146,7 +144,7 @@ n+2个字节，并且可存储的字符数也是n。对于多字节编码字符�
 
 |指定的小数位数|结果(精度，小数位数)|列长度(以字节为单位)|小数 seconds 精确率|
 |:-|:-|:-|:-|
-|time|(16,7)[Informatica中为(12,3)]|5(Informatica中为4)|7(Informatica中为3)|
+|time|(16,7),Informatica中为(12,3)|5(Informatica中为4)|7(Informatica中为3)|
 |time(0)|(8,0)|3|0-2|
 |time(1)|(10,1)|3|0-2|
 |time(2)|(11,2)|3|0-2|
@@ -259,15 +257,15 @@ n+2个字节，并且可存储的字符数也是n。对于多字节编码字符�
 
 有些操作可以引用那些具有cursor数据类型的变量和参数，这些操作包括：
 
-  - DECLARE @local_variable和SET @local_variable语句。
+- DECLARE @local_variable和SET @local_variable语句。
 
-  - OPEN、FETCH、CLOSE及DEALLOCATE游标语句。
+- OPEN、FETCH、CLOSE及DEALLOCATE游标语句。
 
-  - 存储过程输出参数
+- 存储过程输出参数
 
-  - CURSOR_STATUS函数
+- CURSOR_STATUS函数
 
-  - sp_cursor_list、sp_describe_cursor、sp_describe_cursor_tables以及sp_describe_cursor_columns系统存储过程。
+- sp_cursor_list、sp_describe_cursor、sp_describe_cursor_tables以及sp_describe_cursor_columns系统存储过程。
 
   sp_cursor_list和sp_describe_cursor的cursor_name输出列返回游标变量的名称。
 
@@ -294,9 +292,9 @@ n+2个字节，并且可存储的字符数也是n。对于多字节编码字符�
 
 uniqueidentifier 数据类型的列或局部变量可通过以下方式初始化为一个值 ：
 
-  - 通过使用 NEWID 或 NEWSEQUENTIALID 函数。
+- 通过使用 NEWID 或 NEWSEQUENTIALID 函数。
 
-  - 通过从 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 形式的字符串常量进行转换，其中每个 x 都是 0-9 或 a-f 范围的十六进制数字。 例如，6F9619FF-8B86-D011-B42D-00C04FC964FF 为有效的 uniqueidentifier 值 。
+- 通过从 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 形式的字符串常量进行转换，其中每个 x 都是 0-9 或 a-f 范围的十六进制数字。 例如，6F9619FF-8B86-D011-B42D-00C04FC964FF 为有效的 uniqueidentifier 值 。
 
 比较运算符可与 uniqueidentifier 值一起使用 。 不过，排序不是通过比较两个值的位模式来实现的。 唯一可以针对 uniqueidentifier 值执行的操作是比较 (=、<>=<、= >) 以及检查 NULL (IS NULL 和 IS NOT NULL) 。 不能使用其他算术运算符。 除 IDENTITY 之外的所有列约束和属性均可对 uniqueidentifier 数据类型使用 。
 
@@ -308,25 +306,25 @@ uniqueidentifier 数据类型的列或局部变量可通过以下方式初始化
 
 xml 数据类型实例的存储表示形式不能超过 2 GB (GB) 大小。
 
-- hierarchyid 
+- hierarchyid
 
 hierarchyid 数据类型是一种长度可变的系统数据类型。 可使用 hierarchyid 表示层次结构中的位置。 类型为 hierarchyid 的列不会自动表示树。 由应用程序来生成和分配 hierarchyid 值，使行与行之间的所需关系反映在这些值中。
 
 hierarchyid 数据类型的值表示树层次结构中的位置。 hierarchyid 的值具有以下属性：
 
-  - 非常紧凑
+- 非常紧凑
 
     在具有 n 个节点的树中，表示一个节点所需的平均位数取决于平均端数（节点的平均子级数）。 对于 small 小时 (0-7) ，大小约为 6 * logAn 位，其中 A 是平均端数。 对于平均端数为 6 级、包含 100,000 个人的组织层次结构，一个节点大约占 38 位。 存储时，此值向上舍入为 40 位，即 5 字节。
 
-  - 按深度优先顺序进行比较
+- 按深度优先顺序进行比较
 
     假设有两个 hierarchyid 值 a 和 b， a b 意味着在树的深度优先遍历中，a 位于 b 之前。 hierarchyid 数据类型的索引按深度优先顺序排序，在深度优先遍历中相邻的节点的存储位置也相邻。 例如，一条记录的子级的存储位置与该记录的存储位置是相邻的。 有关详细信息，请参阅分层数据 (SQL Server) 。
 
-  - 支持任意插入和删除
+- 支持任意插入和删除
 
     使用 GetDescendant 方法，始终可以在任意给定节点的右侧、左侧或任意两个同级节点之间生成同级节点。 在层次结构中插入或删除任意数目的节点时，该比较属性保持不变。 大多数插入和删除操作都保留了紧凑性属性。 但是，对于在两个节点之间执行的插入操作，所产生的 hierarchyid 值的表示形式在紧凑性方面将稍微降低。
 
-  - hierarchyid 类型中所用的编码限制为 892 字节。 因此，如果节点的表示形式中包含过多级别，以至于 892 字节不足以容纳它，则该节点不能用 hierarchyid 类型表示。
+- hierarchyid 类型中所用的编码限制为 892 字节。 因此，如果节点的表示形式中包含过多级别，以至于 892 字节不足以容纳它，则该节点不能用 hierarchyid 类型表示。
 
 hierarchyid 类型可以作为 SqlHierarchyId 数据类型供 CLR 客户端使用。
 
@@ -352,7 +350,7 @@ sql_variant 的最大长度可以是 8016 个字节 。 这包括基类型信息
 
 ODBC 不完全支持 sql_variant 。 因此，使用 Microsoft OLE DB Provider for ODBC (MSDASQL) 时，sql_variant 列的查询将作为二进制数据返回 。 例如，包含字符串数据 'PS2091' 的 sql_variant 列将作为 0x505332303931 返回 。
 
-- table 
+- table
 
 一种特殊的数据类型，可用于存储结果集以进行后续处理。 table 主要用于临时存储一组作为表值函数结果集返回的行。 可将函数和变量声明为 table 类型。 table 变量可用于函数、存储过程和批处理中。 若要声明 table类型的变量，请使用 。
 

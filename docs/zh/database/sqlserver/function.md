@@ -87,10 +87,10 @@ SELECT MAX(column_name) FROM table_name;
 “WebSites”表数据
 |id|name|url|alexa|country|
 |:-|:-|:-|:-|:-|
-|1|Google|https://www.google.com/|1|USA|
-|2|TaoBao|https://www.taobao.com/|13|CN|
-|3|WeiBo|https://www.weibo.com/|20|CN|
-|4|Facebook|https://www.facebook.com/|3|USA|
+|1|Google|<https://www.google.com/>|1|USA|
+|2|TaoBao|<https://www.taobao.com/>|13|CN|
+|3|WeiBo|<https://www.weibo.com/>|20|CN|
+|4|Facebook|<https://www.facebook.com/>|3|USA|
 
 下面的SQL语句从”Websites“表的”alexa“列最大的值。
 
@@ -117,10 +117,10 @@ SELECT MIN(column_name) FROM table_name;
 “WebSites”表数据
 |id|name|url|alexa|country|
 |:-|:-|:-|:-|:-|
-|1|Google|https://www.google.com/|1|USA|
-|2|TaoBao|https://www.taobao.com/|13|CN|
-|3|WeiBo|https://www.weibo.com/|20|CN|
-|4|Facebook|https://www.facebook.com/|3|USA|
+|1|Google|<https://www.google.com/>|1|USA|
+|2|TaoBao|<https://www.taobao.com/>|13|CN|
+|3|WeiBo|<https://www.weibo.com/>|20|CN|
+|4|Facebook|<https://www.facebook.com/>|3|USA|
 
 下面的SQL语句从”Websites“表的”alexa“列最小的值。
 
@@ -178,11 +178,10 @@ SELECT UPPER(column_name) FROM table_name;
 “WebSites”表数据
 |id|name|url|alexa|country|
 |:-|:-|:-|:-|:-|
-|1|Google|https://www.google.com/|1|USA|
-|2|TaoBao|https://www.taobao.com/|13|CN|
-|3|WeiBo|https://www.weibo.com/|20|CN|
-|4|Facebook|https://www.facebook.com/|3|USA|
-
+|1|Google|<https://www.google.com/>|1|USA|
+|2|TaoBao|<https://www.taobao.com/>|13|CN|
+|3|WeiBo|<https://www.weibo.com/>|20|CN|
+|4|Facebook|<https://www.facebook.com/>|3|USA|
 
 下面的SQL语句从”Websites“表对”name“列的值转换为大写。
 
@@ -197,7 +196,6 @@ SELECT UPPER(name) site_title FROM WebSites;
 |TAOBAO|
 |WEIBO|
 |FACEBOOK|
-
 
 ### LOWER
 
@@ -216,11 +214,10 @@ SELECT LOWER(column_name) FROM table_name;
 “WebSites”表数据
 |id|name|url|alexa|country|
 |:-|:-|:-|:-|:-|
-|1|Google|https://www.google.com/|1|USA|
-|2|TaoBao|https://www.taobao.com/|13|CN|
-|3|WeiBo|https://www.weibo.com/|20|CN|
-|4|Facebook|https://www.facebook.com/|3|USA|
-
+|1|Google|<https://www.google.com/>|1|USA|
+|2|TaoBao|<https://www.taobao.com/>|13|CN|
+|3|WeiBo|<https://www.weibo.com/>|20|CN|
+|4|Facebook|<https://www.facebook.com/>|3|USA|
 
 下面的SQL语句从”Websites“表对”name“列的值转换为小写。
 
@@ -257,11 +254,10 @@ SUBSTRING(expression,start,length)
 “WebSites”表数据
 |id|name|url|alexa|country|
 |:-|:-|:-|:-|:-|
-|1|Google|https://www.google.com/|1|USA|
-|2|TaoBao|https://www.taobao.com/|13|CN|
-|3|WeiBo|https://www.weibo.com/|20|CN|
-|4|Facebook|https://www.facebook.com/|3|USA|
-
+|1|Google|<https://www.google.com/>|1|USA|
+|2|TaoBao|<https://www.taobao.com/>|13|CN|
+|3|WeiBo|<https://www.weibo.com/>|20|CN|
+|4|Facebook|<https://www.facebook.com/>|3|USA|
 
 下面的SQL语句从”Websites“表对”name“列的前4个字符。
 
@@ -294,11 +290,10 @@ SELECT LEN(column_name) FROM table_name;
 “WebSites”表数据
 |id|name|url|alexa|country|
 |:-|:-|:-|:-|:-|
-|1|Google|https://www.google.com/|1|USA|
-|2|TaoBao|https://www.taobao.com/|13|CN|
-|3|WeiBo|https://www.weibo.com/|20|CN|
-|4|Facebook|https://www.facebook.com/|3|USA|
-
+|1|Google|<https://www.google.com/>|1|USA|
+|2|TaoBao|<https://www.taobao.com/>|13|CN|
+|3|WeiBo|<https://www.weibo.com/>|20|CN|
+|4|Facebook|<https://www.facebook.com/>|3|USA|
 
 下面的SQL语句从”Websites“表对”name“列值的长度。
 
@@ -350,7 +345,7 @@ ROUND始终返回一个值。如果length为负数，并且大于小数点前的
 |ROUND(748.58,-3)|导致算术溢出，因为748.58默认为decimal(5,2),它无法返回1000.00|
 |若要向上舍入到4位，请更改输入的数据类型。例如:SELECT ROUND(CAST(748.58 AS decimal(6,2)),3)|
 
-## GROUP BY 
+## GROUP BY
 
 GROUP BY语句用于结合聚合函数，根据一个或多个列对结果集进行分组。
 
@@ -370,10 +365,10 @@ GROUP BY column_name;
 “WebSites”表数据
 |id|name|url|alexa|country|
 |:-|:-|:-|:-|:-|
-|1|Google|https://www.google.com/|1|USA|
-|2|TaoBao|https://www.taobao.com/|13|CN|
-|3|WeiBo|https://www.weibo.com/|20|CN|
-|4|Facebook|https://www.facebook.com/|3|USA|
+|1|Google|<https://www.google.com/>|1|USA|
+|2|TaoBao|<https://www.taobao.com/>|13|CN|
+|3|WeiBo|<https://www.weibo.com/>|20|CN|
+|4|Facebook|<https://www.facebook.com/>|3|USA|
 
 下面是"access_log"表的数据
 
@@ -429,10 +424,10 @@ HAVING aggregate_function(column_name) operator value;
 “WebSites”表数据
 |id|name|url|alexa|country|
 |:-|:-|:-|:-|:-|
-|1|Google|https://www.google.com/|1|USA|
-|2|TaoBao|https://www.taobao.com/|13|CN|
-|3|WeiBo|https://www.weibo.com/|20|CN|
-|4|Facebook|https://www.facebook.com/|3|USA|
+|1|Google|<https://www.google.com/>|1|USA|
+|2|TaoBao|<https://www.taobao.com/>|13|CN|
+|3|WeiBo|<https://www.weibo.com/>|20|CN|
+|4|Facebook|<https://www.facebook.com/>|3|USA|
 
 下面是"access_log"表的数据
 
@@ -479,10 +474,10 @@ WHERE EXISTS(SELECT column_name FROM table_name WHERE condition);
 “WebSites”表数据
 |id|name|url|alexa|country|
 |:-|:-|:-|:-|:-|
-|1|Google|https://www.google.com/|1|USA|
-|2|TaoBao|https://www.taobao.com/|13|CN|
-|3|WeiBo|https://www.weibo.com/|20|CN|
-|4|Facebook|https://www.facebook.com/|3|USA|
+|1|Google|<https://www.google.com/>|1|USA|
+|2|TaoBao|<https://www.taobao.com/>|13|CN|
+|3|WeiBo|<https://www.weibo.com/>|20|CN|
+|4|Facebook|<https://www.facebook.com/>|3|USA|
 
 下面是"access_log"表的数据
 
@@ -504,8 +499,8 @@ WHERE EXISTS(SELECT count FROM Access_log WHERE Websites.id=access_log.site_id A
 输出结果如下:
 |name|url|
 |:-|:-|
-|Google|https://www.google.com/|
-|WeiBo|https://www.weibo.com/|
+|Google|<https://www.google.com/>|
+|WeiBo|<https://www.weibo.com/>|
 
 下面的SQL语句从”Websites“表、”Access_log“表中统计网站访问记录不大于100的记录。
 
@@ -518,7 +513,7 @@ WHERE NOT EXISTS(SELECT count FROM Access_log WHERE Websites.id=access_log.site_
 输出结果如下:
 |name|url|
 |:-|:-|
-|TaoBao|https://www.taobao.com/|
+|TaoBao|<https://www.taobao.com/>|
 
 ## FORMAT
 

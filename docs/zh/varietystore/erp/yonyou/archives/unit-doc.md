@@ -2,49 +2,49 @@
 
 - 资源符
 
-  **unitdoc**
+  unitdoc
   
 - 操作符
 
-  - **create** <Badge type="tip" text="v1" vertical="top" />
+  - create <Badge type="tip" text="v1" vertical="top" />
 
-  - **load** <Badge type="tip" text="v2" vertical="top" />
+  - load <Badge type="tip" text="v2" vertical="top" />
 
-  - **edit** <Badge type="tip" text="v2" vertical="top" />
+  - edit <Badge type="tip" text="v2" vertical="top" />
 
-  - **delete** <Badge type="tip" text="v2" vertical="top" />
+  - delete <Badge type="tip" text="v2" vertical="top" />
 
 - 请求参数说明
 
-|参数				|类型	|参数路径	|是否必填	|描述					|
-|:-					|:-		|:-			|:-			|:-						|
-|cunitid			|string |			|是			|交易方编号				|
-|cunitname			|string |			|是			|交易方名称				|
-|cunitsname			|string |			|否			|交易方简称				|
-|cclass				|string |			|是			|交易方分类编号			|
-|ccusid				|string |			|否			|客户编码				|
-|csupid				|string |			|否			|供应商编码				|
-|caddress			|string |			|否			|联系地址				|
-|cpostcode			|string |			|否			|邮政编码				|
-|ctelephone			|string |			|否			|电话					|
-|ctelefax			|string |			|否			|传真					|
-|cbp				|string |			|否			|呼机					|
-|cmobiletele		|string |			|否			|手机					|
-|cemail				|string |			|否			|Email地址				|
-|clinkman			|string |			|否			|联系人					|
-|cremark			|string |			|否			|备注					|
-|cbankcode			|string |			|否			|对应科目编码				|
-|cdepid				|string |			|否			|对应部门编码				|
-|cpersonid			|string |			|否			|对应人员编码				|
+|参数|类型|参数路径|是否必填|描述|
+|:-|:-|:-|:-|:-|
+|cunitid|string||是|交易方编号|
+|cunitname|string||是|交易方名称|
+|cunitsname|string||否|交易方简称|
+|cclass|string||是|交易方分类编号|
+|ccusid|string||否|客户编码|
+|csupid|string||否|供应商编码|
+|caddress|string||否|联系地址|
+|cpostcode|string||否|邮政编码|
+|ctelephone|string||否|电话|
+|ctelefax|string||否|传真|
+|cbp|string||否|呼机|
+|cmobiletele|string||否|手机|
+|cemail|string||否|Email地址|
+|clinkman|string||否|联系人|
+|cremark|string||否|备注|
+|cbankcode|string||否|对应科目编码|
+|cdepid|string||否|对应部门编码|
+|cpersonid|string||否|对应人员编码|
 
 - 返回参数说明
 
-|参数   |类型     |描述           |
-|:-     |:-       |:-            |
-|errcode|string   |状态码(0:成功) |
-|errmsg |string   |错误描述       |
-|id     |string   |               |
-|tradeid|string   |               |
+|参数|类型|描述|
+|:-|:-|:-|
+|errcode|string|状态码(0:成功)|
+|errmsg|string|错误描述|
+|id|string||
+|tradeid|string||
 
 - 示例
 
@@ -81,10 +81,10 @@
 
 ```json
 {
-  "errcode": "0",
-  "errmsg": "",
-  "id": "",
-  "tradeid": "3eb76146-c94b-4b4b-87ef-40ac1087f9ba"
+    "errcode": "0",
+    "errmsg": "",
+    "id": "",
+    "tradeid": "3eb76146-c94b-4b4b-87ef-40ac1087f9ba"
 }
 ```
 
