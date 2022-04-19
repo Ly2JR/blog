@@ -14,7 +14,7 @@ export const zh:NavbarConfig=[
           },
           {
             text:'写作',
-            link:'/zh/life/literature/markdown/README.md'
+            link:'/zh/life/literature/markdown/overview/philosophy.md'
           },
           {
             text: '音乐',
