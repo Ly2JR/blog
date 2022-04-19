@@ -1,4 +1,4 @@
-# 链接语法
+# [链接](https://daringfireball.net/projects/markdown/syntax#link)
 
 不同的Markdown应用程序处理Url中间的空格方式不一样。为了兼容性，请尽量使用`%20`替代空格。
 
@@ -21,22 +21,6 @@
 [Markdown](https://ilyl.life/zh/life/literature/markdown/)
 
 [Markdown](https://ilyl.life/zh/life/literature/markdown/ "Markdown语法")
-
-## 网址和邮箱
-
-使用`<`和`>`包裹需要显示的内容,变成可点击的链接。
-
-可点击链接Markdown语法代码：`<超链接地址>`
-
-```markdown
-<https://ilyl.life/zh/life/literature/markdown/>
-
-<markwodn@example.com>
-```
-
-<https://ilyl.life/zh/life/literature/markdown/>
-
-<markwodn@example.com>
 
 ## 引用类型链接
 

@@ -71,7 +71,7 @@
 
   - 例题介绍
 
-  $\color{blue}{单选题}$
+  $\color{blue}\bf{单选题}$
 
   1、设A与B是两个随机事件，则P(A-B)=$\textcolor{red}{\underline D}$
 
@@ -83,11 +83,11 @@
 
   D. P(A)-P(AB)
 
-  $\color{blue}{填空题}$
+  $\color{blue}\bf{填空题}$
 
   1、设随机事件A,B互不相容，P(A)=0.6,P(B)=0.4,P(AB)=$\textcolor{red}{\underline 0}$
 
-  $\color{blue}{计算题}$
+  $\color{blue}\bf{计算题}$
 
   1、设甲、乙、丙三个工厂生产同一种产品，由于各工厂规模与设备，技术的差异，三个工厂产品数量比例为1:2:1,且产品次品率分别为1%,2%,3%。
 
@@ -95,12 +95,12 @@
 
   (2)在取出1件产品是次品的条件下，其为丙厂生产的概率。
 
-  $\color{blue}{综合题}$
+  $\color{blue}\bf{综合题}$
 
   1、 设随机变量式的概率密度为
   $$
   f(x) =
-  \begin{cases} 
+  \begin{cases}
   2c,-1 \le x \le 1,  \\
   0, \text{其他}
   \end{cases}
@@ -111,7 +111,7 @@
 
   (3) $E(x^3)$;
 
-  $\color{blue}{应用题}$
+  $\color{blue}\bf{应用题}$
 
   1、设某车间生产的零件长度$X\sim N(\mu,\sigma^2)$(单位:mm),现从生产的一批中随机抽取25件，测得零件长度的平均值$\alpha =1970$，标准差$s=100$,如果$\sigma^2$未知，在显著性水平$\alpha =0.05$下，能否认为该车间生产的零件的平均长度是2020mm?
 

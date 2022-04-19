@@ -6,7 +6,7 @@
 
   - 1、频率的定义
 
-  定义  **在相同条件下,进行了n次试验,在这n次试验中,事件A发生的次数$n_A$称为事件A发生的频数**.
+  $\bf{在相同条件下,进行了n次试验,在这n次试验中,事件A发生的次数n_A称为事件A发生的频数}$。
 
   比值$n_A/n$称为事件A发生的频率,记作$f_n (A)$
 
@@ -36,19 +36,19 @@
 
 称这种试验为古典概型。
 
-$\color{blue}{【题型:】}$
+$\color{blue}\bf{【题型:】}$
   
 抛掷一枚硬币3次，就以下情形写出样本空间：
 
 (1) 观察正面$H$反面$T$出现的情况  (2)观察正面$H$出现的次数
 
-$\color{red}{【解析:】}$
+$\color{red}\bf{【解析:】}$
 
 (1) $S_1={HHH,HHT,HTH,HTT,THH,THT,TTT}$
 
 (2) $S_2={0,1,2,3}$
 
-$\color{blue}{概率的古典定义}$
+$\color{blue}\bf{概率的古典定义}$
 
 定义: 设试验$E$的样本空间$S$包含$n$个基本事件，事件$A$包含$k$个基本事件，则有
 
@@ -68,7 +68,7 @@ $$P(A)=\frac{k}{n}=\frac{A包含的基本事件}{S中基本事件的总数}$$
 
 排列组合是计算古典概率的有力工具。
 
-$\color{blue}{【题型:】}$
+$\color{blue}\bf{【题型:】}$
 
 从${1,2,3,4,5}$中随机地取3个数字，求
 
@@ -76,7 +76,7 @@ $\color{blue}{【题型:】}$
 
 (2) 三个数字中没有3的概率$P_2$;
 
-$\color{red}{【解析:】}$
+$\color{red}\bf{【解析:】}$
 
 基本事件总数:$C_5^3$
 
@@ -86,13 +86,13 @@ $A_2$所含的基本事件数=$C_4^3 \qquad \colorbox{orange}{从1,2,4,5中取3�
 
 $P_1=\frac{C_3^2}{C_5^2}=\frac{3}{10}; \qquad P_2=\frac{C_4^3}{C_5^3}=\frac{4}{10}$
 
-$\color{blue}{【题型:】}$
+$\color{blue}\bf{【题型:】}$
 
 设有$N$件产品,其中有$D$件次品,现在从中随机取$n$件,
 
 问:其中恰有$k$件次品的概率是多少?
 
-$\color{red}{【解析:】}$
+$\color{red}\bf{【解析:】}$
 
 记$A$表示"所取$n$件产品中恰有$k$件次品"
 
@@ -104,11 +104,11 @@ $\colorbox{orange}{k件次品随机取自D件次品,其余来自正品。}$
 
 $P(A)=\frac{C_D^k C_{N-D}^{n-k}}{C_N^n}$
 
-$\color{blue}{【题型:】}$
+$\color{blue}\bf{【题型:】}$
 
 袋中有$a$个白球与$b$个黑球。每次从中取一共球,取出的求不再放回。把球全部取出，求$\color{blue}{第k次取得白球}$的概率。
 
-$\color{red}{【解析: 排列方法】}$
+$\color{red}\bf{【解析: 排列方法】}$
 
 $S:a+b$个球看作不同的编号，依次排列在$a+b$个位置，
 
@@ -122,7 +122,7 @@ $P(A)=\frac{a(a+b-1)!}{(a+b)!}=\frac{a}{a+b}$
 
 - 三、概率的定义与性质
 
-$\color{blue}{概率的定义}$
+$\color{blue}\bf{概率的定义}$
 
 设$E$为随机试验，$S$为$E$的样本空间，对于$E$的每一个事件$A$，赋予一共实数$P(A)$,称作事件$A$发生的概率,其中集合函数$P(.)$满足以下条件:
 
@@ -134,7 +134,7 @@ $\color{blue}{概率的定义}$
 
 $A_i A_j=\phi,i\neq j$
 
-$\color{blue}{概率的性质}$
+$\color{blue}\bf{概率的性质}$
 
 1、$P(\phi)=0$,即：不可能事件发生的概率为0。
 
@@ -170,27 +170,27 @@ $P(B-A)=P(B)-P(AB)$,
 
 $P(\overline{A})=1-P(A) \qquad  \colorbox{orange}{逆概率公式}$
 
-$\color{blue}{【题型:】}$
+$\color{blue}\bf{【题型:】}$
 
 设$P(A)=\frac{1}{2},P(B)=\frac{1}{3},P(A\cup B)=\frac{7}{12}.$则$P(\overline{AB})$=$\overline{\frac{3}{4}}$
 
-$\color{red}{【答案:】\frac{3}{4}}$
+$\color{red}\bf{【答案:】\frac{3}{4}}$
 
-$\color{red}{【解析:】}$
+$\color{red}\bf{【解析:】}$
 
 $P(AB)=P(A)+P(B)-P(A\cup B)=\frac{1}{2}+\frac{1}{3}-\frac{7}{12}=\frac{1}{4}$
 
 $P(\overline{AB})=1-P(AB)=\frac{3}{4}$
 
-$\color{blue}{【题型:】}$
+$\color{blue}\bf{【题型:】}$
 
 盒中有7个球，编号为1至7号，随机取2个，取出球的最小号码是3的概率为($\color{red}{C}$).
 
 $A \frac{1}{21}. \qquad B \frac{5}{21}. \qquad C \frac{4}{21}. \qquad D \frac{2}{21}$
 
-$\color{red}{【答案:】C}$
+$\color{red}\bf{【答案:】C}$
 
-$\color{red}{【解析:】}$
+$\color{red}\bf{【解析:】}$
 
 本题为古典概型。
 

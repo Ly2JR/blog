@@ -1,4 +1,4 @@
-# 标题语法
+# [标题](https://daringfireball.net/projects/markdown/syntax#header)
 
 一个`#`是一级标题，两个`#`是二级标题，以此类推。
 

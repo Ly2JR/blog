@@ -154,7 +154,9 @@ $\overline{H}$
 
 - 2.3 概率的定义与性质
 
-  **定义1** 设$\Omega$是随机实验$\mathbf{E}$的样本空间，对于$\mathbf{E}$的每个事件$\mathbf{A}$赋予一共实数，记作$\mathbf{P(A)}$,
+  $\color{blue}\bf{定义：}$
+  
+  设$\Omega$是随机实验$\mathbf{E}$的样本空间，对于$\mathbf{E}$的每个事件$\mathbf{A}$赋予一共实数，记作$\mathbf{P(A)}$,
   称$\mathbf{P(A)}$为**事件A的概率**,如果它满足下列条件：
 
   1、$P(A)\geq 0$ ;
@@ -164,9 +166,13 @@ $\overline{H}$
   3、设$A_1,A_2,\cdots,A_m,\cdots$是一列互不相容的事件,则有
   $$P( \bigcup_{k=1}^{\infty} A_k)=\sum_{k=1}^{\infty}P(A_k)$$
 
-  **性质1**   $0\leq P(A)\leq 1,P(\phi)=0$
+  $\color{blue}\bf{性质1：}$
 
-  **性质2**   对于任意事件A,B有
+  $0\leq P(A)\leq 1,P(\phi)=0$
+
+  $\color{blue}\bf{性质2：}$
+  
+  对于任意事件A,B有
   $$P(A\cup B)=P(A)+P(B)-P(AB).$$
 
   特别地，当A与B互不相容时,
@@ -179,9 +185,13 @@ $\overline{H}$
   $$P(A_1\cup A_2 \cup \cdots\cup A_n)=P(A_1)+P(A_2)+\cdots+P(A_n)$$
   其中$\mathbf{n}$为正整数.
 
-  **性质3** P(B-A)=P(B)-P(AB).
+  $\color{blue}\bf{性质3：}$
+
+  P(B-A)=P(B)-P(AB).
 
   特别地，当$A \subset B$时,P(B-A)=P(B)-P(A),且$P(A)\leq P(B)$
 
-  **性质4** $P(\overline{A})=1-P(A)$.
+  $\color{blue}\bf{性质4：}$
+  
+  $P(\overline{A})=1-P(A)$.
   
