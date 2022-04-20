@@ -2,12 +2,9 @@
 home: true
 title: Home
 actions:
-  - text: Portal
-    link: /guide/
+  - text: Quick Start ->
+    link: /zh/life/books/
     type: primary
-  - text: About
-    link: /guide/
-    type: secondary
 features:
   - title: Daily learning and life records
     details: The Blog Built Using VurePress

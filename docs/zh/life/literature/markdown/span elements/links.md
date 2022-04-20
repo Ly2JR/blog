@@ -158,6 +158,38 @@ Markwon8[^8]
 [^8]:<https://ilyl.life/zh/life/literature/markdown/> (Markdown8)
 ```
 
+Markwon1[^1]
+
+Markwon2[^2]
+
+Markwon3[^3]
+
+Markwon4[^4]
+
+Markwon5[^5]
+
+Markwon6[^6]
+
+Markwon7[^7]
+
+Markwon8[^8]
+
+[^1]:https://ilyl.life/zh/life/literature/markdown/
+
+[^2]:https://ilyl.life/zh/life/literature/markdown/ "Markdown2"
+
+[^3]:https://ilyl.life/zh/life/literature/markdown/ 'Markdown3'
+
+[^4]:https://ilyl.life/zh/life/literature/markdown/ (Markdown4)
+
+[^5]:<https://ilyl.life/zh/life/literature/markdown/>
+
+[^6]:<https://ilyl.life/zh/life/literature/markdown/> "Markdown6"
+
+[^7]:<https://ilyl.life/zh/life/literature/markdown/> 'Markdown7'
+
+[^8]:<https://ilyl.life/zh/life/literature/markdown/> (Markdown8)
+
 ## 锚点(页内链接)
 
 锚点就是页内超链接，链接本文档内部的某些元素，实现当前页面中的跳转。

@@ -72,7 +72,8 @@ export const zh: SidebarConfig = {
                     children:[
                         '/zh/life/literature/markdown/extension/table.md',
                         '/zh/life/literature/markdown/extension/task-lists.md',
-                        '/zh/life/literature/markdown/extension/emoji.md'
+                        '/zh/life/literature/markdown/extension/emoji.md',
+                        '/zh/life/literature/markdown/extension/others.md'
                     ]
                     
                 }

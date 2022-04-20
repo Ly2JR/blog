@@ -77,13 +77,13 @@ export default defineUserConfig<DefaultThemeOptions,ViteBundlerOptions>({
     locales: {
       '/': {
         lang: 'en-US',
-        title: 'Blog',
-        description: 'Daily record',
+        title: 'Ly2JR·Blog',
+        description: 'Write And Note...',
       },
       '/zh/': {
         lang: 'zh-CN',
         title: '乌龙茶有点甜·博客',
-        description: '日常记录...',
+        description: '写写记记...',
       },
     },
     
@@ -235,8 +235,15 @@ export default defineUserConfig<DefaultThemeOptions,ViteBundlerOptions>({
       * @param md 
       */
      extendsMarkdown:md=>{
+       //支持latex
        let mathjax3=require('markdown-it-mathjax3');
+       //支持注脚
+       let markdownItFootnote=require('markdown-it-footnote');
+       //支持任务列表
+       let markdownTaskList=require('markdown-it-task-lists');
        md.use(mathjax3);
+       md.use(markdownItFootnote);
+       md.use(markdownTaskList);
      },
      /**
       * 打包配置

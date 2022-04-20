@@ -2,15 +2,12 @@
 home: true
 title: 主页
 actions:
-  - text: 传送门
-    link: /zh/guide/
-    type: primary
-  - text: 关于
+  - text: 开始
     link: /zh/life/books/
-    type: secondary
+    type: primary
 features:
   - title: 日常学习、生活记录 
-    details: 这是使用VuePress搭建的博客
+    details: 这是由VuePress搭建的博客
   - title: .Net
     details: .NET Core、ABP
   - title: 移动端
