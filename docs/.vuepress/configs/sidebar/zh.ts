@@ -150,8 +150,23 @@ export const zh: SidebarConfig = {
         {
             text: 'WPF',
             children: [
-                '/zh/dotnet/wpf/README.md',
+                '/zh/dotnet/wpf/README.md'
+            ],
+        },
+        {
+            text:'刘铁猛 -《深入浅出WPF》',
+            children:[
+                '/zh/dotnet/wpf/course1.md',
+                '/zh/dotnet/wpf/course2.md',
+                '/zh/dotnet/wpf/course3.md',
                 '/zh/dotnet/wpf/download.md'
+            ]
+        },
+        {
+            text: 'IHome.UI',
+            children: [
+                '/zh/dotnet/wpf/Controls/README.md',
+                '/zh/dotnet/wpf/Controls/button.md',
             ],
         },
         {
@@ -164,7 +179,9 @@ export const zh: SidebarConfig = {
             text: 'Prism',
             children: [
                 '/zh/dotnet/wpf/prism/README.md',
+                '/zh/dotnet/wpf/prism/course1.md'
             ],
+<<<<<<< HEAD
         },
         {
             text: 'Material Design In Xaml',
@@ -173,6 +190,9 @@ export const zh: SidebarConfig = {
             ],
         },
       
+=======
+        }
+>>>>>>> e8f9c4d8d5ae35d3ce54f71ba0a7bdfdde57ffdd
     ],
     '/zh/jquery/': [
         {
