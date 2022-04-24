@@ -4,7 +4,7 @@ export const zh: SidebarConfig = {
     '/zh/guide/': [
         '/zh/guide/README.md',
     ],
-    '/zh/life/books': [
+    '/zh/life/books/': [
         {
             text: '书籍',
             children: [
@@ -25,7 +25,7 @@ export const zh: SidebarConfig = {
             ]
         }
     ],
-    '/zh/life/literature':[
+    '/zh/life/literature/':[
         {
             text:'Markdown',
             children:[
@@ -87,7 +87,7 @@ export const zh: SidebarConfig = {
                 
         }
     ],
-    '/zh/life/music': [
+    '/zh/life/music/': [
         {
             text: '品味生活，聆听音乐',
             children: [
@@ -99,7 +99,43 @@ export const zh: SidebarConfig = {
         {
             text: 'Design Pattern',
             children: [
-                '/zh/dotnet/design-pattern.md',
+                {
+                    text:'创建型',
+                    children:[
+                        '/zh/dotnet/design-pattern/singleton-pattern.md',
+                        '/zh/dotnet/design-pattern/abstract-factory.md',
+                        '/zh/dotnet/design-pattern/builder.md',
+                        '/zh/dotnet/design-pattern/factory-method.md',
+                        '/zh/dotnet/design-pattern/prototype.md',
+                    ]
+                },
+                {
+                    text:'结构型',
+                    children:[
+                        '/zh/dotnet/design-pattern/adapter-pattern.md',
+                        '/zh/dotnet/design-pattern/bridge-pattern.md',
+                        '/zh/dotnet/design-pattern/decorator-pattern.md',
+                        '/zh/dotnet/design-pattern/composite-pattern.md',
+                        '/zh/dotnet/design-pattern/facade-pattern.md',
+                        '/zh/dotnet/design-pattern/flyweight-pattern.md',
+                        '/zh/dotnet/design-pattern/proxy-pattern.md',
+                    ]
+                }, {
+                    text:'行为型',
+                    children:[
+                        '/zh/dotnet/design-pattern/template-method.md',
+                        '/zh/dotnet/design-pattern/command-pattern.md',
+                        '/zh/dotnet/design-pattern/iterator-pattern.md',
+                        '/zh/dotnet/design-pattern/observer-pattern.md',
+                        '/zh/dotnet/design-pattern/interpreter-pattern.md',
+                        '/zh/dotnet/design-pattern/mediator-pattern.md',
+                        '/zh/dotnet/design-pattern/chain-of-responsibility-pattern.md',
+                        '/zh/dotnet/design-pattern/memento-pattern.md',
+                        '/zh/dotnet/design-pattern/strategy-pattern.md',
+                        '/zh/dotnet/design-pattern/visitor-pattern.md',
+                        '/zh/dotnet/design-pattern/state-pattern.md',
+                    ]
+                }
             ],
         },
         {
@@ -110,12 +146,18 @@ export const zh: SidebarConfig = {
             ],
         },
     ],
-    '/zh/dotnet/wpf': [
+    '/zh/dotnet/wpf/': [
         {
             text: 'WPF',
             children: [
                 '/zh/dotnet/wpf/README.md',
                 '/zh/dotnet/wpf/download.md'
+            ],
+        },
+        {
+            text: '自定义控件',
+            children: [
+                '/zh/dotnet/wpf/controls/button.md',
             ],
         },
         {
@@ -130,6 +172,7 @@ export const zh: SidebarConfig = {
                 '/zh/dotnet/wpf/materialdesigninxaml/README.md',
             ],
         },
+      
     ],
     '/zh/jquery/': [
         {
@@ -155,7 +198,7 @@ export const zh: SidebarConfig = {
             ]
         }
     ],
-    '/zh/varietystore/erp/yonyou': [
+    '/zh/varietystore/erp/yonyou/': [
         {
             text: '用友U8+',
             children: [
@@ -258,7 +301,7 @@ export const zh: SidebarConfig = {
             ]
         }
     ],
-    '/zh/varietystore/markdown/latex': [
+    '/zh/varietystore/markdown/latex/': [
         {
             text: '公式指导手册',
             children: [
@@ -267,7 +310,7 @@ export const zh: SidebarConfig = {
             ]
         }
     ],
-    '/zh/varietystore/office/excel': [
+    '/zh/varietystore/office/excel/': [
         {
             text: 'Excel',
             children: [
@@ -281,7 +324,7 @@ export const zh: SidebarConfig = {
             ]
         }
     ],
-    '/zh/varietystore/data-exchange-format/json': [
+    '/zh/varietystore/data-exchange-format/json/': [
         {
             text: 'JSON',
             children: [
@@ -292,7 +335,7 @@ export const zh: SidebarConfig = {
             ]
         }
     ],
-    '/zh/varietystore/data-exchange-format/xml': [
+    '/zh/varietystore/data-exchange-format/xml/': [
         {
             text: 'XML',
             children: [
@@ -303,7 +346,7 @@ export const zh: SidebarConfig = {
             ]
         }
     ],
-    '/zh/varietystore/cli/github': [
+    '/zh/varietystore/cli/github/': [
         {
             text: 'Github',
             children: [
@@ -312,7 +355,7 @@ export const zh: SidebarConfig = {
             ]
         }
     ],
-    '/zh/varietystore/cli/yarn': [
+    '/zh/varietystore/cli/yarn/': [
         {
             text: 'Yarn',
             children: [
@@ -321,7 +364,7 @@ export const zh: SidebarConfig = {
             ]
         }
     ],
-    '/zh/varietystore/ladder': [
+    '/zh/varietystore/ladder/': [
         {
             text: '梯云纵',
             children: [

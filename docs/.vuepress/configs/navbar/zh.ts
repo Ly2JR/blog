@@ -27,7 +27,7 @@ export const zh:NavbarConfig=[
         children: [
           {
             text: '.NET',
-            link:'/zh/dotnet/design-pattern.md'
+            link:'/zh/dotnet/README.md'
           },
           {
             text:'客户端',
