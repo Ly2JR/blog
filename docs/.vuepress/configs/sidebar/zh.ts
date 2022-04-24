@@ -180,19 +180,8 @@ export const zh: SidebarConfig = {
             children: [
                 '/zh/dotnet/wpf/prism/README.md',
                 '/zh/dotnet/wpf/prism/course1.md'
-            ],
-<<<<<<< HEAD
-        },
-        {
-            text: 'Material Design In Xaml',
-            children: [
-                '/zh/dotnet/wpf/materialdesigninxaml/README.md',
-            ],
-        },
-      
-=======
+            ]
         }
->>>>>>> e8f9c4d8d5ae35d3ce54f71ba0a7bdfdde57ffdd
     ],
     '/zh/jquery/': [
         {
