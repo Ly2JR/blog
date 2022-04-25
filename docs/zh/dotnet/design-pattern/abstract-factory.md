@@ -67,7 +67,6 @@
 ```cs
 namespace Design_Pattern
 {
-
     public class AbstractFactory
     {
         public interface IButton

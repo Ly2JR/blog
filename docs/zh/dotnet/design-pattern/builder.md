@@ -28,7 +28,6 @@ namespace Design_Pattern
     Console.WriteLine(person.Body);
     Console.WriteLine(person.Foot);
     Console.WriteLine(person.Head);
-    Console.ReadKey();
 
     public  class Builder
     {
@@ -71,6 +70,7 @@ namespace Design_Pattern
                 return _person;
             }
         }
+
         /// <summary>
         /// 建造者
         /// </summary>

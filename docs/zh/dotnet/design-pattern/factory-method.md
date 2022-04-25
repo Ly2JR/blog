@@ -53,9 +53,6 @@ namespace Design_Pattern
     var shreddedPorkWithPotatoes = shreddedPorkWithPotatoesFactory.CreateFoodFactory();
     shreddedPorkWithPotatoes.Print();
 
-    /// <summary>
-    /// 工厂方法
-    /// </summary>
     public  class FactoryMethod
     {
         public abstract class Food

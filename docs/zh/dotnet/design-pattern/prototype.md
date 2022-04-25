@@ -16,42 +16,51 @@
 ::: code-group-item 浅度复制
 
 ```cs
-using System;
-class Prototype{
-  public interface IColor{
-    IColor Clone();
+namespace Design_Pattern
+{
+    var redColor = new Prototype.RedColor
+    {
+        Red = 255
+    };
+    Console.WriteLine($"RedColor - Red {redColor.Red}");
 
-    int Red{get;set;}
-
-    int Green{get;set;}
-
-    int Blue{get;set;}
-  }
-
-  public class RedColor:IColor{
-    public int Red{get;set;}
-
-    public int Green{get;set;}
-
-    public int Blue{get;set;}
-
-    public IColor Clone(){
-      return (IColor)this.MemberwiseClone();
+    var redColorClone = redColor.Clone();
+    if (redColorClone != null)
+    {
+        redColorClone.Red = 224;
+        Console.WriteLine($"RedColorClone - Red {redColorClone.Red}");
     }
-  }
+    Console.WriteLine($"RedColor - Red {redColor.Red}");
 
-  static void Main(string[] args){
-    var redColor=new RedColor();
-    redColor.Red=255;
-    Console.WriteLine($"RedColor -Red {redColor.Red}");
+    public  class Prototype
+    {
+        public interface IColor
+        {
+           IColor Clone();
 
-    var redColorClone=redColor.Clone();
-    redColorClone.Red=224;
-    Console.WriteLine($"RedColorClone -Red {redColorClone.Red}");
-    Console.WriteLine($"RedColor -Red {redColor.Red}");
-    Console.ReadKey();
-  }
+           int Red { get; set; }
+
+           int Green { get; set; }
+
+           int Blue { get; set; }
+        }
+
+        public class RedColor : IColor
+        {
+           public int Red { get; set; }
+
+           public int Green { get; set; }
+
+           public int Blue { get; set; }
+
+           public IColor Clone()
+           {
+               return (IColor)this.MemberwiseClone();
+           }
+        }
+    }
 }
+
 ```
 
 :::
@@ -74,9 +83,6 @@ namespace Design_Pattern
     redColorClone.F.Name = "RedColorClone";
     Console.WriteLine($"RedColorClone - Factory {redColorClone.F.Name}; Red - {redColorClone.Red}");
 
-    /// <summary>
-    /// 原型模式
-    /// </summary>
     public  class Prototype
     {
         public interface IColor

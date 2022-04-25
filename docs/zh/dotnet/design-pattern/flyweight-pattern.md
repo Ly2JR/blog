@@ -35,24 +35,24 @@ UML结构图
 ```cs
 namespace Design_Pattern
 {
+    var document = "AAZZBBZB";
+    var chars = document.ToCharArray();
+
+    var factory = new FlyweightPattern.CharacterFactory();
+
+    //extrinsic state
+    int pointSize = 10;
+
+    //for each character use a flyweight object
+    foreach (var c in chars)
+    {
+        pointSize++;
+        var character = factory.GetCharacter(c);
+        character.Display(pointSize);
+    }
+
     public class FlyweightPattern
     {
-        var document = "AAZZBBZB";
-        var chars = document.ToCharArray();
-
-        var factory = new FlyweightPattern.CharacterFactory();
-
-        //extrinsic state
-        int pointSize = 10;
-
-        //for each character use a flyweight object
-        foreach (var c in chars)
-        {
-            pointSize++;
-            var character = factory.GetCharacter(c);
-            character.Display(pointSize);
-        }
-
         public class CharacterFactory
         {
             private Dictionary<char,Character> _characters = new Dictionary<char,Character>();
@@ -151,7 +151,6 @@ namespace Design_Pattern
                 Console.WriteLine($"{symbol} (pointSize {pointSize})");
             }
         }
-        #endregion
     }
 }
 ```
