@@ -44,68 +44,79 @@
 - 示例
 
 ```cs
-using System;
-
-class BridgePattern{
-
-  /**"Implementor"*/
-  interface IDrawingAPI{
-    void DrawCircle(double x,double y,double radius);
-  }
-
-  /**"ConcreteImplementor" 1/2*/
-  class DrawingAPI1:IDrawingAPI{
-    public void DrawCircle(double x,double y,double radius){
-        Console.WriteLine($"API1.circle at {x}:{y} radius {radius}");
-    }
-  }
-
-  /**"ConcreteImplementor" 2/2*/
-  class DrawingAPI2:IDrawingAPI{
-    public void DrawCircle(double x,double y,double radius){
-      Console.WriteLine($"API2.circle at {x}:{y} radius {radius}");
-    }
-  }
-
-  /**“Abstraction“*/
-  interface IShape{
-
-    void Draw();
-    //low-level(i.e. Implementation-specific)
-    void ResizeByPercentage(double pct);
-  }
-
-  /**"Refined Abstraction"*/
-  class CircleShape:IShap{
-    private double _x,_y,_radius;
-    private IDrawingAPI _drawingAPI;
-
-    public CircleShape(double x,double y,double radius,IDrawingAPI drawingAPI){
-      this._x=x;
-      this._y=y;
-      this._radius=radius;
-      this._drawingAPI=drawingAPI;
-    }
-    //low-level(i.e. Implementation-specific)
-    public void Draw(){
-      _drawingAPI.DrawCircle(_x,_y,_radius);
+namespace Design_Pattern
+{
+    var shapes = new BridgePattern.IShape[2];
+    shapes[0] = new BridgePattern.CircleShape(1, 2, 3, new BridgePattern.DrawingApi1());
+    shapes[1] = new BridgePattern.CircleShape(5, 7, 11, new BridgePattern.DrawingApi2());
+    foreach (var shape in shapes)
+    {
+        shape.ResizeByPercentage(2.5);
+        shape.Draw();
     }
 
-    //hihg-level (i.e. Abstraction-specific)
-    public void ResizeByPercentage(double pct){
-      _radius*=pct;
-    }
-  }
+    public  class BridgePattern
+    {
+        /**"Implementor"*/
+        public interface IDrawingApi
+        {
+            void DrawCircle(double x, double y, double radius);
+        }
 
-  static void Main(string[] args){
-    var shapes=new IShape[2];
-    shapes[0]=new CircleShape(1,2,3,new DrawingAPI1());
-    shapes[1]=new CircleShape(5,7,11,new DrawingAPI2());
-    foreach(var shape in shapes){
-      shape.ResizeByPercentage(2.5);
-      shape.Draw();
+        /**"ConcreteImplementor" 1/2*/
+        public class DrawingApi1 : IDrawingApi
+        {
+            public void DrawCircle(double x, double y, double radius)
+            {
+                Console.WriteLine($"API1.circle at {x}:{y} radius {radius}");
+            }
+        }
+
+        /**"ConcreteImplementor" 2/2*/
+        public class DrawingApi2 : IDrawingApi
+        {
+            public void DrawCircle(double x, double y, double radius)
+            {
+                Console.WriteLine($"API2.circle at {x}:{y} radius {radius}");
+            }
+        }
+
+        /**“Abstraction“*/
+        public interface IShape
+        {
+
+            void Draw();
+            //low-level(i.e. Implementation-specific)
+            void ResizeByPercentage(double pct);
+        }
+
+        /**"Refined Abstraction"*/
+        public class CircleShape : IShape
+        {
+            private readonly double _x;
+            private readonly double _y;
+            private double _radius;
+            private readonly IDrawingApi _drawingApi;
+
+            public CircleShape(double x, double y, double radius, IDrawingApi drawingApi)
+            {
+                this._x = x;
+                this._y = y;
+                this._radius = radius;
+                this._drawingApi = drawingApi;
+            }
+            //low-level(i.e. Implementation-specific)
+            public void Draw()
+            {
+                _drawingApi.DrawCircle(_x, _y, _radius);
+            }
+
+            //high-level (i.e. Abstraction-specific)
+            public void ResizeByPercentage(double pct)
+            {
+                _radius *= pct;
+            }
+        }
     }
-    Console.ReadKey();
-  }
 }
 ```

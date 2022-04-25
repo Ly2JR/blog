@@ -62,12 +62,12 @@
 
     难以支持新种类的产品。因为抽象工厂接口确定了可以被创建的产品集合，所以难以扩展抽象工厂以生产新种类的产品。
 
+- 示例
+
 ```cs
 namespace Design_Pattern
 {
-    /// <summary>
-    /// 抽象工厂模式
-    /// </summary>
+
     public class AbstractFactory
     {
         public interface IButton
@@ -80,7 +80,9 @@ namespace Design_Pattern
             void Display();
         }
 
-        //实现抽象类
+        /// <summary>
+        /// 实现抽象类
+        /// </summary>
         public class MacButton : IButton
         {
             public void Display()

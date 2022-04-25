@@ -39,34 +39,43 @@
 
       缺省适配器模式是一种特殊的适配器模式，但这个适配器是由一个抽象类实现的，并且在抽象类中要实现目标接口中所规定的所有方法，但很多方法的实现都是“平庸”的实现，也就是说，这些方法都是空方法。而具体的子类都要继承此抽象类。
 
+- 示例
+
 :::: code-group
 ::: code-group-item 类适配器示例
 
 ```cs
-using System;
-class AdapterPattern 
+namespace Design_Pattern
 {
-  interface ITarget{
-    void Request();
-  }
+    var adapterClass = new AdapterPattern.AdapterClass();
+    adapterClass.Request();
 
-  class Adaptee{
-    public void SpecificRequest(){
-      Console.WriteLine("Called SpecificReqeust.");
+    public  class AdapterPattern
+    {
+        interface ITarget
+        {
+            void Request();
+        }
+
+        public class Adaptee
+        {
+            public void SpecificRequest()
+            {
+                Console.WriteLine("Called SpecificRequest.");
+            }
+        }
+
+        /// <summary>
+        /// 类适配器
+        /// </summary>
+        public class AdapterClass : Adaptee, ITarget
+        {
+            public void Request()
+            {
+                this.SpecificRequest();
+            }
+        }
     }
-  }
-
-  class Adapter:Adaptee,ITarget{
-    public void Request(){
-        this.SpecificRequest();
-    }
-  }
-
-  static void Main(string[] args){
-    var t=new Adapter();
-    t.Request();
-    Console.ReadKey();
-  }
 }
 ```
 
@@ -74,37 +83,45 @@ class AdapterPattern
 ::: code-group-item 对象适配器示例
 
 ```cs
-using System;
-class AdapterPattern 
+namespace Design_Pattern
 {
-  interface ITarget{
-    void Request();
-  }
+    var adapterInterface = new AdapterPattern.AdapterInterface();    
+    adapterInterface.Request();
 
-  class Adaptee{
-    public void SpecificRequest(){
-      Console.WriteLine("Called SpecificReqeust.");
+    public  class AdapterPattern
+    {
+        interface ITarget
+        {
+            void Request();
+        }
+
+        public class Adaptee
+        {
+            public void SpecificRequest()
+            {
+                Console.WriteLine("Called SpecificRequest.");
+            }
+        }
+
+        /// <summary>
+        /// 对象适配器
+        /// </summary>
+        public class AdapterInterface : ITarget
+        {
+
+            private readonly Adaptee _adaptee;
+
+            public AdapterInterface()
+            {
+                _adaptee = new Adaptee();
+            }
+
+            public void Request()
+            {
+                _adaptee.SpecificRequest();
+            }
+        }
     }
-  }
-
-  class Adapter:ITarget{
-
-    private Adaptee _adaptee;
-
-    public Adapter(){
-      _adaptee=new Adaptee();
-    }
-
-    public void Request(){
-        _adaptee.SpecificRequest();
-    }
-  }
-
-  static void Main(string[] args){
-    var t=new Adapter();
-    t.Request();
-    Console.ReadKey();
-  }
 }
 ```
 
@@ -112,40 +129,40 @@ class AdapterPattern
 ::: code-group-item 缺省适配器示例
 
 ```cs
-using System;
-class AdapterPattern 
+namespace Design_Pattern
 {
-  abstract class Target{
-    public abstract void F1();
-    public abstract void F2();
-    public abstract void F3();
-  }
+    var defaultAdapter = new AdapterPattern.MyInteresting();
+    defaultAdapter.F3();
 
-  class DefaultAdapter:Target{
-    public override void F1(){
+    public  class AdapterPattern
+    {
+        public abstract class Target
+        {
+            public abstract void F1();
+            public abstract void F2();
+            public abstract void F3();
+        }
 
+        public class DefaultAdapter : Target
+        {
+            public override void F1(){}
+
+            public override void F2(){}
+
+            public override void F3(){}
+        }
+
+        /// <summary>
+        /// 缺省适配器
+        /// </summary>
+        public class MyInteresting : DefaultAdapter
+        {
+            public override void F3()
+            {
+                Console.WriteLine("我对F3()方法感兴趣，别的不管了！");
+            }
+        }
     }
-
-    public override void F2(){
-
-    }
-
-    public override void F3(){
-
-    }
-  }
-
-  class MyInteresting:DefaultAdapter{
-    public override void F3(){
-       Console.WriteLine("我对F3()方法感兴趣，别的不管了！");
-    }
-  }
-
-  static void Main(string[] args){
-    var t=new MyInteresting();
-    t.F3();
-    Console.ReadKey();
-  }
 }
 ```
 

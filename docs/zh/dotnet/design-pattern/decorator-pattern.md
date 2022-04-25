@@ -61,85 +61,60 @@
 
 以下示例中，ThirdParty.cs假定是一个现有的或者第三方的功能，因某种原因我们不能直接修改，它提供了一个SayMsg()的方法，而我们要做的是想在它的SayMsg()方法中增加一些我们想额外输出的内容，于是我们重写了一个Decorator.cs类。
 
+- 示例
+
 ```cs
-using System;
-class DecoratorPattern{
-  interface IThirdParty{
-    string SayMsg();
-  }
-
-  class ThirdParty:IThirdParty{
-    public string SayMsg(){
-      return "Hello";
-    }
-  }
-
-  class Decorator1:IThirdParty{
-    private IThirdParty _thirdParty;
-
-    public Decorator1(IThirdParty thirdParty){
-      this._thirdParty=thirdParty;
-    }
-
-    public string SayMsg(){
-      return $"##1{_thirdParty.SayMsg()}##1";
-    }
-  }
-
-  class Decorator2:IThirdParty{
-     private IThirdParty _thirdParty;
-
-    public Decorator2(IThirdParty thirdParty){
-      this._thirdParty=thirdParty;
-    }
-
-    public string SayMsg(){
-      return $"##2{_thirdParty.SayMsg()}##2";
-    }
-  }
-
-  static void Main(string[] args){
-    var thirdPartyOne=new ThirdParty();
-    var decorator1=new Decorator1(thirdPartyOne);
-    var decorator2=new Decorator2(decorator1);
+namespace Design_Pattern
+{
+    var thirdPartyOne = new DecoratorPattern.ThirdParty();
+    var decorator1 = new DecoratorPattern.Decorator1(thirdPartyOne);
+    var decorator2 = new DecoratorPattern.Decorator2(decorator1);
     Console.WriteLine(decorator2.SayMsg());
-  }
+
+    public class DecoratorPattern
+    {
+        public interface IThirdParty
+        {
+            string SayMsg();
+        }
+
+        public class ThirdParty : IThirdParty
+        {
+            public string SayMsg()
+            {
+                return "Hello";
+            }
+        }
+
+        public class Decorator1 : IThirdParty
+        {
+            private readonly IThirdParty _thirdParty;
+
+            public Decorator1(IThirdParty thirdParty)
+            {
+                this._thirdParty = thirdParty;
+            }
+
+            public string SayMsg()
+            {
+                return $"##1{_thirdParty.SayMsg()}##1";
+            }
+        }
+
+        public class Decorator2 : IThirdParty
+        {
+            private readonly IThirdParty _thirdParty;
+
+            public Decorator2(IThirdParty thirdParty)
+            {
+                this._thirdParty = thirdParty;
+            }
+
+            public string SayMsg()
+            {
+                return $"##2{_thirdParty.SayMsg()}##2";
+            }
+        }
+    }
 }
 ```
-
-- 组合模式(Composite Pattern)
-
-组合模式，将对象组合秤树形结构以表示"部门-整体"的层次结构。
-
-- 组合模式概述
-
-  组合模式使得用户对单个对象喝组合对象的使用具有一致性。
-
-  有时候又叫做部分-整体模式，它使完美树型结构的问题中，模糊了简单元素喝复杂元素的概念，客户程序可以处理简单元素一样来处理复杂元素，从而使得客户程序与复杂元素的内部结构解耦。
-
-  组合模式让你可以优化处理递归或分级模式结构。有许多关于分级数据结构的例子，使得组合模式非常有用武之地。关于分级数据结构的一个普遍性的例子是你每次使用电脑时所遇到的`文件系统`。文件系统由目录和文件组成。每个目录都可以装内容。目录的内容可以是文件，也可以是目录。按照这种方式，计算机的文件系统就是以递归结构来组织的。如果你想要描述这样的数据结构，那么你可以使用组合模式Composite。
-
-  - 定义
-
-    （GOF《设计模式》）:将对象组合成树形结构以表示“部门整体“的层次结构。组合模式使得用户对单个对象和组合对象的使用具有一致性。
-
-  - 涉及角色
-
-    1. Component是组合中的对象声明接口，在适当的情况下，实现所有类共有接口的默认行为。声明一个接口用于访问和管理Component子部件。
-    2. Leaf 在组合中表示叶子节点对象，叶子节点没有子节点。
-    3. Composite定义有枝界节点行为，用来存储子部件，在Component接口中实现与子部件有关操作，如增加(`add`)和删除(`remove`)等。
-
-  - 适用性
-
-  以下情况下使用Composite模式：
-
-    1. 你想表达对象的部分-整体层次结构
-    2. 你希望用户忽略组合对象与单个对象的不同，用户将统一地使用组合结构中的所有对象。
-
-- 总结
-
-  组合模式解耦了客户程序与复杂元素内部结构，从而使客户程序可以像处理简单元素一样来处理复杂元素。
-
-  如果你想要创建层次结构，并可以在其中以相同的方式对待所有元素，那么组合模式就是最理想的选择。本章使用了一个文件系统的例子来说明了组合模式的用途。在这个例子中，文件和目录都执行相同的接口，这是组合模式的关键。通过执行相同的接口，你就可以用相同的方式对待文件和目录，从而实现将文件或者目录存储为目录的子级元素。
-
-- 示例

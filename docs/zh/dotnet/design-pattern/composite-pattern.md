@@ -42,9 +42,45 @@ using System.Text;
 
 namespace Design_Pattern
 {
-    /// <summary>
-    /// 组合模式
-    /// </summary>
+    CompositePattern.Company root = new CompositePattern.ConcreteCompany();
+    root.Name = "北京总公司";
+    root.Add(new CompositePattern.HRDepartment("总公司人力资源部"));
+    root.Add(new CompositePattern.FinanceDepartment("总公司财务部"));
+
+    CompositePattern.Company shandongCompany=new CompositePattern.ConcreteCompany("山东分公司");
+    shandongCompany.Add(new CompositePattern.HRDepartment("山东分公司人力资源部"));
+    shandongCompany.Add(new CompositePattern.FinanceDepartment("山东分公司财务部"));
+
+    CompositePattern.Company zaozhuangCompany = new CompositePattern.ConcreteCompany("枣庄办事处");
+    zaozhuangCompany.Add(new CompositePattern.FinanceDepartment("枣庄办事处财务部"));
+    zaozhuangCompany.Add(new CompositePattern.HRDepartment("枣庄办事处人力资源部"));
+
+    CompositePattern.Company jinanCompany = new CompositePattern.ConcreteCompany("济南办事处");
+    jinanCompany.Add(new CompositePattern.FinanceDepartment("济南办事处财务部"));
+    jinanCompany.Add(new CompositePattern.HRDepartment("济南办事处人力资源部"));
+
+    shandongCompany.Add(jinanCompany);
+    shandongCompany.Add(zaozhuangCompany);
+
+    CompositePattern.Company huadongCompany = new CompositePattern.ConcreteCompany("上海华东分公司");
+    huadongCompany.Add(new CompositePattern.FinanceDepartment("上海华东分公司财务部"));
+    huadongCompany.Add(new CompositePattern.HRDepartment("上海华东分公司人力资源部"));
+
+    CompositePattern.Company hangzhouCompany = new CompositePattern.ConcreteCompany("杭州办事处");
+    hangzhouCompany.Add(new CompositePattern.FinanceDepartment("杭州办事处财务部"));
+    hangzhouCompany.Add(new CompositePattern.HRDepartment("杭州办事处人力资源部"));
+
+    CompositePattern.Company nanjingCompany = new CompositePattern.ConcreteCompany("南京办事处");
+    nanjingCompany.Add(new CompositePattern.FinanceDepartment("南京办事处财务部"));
+    nanjingCompany.Add(new CompositePattern.HRDepartment("南京办事处人力资源部"));
+
+    huadongCompany.Add(hangzhouCompany);
+    huadongCompany.Add(nanjingCompany);
+
+    root.Add(shandongCompany);
+    root.Add(huadongCompany);
+    root.Display(0);
+
     public class CompositePattern
     {
         /// <summary>
@@ -157,47 +193,5 @@ namespace Design_Pattern
             }
         }
     }
-
-    static void Main(string[] args){
-        CompositePattern.Company root = new CompositePattern.ConcreteCompany();
-        root.Name = "北京总公司";
-        root.Add(new CompositePattern.HRDepartment("总公司人力资源部"));
-        root.Add(new CompositePattern.FinanceDepartment("总公司财务部"));
-
-        CompositePattern.Company shandongCompany=new CompositePattern.ConcreteCompany("山东分公司");
-        shandongCompany.Add(new CompositePattern.HRDepartment("山东分公司人力资源部"));
-        shandongCompany.Add(new CompositePattern.FinanceDepartment("山东分公司财务部"));
-
-        CompositePattern.Company zaozhuangCompany = new CompositePattern.ConcreteCompany("枣庄办事处");
-        zaozhuangCompany.Add(new CompositePattern.FinanceDepartment("枣庄办事处财务部"));
-        zaozhuangCompany.Add(new CompositePattern.HRDepartment("枣庄办事处人力资源部"));
-
-        CompositePattern.Company jinanCompany = new CompositePattern.ConcreteCompany("济南办事处");
-        jinanCompany.Add(new CompositePattern.FinanceDepartment("济南办事处财务部"));
-        jinanCompany.Add(new CompositePattern.HRDepartment("济南办事处人力资源部"));
-
-        shandongCompany.Add(jinanCompany);
-        shandongCompany.Add(zaozhuangCompany);
-
-        CompositePattern.Company huadongCompany = new CompositePattern.ConcreteCompany("上海华东分公司");
-        huadongCompany.Add(new CompositePattern.FinanceDepartment("上海华东分公司财务部"));
-        huadongCompany.Add(new CompositePattern.HRDepartment("上海华东分公司人力资源部"));
-
-        CompositePattern.Company hangzhouCompany = new CompositePattern.ConcreteCompany("杭州办事处");
-        hangzhouCompany.Add(new CompositePattern.FinanceDepartment("杭州办事处财务部"));
-        hangzhouCompany.Add(new CompositePattern.HRDepartment("杭州办事处人力资源部"));
-
-        CompositePattern.Company nanjingCompany = new CompositePattern.ConcreteCompany("南京办事处");
-        nanjingCompany.Add(new CompositePattern.FinanceDepartment("南京办事处财务部"));
-        nanjingCompany.Add(new CompositePattern.HRDepartment("南京办事处人力资源部"));
-
-        huadongCompany.Add(hangzhouCompany);
-        huadongCompany.Add(nanjingCompany);
-
-        root.Add(shandongCompany);
-        root.Add(huadongCompany);
-        root.Display(0);
-    }
 }
-
 ```
