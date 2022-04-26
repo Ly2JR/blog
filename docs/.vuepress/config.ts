@@ -1,9 +1,12 @@
-import { defineUserConfig } from "@vuepress/cli";
-import { DefaultThemeOptions } from "@vuepress/theme-default";
-import { ViteBundlerOptions } from "vuepress";
-import {navbar,sidebar} from './configs'
+import { defineUserConfig } from '@vuepress/cli';
+import { defaultTheme } from '@vuepress/theme-default';
+import { searchPlugin } from '@vuepress/plugin-search';
+import { pwaPlugin } from '@vuepress/plugin-pwa';
+import { pwaPopupPlugin } from '@vuepress/plugin-pwa-popup';
+import { path } from '@vuepress/utils';
+import { navbar,sidebar } from './configs';
 
-export default defineUserConfig<DefaultThemeOptions,ViteBundlerOptions>({
+export default defineUserConfig({
     base:'/',
     head:[
       [
@@ -87,8 +90,7 @@ export default defineUserConfig<DefaultThemeOptions,ViteBundlerOptions>({
       }
     },
     
-    themeConfig:{
-
+    theme:defaultTheme({
         /**
          * logo
          */
@@ -165,56 +167,42 @@ export default defineUserConfig<DefaultThemeOptions,ViteBundlerOptions>({
               repoLabel:'Github'
             },
           },
-    },
+    }),
     plugins: [
-      // [
-      //   '@vuepress/plugin-docsearch',
-      //   {
-      //     apiKey: '',
-      //     indexName: 'Ly2',
-      //     locales: {
-      //       '/':{
-      //         placeholder:'Search Document',
-      //       },
-      //       '/zh/': {
-      //         placeholder: '搜索文档',
-      //       },
-      //     },
-      //   },
-      // ],
-      [
-        '@vuepress/plugin-search',
-        {
-          locales: {
-            '/': {
-              placeholder: 'Search',
-            },
-            '/zh/': {
-              placeholder: '搜索',
-            },
+      searchPlugin({
+        locales: {
+          '/': {
+            placeholder: 'Search',
+          },
+          '/zh/': {
+            placeholder: '搜索',
           },
         },
-      ],
-      [
-        '@vuepress/plugin-pwa',{
-          skipWaiting:false
-        }
-      ],
-      [
-        '@vuepress/plugin-pwa-popup',{
-          locales:{
-            '/':{
-              message:'New content is available.',
-              buttonText:'Refresh'
-            },
-            '/zh/':{
-              message:'发现新内容可用',
-              buttonText:'刷新'
-            }
+      }),
+      pwaPlugin({
+        skipWaiting:false
+      }),
+      pwaPopupPlugin({
+        locales:{
+          '/':{
+            message:'New content is available.',
+            buttonText:'Refresh'
+          },
+          '/zh/':{
+            message:'发现新内容可用',
+            buttonText:'刷新'
           }
         }
-      ]
+      })
      ],
+     markdown:{
+       importCode:{
+         handleImportPath:(str)=>
+           str.replace(
+             /^@vuepress/,path.resolve(__dirname,'../../packages/@vuepress')
+           )
+       }
+     },
      /**
       * markdown扩展
       * @param md 
@@ -230,16 +218,4 @@ export default defineUserConfig<DefaultThemeOptions,ViteBundlerOptions>({
        md.use(markdownItFootnote);
        md.use(markdownTaskList);
      }
-    //  /**
-    //   * 打包配置
-    //   */
-    //  bundlerConfig:{
-    //     vuePluginOptions:{
-    //       template:{
-    //         compilerOptions:{
-    //           isCustomElement:tag=>tag.startsWith("mjx-")
-    //         }
-    //       }
-    //     }
-    //  }
 });
