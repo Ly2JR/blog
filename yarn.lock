@@ -1152,7 +1152,7 @@
     envinfo "^7.8.1"
     esbuild "^0.14.36"
 
-"@vuepress/client@2.0.0-beta.41":
+"@vuepress/client@2.0.0-beta.41", "@vuepress/client@^2.0.0-beta.41":
   version "2.0.0-beta.41"
   resolved "https://registry.yarnpkg.com/@vuepress/client/-/client-2.0.0-beta.41.tgz#ba066be11b1c6823e271b9e8444bdf3e3d2004f3"
   integrity sha512-K9EBrOm7Wgy+7C7fo3vBP8nLIG1zt+5+JXsl1DHuj7h3ZFh8MJrhx22lkI5rVgbSJjz2AmQzz15JQ+W8j5Lqhg==
