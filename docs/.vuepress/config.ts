@@ -1,10 +1,13 @@
-import { defineUserConfig } from '@vuepress/cli';
+import { viteBundler } from '@vuepress/bundler-vite';
+import { defineUserConfig } from '@vuepress/cli'
 import { defaultTheme } from '@vuepress/theme-default';
 import { searchPlugin } from '@vuepress/plugin-search';
 import { pwaPlugin } from '@vuepress/plugin-pwa';
 import { pwaPopupPlugin } from '@vuepress/plugin-pwa-popup';
 import { path } from '@vuepress/utils';
 import { navbar, sidebar } from './configs';
+
+const isProd = process.env.NODE_ENV === 'production';
 
 export default defineUserConfig({
   base: '/',
@@ -83,8 +86,8 @@ export default defineUserConfig({
       title: '乌龙茶有点甜·博客',
       description: '写写记记...',
     },
-    '/en/':{
-      lang:'en-US',
+    '/en/': {
+      lang: 'en-US',
       title: 'Ly2JR·Blog',
       description: 'note...',
     }
@@ -150,17 +153,23 @@ export default defineUserConfig({
       // 英语资源
       '/en/': {
 
-        navbar:navbar.en,
+        navbar: navbar.en,
 
-        selectLanguageName: 'English', 
-        selectLanguageAriaLabel:"Languages",
-        selectLanguageText:'Languages',
+        selectLanguageName: 'English',
+        selectLanguageAriaLabel: "Languages",
+        selectLanguageText: 'Languages',
 
-        sidebar:sidebar.en,
+        sidebar: sidebar.en,
 
         repo: 'https://github.com/Ly2JR/blog',
-        repoLabel:'Github'
+        repoLabel: 'Github'
       },
+    },
+    themePlugins: {
+      // only enable git plugin in production mode
+      git: isProd,
+      // use shiki plugin in production mode instead
+      prismjs: !isProd,
     },
   }),
   plugins: [
@@ -168,6 +177,9 @@ export default defineUserConfig({
       locales: {
         '/': {
           placeholder: '搜索',
+        },
+        '/en/': {
+          placeholder: 'Search',
         },
       },
     }),
@@ -180,21 +192,22 @@ export default defineUserConfig({
           message: '发现新内容可用',
           buttonText: '刷新'
         },
-        '/en/':{
-          message:'New content is available.',
-          buttonText:'Refresh'
+        '/en/': {
+          message: 'New content is available.',
+          buttonText: 'Refresh'
         },
       }
     })
   ],
-  markdown: {
-    importCode: {
-      handleImportPath: (str) =>
-        str.replace(
-          /^@vuepress/, path.resolve(__dirname, '../../packages/@vuepress')
-        )
-    }
-  },
+  // markdown: {
+  //   importCode: {
+  //     handleImportPath: (str) =>
+  //       str.replace(
+  //         /^@vuepress/, path.resolve(__dirname, '../../packages/@vuepress')
+  //       )
+  //   }
+  // },
+  
   /**
    * markdown扩展
    * @param md 
@@ -209,5 +222,17 @@ export default defineUserConfig({
     md.use(mathjax3);
     md.use(markdownItFootnote);
     md.use(markdownTaskList);
-  }
+  },
+  /**
+  * 打包配置
+  */
+  bundler:viteBundler({
+    vuePluginOptions:{
+      template:{
+        compilerOptions:{
+          isCustomElement: tag => tag.startsWith("mjx-")
+        }
+      }
+    }
+  })
 });

@@ -30,5 +30,5 @@ footer: Copyright © 2021-present ilyl.life All Rights Reserved. </br><a href="h
 
 <img width="160" height="160" :src="$withBase('/images/reward.png')" alt="reward"/>
 
-[![reward](https://badgen.net/github/last-commit/TgT982474256/blog/main)](https://ilyl.life/)
+[![reward](https://badgen.net/github/last-commit/Ly2JR/blog/main)](https://ilyl.life/)
 </div>

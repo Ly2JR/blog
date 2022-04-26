@@ -211,9 +211,6 @@
 ```markdown
 1. Open the file containing the Markdown mascot.
 2. Marvel at its beauty.
-
-  ![logo](/favicon.ico)
-
 3. Close the file.
 ```
 
@@ -221,7 +218,4 @@
 
 - This is the first list item.
 - Here's the second list item.
-
-   ![logo](/favicon.ico)
-
 - And here's the third list item.

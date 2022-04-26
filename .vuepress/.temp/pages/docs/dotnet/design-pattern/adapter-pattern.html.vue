@@ -1,0 +1,207 @@
+<template><h1 id="适配器模式-adapter-pattern" tabindex="-1"><a class="header-anchor" href="#适配器模式-adapter-pattern" aria-hidden="true">#</a> 适配器模式(Adapter Pattern)</h1>
+<p>在计算机编程重，适配器模式(有时候也城包装样式或者包装)将一个类的接口适配成用户所期待的。
+一个适配允许通常因为接口不兼容而不能在一起工作的类工作在一起，做法是将类自己的接口包裹在一个已存在的类中。</p>
+<ul>
+<li>
+<p>基本信息</p>
+<p>共有两类适配器模式：</p>
+<ul>
+<li>
+<p>对象适配器模式</p>
+<p>在这种适配器模式中，适配器容纳一个它包裹的类的实例。在这种情况下，适配器调用被包裹对象的物理实体。</p>
+</li>
+<li>
+<p>类适配器模式</p>
+<p>这种适配模式下，适配器继承自己实现的类(一般多重继承)。</p>
+</li>
+</ul>
+</li>
+<li>
+<p>解释</p>
+<p>将一个类的接口转换成客户希望的另外一个接口。Adapter模式使得原本由于接口不兼容而不能一起工作的那些类可以一起工作。</p>
+<ul>
+<li>
+<p>基本概念</p>
+<p>客户：需要调用我们的代码的对象。</p>
+<p>Adapter模式的宗旨：保留现有类所提供的服务，向客户提供借口，以满足客户的期望。</p>
+</li>
+<li>
+<p>主要内容</p>
+<ul>
+<li>
+<ol>
+<li>类适配器：</li>
+</ol>
+<p>当客户在接口中定义了他期望的行为时，我们就可以应用适配器模式，提供一个实现该接口的类，并且扩展已有的类，通过创建子类来实现适配。</p>
+</li>
+<li>
+<ol start="2">
+<li>对象适配器：</li>
+</ol>
+<p>对象适配器：通过组合除了满足用户期待接口还降低了代码间的不良耦合。在工作中推荐使用“对象适配”。</p>
+</li>
+<li>
+<ol start="3">
+<li>缺省适配器模式：</li>
+</ol>
+<p>缺省适配器模式是一种特殊的适配器模式，但这个适配器是由一个抽象类实现的，并且在抽象类中要实现目标接口中所规定的所有方法，但很多方法的实现都是“平庸”的实现，也就是说，这些方法都是空方法。而具体的子类都要继承此抽象类。</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>示例</p>
+</li>
+</ul>
+<CodeGroup>
+<CodeGroupItem title="类适配器示例">
+<div class="language-csharp ext-cs line-numbers-mode"><pre v-pre class="language-csharp"><code><span class="token keyword">namespace</span> <span class="token namespace">Design_Pattern</span>
+<span class="token punctuation">{</span>
+    <span class="token class-name"><span class="token keyword">var</span></span> adapterClass <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">AdapterPattern<span class="token punctuation">.</span>AdapterClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    adapterClass<span class="token punctuation">.</span><span class="token function">Request</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span>  <span class="token keyword">class</span> <span class="token class-name">AdapterPattern</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">interface</span> <span class="token class-name">ITarget</span>
+        <span class="token punctuation">{</span>
+            <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">Request</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Adaptee</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">public</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">SpecificRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"Called SpecificRequest."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token doc-comment comment">/// <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>summary</span><span class="token punctuation">></span></span></span>
+        <span class="token doc-comment comment">/// 类适配器</span>
+        <span class="token doc-comment comment">/// <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>summary</span><span class="token punctuation">></span></span></span>
+        <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">AdapterClass</span> <span class="token punctuation">:</span> <span class="token type-list"><span class="token class-name">Adaptee</span><span class="token punctuation">,</span> <span class="token class-name">ITarget</span></span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">public</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">Request</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">SpecificRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br></div></div></CodeGroupItem>
+<CodeGroupItem title="对象适配器示例">
+<div class="language-csharp ext-cs line-numbers-mode"><pre v-pre class="language-csharp"><code><span class="token keyword">namespace</span> <span class="token namespace">Design_Pattern</span>
+<span class="token punctuation">{</span>
+    <span class="token class-name"><span class="token keyword">var</span></span> adapterInterface <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">AdapterPattern<span class="token punctuation">.</span>AdapterInterface</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
+    adapterInterface<span class="token punctuation">.</span><span class="token function">Request</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span>  <span class="token keyword">class</span> <span class="token class-name">AdapterPattern</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">interface</span> <span class="token class-name">ITarget</span>
+        <span class="token punctuation">{</span>
+            <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">Request</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Adaptee</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">public</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">SpecificRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"Called SpecificRequest."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token doc-comment comment">/// <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>summary</span><span class="token punctuation">></span></span></span>
+        <span class="token doc-comment comment">/// 对象适配器</span>
+        <span class="token doc-comment comment">/// <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>summary</span><span class="token punctuation">></span></span></span>
+        <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">AdapterInterface</span> <span class="token punctuation">:</span> <span class="token type-list"><span class="token class-name">ITarget</span></span>
+        <span class="token punctuation">{</span>
+
+            <span class="token keyword">private</span> <span class="token keyword">readonly</span> <span class="token class-name">Adaptee</span> _adaptee<span class="token punctuation">;</span>
+
+            <span class="token keyword">public</span> <span class="token function">AdapterInterface</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                _adaptee <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">Adaptee</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+
+            <span class="token keyword">public</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">Request</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                _adaptee<span class="token punctuation">.</span><span class="token function">SpecificRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br></div></div></CodeGroupItem>
+<CodeGroupItem title="缺省适配器示例">
+<div class="language-csharp ext-cs line-numbers-mode"><pre v-pre class="language-csharp"><code><span class="token keyword">namespace</span> <span class="token namespace">Design_Pattern</span>
+<span class="token punctuation">{</span>
+    <span class="token class-name"><span class="token keyword">var</span></span> defaultAdapter <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">AdapterPattern<span class="token punctuation">.</span>MyInteresting</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    defaultAdapter<span class="token punctuation">.</span><span class="token function">F3</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span>  <span class="token keyword">class</span> <span class="token class-name">AdapterPattern</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">public</span> <span class="token keyword">abstract</span> <span class="token keyword">class</span> <span class="token class-name">Target</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">public</span> <span class="token keyword">abstract</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">F1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">public</span> <span class="token keyword">abstract</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">F2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">public</span> <span class="token keyword">abstract</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">F3</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">DefaultAdapter</span> <span class="token punctuation">:</span> <span class="token type-list"><span class="token class-name">Target</span></span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">public</span> <span class="token keyword">override</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">F1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+            <span class="token keyword">public</span> <span class="token keyword">override</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">F2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+            <span class="token keyword">public</span> <span class="token keyword">override</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">F3</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token doc-comment comment">/// <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>summary</span><span class="token punctuation">></span></span></span>
+        <span class="token doc-comment comment">/// 缺省适配器</span>
+        <span class="token doc-comment comment">/// <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>summary</span><span class="token punctuation">></span></span></span>
+        <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyInteresting</span> <span class="token punctuation">:</span> <span class="token type-list"><span class="token class-name">DefaultAdapter</span></span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">public</span> <span class="token keyword">override</span> <span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">F3</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token string">"我对F3()方法感兴趣，别的不管了！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br></div></div></CodeGroupItem>
+</CodeGroup>
+<ul>
+<li>适用情况</li>
+</ul>
+<ol>
+<li>接口中规定了所有要实现的方法</li>
+<li>但一个要实现此接口的具体类，只用到了其中国的几个方法，而其它的方法都是没有用。</li>
+</ol>
+<ul>
+<li>实现方法</li>
+</ul>
+<ol>
+<li>用一个抽象类实现已有的接口，并实现接口中所规定的所有方法，这些方法的实现可以都是“平庸”实现----空方法；但此类中的方法是具体的方法，而不是抽象发给发，否则的话，在具体的子类中仍要实现所有的方法，这就失去了适配器本来的作用。</li>
+<li>原本要实现接口的子类，只实现其中的抽象类即可，并在其内部实现时，只对其感兴趣的方法进行实现。</li>
+</ol>
+<ul>
+<li>注意事项</li>
+</ul>
+<ol>
+<li>充当适配器角色的类就是：实现已有接口的抽象类</li>
+<li>为什么要用抽象类:</li>
+</ol>
+<p>此类是不要被实例化的。而只充当适配器的角色，也就为其子类提供了一个共同的接口，但其子类有可以将精力只集中在其感兴趣的地方。</p>
+<ul>
+<li>模式解析</li>
+</ul>
+<p>你想适用一个已经存在的适配器模式，而他的接口不符合你的需求。你想创建一个可以复用的类，该类可以与其他不相关的类或不可预见的类协同工作。你想适用一些已经存在的子类，但是不可能对每一个都进行子类化一一匹配他们的接口，对象适配器可以适配他的父类接口。适配器如何一个常见的变压器，也如果电脑的变压器喝插线板之间的电源连接线，它们虽然都是3相的，但是电脑后面的插孔却不能之间插到插线板上。作者曾经遇到过一个ASP编程的难题，字段名字是bh,每个编号是唯一的，但却不是主键，表中适用一个自动增长的id作为主键。在产品的详情页中适用传过来的参数id查询产品，而在另外一个系统中也有一个同样的表，需要访问详情页(已经由另外一个程序员设计好，并且地面晦涩难懂)，由于字段值是自动增长的，两个表的主键并不对应(在其中一个系统中进行删除添加都会引起id的增长)，在具体的实现中，本人在有详情页的系统中添加了一个页面(adapter)，接受传过来的产品编号bh,然后根据编号查找数据库得到相应产品的主键id,最后让页面跳转到详情页面并传递一个id,在另外的系统中只要得到产品的编号bh,并把bh作为参数传递到添加的页面(adapter)便可以得到正确的结果。</p>
+<ul>
+<li>总结</li>
+</ul>
+<p>如何做到一个类不被实例化或者不被轻易实例化？</p>
+<ol>
+<li>把一个类定义为抽象类；</li>
+<li>把一个类的构造方法设置为：private类型的,这样在客户端就不能通过new ClassName()方法来轻易将一个类实例化，而要生成此类的实例就必须通过一个特殊的方法，这样在一个系统中，对此类的使用就能得到合理的控制(如：单例模式/多例模式/简单工厂方法等模式)。</li>
+<li>对于两个独立的系统，要满足OCP原则，则适配器模式会有一定的局限性。</li>
+</ol>
+</template>

@@ -196,9 +196,40 @@ export const zh: SidebarConfig = {
         {
             text: 'SQL Server',
             children: [
-                '/database/sqlserver/README.md',
-                '/database/sqlserver/advance.md',
-                '/database/sqlserver/function.md',
+                '/database/sqlserver/select.md',
+                '/database/sqlserver/where.md',
+                '/database/sqlserver/order-by.md',
+                '/database/sqlserver/insert-into.md',
+                '/database/sqlserver/update.md',
+                '/database/sqlserver/delete.md',
+                '/database/sqlserver/join.md',
+                '/database/sqlserver/union.md',
+                {
+                    text:'高级语法',
+                    children:[
+                        '/database/sqlserver/create-database.md',
+                        '/database/sqlserver/create-table.md',
+                        '/database/sqlserver/constranints.md',
+                        '/database/sqlserver/create-index.md',
+                        '/database/sqlserver/drop.md',
+                        '/database/sqlserver/alter-table.md',
+                        '/database/sqlserver/auto-increment.md',
+                        '/database/sqlserver/view.md',
+                        '/database/sqlserver/date.md',
+                        '/database/sqlserver/null.md',
+                    ]
+                    
+                },{
+                    text:'函数',
+                    children:[
+                        '/database/sqlserver/aggregate.md',
+                        '/database/sqlserver/scalar.md',
+                        '/database/sqlserver/group-by.md',
+                        '/database/sqlserver/having.md',
+                        '/database/sqlserver/exists.md',
+                        '/database/sqlserver/format.md',
+                    ]
+                },
                 '/database/sqlserver/sqlserver-sync-to-mysql.md',
                 '/database/sqlserver/sqlserver-sync-to-oracle.md',
                 '/database/sqlserver/tips.md',
@@ -328,7 +359,6 @@ export const zh: SidebarConfig = {
                 '/varietystore/office/excel/macro-sample3.md',
                 '/varietystore/office/excel/read-from-excel.md',
                 '/varietystore/office/excel/write-to-excel.md',
-                '/varietystore/office/excel/reference.md'
             ]
         }
     ],

@@ -22,8 +22,6 @@ footerHtml: true
 footer: Copyright © 2021-现在 ilyl.life 版权所有 </br><a href="http://beian.miit.gov.cn" target="_blank">苏ICP备2021053735号-1</a>&nbsp;&nbsp;<img src="备案图标.png" alt="公网备案"/>&nbsp;&nbsp;<a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=32118302000302" target="_blank">苏公网安备32118302000302号</a> 
 ---
 
-
-
 <div style="text-align:center;">
 
 ## 赞赏码
@@ -32,5 +30,5 @@ footer: Copyright © 2021-现在 ilyl.life 版权所有 </br><a href="http://bei
 
 <img width="160" height="160" :src="$withBase('/images/reward.png')" alt="reward"/>
 
-[![reward](https://badgen.net/github/last-commit/TgT982474256/blog/main)](https://ilyl.life/)
+[![reward](https://badgen.net/github/last-commit/Ly2JR/blog/main)](https://ilyl.life/)
 </div>
