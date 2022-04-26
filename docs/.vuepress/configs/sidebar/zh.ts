@@ -1,79 +1,79 @@
 import type { SidebarConfig } from '@vuepress/theme-default'
 
 export const zh: SidebarConfig = {
-    '/zh/guide/': [
-        '/zh/guide/README.md',
+    '/guide/': [
+        '/guide/README.md',
     ],
-    '/zh/life/books/': [
+    '/life/books/': [
         {
             text: '书籍',
             children: [
-                '/zh/life/books/README.md',
-                '/zh/life/books/must-read-books.md',
+                '/life/books/README.md',
+                '/life/books/must-read-books.md',
             ]
         }, {
             text: '概率论与数理统计(二)',
             children: [
-                '/zh/life/books/self-study/probability-and-statistics/basic-formula.md',
-                '/zh/life/books/self-study/probability-and-statistics/README.md',
-                '/zh/life/books/self-study/probability-and-statistics/course1.md',
-                '/zh/life/books/self-study/probability-and-statistics/course2.md',
-                '/zh/life/books/self-study/probability-and-statistics/course3.md',
-                '/zh/life/books/self-study/probability-and-statistics/course4.md',
-                '/zh/life/books/self-study/probability-and-statistics/course5.md',
-                '/zh/life/books/self-study/probability-and-statistics/course6.md',
+                '/life/books/self-study/probability-and-statistics/basic-formula.md',
+                '/life/books/self-study/probability-and-statistics/README.md',
+                '/life/books/self-study/probability-and-statistics/course1.md',
+                '/life/books/self-study/probability-and-statistics/course2.md',
+                '/life/books/self-study/probability-and-statistics/course3.md',
+                '/life/books/self-study/probability-and-statistics/course4.md',
+                '/life/books/self-study/probability-and-statistics/course5.md',
+                '/life/books/self-study/probability-and-statistics/course6.md',
             ]
         }
     ],
-    '/zh/life/literature/':[
+    '/life/literature/':[
         {
             text:'Markdown',
             children:[
                 {
                     text:'概述',
                     children:[
-                        '/zh/life/literature/markdown/overview/philosophy.md',
-                        '/zh/life/literature/markdown/overview/inline-html.md',
-                        '/zh/life/literature/markdown/overview/automatic-escaping-for-special-characters.md',
+                        '/life/literature/markdown/overview/philosophy.md',
+                        '/life/literature/markdown/overview/inline-html.md',
+                        '/life/literature/markdown/overview/automatic-escaping-for-special-characters.md',
                     ]
                     
                 }, {
                     text:'块元素',
                     children:[
-                        '/zh/life/literature/markdown/block elements/paragraphs-and-line-breaks.md',
-                        '/zh/life/literature/markdown/block elements/headers.md',
-                        '/zh/life/literature/markdown/block elements/blockquotes.md',
-                        '/zh/life/literature/markdown/block elements/lists.md',
-                        '/zh/life/literature/markdown/block elements/code-blocks.md',
-                        '/zh/life/literature/markdown/block elements/horizontal-rules.md',
+                        '/life/literature/markdown/block elements/paragraphs-and-line-breaks.md',
+                        '/life/literature/markdown/block elements/headers.md',
+                        '/life/literature/markdown/block elements/blockquotes.md',
+                        '/life/literature/markdown/block elements/lists.md',
+                        '/life/literature/markdown/block elements/code-blocks.md',
+                        '/life/literature/markdown/block elements/horizontal-rules.md',
                     ]
                     
                 }
                 , {
                     text:'跨度元素',
                     children:[
-                        '/zh/life/literature/markdown/span elements/links.md',
-                        '/zh/life/literature/markdown/span elements/emphasis.md',
-                        '/zh/life/literature/markdown/span elements/code.md',
-                        '/zh/life/literature/markdown/span elements/images.md',
+                        '/life/literature/markdown/span elements/links.md',
+                        '/life/literature/markdown/span elements/emphasis.md',
+                        '/life/literature/markdown/span elements/code.md',
+                        '/life/literature/markdown/span elements/images.md',
                     ]
                     
                 }
                 , {
                     text:'各种各样的',
                     children:[
-                        '/zh/life/literature/markdown/miscellaneous/backslash-escapes.md',
-                        '/zh/life/literature/markdown/miscellaneous/automatic-links.md',
+                        '/life/literature/markdown/miscellaneous/backslash-escapes.md',
+                        '/life/literature/markdown/miscellaneous/automatic-links.md',
                     ]
                     
                 }
                 , {
                     text:'扩展语法',
                     children:[
-                        '/zh/life/literature/markdown/extension/table.md',
-                        '/zh/life/literature/markdown/extension/task-lists.md',
-                        '/zh/life/literature/markdown/extension/emoji.md',
-                        '/zh/life/literature/markdown/extension/others.md'
+                        '/life/literature/markdown/extension/table.md',
+                        '/life/literature/markdown/extension/task-lists.md',
+                        '/life/literature/markdown/extension/emoji.md',
+                        '/life/literature/markdown/extension/others.md'
                     ]
                     
                 }
@@ -81,59 +81,59 @@ export const zh: SidebarConfig = {
         },{
             text:'Latex',
             children:[
-                '/zh/life/literature/latex/README.md',
-                '/zh/life/literature/latex/latex-course1.md',
+                '/life/literature/latex/README.md',
+                '/life/literature/latex/latex-course1.md',
             ]
                 
         }
     ],
-    '/zh/life/music/': [
+    '/life/music/': [
         {
             text: '品味生活，聆听音乐',
             children: [
-                '/zh/life/music/README.md',
+                '/life/music/README.md',
             ]
         }
     ],
-    '/zh/dotnet/': [
+    '/dotnet/': [
         {
             text: 'Design Pattern',
             children: [
                 {
                     text:'创建型',
                     children:[
-                        '/zh/dotnet/design-pattern/singleton-pattern.md',
-                        '/zh/dotnet/design-pattern/abstract-factory.md',
-                        '/zh/dotnet/design-pattern/builder.md',
-                        '/zh/dotnet/design-pattern/factory-method.md',
-                        '/zh/dotnet/design-pattern/prototype.md',
+                        '/dotnet/design-pattern/singleton-pattern.md',
+                        '/dotnet/design-pattern/abstract-factory.md',
+                        '/dotnet/design-pattern/builder.md',
+                        '/dotnet/design-pattern/factory-method.md',
+                        '/dotnet/design-pattern/prototype.md',
                     ]
                 },
                 {
                     text:'结构型',
                     children:[
-                        '/zh/dotnet/design-pattern/adapter-pattern.md',
-                        '/zh/dotnet/design-pattern/bridge-pattern.md',
-                        '/zh/dotnet/design-pattern/decorator-pattern.md',
-                        '/zh/dotnet/design-pattern/composite-pattern.md',
-                        '/zh/dotnet/design-pattern/facade-pattern.md',
-                        '/zh/dotnet/design-pattern/flyweight-pattern.md',
-                        '/zh/dotnet/design-pattern/proxy-pattern.md',
+                        '/dotnet/design-pattern/adapter-pattern.md',
+                        '/dotnet/design-pattern/bridge-pattern.md',
+                        '/dotnet/design-pattern/decorator-pattern.md',
+                        '/dotnet/design-pattern/composite-pattern.md',
+                        '/dotnet/design-pattern/facade-pattern.md',
+                        '/dotnet/design-pattern/flyweight-pattern.md',
+                        '/dotnet/design-pattern/proxy-pattern.md',
                     ]
                 }, {
                     text:'行为型',
                     children:[
-                        '/zh/dotnet/design-pattern/template-method.md',
-                        '/zh/dotnet/design-pattern/command-pattern.md',
-                        '/zh/dotnet/design-pattern/iterator-pattern.md',
-                        '/zh/dotnet/design-pattern/observer-pattern.md',
-                        '/zh/dotnet/design-pattern/interpreter-pattern.md',
-                        '/zh/dotnet/design-pattern/mediator-pattern.md',
-                        '/zh/dotnet/design-pattern/chain-of-responsibility-pattern.md',
-                        '/zh/dotnet/design-pattern/memento-pattern.md',
-                        '/zh/dotnet/design-pattern/strategy-pattern.md',
-                        '/zh/dotnet/design-pattern/visitor-pattern.md',
-                        '/zh/dotnet/design-pattern/state-pattern.md',
+                        '/dotnet/design-pattern/template-method.md',
+                        '/dotnet/design-pattern/command-pattern.md',
+                        '/dotnet/design-pattern/iterator-pattern.md',
+                        '/dotnet/design-pattern/observer-pattern.md',
+                        '/dotnet/design-pattern/interpreter-pattern.md',
+                        '/dotnet/design-pattern/mediator-pattern.md',
+                        '/dotnet/design-pattern/chain-of-responsibility-pattern.md',
+                        '/dotnet/design-pattern/memento-pattern.md',
+                        '/dotnet/design-pattern/strategy-pattern.md',
+                        '/dotnet/design-pattern/visitor-pattern.md',
+                        '/dotnet/design-pattern/state-pattern.md',
                     ]
                 }
             ],
@@ -141,247 +141,246 @@ export const zh: SidebarConfig = {
         {
             text: 'ABP.vNext',
             children: [
-                '/zh/dotnet/abp.vnext/README.md',
-                '/zh/dotnet/abp.vnext/data-dictionary.md',
+                '/dotnet/abp.vnext/README.md',
+                '/dotnet/abp.vnext/data-dictionary.md',
             ],
         },
     ],
-    '/zh/dotnet/wpf/': [
+    '/dotnet/wpf/': [
         {
             text: 'WPF',
             children: [
-                '/zh/dotnet/wpf/README.md'
+                '/dotnet/wpf/README.md'
             ],
         },
         {
             text:'刘铁猛 -《深入浅出WPF》',
             children:[
-                '/zh/dotnet/wpf/course1.md',
-                '/zh/dotnet/wpf/course2.md',
-                '/zh/dotnet/wpf/course3.md',
-                '/zh/dotnet/wpf/download.md'
+                '/dotnet/wpf/course1.md',
+                '/dotnet/wpf/course2.md',
+                '/dotnet/wpf/course3.md',
+                '/dotnet/wpf/download.md'
             ]
         },
         {
             text: 'IHome.UI',
             children: [
-                '/zh/dotnet/wpf/Controls/README.md',
-                '/zh/dotnet/wpf/Controls/button.md',
+                '/dotnet/wpf/Controls/README.md',
+                '/dotnet/wpf/Controls/button.md',
             ],
         },
         {
             text: '自定义控件',
             children: [
-                '/zh/dotnet/wpf/controls/button.md',
+                '/dotnet/wpf/controls/button.md',
             ],
         },
         {
             text: 'Prism',
             children: [
-                '/zh/dotnet/wpf/prism/README.md',
-                '/zh/dotnet/wpf/prism/course1.md'
+                '/dotnet/wpf/prism/README.md',
+                '/dotnet/wpf/prism/course1.md'
             ]
         }
     ],
-    '/zh/jquery/': [
+    '/web/jquery':[
         {
             text: 'JQuery',
             children: [
-                '/zh/jquery/README.md',
-                '/zh/jquery/tips.md',
-                '/zh/jquery/reference.md'
+                '/web/jquery/README.md',
+                '/web/jquery/define-key-board.md',
             ]
         }
     ],
-    '/zh/database/sqlserver/': [
+    '/database/sqlserver/': [
         {
             text: 'SQL Server',
             children: [
-                '/zh/database/sqlserver/README.md',
-                '/zh/database/sqlserver/advance.md',
-                '/zh/database/sqlserver/function.md',
-                '/zh/database/sqlserver/sqlserver-sync-to-mysql.md',
-                '/zh/database/sqlserver/sqlserver-sync-to-oracle.md',
-                '/zh/database/sqlserver/tips.md',
-                '/zh/database/sqlserver/reference.md',
+                '/database/sqlserver/README.md',
+                '/database/sqlserver/advance.md',
+                '/database/sqlserver/function.md',
+                '/database/sqlserver/sqlserver-sync-to-mysql.md',
+                '/database/sqlserver/sqlserver-sync-to-oracle.md',
+                '/database/sqlserver/tips.md',
+                '/database/sqlserver/reference.md',
             ]
         }
     ],
-    '/zh/varietystore/erp/yonyou/': [
+    '/varietystore/erp/yonyou/': [
         {
             text: '用友U8+',
             children: [
-                '/zh/varietystore/erp/yonyou/README.md',
+                '/varietystore/erp/yonyou/README.md',
             ]
         }, {
             text: '基础档案',
             children: [
-                '/zh/varietystore/erp/yonyou/archives/aa_bank.md',
-                '/zh/varietystore/erp/yonyou/archives/assembly.md',
-                '/zh/varietystore/erp/yonyou/archives/balance-type.md',
-                '/zh/varietystore/erp/yonyou/archives/bank-account.md',
-                '/zh/varietystore/erp/yonyou/archives/bank.md',
-                '/zh/varietystore/erp/yonyou/archives/batch-property.md',
-                '/zh/varietystore/erp/yonyou/archives/capital-asset-types.md',
-                '/zh/varietystore/erp/yonyou/archives/capital-assets.md',
-                '/zh/varietystore/erp/yonyou/archives/code-balance.md',
-                '/zh/varietystore/erp/yonyou/archives/code.md',
-                '/zh/varietystore/erp/yonyou/archives/currency.md',
-                '/zh/varietystore/erp/yonyou/archives/customer-class.md',
-                '/zh/varietystore/erp/yonyou/archives/customer-inventory.md',
-                '/zh/varietystore/erp/yonyou/archives/customer-linker.md',
-                '/zh/varietystore/erp/yonyou/archives/customer.md',
-                '/zh/varietystore/erp/yonyou/archives/department.md',
-                '/zh/varietystore/erp/yonyou/archives/digest.md',
-                '/zh/varietystore/erp/yonyou/archives/district-class.md',
-                '/zh/varietystore/erp/yonyou/archives/dsign.md',
-                '/zh/varietystore/erp/yonyou/archives/duty-level.md',
-                '/zh/varietystore/erp/yonyou/archives/duty-type.md',
-                '/zh/varietystore/erp/yonyou/archives/duty.md',
-                '/zh/varietystore/erp/yonyou/archives/expense-item.md',
-                '/zh/varietystore/erp/yonyou/archives/expitem-class.md',
-                '/zh/varietystore/erp/yonyou/archives/inventory-class.md',
-                '/zh/varietystore/erp/yonyou/archives/inventory-free.md',
-                '/zh/varietystore/erp/yonyou/archives/inventory-position.md',
-                '/zh/varietystore/erp/yonyou/archives/inventory.md',
-                '/zh/varietystore/erp/yonyou/archives/job-grade-set.md',
-                '/zh/varietystore/erp/yonyou/archives/job-type.md',
-                '/zh/varietystore/erp/yonyou/archives/job.md',
-                '/zh/varietystore/erp/yonyou/archives/pay-condition.md',
-                '/zh/varietystore/erp/yonyou/archives/person-type.md',
-                '/zh/varietystore/erp/yonyou/archives/person.md',
-                '/zh/varietystore/erp/yonyou/archives/position.md',
-                '/zh/varietystore/erp/yonyou/archives/purchase-type.md',
-                '/zh/varietystore/erp/yonyou/archives/reason.md',
-                '/zh/varietystore/erp/yonyou/archives/receive-send-type.md',
-                '/zh/varietystore/erp/yonyou/archives/requirement-class.md',
-                '/zh/varietystore/erp/yonyou/archives/sale-type.md',
-                '/zh/varietystore/erp/yonyou/archives/shipping-choice.md',
-                '/zh/varietystore/erp/yonyou/archives/unit-account.md',
-                '/zh/varietystore/erp/yonyou/archives/unit-class.md',
-                '/zh/varietystore/erp/yonyou/archives/unit-doc.md',
-                '/zh/varietystore/erp/yonyou/archives/unit-group.md',
-                '/zh/varietystore/erp/yonyou/archives/unit.md',
-                '/zh/varietystore/erp/yonyou/archives/vendor-class.md',
-                '/zh/varietystore/erp/yonyou/archives/vendor-inventory.md',
-                '/zh/varietystore/erp/yonyou/archives/vendor.md',
-                '/zh/varietystore/erp/yonyou/archives/vouch-rd.md',
-                '/zh/varietystore/erp/yonyou/archives/warehouse.md',
+                '/varietystore/erp/yonyou/archives/aa_bank.md',
+                '/varietystore/erp/yonyou/archives/assembly.md',
+                '/varietystore/erp/yonyou/archives/balance-type.md',
+                '/varietystore/erp/yonyou/archives/bank-account.md',
+                '/varietystore/erp/yonyou/archives/bank.md',
+                '/varietystore/erp/yonyou/archives/batch-property.md',
+                '/varietystore/erp/yonyou/archives/capital-asset-types.md',
+                '/varietystore/erp/yonyou/archives/capital-assets.md',
+                '/varietystore/erp/yonyou/archives/code-balance.md',
+                '/varietystore/erp/yonyou/archives/code.md',
+                '/varietystore/erp/yonyou/archives/currency.md',
+                '/varietystore/erp/yonyou/archives/customer-class.md',
+                '/varietystore/erp/yonyou/archives/customer-inventory.md',
+                '/varietystore/erp/yonyou/archives/customer-linker.md',
+                '/varietystore/erp/yonyou/archives/customer.md',
+                '/varietystore/erp/yonyou/archives/department.md',
+                '/varietystore/erp/yonyou/archives/digest.md',
+                '/varietystore/erp/yonyou/archives/district-class.md',
+                '/varietystore/erp/yonyou/archives/dsign.md',
+                '/varietystore/erp/yonyou/archives/duty-level.md',
+                '/varietystore/erp/yonyou/archives/duty-type.md',
+                '/varietystore/erp/yonyou/archives/duty.md',
+                '/varietystore/erp/yonyou/archives/expense-item.md',
+                '/varietystore/erp/yonyou/archives/expitem-class.md',
+                '/varietystore/erp/yonyou/archives/inventory-class.md',
+                '/varietystore/erp/yonyou/archives/inventory-free.md',
+                '/varietystore/erp/yonyou/archives/inventory-position.md',
+                '/varietystore/erp/yonyou/archives/inventory.md',
+                '/varietystore/erp/yonyou/archives/job-grade-set.md',
+                '/varietystore/erp/yonyou/archives/job-type.md',
+                '/varietystore/erp/yonyou/archives/job.md',
+                '/varietystore/erp/yonyou/archives/pay-condition.md',
+                '/varietystore/erp/yonyou/archives/person-type.md',
+                '/varietystore/erp/yonyou/archives/person.md',
+                '/varietystore/erp/yonyou/archives/position.md',
+                '/varietystore/erp/yonyou/archives/purchase-type.md',
+                '/varietystore/erp/yonyou/archives/reason.md',
+                '/varietystore/erp/yonyou/archives/receive-send-type.md',
+                '/varietystore/erp/yonyou/archives/requirement-class.md',
+                '/varietystore/erp/yonyou/archives/sale-type.md',
+                '/varietystore/erp/yonyou/archives/shipping-choice.md',
+                '/varietystore/erp/yonyou/archives/unit-account.md',
+                '/varietystore/erp/yonyou/archives/unit-class.md',
+                '/varietystore/erp/yonyou/archives/unit-doc.md',
+                '/varietystore/erp/yonyou/archives/unit-group.md',
+                '/varietystore/erp/yonyou/archives/unit.md',
+                '/varietystore/erp/yonyou/archives/vendor-class.md',
+                '/varietystore/erp/yonyou/archives/vendor-inventory.md',
+                '/varietystore/erp/yonyou/archives/vendor.md',
+                '/varietystore/erp/yonyou/archives/vouch-rd.md',
+                '/varietystore/erp/yonyou/archives/warehouse.md',
             ]
         }, {
             text: '财务模块',
             children: [
-                '/zh/varietystore/erp/yonyou/financial/accept.md',
-                '/zh/varietystore/erp/yonyou/financial/capital-vouchers.md',
-                '/zh/varietystore/erp/yonyou/financial/ought-pay.md',
-                '/zh/varietystore/erp/yonyou/financial/ought-receive.md',
-                '/zh/varietystore/erp/yonyou/financial/voucher.md',
+                '/varietystore/erp/yonyou/financial/accept.md',
+                '/varietystore/erp/yonyou/financial/capital-vouchers.md',
+                '/varietystore/erp/yonyou/financial/ought-pay.md',
+                '/varietystore/erp/yonyou/financial/ought-receive.md',
+                '/varietystore/erp/yonyou/financial/voucher.md',
             ]
         }, {
             text: '门户集成',
             children: [
-                '/zh/varietystore/erp/yonyou/portal/README.md',
+                '/varietystore/erp/yonyou/portal/README.md',
             ]
         }, {
             text: '按钮',
             children: [
-                '/zh/varietystore/erp/yonyou/buttons/README.md',
+                '/varietystore/erp/yonyou/buttons/README.md',
             ]
         }, {
             text: '业务单据',
             children: [
-                '/zh/varietystore/erp/yonyou/vouchers/README.md',
+                '/varietystore/erp/yonyou/vouchers/README.md',
             ]
         }, {
             text: '报表',
             children: [
-                '/zh/varietystore/erp/yonyou/reports/README.md',
+                '/varietystore/erp/yonyou/reports/README.md',
             ]
         }, {
             text: '定时与预警',
             children: [
-                '/zh/varietystore/erp/yonyou/times/README.md',
-                '/zh/varietystore/erp/yonyou/alarms/README.md',
+                '/varietystore/erp/yonyou/times/README.md',
+                '/varietystore/erp/yonyou/alarms/README.md',
             ]
         }, {
             text: '打包',
             children: [
-                '/zh/varietystore/erp/yonyou/package/README.md',
+                '/varietystore/erp/yonyou/package/README.md',
             ]
         }
     ],
-    '/zh/varietystore/markdown/latex/': [
+    '/varietystore/markdown/latex/': [
         {
             text: '公式指导手册',
             children: [
-                   '/zh/varietystore/markdown/latex/README.md',
-                   '/zh/varietystore/markdown/latex/latex-course1.md',
+                   '/varietystore/markdown/latex/README.md',
+                   '/varietystore/markdown/latex/latex-course1.md',
             ]
         }
     ],
-    '/zh/varietystore/office/excel/': [
+    '/varietystore/office/excel/': [
         {
             text: 'Excel',
             children: [
-                '/zh/varietystore/office/excel/README.md',
-                '/zh/varietystore/office/excel/macro-sample1.md',
-                '/zh/varietystore/office/excel/macro-sample2.md',
-                '/zh/varietystore/office/excel/macro-sample3.md',
-                '/zh/varietystore/office/excel/read-from-excel.md',
-                '/zh/varietystore/office/excel/write-to-excel.md',
-                '/zh/varietystore/office/excel/reference.md'
+                '/varietystore/office/excel/README.md',
+                '/varietystore/office/excel/macro-sample1.md',
+                '/varietystore/office/excel/macro-sample2.md',
+                '/varietystore/office/excel/macro-sample3.md',
+                '/varietystore/office/excel/read-from-excel.md',
+                '/varietystore/office/excel/write-to-excel.md',
+                '/varietystore/office/excel/reference.md'
             ]
         }
     ],
-    '/zh/varietystore/data-exchange-format/json/': [
+    '/varietystore/data-exchange-format/json/': [
         {
             text: 'JSON',
             children: [
-                '/zh/varietystore/data-exchange-format/json/README.md',
-                '/zh/varietystore/data-exchange-format/json/read-json.md',
-                '/zh/varietystore/data-exchange-format/json/write-json.md',
-                '/zh/varietystore/data-exchange-format/json/reference.md'
+                '/varietystore/data-exchange-format/json/README.md',
+                '/varietystore/data-exchange-format/json/read-json.md',
+                '/varietystore/data-exchange-format/json/write-json.md',
+                '/varietystore/data-exchange-format/json/reference.md'
             ]
         }
     ],
-    '/zh/varietystore/data-exchange-format/xml/': [
+    '/varietystore/data-exchange-format/xml/': [
         {
             text: 'XML',
             children: [
-                '/zh/varietystore/data-exchange-format/xml/README.md',
-                '/zh/varietystore/data-exchange-format/xml/read-xml.md',
-                '/zh/varietystore/data-exchange-format/xml/write-xml.md',
-                '/zh/varietystore/data-exchange-format/xml/reference.md'
+                '/varietystore/data-exchange-format/xml/README.md',
+                '/varietystore/data-exchange-format/xml/read-xml.md',
+                '/varietystore/data-exchange-format/xml/write-xml.md',
+                '/varietystore/data-exchange-format/xml/reference.md'
             ]
         }
     ],
-    '/zh/varietystore/cli/github/': [
+    '/varietystore/cli/github/': [
         {
             text: 'Github',
             children: [
-                '/zh/varietystore/cli/github/README.md',
-                '/zh/varietystore/cli/github/reference.md',
+                '/varietystore/cli/github/README.md',
+                '/varietystore/cli/github/reference.md',
             ]
         }
     ],
-    '/zh/varietystore/cli/yarn/': [
+    '/varietystore/cli/yarn/': [
         {
             text: 'Yarn',
             children: [
-                '/zh/varietystore/cli/yarn/README.md',
-                '/zh/varietystore/cli/yarn/reference.md',
+                '/varietystore/cli/yarn/README.md',
+                '/varietystore/cli/yarn/reference.md',
             ]
         }
     ],
-    '/zh/varietystore/ladder/': [
+    '/varietystore/ladder/': [
         {
             text: '梯云纵',
             children: [
-                '/zh/varietystore/ladder/machinecode/README.md',
-                '/zh/varietystore/ladder/sounds/README.md',
-                '/zh/varietystore/ladder/google-recaptcha.md',
-                '/zh/varietystore/ladder/encryption/README.md',
-                '/zh/varietystore/ladder/transform/README.md',
+                '/varietystore/ladder/machinecode/README.md',
+                '/varietystore/ladder/sounds/README.md',
+                '/varietystore/ladder/google-recaptcha.md',
+                '/varietystore/ladder/encryption/README.md',
+                '/varietystore/ladder/transform/README.md',
             ]
         },
     ],

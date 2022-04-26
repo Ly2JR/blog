@@ -3,22 +3,22 @@ import { NavbarConfig } from "@vuepress/theme-default";
 export const zh:NavbarConfig=[
     {
         text:'指南',
-        link:'/zh/guide/readme.md',
+        link:'/guide/readme.md',
       },
       {
         text: '生活',
         children: [
           {
             text: '书籍',
-            link:'/zh/life/books/README.md',
+            link:'/life/books/README.md',
           },
           {
             text:'写作',
-            link:'/zh/life/literature/markdown/overview/philosophy.md'
+            link:'/life/literature/markdown/overview/philosophy.md'
           },
           {
             text: '音乐',
-            link:'/zh/life/music/README.md',
+            link:'/life/music/README.md',
           },
         ],
       },
@@ -27,14 +27,14 @@ export const zh:NavbarConfig=[
         children: [
           {
             text: '.NET',
-            link:'/zh/dotnet/README.md'
+            link:'/dotnet/README.md'
           },
           {
             text:'客户端',
             children:[
               {
                 text:'WPF',
-                link:'/zh/dotnet/wpf/README.md'
+                link:'/dotnet/wpf/README.md'
               }
             ]
           },
@@ -42,7 +42,10 @@ export const zh:NavbarConfig=[
             text: 'Web端',
             children:[{
               text:'Vue',
-              link:'/zh/web/vue3/README.md',
+              link:'/web/vue3/README.md',
+            },{
+              text:'JQuery',
+              link:'/web/jquery/README.md'
             }]
           },
           {
@@ -50,7 +53,7 @@ export const zh:NavbarConfig=[
             children:[
                {
                  text:'SQL Server',
-                 link:'/zh/database/sqlserver/README.md'
+                 link:'/database/sqlserver/README.md'
                }
             ]
           }
@@ -64,11 +67,11 @@ export const zh:NavbarConfig=[
             children:[
               {
                 text:'Github',
-                link:'/zh/varietystore/cli/github/README.md'
+                link:'/varietystore/cli/github/README.md'
               },
               {
                 text:'YARN',
-                link:'/zh/varietystore/cli/yarn/README.md'
+                link:'/varietystore/cli/yarn/README.md'
               }
             ]
           },
@@ -77,11 +80,11 @@ export const zh:NavbarConfig=[
             children:[
               {
                 text:'JSON',
-                link:'/zh/varietystore/data-exchange-format/json/README.md'
+                link:'/varietystore/data-exchange-format/json/README.md'
               },
               {
                 text:'XML',
-                link:'/zh/varietystore/data-exchange-format/xml/README.md'
+                link:'/varietystore/data-exchange-format/xml/README.md'
               }
             ]
           },
@@ -90,14 +93,14 @@ export const zh:NavbarConfig=[
             children:[
               {
                 text:'Excel',
-                link:'/zh/varietystore/office/excel/README.md'
+                link:'/varietystore/office/excel/README.md'
               }]
           },
           {
             text: 'ERP',
             children:[{
               text:'用友U8+',
-              link:'/zh/varietystore/erp/yonyou/README.md'
+              link:'/varietystore/erp/yonyou/README.md'
             }]
           },
           {
@@ -105,7 +108,7 @@ export const zh:NavbarConfig=[
             children:[
               {
                 text:'梯云纵',
-                link:'/zh/varietystore/ladder/README.md'
+                link:'/varietystore/ladder/README.md'
               }
             ]
           },

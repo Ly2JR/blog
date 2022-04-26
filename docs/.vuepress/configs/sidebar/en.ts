@@ -1,31 +1,12 @@
 import type {SidebarConfig} from '@vuepress/theme-default'
 
 export const en:SidebarConfig={
-    '/guide/':[
+    '/en/guide/':[
         {
             text:'Guide',
             children:[
-                '/guide/README.md',
+                '/en/guide/README.md',
             ]
         }
-    ],
-    '/varietystore/':[
-        {
-            text:'Variety Store',
-            children:[
-                '/varietystore/excel/README.md',
-                '/varietystore/excel/sample1.md',
-                '/varietystore/excel/macro.md',
-            ]
-        },
-    ],
-    '/varietystore/ladder':[
-        {
-            text:'TiYunZong',
-            children:[
-                '/varietystore/ladder/sounds/README.md',
-                '/varietystore/ladder/google-recaptcha.md'
-            ]
-        },
     ],
 };
