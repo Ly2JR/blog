@@ -84,7 +84,7 @@ export default defineUserConfig<DefaultThemeOptions,ViteBundlerOptions>({
         lang: 'zh-CN',
         title: '乌龙茶有点甜·博客',
         description: '写写记记...',
-      },
+      }
     },
     
     themeConfig:{
@@ -213,23 +213,8 @@ export default defineUserConfig<DefaultThemeOptions,ViteBundlerOptions>({
             }
           }
         }
-      ],
-      // [
-      //   '@vuepress/plugin-register-components',
-      //   {
-      //     componentsDir: path.resolve(__dirname, './components'),
-      //   },
-      // ],
+      ]
      ],
-    //  markdown: {
-    //   importCode: {
-    //     handleImportPath: (str) =>
-    //       str.replace(
-    //         /^@vuepress/,
-    //         path.resolve(__dirname, '../../packages/@vuepress')
-    //       ),
-    //   },
-    // },
      /**
       * markdown扩展
       * @param md 
@@ -244,17 +229,17 @@ export default defineUserConfig<DefaultThemeOptions,ViteBundlerOptions>({
        md.use(mathjax3);
        md.use(markdownItFootnote);
        md.use(markdownTaskList);
-     },
-     /**
-      * 打包配置
-      */
-     bundlerConfig:{
-        vuePluginOptions:{
-          template:{
-            compilerOptions:{
-              isCustomElement:tag=>tag.startsWith("mjx-")
-            }
-          }
-        }
      }
+    //  /**
+    //   * 打包配置
+    //   */
+    //  bundlerConfig:{
+    //     vuePluginOptions:{
+    //       template:{
+    //         compilerOptions:{
+    //           isCustomElement:tag=>tag.startsWith("mjx-")
+    //         }
+    //       }
+    //     }
+    //  }
 });
