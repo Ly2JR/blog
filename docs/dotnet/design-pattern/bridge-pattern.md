@@ -43,6 +43,9 @@
 
 - 示例
 
+:::: code-group
+::: code-group-item Structural code
+
 ```cs
 namespace Design_Pattern
 {
@@ -120,3 +123,12 @@ namespace Design_Pattern
     }
 }
 ```
+
+:::
+::: code-group-item RealWorld code
+
+```cs
+```
+
+:::
+::::

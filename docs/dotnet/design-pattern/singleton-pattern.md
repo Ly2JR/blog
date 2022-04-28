@@ -13,7 +13,7 @@ Public 保证了它的全局可见性，静态方法保证了不会创建出多�
 - 示例
 
 :::: code-group
-::: code-group-item 方式一
+::: code-group-item Structurl code
 
 ```cs
 namespace Design_Pattern
@@ -40,7 +40,7 @@ namespace Design_Pattern
 ```
 
 :::
-::: code-group-item 方式二
+::: code-group-item RealWorld code
 
 ```cs
 namespace Design_Pattern

@@ -32,6 +32,9 @@ UML结构图
 
 典型的享元模式的例子为文书处理器中以图形结构来表示字符。一个做法是，每个字形有其字型外观，字模metrics，和其他格式资讯，但这会使每个字符就好用上千字节。取而代之的是，每个字符参照到一个共享字形物件，此物件会被其他共同特质的字符所分享；只有每个字符(文件中或页面中)的位置才需要另外存储。
 
+:::: code-group
+::: code-group-item Structural code
+
 ```cs
 namespace Design_Pattern
 {
@@ -154,3 +157,12 @@ namespace Design_Pattern
     }
 }
 ```
+
+:::
+::: code-group-item
+
+```cs
+```
+
+:::
+::::

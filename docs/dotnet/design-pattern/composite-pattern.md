@@ -37,6 +37,9 @@
 
 比如现实中公司内各部门的层级关系
 
+:::: code-group
+::: code-group-item Structural code
+
 ```cs
 using System.Text;
 
@@ -195,3 +198,12 @@ namespace Design_Pattern
     }
 }
 ```
+
+:::
+::: code-group-item RealWorld code
+
+```cs
+```
+
+:::
+::::

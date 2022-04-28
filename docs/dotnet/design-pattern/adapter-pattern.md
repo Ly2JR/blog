@@ -42,7 +42,7 @@
 - 示例
 
 :::: code-group
-::: code-group-item 类适配器示例
+::: code-group-item Structural code
 
 ```cs
 namespace Design_Pattern
@@ -80,7 +80,7 @@ namespace Design_Pattern
 ```
 
 :::
-::: code-group-item 对象适配器示例
+::: code-group-item RealWorld code
 
 ```cs
 namespace Design_Pattern
@@ -119,47 +119,6 @@ namespace Design_Pattern
             public void Request()
             {
                 _adaptee.SpecificRequest();
-            }
-        }
-    }
-}
-```
-
-:::
-::: code-group-item 缺省适配器示例
-
-```cs
-namespace Design_Pattern
-{
-    var defaultAdapter = new AdapterPattern.MyInteresting();
-    defaultAdapter.F3();
-
-    public  class AdapterPattern
-    {
-        public abstract class Target
-        {
-            public abstract void F1();
-            public abstract void F2();
-            public abstract void F3();
-        }
-
-        public class DefaultAdapter : Target
-        {
-            public override void F1(){}
-
-            public override void F2(){}
-
-            public override void F3(){}
-        }
-
-        /// <summary>
-        /// 缺省适配器
-        /// </summary>
-        public class MyInteresting : DefaultAdapter
-        {
-            public override void F3()
-            {
-                Console.WriteLine("我对F3()方法感兴趣，别的不管了！");
             }
         }
     }

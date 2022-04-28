@@ -41,7 +41,15 @@
 
 :::: code-group
 ::: code-group-item Strutural code
+
+```cs
+```
+
 :::
 ::: code-group-item RealWorld code
+
+```cs
+```
+
 :::
 ::::
