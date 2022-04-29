@@ -24,91 +24,271 @@
 ::: code-group-item Structural code
 
 ```cs
-namespace Design_Pattern
+namespace Design_Pattern.Builder
 {
-    var pd = new Builder.PersonDirector();
-    var person = pd.ConstructPerson(new Builder.ManBuilder());
-    Console.WriteLine(person.Body);
-    Console.WriteLine(person.Foot);
-    Console.WriteLine(person.Head);
+    var director = new Structural.Director();
 
-    public  class Builder
+    var b1 = new Structural.ConcreteBuilder1();
+    var b2 = new Structural.ConcreteBuilder2();
+
+    director.Construct(b1);
+    var p1 = b1.GetResult();
+    p1.Show();
+
+    director.Construct(b2);
+    var p2 = b2.GetResult();
+    p2.Show();
+
+    // Wait for user
+    Console.ReadKey();
+
+    /// <summary>
+    /// 演示了构建器模式，其中以逐步方式创建复杂对象。
+    /// 构建过程可以创建不同的对象表示并提供对对象组装的高级控制
+    /// </summary>
+    public class Structural
     {
-        public interface IPersonBuilder
+        public class Director
         {
-            void BuildHead();
-            void BuildBody();
-            void BuildFoot();
-            Person BuildPerson();
-        }
-
-        /// <summary>
-        /// 具体构造工具
-        /// </summary>
-        public class ManBuilder : IPersonBuilder
-        {
-            private readonly Person _person;
-            public ManBuilder()
+            public void Construct(Builder builder)
             {
-                _person = new Person();
-            }
-
-            public void BuildBody()
-            {
-                _person.Body = "建造男人的身体";
-            }
-
-            public void BuildFoot()
-            {
-                _person.Foot = "建造男人的脚";
-            }
-
-            public void BuildHead()
-            {
-                _person.Head = "建造男人的头";
-            }
-
-            public Person BuildPerson()
-            {
-                return _person;
+                builder.BuildPartA();
+                builder.BuildPartB();
             }
         }
 
-        /// <summary>
-        /// 建造者
-        /// </summary>
-        public class PersonDirector
+        public abstract class Builder
         {
-            public Person ConstructPerson(IPersonBuilder pb)
+            public abstract void BuildPartA();
+            public abstract void BuildPartB();
+            public abstract Product GetResult();
+        }
+
+        public class ConcreteBuilder1:Builder
+        {
+            private readonly Product _product = new Product();
+
+            public override void BuildPartA()
             {
-                pb.BuildHead();
-                pb.BuildBody();
-                pb.BuildFoot();
-                return pb.BuildPerson();
+                _product.Add("PartA");
+            }
+
+            public override void BuildPartB()
+            {
+                _product.Add("PartB");
+            }
+
+            public override Product GetResult()
+            {
+                return _product;
             }
         }
-        /// <summary>
-        /// Product
-        /// </summary>
-        public class Person
+
+        public class ConcreteBuilder2:Builder
         {
-            public string Head { get; set; }
+            private readonly Product _product=new Product();
 
-            public string Body { get; set; }
+            public override void BuildPartA()
+            {
+                _product.Add("PartX");
+            }
 
-            public string Foot { get; set; }
+            public override void BuildPartB()
+            {
+                _product.Add("PartY");
+            }
+
+            public override Product GetResult()
+            {
+                return _product;
+            }
         }
 
-        public class Man : Person {}
+        public class Product
+        {
+            private readonly List<string> _parts = new List<string>();
+
+            public void Add(string part)
+            {
+                _parts.Add(part);
+            }
+
+            public void Show()
+            {
+                Console.WriteLine("\n Product Parts -------");
+                foreach (string part in _parts)
+                {
+                    Console.WriteLine(part);
+                }
+            }
+        }
     }
 }
-
 ```
 
 :::
 ::: code-group-item RealWorld code
 
 ```cs
+namespace Design_Pattern.Builder
+{
+    RealWorld.VehicleBuilder builder;
+
+    var shop = new RealWorld.Shop();
+    builder = new RealWorld.ScooterBuilder();
+    shop.Construct(builder);
+    builder.Vehicle.Show();
+
+    builder = new RealWorld.CarBuilder();
+    shop.Construct(builder);
+    builder.Vehicle.Show();
+
+    builder = new RealWorld.MotorCycleBuilder();
+    shop.Construct(builder);
+    builder.Vehicle.Show();
+
+    // Wait for user
+    Console.ReadKey();
+
+    /// <summary>
+    /// 演示了构建起模式，其中不同的车辆以逐步的方式组装。
+    /// 商店使用VehicleBuilders以一系列顺序步骤构建各种车辆。
+    /// </summary>
+    public class RealWorld
+    {
+        public class Shop
+        {
+            public void Construct(VehicleBuilder vehicleBuilder)
+            {
+                vehicleBuilder.BuildFrame();
+                vehicleBuilder.BuildEngine();
+                vehicleBuilder.BuildWheels();
+                vehicleBuilder.BuildDoors();
+            }
+        }
+
+        public abstract class VehicleBuilder
+        {
+            public Vehicle Vehicle { get; protected set; } = null!;
+
+            public abstract void BuildFrame();
+            public abstract void BuildEngine();
+            public abstract void BuildWheels();
+            public abstract void BuildDoors();
+        }
+
+        public class MotorCycleBuilder:VehicleBuilder
+        {
+            public MotorCycleBuilder()
+            {
+                Vehicle = new Vehicle("MotorCycle");
+            }
+
+            public override void BuildFrame()
+            {
+                Vehicle["frame"] = "MotorCycle Frame";
+            }
+
+            public override void BuildEngine()
+            {
+                Vehicle["engine"] = "500 cc";
+            }
+
+            public override void BuildWheels()
+            {
+                Vehicle["wheels"] = "2";
+            }
+
+            public override void BuildDoors()
+            {
+                Vehicle["doors"] = "0";
+            }
+        }
+
+        public class CarBuilder:VehicleBuilder
+        {
+            public CarBuilder()
+            {
+                Vehicle = new Vehicle("Car");
+            }
+
+            public override void BuildFrame()
+            {
+                Vehicle["frame"] = "Car Frame";
+            }
+
+            public override void BuildEngine()
+            {
+                Vehicle["engine"] = "2500 cc";
+            }
+
+            public override void BuildWheels()
+            {
+                Vehicle["wheels"] = "4";
+            }
+
+            public override void BuildDoors()
+            {
+                Vehicle["doors"] = "4";
+            }
+        }
+
+        public class ScooterBuilder:VehicleBuilder
+        {
+            public ScooterBuilder()
+            {
+                Vehicle = new Vehicle("Scooter");
+            }
+
+            public override void BuildFrame()
+            {
+                Vehicle["frame"] = "Scooter Frame";
+            }
+
+            public override void BuildEngine()
+            {
+                Vehicle["engine"] = "50 cc";
+            }
+
+            public override void BuildWheels()
+            {
+                Vehicle["wheels"] = "2";
+            }
+
+            public override void BuildDoors()
+            {
+                Vehicle["doors"]="0";
+            }
+        }
+
+        public class Vehicle
+        {
+            private readonly string _vehicleType;
+            private readonly Dictionary<string,string> _parts=new Dictionary<string,string>();
+
+            public Vehicle(string vehicleType)
+            {
+                _vehicleType=vehicleType;
+            }
+
+            public string this[string key]
+            {
+                get => _parts[key];
+                set => _parts[key] = value;
+            }
+
+            public void Show()
+            {
+                Console.WriteLine("\n--------------------------");
+                Console.WriteLine($"Vehicle Type:{_vehicleType}");
+                Console.WriteLine($" Frame:{_parts["frame"]}");
+                Console.WriteLine($" Engine:{_parts["engine"]}");
+                Console.WriteLine($" #Wheels:{_parts["wheels"]}");
+                Console.WriteLine($" #Doors:{_parts["doors"]}");
+            }
+        }
+    }
+}
 ```
 
 :::

@@ -13,112 +13,139 @@
 - 示例
 
 :::: code-group
-::: code-group-item 浅度复制
+::: code-group-item Structural code
 
 ```cs
-namespace Design_Pattern
+namespace Design_Pattern.Prototype
 {
-    var redColor = new Prototype.RedColor
+    var p1 = new Structural.ConcretePrototype1("I");
+    var c1 = (Structural.ConcretePrototype1)p1.Clone();
+    Console.WriteLine($"Cloned:{c1.Id}");
+
+    var p2=new Structural.ConcretePrototype2("II");
+    var c2 = (Structural.ConcretePrototype2)p2.Clone();
+    Console.WriteLine($"Cloned:{c2.Id}");
+
+    // Wait for user
+    Console.ReadKey();
+
+    /// <summary>
+    /// 演示了原型模式，其中通过复制同一类的预先存在的对象(原型)来创建新对象。
+    /// </summary>
+    public class Structural
     {
-        Red = 255
-    };
-    Console.WriteLine($"RedColor - Red {redColor.Red}");
-
-    var redColorClone = redColor.Clone();
-    if (redColorClone != null)
-    {
-        redColorClone.Red = 224;
-        Console.WriteLine($"RedColorClone - Red {redColorClone.Red}");
-    }
-    Console.WriteLine($"RedColor - Red {redColor.Red}");
-
-    public  class Prototype
-    {
-        public interface IColor
+        public abstract class Prototype
         {
-           IColor Clone();
+            private string _id;
 
-           int Red { get; set; }
-
-           int Green { get; set; }
-
-           int Blue { get; set; }
-        }
-
-        public class RedColor : IColor
-        {
-           public int Red { get; set; }
-
-           public int Green { get; set; }
-
-           public int Blue { get; set; }
-
-           public IColor Clone()
-           {
-               return (IColor)this.MemberwiseClone();
-           }
-        }
-    }
-}
-
-```
-
-:::
-::: code-group-item 深度复制
-
-```cs
-using System.Text.Json;
-
-namespace Design_Pattern
-{
-    var redColor = new Prototype.RedColor
-    {
-        Red = 255,
-        F = new Prototype.Factory() { Name = "RedColor" }
-    };
-    Console.WriteLine($"RedColor - Factory:{redColor.F.Name}; Red - {redColor.Red}");
-
-    var redColorClone = redColor.Clone();
-    redColorClone.Red = 234;
-    redColorClone.F.Name = "RedColorClone";
-    Console.WriteLine($"RedColorClone - Factory {redColorClone.F.Name}; Red - {redColorClone.Red}");
-
-    public  class Prototype
-    {
-        public interface IColor
-        {
-            IColor? Clone();
-
-            int Red { get; set; }
-
-            int Green { get; set; }
-
-            int Blue { get; set; }
-
-            Factory? F { get; set; }
-        }
-
-        public class Factory
-        {
-            public string? Name { get; set; }
-        }
-
-        public class RedColor : IColor
-        {
-            public int Red { get; set; }
-            public int Green { get; set; }
-            public int Blue { get; set; }
-            public Factory? F { get; set; }
-
-            public IColor? Clone()
+            protected Prototype(string id)
             {
-                var json = JsonSerializer.Serialize(this);
-                return JsonSerializer.Deserialize<RedColor>(json);
+                _id = id;
+            }
+
+            public string Id
+            {
+                get { return _id; }
+            }
+
+            public abstract Prototype Clone();
+        }
+
+        public class ConcretePrototype1 : Prototype
+        {
+            public ConcretePrototype1(string id) : base(id)
+            {
+            }
+
+            public override Prototype Clone()
+            {
+                return (Prototype)this.MemberwiseClone();
+            }
+        }
+
+        public class ConcretePrototype2:Prototype
+        {
+            public ConcretePrototype2(string id) : base(id)
+            {
+            }
+
+            public override Prototype Clone()
+            {
+                return (Prototype)this.MemberwiseClone();
             }
         }
     }
 }
+```
 
+:::
+::: code-group-item RealWorld code
+
+```cs
+namespace Design_Pattern.Prototype
+{
+    var colorManager = new RealWorld.ColorManager
+    {
+        ["red"] = new RealWorld.Color(255, 0, 0),
+        ["green"] = new RealWorld.Color(0, 255, 0),
+        ["blue"] = new RealWorld.Color(0, 0, 255)
+    };
+
+    //User adds personalized colors
+    colorManager["angry"]=new RealWorld.Color(255, 54, 0);
+    colorManager["peace"] = new RealWorld.Color(128, 211, 128);
+    colorManager["flame"] = new RealWorld.Color(211, 34, 20);
+
+    //User clones selected colors
+    var color1 = colorManager["red"].Clone() as RealWorld.Color;
+    var color2 = colorManager["peace"].Clone() as RealWorld.Color;
+    var color3= colorManager["flame"].Clone() as RealWorld.Color;
+
+    // Wait for user
+    Console.ReadKey();
+
+    /// <summary>
+    /// 演示了原型模式，其中通过复制预先存在的、用户定义的相同类型的颜色来创建新的颜色对象。
+    /// </summary>
+    public class RealWorld
+    {
+        public abstract class ColorPrototype
+        {
+            public abstract ColorPrototype Clone();
+        }
+
+        public class Color:ColorPrototype
+        {
+            private int _red;
+            private int _green;
+            private int _blue;
+
+            public Color(int red,int green,int blue)
+            {
+                _red = red;
+                _green = green;
+                _blue = blue;
+            }
+
+            public override ColorPrototype Clone()
+            {
+                Console.WriteLine($"Cloning color RGB:{_red,3},{_green,3},{_blue,3}");
+                return this.MemberwiseClone() as ColorPrototype;
+            }
+        }
+
+        public class ColorManager
+        {
+            private Dictionary<string,ColorPrototype> _colors=new Dictionary<string,ColorPrototype>();
+
+            public ColorPrototype this[string key]
+            {
+                get { return _colors[key]; }
+                set{_colors.Add(key,value);}
+            }
+        }
+    }
+}
 ```
 
 :::

@@ -1,6 +1,6 @@
-# 单件模式(Singleton Pattern)
+# 单例模式(Singleton Pattern)
 
-单件模式是一种用于确保整个应用程序中只有一个类实例且这个实例所占用资源在整个应用程序中是共享时的程序设计方法
+单例模式是一种用于确保整个应用程序中只有一个类实例且这个实例所占用资源在整个应用程序中是共享时的程序设计方法
   (根据实际情况，可能需要几个类实例)。
 
 Singleton模式的实现基于两个要点:
@@ -16,24 +16,42 @@ Public 保证了它的全局可见性，静态方法保证了不会创建出多�
 ::: code-group-item Structurl code
 
 ```cs
-namespace Design_Pattern
+namespace Design_Pattern.Singleton
 {
-    var s1 = SingletonPattern.Instance();
-    var s2 = SingletonPattern.Instance();
-    if (s1.Equals(s2))
+    var s1 = Structural.Singleton.Instance();
+    var s2 = Structural.Singleton.Instance();
+
+    //Test for same instance
+    if (s1==s2)
     {
-        Console.WriteLine("see,only one instance.");
+        Console.WriteLine("Objects are the same instance");
     }
 
-    public class SingletonPattern
+    // Wait for user
+    Console.ReadKey();
+
+    /// <summary>
+    /// 演示了单例模式，该模式确保只能创建类的单个实例(单例)
+    /// </summary>
+    public class Structural
     {
-        private static SingletonPattern? _theSingleton;
-
-        private SingletonPattern() { }
-
-        public static SingletonPattern Instance()
+        public class Singleton
         {
-            return _theSingleton ??= new SingletonPattern();
+            private static Singleton _instance;
+
+            protected Singleton(){}
+
+            public static Singleton Instance()
+            {
+                //Uses lazy initialization
+                //Note:this is not thread safe.
+                if (_instance == null)
+                {
+                    _instance=new Singleton();
+                }
+
+                return _instance;
+            }
         }
     }
 }
@@ -43,24 +61,86 @@ namespace Design_Pattern
 ::: code-group-item RealWorld code
 
 ```cs
-namespace Design_Pattern
+namespace Design_Pattern.Singleton
 {
-    var s1 = SingletonPattern.Instance();
-    var s2 = SingletonPattern.Instance();
-    if (s1.Equals(s2))
+    var b1 = RealWorld.LoadBalancer.GetLoadBalancer();
+    var b2 = RealWorld.LoadBalancer.GetLoadBalancer();
+    var b3= RealWorld.LoadBalancer.GetLoadBalancer();
+    var b4= RealWorld.LoadBalancer.GetLoadBalancer();
+
+    //Same instance?
+    if (b1 == b2 && b2 == b3 && b3 == b4)
     {
-        Console.WriteLine("see,only one instance.");
+        Console.WriteLine("Same instance\n");
     }
 
-    public class SingletonPattern
+    //Load balance 15 server requests
+    var balancer = RealWorld.LoadBalancer.GetLoadBalancer();
+    for (var i = 0; i < 15; i++)
     {
-        private static readonly SingletonPattern TheSingleton = new SingletonPattern();
+        var server = balancer.Server;
+        Console.WriteLine($"Dispatch Request to:{server}");
+    }
 
-        private SingletonPattern() { }
+    // Wait for user
+    Console.ReadKey();
 
-        public static SingletonPattern Instance()
+    /// <summary>
+    /// 将单列模式演示为LoadBalancing对象。只能创建该类的单个实例(单列),
+    /// 因为服务器可能回动态地联机或脱机，并且每个请求都必须通过一个了解(网络)农场状态的对象。
+    /// </summary>
+    public class RealWorld
+    {
+        public class LoadBalancer
         {
-            return TheSingleton;
+            private static LoadBalancer _instance = null!;
+            private readonly List<string> _servers = new();
+            readonly Random _random = new();
+
+            //Lock synchronization object
+            private static readonly object Locker=new();
+
+            //Constructor (protected)
+            protected LoadBalancer()
+            {
+                _servers.Add("ServerI");
+                _servers.Add("ServerII");
+                _servers.Add("ServerIII");
+                _servers.Add("ServerIV");
+                _servers.Add("ServerV");
+            }
+
+            public static LoadBalancer GetLoadBalancer()
+            {
+                // Support multithreaded applications through
+                // 'Double checked locking' pattern which (once
+                // the instance exists) avoids locking each 
+                // time the method is invoked
+                if (_instance == null)
+                {
+                    lock (Locker)
+                    {
+                        if (_instance == null)
+                        {
+                            _instance = new LoadBalancer();
+                        }
+                    }
+                }
+
+                return _instance;
+            }
+
+            /// <summary>
+            /// Simple,but effective random load balancer
+            /// </summary>
+            public string Server
+            {
+                get
+                {
+                    int r = _random.Next(_servers.Count);
+                    return _servers[r];
+                }
+            }
         }
     }
 }

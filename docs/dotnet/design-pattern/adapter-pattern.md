@@ -39,95 +39,6 @@
 
       缺省适配器模式是一种特殊的适配器模式，但这个适配器是由一个抽象类实现的，并且在抽象类中要实现目标接口中所规定的所有方法，但很多方法的实现都是“平庸”的实现，也就是说，这些方法都是空方法。而具体的子类都要继承此抽象类。
 
-- 示例
-
-:::: code-group
-::: code-group-item Structural code
-
-```cs
-namespace Design_Pattern
-{
-    var adapterClass = new AdapterPattern.AdapterClass();
-    adapterClass.Request();
-
-    public  class AdapterPattern
-    {
-        interface ITarget
-        {
-            void Request();
-        }
-
-        public class Adaptee
-        {
-            public void SpecificRequest()
-            {
-                Console.WriteLine("Called SpecificRequest.");
-            }
-        }
-
-        /// <summary>
-        /// 类适配器
-        /// </summary>
-        public class AdapterClass : Adaptee, ITarget
-        {
-            public void Request()
-            {
-                this.SpecificRequest();
-            }
-        }
-    }
-}
-```
-
-:::
-::: code-group-item RealWorld code
-
-```cs
-namespace Design_Pattern
-{
-    var adapterInterface = new AdapterPattern.AdapterInterface();    
-    adapterInterface.Request();
-
-    public  class AdapterPattern
-    {
-        interface ITarget
-        {
-            void Request();
-        }
-
-        public class Adaptee
-        {
-            public void SpecificRequest()
-            {
-                Console.WriteLine("Called SpecificRequest.");
-            }
-        }
-
-        /// <summary>
-        /// 对象适配器
-        /// </summary>
-        public class AdapterInterface : ITarget
-        {
-
-            private readonly Adaptee _adaptee;
-
-            public AdapterInterface()
-            {
-                _adaptee = new Adaptee();
-            }
-
-            public void Request()
-            {
-                _adaptee.SpecificRequest();
-            }
-        }
-    }
-}
-```
-
-:::
-::::
-
 - 适用情况
 
 1. 接口中规定了所有要实现的方法
@@ -156,3 +67,111 @@ namespace Design_Pattern
 1. 把一个类定义为抽象类；
 2. 把一个类的构造方法设置为：private类型的,这样在客户端就不能通过new ClassName()方法来轻易将一个类实例化，而要生成此类的实例就必须通过一个特殊的方法，这样在一个系统中，对此类的使用就能得到合理的控制(如：单例模式/多例模式/简单工厂方法等模式)。
 3. 对于两个独立的系统，要满足OCP原则，则适配器模式会有一定的局限性。
+
+- 示例
+
+:::: code-group
+::: code-group-item Structural code
+
+```cs
+namespace Design_Pattern.Adapter
+{
+    var target = new Structural.Adapter();
+    target.Request();
+
+    // Wait for user
+    Console.ReadKey();
+
+    /// <summary>
+    /// 演示了适配器模式，该模式将一个类的接口映射到另一个类，以便它们可以一起工作。
+    /// 这些不兼容的类可能来自不同的库或框架。
+    /// </summary>
+    public class Structural
+    {
+        public class Target
+        {
+            public virtual void Request()
+            {
+                Console.WriteLine("Called Target Request()");
+            }
+        }
+
+        public class Adapter:Target
+        {
+            private readonly Adaptee _adapter = new Adaptee();
+
+            public override void Request()
+            {
+                _adapter.SpecificRequest();
+            }
+        }
+
+        public class Adaptee
+        {
+            public void SpecificRequest()
+            {
+                Console.WriteLine("Called SpecificRequest()");
+            }
+        }
+    }
+}
+```
+
+:::
+::: code-group-item RealWorld code
+
+```cs
+namespace Design_Pattern.Adapter
+{
+    var unknown = new RealWorld.Compound();
+    unknown.Display();
+
+    var water = new RealWorld.RichCompound("Water");
+    water.Display();
+
+    var benzene = new RealWorld.RichCompound("Benzene");
+    benzene.Display();
+
+    var ethanol = new RealWorld.RichCompound("Ethanol");
+    ethanol.Display();
+
+    // Wait for user
+    Console.ReadKey();
+
+    /// <summary>
+    /// 演示了适配器模式，该模式将一个类的接口映射到另一个类，以便它们可以一起工作。
+    /// 这些不兼容的类可能来自不同的库或框架。
+    /// </summary>
+    public class Structural
+    {
+        public class Target
+        {
+            public virtual void Request()
+            {
+                Console.WriteLine("Called Target Request()");
+            }
+        }
+
+        public class Adapter:Target
+        {
+            private readonly Adaptee _adapter = new Adaptee();
+
+            public override void Request()
+            {
+                _adapter.SpecificRequest();
+            }
+        }
+
+        public class Adaptee
+        {
+            public void SpecificRequest()
+            {
+                Console.WriteLine("Called SpecificRequest()");
+            }
+        }
+    }
+}
+```
+
+:::
+::::

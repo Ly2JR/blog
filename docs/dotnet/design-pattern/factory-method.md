@@ -45,58 +45,60 @@
 ::: code-group-item Structural code
 
 ```cs
-namespace Design_Pattern
+namespace Design_Pattern.FactoryMethod
 {
-    var shreddedPorkWithPotatoesFactory = new FactoryMethod.ShreddedPorkWithPotatoesFactory();
-    var tomatoScrambledEggsFactory = new FactoryMethod.TomatoScrambledEggsFactory();
+    var creators = new Structural.Creator[2];
+    creators[0] = new Structural.ConcreteCreatorA();
+    creators[1] = new Structural.ConcreteCreatorB();
 
-    var tomatoScrambleEggs = tomatoScrambledEggsFactory.CreateFoodFactory();
-    tomatoScrambleEggs.Print();
-
-    var shreddedPorkWithPotatoes = shreddedPorkWithPotatoesFactory.CreateFoodFactory();
-    shreddedPorkWithPotatoes.Print();
-
-    public  class FactoryMethod
+    foreach (var creator in creators)
     {
-        public abstract class Food
+        var product = creator.FactoryMethod();
+        Console.WriteLine($"Created {product.GetType().Name}");
+    }
+
+    // Wait for user
+    Console.ReadKey();
+
+    /// <summary>
+    /// 演示了Factory方法，它在创建不同对象方面提供了极大的灵活性。
+    /// Abstract类可以提供一个默认对象，但每个子类都可以实例化该对象的扩展版本。
+    /// </summary>
+    public class Structural
+    {
+        public abstract class Product
         {
-            public abstract void Print();
+
         }
 
-        public class TomatoScrambleEggs : Food
+        public class ConcreteProductA:Product
         {
-            public override void Print()
-            {
-                Console.WriteLine("西红柿炒鸡蛋");
-            }
+            
         }
 
-        public class ShreddedPorkWithPotatoes : Food
+        public class ConcreteProductB:Product
         {
-            public override void Print()
-            {
-                Console.WriteLine("土豆肉丝");
-            }
+            
         }
 
         public abstract class Creator
         {
-            public abstract Food CreateFoodFactory();
+            public abstract Product FactoryMethod();
         }
 
-        public class TomatoScrambledEggsFactory : Creator
+        public class ConcreteCreatorA:Creator
         {
-            public override Food CreateFoodFactory()
+            public override Product FactoryMethod()
             {
-                return new TomatoScrambleEggs();
+                return new ConcreteProductA();
             }
         }
 
-        public class ShreddedPorkWithPotatoesFactory : Creator
+        public class ConcreteCreatorB : Creator
         {
-            public override Food CreateFoodFactory()
+            public override Product FactoryMethod()
             {
-                return new ShreddedPorkWithPotatoes();
+                return new ConcreteProductB();
             }
         }
     }
@@ -104,9 +106,118 @@ namespace Design_Pattern
 ```
 
 :::
-::: code-group-item
+::: code-group-item RealWorld code
 
 ```cs
+namespace Design_Pattern.FactoryMethod
+{
+    var documents = new RealWorld.Document[2];
+    documents[0] = new RealWorld.Resume();
+    documents[1] = new RealWorld.Report();
+
+    foreach (var document in documents)
+    {
+        Console.WriteLine($"\n{document.GetType().Name}--");
+        foreach (var page in document.Pages)
+        {
+            Console.WriteLine($" {page.GetType().Name}");
+        }
+    }
+
+    // Wait for user
+    Console.ReadKey();
+
+    /// <summary>
+    /// 演示了工厂方法，它在创建不同的文档时提供了灵活性。
+    /// 派生的Document类Report和Resume实例化Document类的扩展版本。
+    /// 这里，工厂方法在Document基类的构造函数中被调用。
+    /// </summary>
+    public class RealWorld
+    {
+        public abstract class Page
+        {
+            
+        }
+
+        public class SkillsPage:Page
+        {
+            
+        }
+
+        public class EducationPage:Page
+        {
+
+        }
+
+        public class ExperiencePage:Page
+        {
+        }
+
+        public class IntroductionPage:Page
+        {
+            
+        }
+
+        public class ResultPage:Page
+        {
+            
+        }
+
+        public class ConclusionPage:Page
+        {
+            
+        }
+
+        public class SummaryPage:Page
+        {
+            
+        }
+
+        public class BibliographyPage:Page
+        {
+            
+        }
+
+        public abstract class Document
+        {
+            private readonly List<Page> _pages=new List<Page>();
+
+            protected Document()
+            {
+                this.CreatePages();
+            }
+
+            public List<Page> Pages
+            {
+                get { return _pages; }
+            }
+
+            public abstract void CreatePages();
+        }
+
+        public class Resume:Document
+        {
+            public override void CreatePages()
+            {
+                Pages.Add(new SkillsPage());
+                Pages.Add(new EducationPage());
+                Pages.Add(new ExperiencePage());
+            }
+        }
+
+        public class Report:Document
+        {
+            public override void CreatePages()
+            {
+                Pages.Add(new IntroductionPage());
+                Pages.Add(new ResultPage());
+                Pages.Add(new ConclusionPage());
+                Pages.Add(new SummaryPage());
+                Pages.Add(new BibliographyPage());
+            }
+        }
+    }
+}
 ```
 
 :::

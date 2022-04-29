@@ -68,76 +68,98 @@
 ::: code-group-item Structural code
 
 ```cs
-namespace Design_Pattern
+namespace Design_Pattern.AbstractFactory
 {
-    public class AbstractFactory
+    var factory1 = new Structural.ConcreteFactory1();
+    var client1 = new Structural.Client(factory1);
+    client1.Run();
+
+    var factory2 = new Structural.ConcreteFactory2();
+    var client2 = new Structural.Client(factory2);
+    client2.Run();
+
+    // Wait for user
+    Console.ReadKey();
+
+    /// <summary>
+    /// 演示了创建对象的并行层次结构的抽象工厂模式。
+    /// 对象创建已被抽象化，客户端代码中不需要硬编码的类名。
+    /// </summary>
+    public class Structural
     {
-        public interface IButton
+        public abstract class AbstractFactory
         {
-            void Display();
+            public abstract AbstractProductA CreateProductA();
+            public abstract AbstractProductB CreateProductB();
         }
 
-        public interface IBorder
+        public class ConcreteFactory1 : AbstractFactory
         {
-            void Display();
-        }
+            public override AbstractProductA CreateProductA()
+            {
+                return new ProductA1();
+            }
 
-        /// <summary>
-        /// 实现抽象类
-        /// </summary>
-        public class MacButton : IButton
-        {
-            public void Display()
+            public override AbstractProductB CreateProductB()
             {
-                Console.WriteLine(nameof(MacButton));
-            }
-        }
-        public class MacBorder : IBorder
-        {
-            public void Display()
-            {
-                Console.WriteLine(nameof(MacBorder));
-            }
-        }
-        public class WinButton : IButton
-        {
-            public void Display()
-            {
-                Console.WriteLine(nameof(WinButton));
-            }
-        }
-        public class WinBorder : IBorder
-        {
-            public void Display()
-            {
-                Console.WriteLine(nameof(WinBorder));
+                return new ProductB1();
             }
         }
 
-        /// <summary>
-        /// 实现工厂
-        /// </summary>
-        public class MacFactory
+        public class ConcreteFactory2 : AbstractFactory
         {
-            public IButton CreateButton()
+            public override AbstractProductA CreateProductA()
             {
-                return new MacButton();
+                return new ProductA2();
             }
-            public IBorder CreateBorder()
+
+            public override AbstractProductB CreateProductB()
             {
-                return new MacBorder();
+                return new ProductB2();
             }
         }
 
-        public  class WinFactory
+        public abstract class AbstractProductA{}
+
+        public abstract class AbstractProductB
         {
-            public IButton CreateButton()
+            public abstract void Interact(AbstractProductA a);
+        }
+
+        public class ProductA1 : AbstractProductA{}
+
+        public class ProductB1 : AbstractProductB
+        {
+            public override void Interact(AbstractProductA a)
             {
-                return new WinButton();
+                Console.WriteLine($"{this.GetType().Namespace} interacts with {a.GetType().Name}");
             }
-            public IBorder CreateBorder()
+        }
+
+        public class ProductA2 : AbstractProductA{}
+
+        public class ProductB2 : AbstractProductB
+        {
+            public override void Interact(AbstractProductA a)
             {
-                return new WinBorder();
+                Console.WriteLine($"{this.GetType().Name} interacts with {a.GetType().Name}");
+            }
+        }
+
+        public class Client
+        {
+            private AbstractProductA _abstractProductA;
+            private AbstractProductB _abstractProductB;
+
+            public Client(AbstractFactory factory)
+            {
+                _abstractProductA=factory.CreateProductA();
+                _abstractProductB=factory.CreateProductB();
+            }
+
+            public void Run()
+            {
+                _abstractProductB.Interact(_abstractProductA);
             }
         }
     }
@@ -148,6 +170,104 @@ namespace Design_Pattern
 ::: code-group-item RealWord code
 
 ```cs
+namespace Design_Pattern.AbstractFactory
+{
+    var africa = new RealWorld.AfricaFactory();
+    var world = new RealWorld.AnimalWorld(africa);
+    world.RunFoodChain();
+
+    var america = new RealWorld.AmericalFactory();
+    world = new RealWorld.AnimalWorld(america);
+    world.RunFoodChain();
+
+    // Wait for user
+    Console.ReadKey();
+
+    /// <summary>
+    /// 演示了使用不同工厂为电脑游戏创建不同的动物世界。
+    /// 虽然大陆工厂创造的动物不同，但动物之间的互动是一样的。
+    /// </summary>
+    public class RealWorld
+    {
+        public abstract class ContinentFactory
+        {
+            public abstract Herbivore CreateHerbivore();
+            public abstract Carnivore CreateCarnivore();
+        }
+
+        public class AfricaFactory:ContinentFactory
+        {
+            public override Herbivore CreateHerbivore()
+            {
+                return new Wildebeest();
+            }
+
+            public override Carnivore CreateCarnivore()
+            {
+                return new Lion();
+            }
+        }
+
+        public class AmericalFactory:ContinentFactory
+        {
+            public override Herbivore CreateHerbivore()
+            {
+                return new Bison();
+            }
+
+            public override Carnivore CreateCarnivore()
+            {
+                return new Wolf();
+            }
+        }
+
+        public abstract class Herbivore{}
+
+        public abstract class Carnivore
+        {
+            public abstract void Eat(Herbivore h);
+        }
+
+        public class Wildebeest:Herbivore{}
+
+        public class Lion:Carnivore
+        {
+            public override void Eat(Herbivore h)
+            {
+                //Eat Wildebeest
+                Console.WriteLine($"{this.GetType().Name} eats {h.GetType().Name}");
+            }
+        }
+
+        public class Bison : Herbivore{}
+
+        public class Wolf:Carnivore
+        {
+            public override void Eat(Herbivore h)
+            {
+                //Eat Bison
+                Console.WriteLine($"{this.GetType().Name} eats {h.GetType().Name}");
+            }
+        }
+
+        public  class AnimalWorld
+        {
+            private Herbivore _herbivore;
+            private Carnivore _carnivore;
+
+            public AnimalWorld(ContinentFactory factory)
+            {
+                _carnivore = factory.CreateCarnivore();
+                _herbivore = factory.CreateHerbivore();
+            }
+
+            public void RunFoodChain()
+            {
+                _carnivore.Eat(_herbivore);
+            }
+        }
+    }
+}
 ```
 
 :::
