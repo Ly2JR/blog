@@ -1,4 +1,4 @@
-# 中介者模式(Mediator Pattern)
+# 中介者模式(Mediator)
 
 中介者模式(Mediator pattern)是2018年公布的计算机科学技术名词。
 
@@ -14,14 +14,17 @@
 ```cs
 namespace Design_Pattern.Mediator
 {
-    var m = new Mediator.Structural.ConcreteMediator();
-    var c1 = new Mediator.Structural.ConcreteColleague1(m);
-    var c2=new Mediator.Structural.ConcreteColleague2(m);
+    var m = new Structural.ConcreteMediator();
+    var c1 = new Structural.ConcreteColleague1(m);
+    var c2=new Structural.ConcreteColleague2(m);
     m.Colleague1 = c1;
     m.Colleague2 = c2;
 
     c1.Send("How are you?");
     c2.Send("Fine,thanks");
+
+    // Wait for user
+    Console.ReadKey();
 
     /// <summary>
     /// 演示了促进不同对象和对象类型之间松散耦合通信的中介者模式。
@@ -80,7 +83,7 @@ namespace Design_Pattern.Mediator
 
             public void Send(string message)
             {
-                Mediator.Send(message,this);
+                Send(message,this);
             }
 
             public void Notify(string message)
@@ -97,7 +100,7 @@ namespace Design_Pattern.Mediator
 
             public void Send(string message)
             {
-                Mediator.Send(message,this);
+                Send(message,this);
             }
 
             public void Notify(string message)
@@ -115,13 +118,13 @@ namespace Design_Pattern.Mediator
 ```cs
 namespace Design_Pattern.Mediator
 {
-    var chartRoom = new Mediator.RealWorld.ChatRoom();
+    var chartRoom = new RealWorld.ChatRoom();
 
-    var george = new Mediator.RealWorld.Beatle("George");
-    var paul = new Mediator.RealWorld.Beatle("Paul");
-    var ringo = new Mediator.RealWorld.Beatle("Ringo");
-    var john = new Mediator.RealWorld.Beatle("John");
-    var yoko = new Mediator.RealWorld.NonBeatle("Yoko");
+    var george = new RealWorld.Beatle("George");
+    var paul = new RealWorld.Beatle("Paul");
+    var ringo = new RealWorld.Beatle("Ringo");
+    var john = new RealWorld.Beatle("John");
+    var yoko = new RealWorld.NonBeatle("Yoko");
 
     chartRoom.Register(george);
     chartRoom.Register(paul);
@@ -134,6 +137,9 @@ namespace Design_Pattern.Mediator
     ringo.Send("George","My sweet Lord");
     paul.Send("John","Can't buy me love");
     john.Send("Yoko","My sweet love");
+
+    // Wait for user
+    Console.ReadKey();
 
     /// <summary>
     /// 演示了中介者模式，促进了在聊天室注册的不同参与者之间的松散耦合通信。聊天室是进行所有交流的中心枢纽。

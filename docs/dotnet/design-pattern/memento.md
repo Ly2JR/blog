@@ -1,4 +1,4 @@
-# 备忘录模式(Memento Pattern)
+# 备忘录模式(Memento)
 
 备忘录模式是一种软件设计模式；在不破坏封闭的前提下，捕获一个对象的内部状态，并在该对象之外保存这个状态。这样以后就可以将该对象恢复到原先保存的状态。
 
@@ -38,17 +38,20 @@
 ```cs
 namespace Design_Pattern.Memento
 {
-    var o = new Memento.Structural.Originator
+    var o = new Structural.Originator
     {
         State = "On"
     };
-    var c =new Memento.Structural.Caretaker
+    var c =new Structural.Caretaker
     {
         Memento = o.CreateMemento()
     };
 
     o.State = "Off";
     o.SetMemento(c.Memento);
+
+    // Wait for user
+    Console.ReadKey();
 
     /// <summary>
     /// 演示了临时保存和恢复另一个对象的内部状态的备忘录模式
@@ -77,7 +80,7 @@ namespace Design_Pattern.Memento
             public void SetMemento(Memento memento)
             {
                 Console.WriteLine("Restoring state...");
-                State=memento.State;
+                State=State;
             }
         }
 
@@ -105,14 +108,14 @@ namespace Design_Pattern.Memento
 ```cs
 namespace Design_Pattern.Memento
 {
-    var s = new Memento.RealWorld.SaleProspect()
+    var s = new RealWorld.SaleProspect()
     {
         Name = "Noel van Halen",
         Phone = "(412) 256-0990",
         Budget = 25000.0
     };
 
-    var m = new Memento.RealWorld.ProspectMemory
+    var m = new RealWorld.ProspectMemory
     {
         Memento = s.SaveMemento()
     };
@@ -122,6 +125,9 @@ namespace Design_Pattern.Memento
     s.Budget = 1000000.0;
 
     s.RestoreMemento(m.Memento);
+
+    // Wait for user
+    Console.ReadKey();
 
     /// <summary>
     /// 演示了临时保存然后恢复SalesProspect的内部状态的Memento模式
@@ -173,9 +179,9 @@ namespace Design_Pattern.Memento
             public void RestoreMemento(Memento memento)
             {
                 Console.WriteLine("\nRestoring state --\n");
-                Name=memento.Name;
-                Phone=memento.Phone;
-                Budget=memento.Budget;
+                Name=Name;
+                Phone=Phone;
+                Budget=Budget;
             }
         }
 

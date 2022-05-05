@@ -102,7 +102,7 @@ export const zh: SidebarConfig = {
                 {
                     text:'创建型',
                     children:[
-                        '/dotnet/design-pattern/singleton-pattern.md',
+                        '/dotnet/design-pattern/singleton.md',
                         '/dotnet/design-pattern/abstract-factory.md',
                         '/dotnet/design-pattern/builder.md',
                         '/dotnet/design-pattern/factory-method.md',
@@ -112,28 +112,28 @@ export const zh: SidebarConfig = {
                 {
                     text:'结构型',
                     children:[
-                        '/dotnet/design-pattern/adapter-pattern.md',
-                        '/dotnet/design-pattern/bridge-pattern.md',
-                        '/dotnet/design-pattern/decorator-pattern.md',
-                        '/dotnet/design-pattern/composite-pattern.md',
-                        '/dotnet/design-pattern/facade-pattern.md',
-                        '/dotnet/design-pattern/flyweight-pattern.md',
-                        '/dotnet/design-pattern/proxy-pattern.md',
+                        '/dotnet/design-pattern/adapter.md',
+                        '/dotnet/design-pattern/bridge.md',
+                        '/dotnet/design-pattern/decorator.md',
+                        '/dotnet/design-pattern/composite.md',
+                        '/dotnet/design-pattern/facade.md',
+                        '/dotnet/design-pattern/flyweight.md',
+                        '/dotnet/design-pattern/proxy.md',
                     ]
                 }, {
                     text:'行为型',
                     children:[
                         '/dotnet/design-pattern/template-method.md',
-                        '/dotnet/design-pattern/command-pattern.md',
-                        '/dotnet/design-pattern/iterator-pattern.md',
-                        '/dotnet/design-pattern/observer-pattern.md',
-                        '/dotnet/design-pattern/interpreter-pattern.md',
-                        '/dotnet/design-pattern/mediator-pattern.md',
-                        '/dotnet/design-pattern/chain-of-responsibility-pattern.md',
-                        '/dotnet/design-pattern/memento-pattern.md',
-                        '/dotnet/design-pattern/strategy-pattern.md',
-                        '/dotnet/design-pattern/visitor-pattern.md',
-                        '/dotnet/design-pattern/state-pattern.md',
+                        '/dotnet/design-pattern/command.md',
+                        '/dotnet/design-pattern/iterator.md',
+                        '/dotnet/design-pattern/observer.md',
+                        '/dotnet/design-pattern/interpreter.md',
+                        '/dotnet/design-pattern/mediator.md',
+                        '/dotnet/design-pattern/chain-of-responsibility.md',
+                        '/dotnet/design-pattern/memento.md',
+                        '/dotnet/design-pattern/strategy.md',
+                        '/dotnet/design-pattern/visitor.md',
+                        '/dotnet/design-pattern/state.md',
                     ]
                 }
             ],

@@ -1,4 +1,4 @@
-# 迭代器模式(Iterator Pattern)
+# 迭代器模式(Iterator)
 
 迭代器模式(Iterator),提供一种方法顺序访问一个聚合对象中的各种元素，而又不暴露该对象的内部表示。
 
@@ -56,7 +56,7 @@ ConcreteIterator跟踪聚合中的当前对象，并能够计算除待遍历的�
 ```cs
 namespace Design_Pattern
 {
-    var aggregate = new IteratorPattern.ConcreteAggregate
+    var aggregate = new Structural.ConcreteAggregate
     {
         [0] = "Item A",
         [1] = "Item B",
@@ -67,13 +67,20 @@ namespace Design_Pattern
     var iterator = aggregate.CreateIterator();
     Console.WriteLine("Iterating over collection:");
 
-    object? item = iterator.First();
-    while (item!=null)
+    object? item = First();
+    while (item != null)
     {
         Console.WriteLine(item);
-        item=iterator.Next();
+        item = Next();
     }
 
+    // Wait for user
+    Console.ReadKey();
+
+    /// <summary>
+    /// 演示了迭代器模式。
+    /// 该模式提供了一种遍历(迭代)项目集合的方法，而无需详细说明集合的底层结构。
+    /// </summary>
     public class IteratorPattern
     {
         public abstract class Aggregate
@@ -154,7 +161,7 @@ namespace Design_Pattern
 ```cs
 namespace Design_Pattern
 {
-    var collection = new IteratorPattern.Collection
+    var collection = new RealWorld.Collection
     {
         [0] = new("Item 0"),
         [1] = new("Item 1"),
@@ -167,16 +174,22 @@ namespace Design_Pattern
         [8] = new("Item 8"),
     };
 
-    var iterator = collection.CreateIterator();
-    iterator.Step = 2;
+    var iterator2 = collection.CreateIterator();
+    iterator2.Step = 2;
 
     Console.WriteLine("Iterating over collection:");
 
-    for (var item=iterator.First();!iterator.IsDone;item=iterator.Next())
+    for (var item2 = iterator2.First(); !iterator2.IsDone; item2 = iterator2.Next())
     {
-        if (item != null) Console.WriteLine(item.Name);
+        if (item2 != null) Console.WriteLine(item2.Name);
     }
+    // Wait for user
+    Console.ReadKey();
 
+    /// <summary>
+    /// 演示了迭代器模式。
+    /// 该模式用于迭代项目集合并在每次迭代时跳过特定数量的项目
+    /// </summary>
     public class IteratorPattern
     {
         public class Item

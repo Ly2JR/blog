@@ -1,4 +1,4 @@
-# 代理模式(Proxy Pattern)
+# 代理模式(Proxy)
 
 所谓的代理者是指一个类别可以作为其它东西的接口。代理者可以作任何东西的接口：网上连接、存储器中的大对象、文件或其他昂贵或无法复制的资源。
 
@@ -45,15 +45,68 @@
 ::: code-group-item Structural code
 
 ```cs
-namespace Design_Pattern
+namespace Design_Pattern.Proxy
 {
-    var proxy = new ProxyPattern.MathProxy();
-    Console.WriteLine($"4 + 2 = {proxy.Add(4, 2)}");
-    Console.WriteLine($"4 - 2 = {proxy.Sub(4, 2)}");
-    Console.WriteLine($"4 * 2 = {proxy.Mul(4, 2)}");
-    Console.WriteLine($"4 / 2 = {proxy.Div(4, 2)}");
 
-    public class ProxyPattern
+    var proxy = new Structural.Proxy();
+    proxy.Request();
+
+    // Wait for user
+    Console.ReadKey();
+
+    /// <summary>
+    /// 演示了代理模式，它提供了一个代表对象(代理)来控制对另一个类似对象的访问。
+    /// </summary>
+    public class Structural
+    {
+        public abstract class Subject
+        {
+            public abstract void Request();
+        }
+
+        public class RealSubject : Subject
+        {
+            public override void Request()
+            {
+                Console.WriteLine("Called RealSubject.Request()");
+            }
+        }
+
+        public class Proxy : Subject
+        {
+            private RealSubject _realSubject;
+            public override void Request()
+            {
+                if (_realSubject == null)
+                {
+                    _realSubject = new RealSubject();
+                }
+                _realSubject.Request();
+            }
+        }
+    }
+}
+```
+
+:::
+::: code-group-item RealWorld code
+
+```cs
+namespace Design_Pattern.Proxy
+{
+    var proxy2 = new Proxy.RealWorld.MathProxy();
+    Console.WriteLine($"4 + 2 = {proxy2.Add(4, 2)}");
+    Console.WriteLine($"4 - 2 = {proxy2.Sub(4, 2)}");
+    Console.WriteLine($"4 * 2 = {proxy2.Mul(4, 2)}");
+    Console.WriteLine($"4 / 2 = {proxy2.Div(4, 2)}");
+
+    // Wait for user
+    Console.ReadKey();
+
+    /// <summary>
+    /// 演示了由MathProxy对象表示的Math对象的代理模式。
+    /// </summary>
+    public class RealWorld
     {
         public interface IMath
         {
@@ -67,7 +120,7 @@ namespace Design_Pattern
         {
             public double Add(double x, double y)
             {
-                return x+ y; 
+                return x + y;
             }
 
             public double Sub(double x, double y)
@@ -88,11 +141,11 @@ namespace Design_Pattern
 
         public class MathProxy : IMath
         {
-            private Math _math=new Math();
+            private readonly Math _math = new Math();
 
             public double Add(double x, double y)
             {
-               return _math.Add(x, y);
+                return _math.Add(x, y);
             }
 
             public double Div(double x, double y)
@@ -112,12 +165,6 @@ namespace Design_Pattern
         }
     }
 }
-```
-
-:::
-::: code-group-item RealWorld code
-
-```cs
 ```
 
 :::

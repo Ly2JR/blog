@@ -1,4 +1,4 @@
-# 职责链模式(Chain of Responsibility Pattern)
+# 职责链模式(Chain of Responsibility)
 
 职责链模式(Chain of Responsibility pattern)是2018年公布的计算机技术名词。
 
@@ -26,6 +26,9 @@ namespace Design_Pattern.Chain
         h1.HandleRequest(request);
     }
 
+    // Wait for user
+    Console.ReadKey();
+
     /// <summary>
     /// 演示了责任链模式。
     /// 其中为多个链接对象(链)提供了响应请求或将其交给下一个对象的机会
@@ -48,7 +51,7 @@ namespace Design_Pattern.Chain
         {
             public override void HandleRequest(int request)
             {
-                if (request >= 0 && request < 10)
+                if (request is >= 0 and < 10)
                 {
                     Console.WriteLine($"{this.GetType().Name} handled request {request}");
 
@@ -63,7 +66,7 @@ namespace Design_Pattern.Chain
         {
             public override void HandleRequest(int request)
             {
-                if (request >= 10 && request < 20)
+                if (request is >= 10 and < 20)
                 {
                     Console.WriteLine($"{this.GetType().Name} handled request {request}");
 
@@ -79,7 +82,7 @@ namespace Design_Pattern.Chain
         {
             public override void HandleRequest(int request)
             {
-                if (request >= 20 && request < 30)
+                if (request is >= 20 and < 30)
                 {
                     Console.WriteLine($"{this.GetType().Name} handled request {request}");
 
@@ -115,6 +118,9 @@ namespace Design_Pattern.Chain
 
     p = new Chain.RealWorld.Purchase(2036, 122100.00, "Project Y");
     larry.ProcessRequest(p);
+
+    // Wait for user
+    Console.ReadKey();
 
     /// <summary>
     /// 演示了责任链模式，在该模式中，多个相关的经理和高管可以响应采购请求或将其交给上级。

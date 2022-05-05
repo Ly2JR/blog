@@ -1,4 +1,4 @@
-# 解释器模式(Interpreter Pattern)
+# 解释器模式(Interpreter)
 
 解释器模式(interpreter pattern)是2018年全国科学技术名称审定委员会公布的计算机科学技术名词。
 
@@ -12,20 +12,15 @@
 ::: code-group-item Structural code
 
 ```cs
-/// <summary>
-/// 演示了解释器模式，它使用定义的语法提供处理已解析语句的解释器。
-/// </summary>
 namespace Design_Pattern.Interpreter
 {
-    using Interpreter= Design_Pattern.Interpreter;
-
-    var structuralContext = new Interpreter.Structural.Context();
-    var list = new List<Interpreter.Structural.AbstractExpression>
+    var structuralContext = new Structural.Context();
+    var list = new List<Structural.AbstractExpression>
     {
-        new Interpreter.Structural.TerminalExpression(),
-        new Interpreter.Structural.NonterminalExpression(),
-        new Interpreter.Structural.TerminalExpression(),
-        new Interpreter.Structural.TerminalExpression()
+        new Structural.TerminalExpression(),
+        new Structural.NonterminalExpression(),
+        new Structural.TerminalExpression(),
+        new Structural.TerminalExpression()
     };
 
     foreach (var expression in list)
@@ -33,6 +28,12 @@ namespace Design_Pattern.Interpreter
         expression.Interpret(structuralContext);
     }
 
+    // Wait for user
+    Console.ReadKey();
+
+    /// <summary>
+    /// 演示了解释器模式，它使用定义的语法提供处理已解析语句的解释器。
+    /// </summary>
     public class Structural
     {
         public class Context
@@ -67,22 +68,17 @@ namespace Design_Pattern.Interpreter
 ::: code-group-item Real-world code
 
 ```cs
-/// <summary>
-/// 演示了用于将罗马数字转为十进制的解释器模式。
-/// </summary>
 namespace Design_Pattern.Interpreter
 {
-    using Interpreter= Design_Pattern.Interpreter;
-
     var roman = "MCMXXVIII";
-    var realWorldContext = new Interpreter.RealWorld.Context(roman);
+    var realWorldContext = new RealWorld.Context(roman);
 
-    var tree = new List<Interpreter.RealWorld.Expression>()
+    var tree = new List<RealWorld.Expression>()
     {
-        new Interpreter.RealWorld.ThousandExpression(),
-        new Interpreter.RealWorld.HundredExpress(),
-        new Interpreter.RealWorld.TenExpress(),
-        new Interpreter.RealWorld.OneExpress(),
+        new RealWorld.ThousandExpression(),
+        new RealWorld.HundredExpress(),
+        new RealWorld.TenExpress(),
+        new RealWorld.OneExpress(),
     };
 
     foreach (var exp in tree)
@@ -92,6 +88,12 @@ namespace Design_Pattern.Interpreter
 
     Console.WriteLine($"{roman} = {realWorldContext.Output}");
 
+    // Wait for user
+    Console.ReadKey();
+
+    /// <summary>
+    /// 演示了用于将罗马数字转为十进制的解释器模式。
+    /// </summary>
     public class RealWorld
     {
         public class Context

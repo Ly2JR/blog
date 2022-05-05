@@ -1,4 +1,4 @@
-# 观察者模式(Observer Pattern)
+# 观察者模式(Observer)
 
 观察者模式(有时又被称为模型(Model)-视图(View)模式、源-收听者(Listener)模式或从属者模式)是软件设计模式的一种。在此种模式中，一个目标物件管理所有相异于它的观察者物件，并且在它本身的状态改变时主动发出通知。者通常透过呼叫各观察者所提供的方法来实现。此种模式通常被用来实现事件处理系统。
 
@@ -72,73 +72,80 @@
 ::: code-group-item Structural code
 
 ```cs
-namespace Design_Pattern
+namespace Design_Pattern.Observer
 {
-    var s = new ObserverPattern.ConcreteSubject();
-    s.Attach(new ObserverPattern.ConcreteObserver(s,"x"));
-    s.Attach(new ObserverPattern.ConcreteObserver(s, "y"));
-    s.Attach(new ObserverPattern.ConcreteObserver(s, "z"));
+    var s = new Observer.Structural.ConcreteSubject();
+    s.Attach(new Observer.Structural.ConcreteObserver(s, "x"));
+    s.Attach(new Observer.Structural.ConcreteObserver(s, "y"));
+    s.Attach(new Observer.Structural.ConcreteObserver(s, "z"));
 
     s.SubjectState = "ABC";
     s.Notify();
 
-    public class ObserverPattern
+    // Wait for user
+    Console.ReadKey();
+
+    /// <summary>
+    /// 演示了观察者模式。
+    /// 在该模式中，已注册对象被通知并随着状态更改而更新。
+    /// </summary>
+    public class Structural
     {
         public abstract class Subject
         {
-           private readonly List<Observer> _observers=new();
+            private readonly List<Observer> _observers = new();
 
-           public void Attach(Observer observer)
-           {
-               _observers.Add(observer);
-           }
+            public void Attach(Observer observer)
+            {
+                _observers.Add(observer);
+            }
 
-           public void Detach(Observer observer)
-           {
-               _observers.Remove(observer);
-           }
+            public void Detach(Observer observer)
+            {
+                _observers.Remove(observer);
+            }
 
-           public void Notify()
-           {
-               foreach (var o in _observers)
-               {
-                   o.Update();
-               }
-           }
+            public void Notify()
+            {
+                foreach (var o in _observers)
+                {
+                    o.Update();
+                }
+            }
         }
 
         public class ConcreteSubject : Subject
         {
-           public string? SubjectState { get; set; }
+            public string? SubjectState { get; set; }
         }
 
         public abstract class Observer
         {
-           public abstract void Update();
+            public abstract void Update();
         }
 
         public class ConcreteObserver : Observer
         {
-           private readonly string _name;
-           private string? _observerState;
-           private ConcreteSubject _subject;
+            private readonly string _name;
+            private string? _observerState;
+            private ConcreteSubject _subject;
 
-           public ConcreteObserver(ConcreteSubject subject, string name)
-           {
-               _subject = subject;
-               _name = name;
-           }
-           public override void Update()
-           {
-               _observerState = _subject.SubjectState;
-               Console.WriteLine($"Observer {_name}'s new state is {_observerState}");
-           }
+            public ConcreteObserver(ConcreteSubject subject, string name)
+            {
+                _subject = subject;
+                _name = name;
+            }
+            public override void Update()
+            {
+                _observerState = _subject.SubjectState;
+                Console.WriteLine($"Observer {_name}'s new state is {_observerState}");
+            }
 
-           public ConcreteSubject Subject
-           {
-               get => _subject;
-               set => _subject = value;
-           }
+            public ConcreteSubject Subject
+            {
+                get => _subject;
+                set => _subject = value;
+            }
         }
     }
 }
@@ -148,29 +155,35 @@ namespace Design_Pattern
 ::: code-group-item Real-world code
 
 ```cs
-namespace Design_Pattern
+namespace Design_Pattern.Observer
 {
-    var ibm = new ObserverPattern.IBM("IBM", 120.00);
-    ibm.Attach(new ObserverPattern.Investor("Sorros"));
-    ibm.Attach(new ObserverPattern.Investor("Berkshire"));
+    var ibm = new Observer.RealWorld.IBM("IBM", 120.00);
+    ibm.Attach(new Observer.RealWorld.Investor("Sorros"));
+    ibm.Attach(new Observer.RealWorld.Investor("Berkshire"));
 
     ibm.Price = 120.10;
     ibm.Price = 121.00;
     ibm.Price = 120.50;
     ibm.Price = 120.75;
 
-    public class ObserverPattern
+    // Wait for user
+    Console.ReadKey();
+
+    /// <summary>
+    /// 演示了观察者模式。
+    /// 在该模式中，每次股票价值发生变化时都回通知注册投资者。
+    /// </summary>
+    public class RealWorld
     {
         public abstract class Stock
         {
-            private string _symbol;
             private double _price;
-            private List<IInvestor> _investors=new List<IInvestor>();
+            private readonly List<IInvestor> _investors = new List<IInvestor>();
 
-            public Stock(string symbol, double price)
+            protected Stock(string symbol, double price)
             {
-                _symbol=symbol;
-                _price=price;
+                Symbol = symbol;
+                _price = price;
             }
 
             public void Attach(IInvestor investor)
@@ -206,10 +219,10 @@ namespace Design_Pattern
                 }
             }
 
-            public string Symbol => _symbol;
+            public string Symbol { get; }
         }
 
-        public class IBM :ObserverPattern.Stock
+        public class IBM : Stock
         {
             public IBM(string symbol, double price) : base(symbol, price)
             {
@@ -219,29 +232,24 @@ namespace Design_Pattern
 
         public interface IInvestor
         {
-            void Update(ObserverPattern.Stock stock);
+            void Update(Stock stock);
         }
 
         public class Investor : IInvestor
         {
-            private string _name;
-            private ObserverPattern.Stock _stock;
+            private readonly string _name;
 
             public Investor(string name)
             {
-                _name=name;
+                _name = name;
             }
 
-            public void Update(ObserverPattern.Stock stock)
+            public void Update(Stock stock)
             {
                 Console.WriteLine($"Notified {_name } of {stock.Symbol}'s change  to {stock.Price:C}");
             }
 
-            public ObserverPattern.Stock Stock
-            {
-                get => _stock;
-                set => _stock = value;
-            }
+            public Stock Stock { get; set; }
         }
     }
 }

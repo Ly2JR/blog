@@ -1,4 +1,4 @@
-# 命令模式(Command Pattern)
+# 命令模式(Command)
 
 在面向对象程序设计的范畴中，命令模式(Command Pattern)是一种设计模式，它尝试以物件来代表实际行动。
 
@@ -69,12 +69,19 @@
 ```cs
 namespace Design_Pattern
 {
-    var receiver = new CommandPattern.Receiver();
-    var command = new CommandPattern.ConcreteCommand(receiver);
-    var invoker = new CommandPattern.Invoker();
+    var receiver = new Structural.Receiver();
+    var command = new Structural.ConcreteCommand(receiver);
+    var invoker = new Structural.Invoker();
     invoker.SetCommand(command);
     invoker.ExecuteCommand();
 
+    // Wait for user
+    Console.ReadKey();
+
+    /// <summary>
+    /// 演示了命令模式。
+    /// 该模式将请求存储为允许客户端执行或回放请求的对象。
+    /// </summary>
     public class CommandPattern
     {
         public abstract class Command
@@ -120,7 +127,7 @@ namespace Design_Pattern
 
            public void ExecuteCommand()
            {
-               _command.Execute();
+               _Execute();
            }
         }
     }
@@ -133,15 +140,22 @@ namespace Design_Pattern
 ```cs
 namespace Design_Pattern
 {
-    var user = new CommandPattern.User();
-    user.Compute('+',100);
-    user.Compute('-',50);
-    user.Compute('*',10);
-    user.Compute('/',2);
+    var user = new RealWorld.User();
+    user.Compute('+', 100);
+    user.Compute('-', 50);
+    user.Compute('*', 10);
+    user.Compute('/', 2);
 
     user.Undo(4);
     user.Redo(3);
 
+    // Wait for user
+    Console.ReadKey();
+
+    /// <summary>
+    /// 演示了在一个简单的计算器中使用的命令模式，它具有无线数量的撤销和重做。
+    /// 请注意，在C#中,"运算符"一词是关键字。用`@`作为前缀允许将其用作标识符。
+    /// </summary>
     public class CommandPattern
     {
         public abstract class Command
@@ -218,7 +232,7 @@ namespace Design_Pattern
                     if (_current < _commands.Count - 1)
                     {
                         var command = _commands[_current++];
-                        command.Execute();
+                        Execute();
                     }
                 }
             }
@@ -232,7 +246,7 @@ namespace Design_Pattern
                     if (_current > 0)
                     {
                         var command = _commands[--_current];
-                        command.UnExecute();
+                        UnExecute();
                     }
                 }
             }
@@ -240,7 +254,7 @@ namespace Design_Pattern
             public void Compute(char @operator, int operand)
             {
                 var command = new CalculatorCommand(_calculator, @operator, operand);
-                command.Execute();
+                Execute();
 
                 _commands.Add(command);
                 _current++;
