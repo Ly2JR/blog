@@ -127,7 +127,7 @@ namespace Design_Pattern.Builder
 ```
 
 :::
-::: code-group-item RealWorld code
+::: code-group-item Real-World code
 
 ```cs
 namespace Design_Pattern.Builder

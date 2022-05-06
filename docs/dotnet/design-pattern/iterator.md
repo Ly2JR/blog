@@ -156,7 +156,7 @@ namespace Design_Pattern
 ```
 
 :::
-::: code-group-item Real-world code
+::: code-group-item Real-World code
 
 ```cs
 namespace Design_Pattern
@@ -183,6 +183,7 @@ namespace Design_Pattern
     {
         if (item2 != null) Console.WriteLine(item2.Name);
     }
+
     // Wait for user
     Console.ReadKey();
 

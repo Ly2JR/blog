@@ -167,7 +167,7 @@ namespace Design_Pattern.AbstractFactory
 ```
 
 :::
-::: code-group-item RealWord code
+::: code-group-item Real-World code
 
 ```cs
 namespace Design_Pattern.AbstractFactory

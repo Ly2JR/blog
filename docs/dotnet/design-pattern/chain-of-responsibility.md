@@ -14,9 +14,10 @@
 ```cs
 namespace Design_Pattern.Chain
 {
-    var h1 = new Chain.Structural.ConcreteHandler1();
-    var h2 = new Chain.Structural.ConcreteHandler2();
-    var h3 = new Chain.Structural.ConcreteHandler3();
+    var h1 = new Structural.ConcreteHandler1();
+    var h2 = new Structural.ConcreteHandler2();
+    var h3 = new Structural.ConcreteHandler3();
+
     h1.SetSuccessor(h2);
     h2.SetSuccessor(h3);
 
@@ -98,25 +99,25 @@ namespace Design_Pattern.Chain
 ```
 
 :::
-::: code-group-item RealWorld code
+::: code-group-item Real-World code
 
 ```cs
 namespace Design_Pattern.Chain
 {
-    var larry = new Chain.RealWorld.Director();
-    var sam = new Chain.RealWorld.Director.VicePresident();
-    var tammy = new Chain.RealWorld.Director.President();
+    var larry = new RealWorld.Director();
+    var sam = new RealWorld.Director.VicePresident();
+    var tammy = new RealWorld.Director.President();
 
     larry.SetSuccessor(sam);
     sam.SetSuccessor(tammy);
 
-    var p = new Chain.RealWorld.Purchase(2034, 450, "Supplies");
+    var p = new RealWorld.Purchase(2034, 450, "Supplies");
     larry.ProcessRequest(p);
 
-    p = new Chain.RealWorld.Purchase(2035, 32590.10, "Project X");
+    p = new RealWorld.Purchase(2035, 32590.10, "Project X");
     larry.ProcessRequest(p);
 
-    p = new Chain.RealWorld.Purchase(2036, 122100.00, "Project Y");
+    p = new RealWorld.Purchase(2036, 122100.00, "Project Y");
     larry.ProcessRequest(p);
 
     // Wait for user

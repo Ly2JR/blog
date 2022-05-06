@@ -74,10 +74,10 @@
 ```cs
 namespace Design_Pattern.Observer
 {
-    var s = new Observer.Structural.ConcreteSubject();
-    s.Attach(new Observer.Structural.ConcreteObserver(s, "x"));
-    s.Attach(new Observer.Structural.ConcreteObserver(s, "y"));
-    s.Attach(new Observer.Structural.ConcreteObserver(s, "z"));
+    var s = new Structural.ConcreteSubject();
+    s.Attach(new Structural.ConcreteObserver(s, "x"));
+    s.Attach(new Structural.ConcreteObserver(s, "y"));
+    s.Attach(new Structural.ConcreteObserver(s, "z"));
 
     s.SubjectState = "ABC";
     s.Notify();
@@ -152,14 +152,14 @@ namespace Design_Pattern.Observer
 ```
 
 :::
-::: code-group-item Real-world code
+::: code-group-item Real-World code
 
 ```cs
 namespace Design_Pattern.Observer
 {
-    var ibm = new Observer.RealWorld.IBM("IBM", 120.00);
-    ibm.Attach(new Observer.RealWorld.Investor("Sorros"));
-    ibm.Attach(new Observer.RealWorld.Investor("Berkshire"));
+    var ibm = new RealWorld.IBM("IBM", 120.00);
+    ibm.Attach(new RealWorld.Investor("Sorros"));
+    ibm.Attach(new RealWorld.Investor("Berkshire"));
 
     ibm.Price = 120.10;
     ibm.Price = 121.00;

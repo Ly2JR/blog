@@ -15,8 +15,10 @@
 namespace Design_Pattern.Mediator
 {
     var m = new Structural.ConcreteMediator();
+
     var c1 = new Structural.ConcreteColleague1(m);
-    var c2=new Structural.ConcreteColleague2(m);
+    var c2 = new Structural.ConcreteColleague2(m);
+
     m.Colleague1 = c1;
     m.Colleague2 = c2;
 
@@ -113,7 +115,7 @@ namespace Design_Pattern.Mediator
 ```
 
 :::
-::: code-group-item RealWorld code
+::: code-group-item Real-World code
 
 ```cs
 namespace Design_Pattern.Mediator

@@ -18,10 +18,10 @@
 ```cs
 namespace Design_Pattern.TemplateMethod
 {
-    var aA = new TemplateMethod.Structural.ConcreteClassA();
+    var aA = new Structural.ConcreteClassA();
     aA.TemplateMethod();
 
-    var aB = new TemplateMethod.Structural.ConcreteClassB();
+    var aB = new Structural.ConcreteClassB();
     aB.TemplateMethod();
 
     // Wait for user
@@ -74,15 +74,15 @@ namespace Design_Pattern.TemplateMethod
 ```
 
 :::
-::: code-group-item RealWorld code
+::: code-group-item Real-World code
 
 ```cs
 namespace Design_Pattern.TemplateMethod
 {
-    var categories = new TemplateMethod.RealWorld.Categories();
+    var categories = new RealWorld.Categories();
     categories.Run(5);
 
-    var products = new TemplateMethod.RealWorld.Products();
+    var products = new RealWorld.Products();
     products.Run(3);
 
     // Wait for user

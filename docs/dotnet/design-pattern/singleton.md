@@ -58,7 +58,7 @@ namespace Design_Pattern.Singleton
 ```
 
 :::
-::: code-group-item RealWorld code
+::: code-group-item Real-World code
 
 ```cs
 namespace Design_Pattern.Singleton

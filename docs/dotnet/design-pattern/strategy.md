@@ -113,7 +113,7 @@ namespace Design_Pattern.Strategy
 ```
 
 :::
-::: code-group-item RealWorld code
+::: code-group-item Real-World code
 
 ```cs
 namespace Design_Pattern.Strategy

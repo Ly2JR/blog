@@ -47,7 +47,6 @@
 ```cs
 namespace Design_Pattern.Proxy
 {
-
     var proxy = new Structural.Proxy();
     proxy.Request();
 
@@ -89,7 +88,7 @@ namespace Design_Pattern.Proxy
 ```
 
 :::
-::: code-group-item RealWorld code
+::: code-group-item Real-World code
 
 ```cs
 namespace Design_Pattern.Proxy

@@ -72,6 +72,7 @@ namespace Design_Pattern
     var receiver = new Structural.Receiver();
     var command = new Structural.ConcreteCommand(receiver);
     var invoker = new Structural.Invoker();
+
     invoker.SetCommand(command);
     invoker.ExecuteCommand();
 
@@ -135,7 +136,7 @@ namespace Design_Pattern
 ```
 
 :::
-::: code-group-item Real-world code
+::: code-group-item Real-World code
 
 ```cs
 namespace Design_Pattern
