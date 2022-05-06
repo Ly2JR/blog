@@ -12,6 +12,17 @@
 
 - 示例
 
+  参与此模式的类和对象包括：
+
+  - Prototype(ColorPrototype)
+    - 声明用于克隆自身的接口。
+
+  - ConcretePrototype(Color)
+    - 实现克隆本身的操作。
+
+  - Client(ColorManager)
+    - 通过要求原型克隆自身来创建新对象。
+
 :::: code-group
 ::: code-group-item Structural code
 

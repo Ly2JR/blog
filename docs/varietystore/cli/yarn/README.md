@@ -1,4 +1,6 @@
-# 说明
+# Yarn
+
+[官方传送门](https://yarnpkg.com/cli/install)
 
 ## 安装 yarn
 

@@ -63,6 +63,20 @@
 
 - 示例
 
+  参与此模式的类和对象包括：
+
+  - Component(LibraryItem)
+    - 定义对象的接口，这些对象可以动态地向其添加职责。
+
+  - ConcreteComponent(Book,Video)
+    - 定义可附加其他职责的对象。
+
+  - Decorator(Decorator)
+    - 维护对组件对象的引用，并定义符合组件接口的接口。
+
+  - ConcreteDecorator(Borrowable)
+    - 向组件添加职责。
+
 :::: code-group
 ::: code-group-item Structural code
 

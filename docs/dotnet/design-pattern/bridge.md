@@ -43,6 +43,21 @@
 
 - 示例
 
+  参与此模式的类和对象包括：
+
+  - Abstraction(BusinessObject)
+    - 定义抽象的接口。
+    - 维护对实现器类型对象的引用。
+
+  - RefinedAbstraction(CustomerBusinessObject)
+    - 扩展抽象定义的接口。
+
+  - Implementor(DataObject)
+    - 定义实现类的接口。这个接口不必完全对应于抽象的接口；实际上，这两个接口可能完全不同。通常，实现接口仅提供基元操作，抽象基于这些基元定义更高级别的操作。
+
+  - ConcreteImplementor(CustomerDataObject)
+    - 实现实现器接口并定义其具体实现。
+
 :::: code-group
 ::: code-group-item Structural code
 

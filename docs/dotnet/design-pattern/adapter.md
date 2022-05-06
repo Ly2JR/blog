@@ -70,6 +70,20 @@
 
 - 示例
 
+  参与此模式的类和对象包括：
+
+  - Target(ChemicalCompound)
+    - 定义客户端使用的特定于域的接口。
+
+  - Adapter(Compund)
+    - 使接口适配器适应目标接口。
+
+  - Adaptee(ChemicalDatabank)
+  - 定义需要调整的现有接口。
+
+  - Client(AdapterApp)
+    - 与符合"目标"接口的对象协作。
+
 :::: code-group
 ::: code-group-item Structural code
 

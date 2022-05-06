@@ -384,21 +384,17 @@ export const zh: SidebarConfig = {
             ]
         }
     ],
-    '/varietystore/cli/github/': [
+    '/varietystore/cli/': [
         {
-            text: 'Github',
+            text: 'Github cli',
             children: [
                 '/varietystore/cli/github/README.md',
-                '/varietystore/cli/github/reference.md',
             ]
-        }
-    ],
-    '/varietystore/cli/yarn/': [
+        },
         {
-            text: 'Yarn',
+            text: 'Yarn cli',
             children: [
                 '/varietystore/cli/yarn/README.md',
-                '/varietystore/cli/yarn/reference.md',
             ]
         }
     ],

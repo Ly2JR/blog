@@ -35,7 +35,25 @@
 
 - 示例
 
-比如现实中公司内各部门的层级关系
+  参与此模式的类和对象包括：
+
+  - Component(DrawingElement)
+    - 声明组合对象的接口。
+    - 更具需要实现苏哦有类通用接口的默认行为。
+    - 声明用于访问和管理其子组件的接口。
+    - （可选）定义一个接口，用于在递归结构中访问组件的父级，并在适当的情况下实现它。
+
+  - Leaf(PrimitiveElement)
+    - 表示组合中的叶对象。叶子没有孩子。
+    - 定义组合中基于对象的行为。
+
+  - Composite(CompositeElement)
+    - 定义具有子项的组件的行为。
+    - 存储子组件。
+    - 在组件接口中实现与子项相关的操作。
+
+  - Client(CompositeApp)
+    - 通过组件接口操作组合中的对象。
 
 :::: code-group
 ::: code-group-item Structural code
