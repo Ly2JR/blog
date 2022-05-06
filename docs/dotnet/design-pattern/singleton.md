@@ -12,6 +12,12 @@ Public 保证了它的全局可见性，静态方法保证了不会创建出多�
 
 - 示例
 
+  参与此模式的类和对象包括：
+
+  - Singleton(LoadBalancer)
+    - 定义一个Instance操作，允许客户端访问其唯一的实例。实例是一共类操作。
+    - 负责创建和维护自己的唯一实例。
+
 :::: code-group
 ::: code-group-item Structurl code
 

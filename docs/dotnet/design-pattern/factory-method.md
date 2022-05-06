@@ -41,6 +41,21 @@
 
 - 示例
 
+  参与此模式的类和对象包括：
+
+  - Product(Page)
+    - 定义工厂方法创建的对象的接口。
+
+  - ConcreteProduct(SkillsPage,EducationPage,ExperiencePage)
+    - 实现产品接口。
+
+  - Creator(Document)
+    - 声明工厂方法，它返回一共Product类型的对象。Creator还可以定义返回默认ConcreteProduct对象的工厂方法的默认实现。
+    - 可以调用工厂方法来创建Product对象。
+  - ConcreteCreator(Report,Resume)
+
+    - 重写工厂方法已放灰ConcreteProduct的实例。
+
 :::: code-group
 ::: code-group-item Structural code
 

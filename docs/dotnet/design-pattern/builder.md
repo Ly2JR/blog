@@ -20,6 +20,23 @@
 
 - 示例
 
+  参与此模式的类和对象包括：
+
+  - Builder(VehicleBuilder)
+    - 指定用于创建Product对象的部分的抽象接口。
+
+  - ConcreteBuilder(MotorCycleBuilder,CarBuilder,ScooterBuilder)
+    - 通过实现Builder接口来构造和组装产品的各个部分。
+    - 定义并跟踪它创建的表示。
+    - 提供检索产品的接口。
+
+  - Director(Shop)
+    - 使用Builder接口构造一共对象。
+
+  - Product(Vehicle)
+    - 表示正在构建的复杂对象。ConcreteBuilder构建产品的内部表示并定义其组装过程
+    - 包括定义组成部分的类，包括将这些部分组装成最终结果的接口。
+
 :::: code-group
 ::: code-group-item Structural code
 
