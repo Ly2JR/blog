@@ -14,77 +14,70 @@
 
   参与此模式的类和对象包括：
 
-  - Prototype(ColorPrototype)
+  - Prototype(`ColorPrototype`)
     - 声明用于克隆自身的接口。
 
-  - ConcretePrototype(Color)
+  - ConcretePrototype(`Color`)
     - 实现克隆本身的操作。
 
-  - Client(ColorManager)
+  - Client(`ColorManager`)
     - 通过要求原型克隆自身来创建新对象。
 
 :::: code-group
 ::: code-group-item Structural code
 
 ```cs
-namespace Design_Pattern.Prototype
+// 演示了原型模式，其中通过复制同一类的预先存在的对象(原型)来创建新对象。
+
+var p1 = new ConcretePrototype1("I");
+var c1 = (ConcretePrototype1)p1.Clone();
+Console.WriteLine($"Cloned:{c1.Id}");
+
+var p2=new ConcretePrototype2("II");
+var c2 = (ConcretePrototype2)p2.Clone();
+Console.WriteLine($"Cloned:{c2.Id}");
+
+// Wait for user
+Console.ReadKey();
+
+public abstract class Prototype
 {
-    var p1 = new Structural.ConcretePrototype1("I");
-    var c1 = (Structural.ConcretePrototype1)p1.Clone();
-    Console.WriteLine($"Cloned:{c1.Id}");
+    private string _id;
 
-    var p2=new Structural.ConcretePrototype2("II");
-    var c2 = (Structural.ConcretePrototype2)p2.Clone();
-    Console.WriteLine($"Cloned:{c2.Id}");
-
-    // Wait for user
-    Console.ReadKey();
-
-    /// <summary>
-    /// 演示了原型模式，其中通过复制同一类的预先存在的对象(原型)来创建新对象。
-    /// </summary>
-    public class Structural
+    protected Prototype(string id)
     {
-        public abstract class Prototype
-        {
-            private string _id;
+        _id = id;
+    }
 
-            protected Prototype(string id)
-            {
-                _id = id;
-            }
+    public string Id
+    {
+        get { return _id; }
+    }
 
-            public string Id
-            {
-                get { return _id; }
-            }
+    public abstract Prototype Clone();
+}
 
-            public abstract Prototype Clone();
-        }
+public class ConcretePrototype1 : Prototype
+{
+    public ConcretePrototype1(string id) : base(id)
+    {
+    }
 
-        public class ConcretePrototype1 : Prototype
-        {
-            public ConcretePrototype1(string id) : base(id)
-            {
-            }
+    public override Prototype Clone()
+    {
+        return (Prototype)this.MemberwiseClone();
+    }
+}
 
-            public override Prototype Clone()
-            {
-                return (Prototype)this.MemberwiseClone();
-            }
-        }
+public class ConcretePrototype2:Prototype
+{
+    public ConcretePrototype2(string id) : base(id)
+    {
+    }
 
-        public class ConcretePrototype2:Prototype
-        {
-            public ConcretePrototype2(string id) : base(id)
-            {
-            }
-
-            public override Prototype Clone()
-            {
-                return (Prototype)this.MemberwiseClone();
-            }
-        }
+    public override Prototype Clone()
+    {
+        return (Prototype)this.MemberwiseClone();
     }
 }
 ```
@@ -93,68 +86,61 @@ namespace Design_Pattern.Prototype
 ::: code-group-item Real-World code
 
 ```cs
-namespace Design_Pattern.Prototype
+// 演示了原型模式，其中通过复制预先存在的、用户定义的相同类型的颜色来创建新的颜色对象。
+
+var colorManager = new ColorManager
 {
-    var colorManager = new RealWorld.ColorManager
+    ["red"] = new Color(255, 0, 0),
+    ["green"] = new Color(0, 255, 0),
+    ["blue"] = new Color(0, 0, 255)
+};
+
+//User adds personalized colors
+colorManager["angry"]=new Color(255, 54, 0);
+colorManager["peace"] = new Color(128, 211, 128);
+colorManager["flame"] = new Color(211, 34, 20);
+
+//User clones selected colors
+var color1 = colorManager["red"].Clone() as Color;
+var color2 = colorManager["peace"].Clone() as Color;
+var color3= colorManager["flame"].Clone() as Color;
+
+// Wait for user
+Console.ReadKey();
+
+public abstract class ColorPrototype
+{
+    public abstract ColorPrototype Clone();
+}
+
+public class Color:ColorPrototype
+{
+    private int _red;
+    private int _green;
+    private int _blue;
+
+    public Color(int red,int green,int blue)
     {
-        ["red"] = new RealWorld.Color(255, 0, 0),
-        ["green"] = new RealWorld.Color(0, 255, 0),
-        ["blue"] = new RealWorld.Color(0, 0, 255)
-    };
+        _red = red;
+        _green = green;
+        _blue = blue;
+    }
 
-    //User adds personalized colors
-    colorManager["angry"]=new RealWorld.Color(255, 54, 0);
-    colorManager["peace"] = new RealWorld.Color(128, 211, 128);
-    colorManager["flame"] = new RealWorld.Color(211, 34, 20);
-
-    //User clones selected colors
-    var color1 = colorManager["red"].Clone() as RealWorld.Color;
-    var color2 = colorManager["peace"].Clone() as RealWorld.Color;
-    var color3= colorManager["flame"].Clone() as RealWorld.Color;
-
-    // Wait for user
-    Console.ReadKey();
-
-    /// <summary>
-    /// 演示了原型模式，其中通过复制预先存在的、用户定义的相同类型的颜色来创建新的颜色对象。
-    /// </summary>
-    public class RealWorld
+    public override ColorPrototype Clone()
     {
-        public abstract class ColorPrototype
-        {
-            public abstract ColorPrototype Clone();
-        }
+        Console.WriteLine($"Cloning color RGB:{_red,3},{_green,3},{_blue,3}");
+        return this.MemberwiseClone() as ColorPrototype;
+    }
+}
 
-        public class Color:ColorPrototype
-        {
-            private int _red;
-            private int _green;
-            private int _blue;
+public class ColorManager
+{
+    private Dictionary<string,ColorPrototype> _colors=new Dictionary<string,ColorPrototype>();
 
-            public Color(int red,int green,int blue)
-            {
-                _red = red;
-                _green = green;
-                _blue = blue;
-            }
-
-            public override ColorPrototype Clone()
-            {
-                Console.WriteLine($"Cloning color RGB:{_red,3},{_green,3},{_blue,3}");
-                return this.MemberwiseClone() as ColorPrototype;
-            }
-        }
-
-        public class ColorManager
-        {
-            private Dictionary<string,ColorPrototype> _colors=new Dictionary<string,ColorPrototype>();
-
-            public ColorPrototype this[string key]
-            {
-                get { return _colors[key]; }
-                set{_colors.Add(key,value);}
-            }
-        }
+    public ColorPrototype this[string key]
+    {
+        get { return _colors[key]; }
+        set{_colors.Add(key,value);}
     }
 }
 ```

@@ -65,95 +65,88 @@
 
   参与此模式的类和对象包括：
 
-  - Component(LibraryItem)
+  - Component(`LibraryItem`)
     - 定义对象的接口，这些对象可以动态地向其添加职责。
 
-  - ConcreteComponent(Book,Video)
+  - ConcreteComponent(`Book`,`Video`)
     - 定义可附加其他职责的对象。
 
-  - Decorator(Decorator)
+  - Decorator(`Decorator`)
     - 维护对组件对象的引用，并定义符合组件接口的接口。
 
-  - ConcreteDecorator(Borrowable)
+  - ConcreteDecorator(`Borrowable`)
     - 向组件添加职责。
 
 :::: code-group
 ::: code-group-item Structural code
 
 ```cs
-namespace Design_Pattern.Decorator
+// 演示了装饰器模式，它动态地向现有对象添加额外的功能。
+
+var c = new ConcreteComponent();
+var d1 = new ConcreteDecoratorA();
+var d2= new ConcreteDecoratorB();
+
+d1.SetComponent(c);
+d2.SetComponent(d1);
+
+d2.Operation();
+
+// Wait for user
+Console.ReadKey();
+
+public abstract class Component
 {
-    var c = new Structural.ConcreteComponent();
-    var d1 = new Structural.ConcreteDecoratorA();
-    var d2= new Structural.ConcreteDecoratorB();
+    public abstract void Operation();
+}
 
-    d1.SetComponent(c);
-    d2.SetComponent(d1);
-
-    d2.Operation();
-
-    // Wait for user
-    Console.ReadKey();
-
-    /// <summary>
-    /// 演示了装饰器模式，它动态地向现有对象添加额外的功能。
-    /// </summary>
-    public class Structural
+public class ConcreteComponent:Component
+{
+    public override void Operation()
     {
-        public abstract class Component
+        Console.WriteLine("ConcreteComponent.Operation()");
+    }
+}
+
+public abstract class Decorator:Component
+{
+    protected Component Component;
+
+    public void SetComponent(Component component)
+    {
+        this.Component = component;
+    }
+
+    public override void Operation()
+    {
+        if (Component != null)
         {
-            public abstract void Operation();
+            Component.Operation();
         }
+    }
+}
 
-        public class ConcreteComponent:Component
-        {
-            public override void Operation()
-            {
-                Console.WriteLine("ConcreteComponent.Operation()");
-            }
-        }
+public class ConcreteDecoratorA:Decorator
+{
+    public override void Operation()
+    {
+        base.Operation();
+        Console.WriteLine("ConcreteDecoratorA.Operation()");
+    }
+}
 
-        public abstract class Decorator:Component
-        {
-            protected Component Component;
+public class ConcreteDecoratorB:Decorator
+{
+    public override void Operation()
+    {
+        base.Operation();
+        AddedBehavior();
+        Console.WriteLine("ConcreteDecoratorB.Operation()");
+    }
 
-            public void SetComponent(Component component)
-            {
-                this.Component = component;
-            }
+    void AddedBehavior()
+    {
 
-            public override void Operation()
-            {
-                if (Component != null)
-                {
-                    Component.Operation();
-                }
-            }
-        }
-
-        public class ConcreteDecoratorA:Decorator
-        {
-            public override void Operation()
-            {
-                base.Operation();
-                Console.WriteLine("ConcreteDecoratorA.Operation()");
-            }
-        }
-
-        public class ConcreteDecoratorB:Decorator
-        {
-            public override void Operation()
-            {
-                base.Operation();
-                AddedBehavior();
-                Console.WriteLine("ConcreteDecoratorB.Operation()");
-            }
-
-            void AddedBehavior()
-            {
-
-            }
-        }
     }
 }
 ```
@@ -162,124 +155,117 @@ namespace Design_Pattern.Decorator
 ::: code-group-item Real-World code
 
 ```cs
-namespace Design_Pattern.Decorator
+// 演示了装饰器模式。
+// 其中"可借"功能被添加到现有的图书馆项目(书籍和视频)中。
+
+var book = new Book("Worley", "Inside ASP.NET", 10);
+book.Display();
+
+var video = new Video("Spielberg", "Jaws", 23, 92);
+video.Display();
+
+Console.WriteLine("\nMaking video borrowable:");
+
+var borrowvideo = new Borrowable(video);
+borrowvideo.BorrowItem("Customer #1");
+borrowvideo.BorrowItem("Customer #2");
+borrowvideo.Display();
+
+// Wait for user
+Console.ReadKey();
+
+public abstract class LibraryItem
 {
-    var book = new RealWorld.Book("Worley", "Inside ASP.NET", 10);
-    book.Display();
+    public int NumCopies { get; set; }
 
-    var video = new RealWorld.Video("Spielberg", "Jaws", 23, 92);
-    video.Display();
+    public abstract void Display();
+}
 
-    Console.WriteLine("\nMaking video borrowable:");
+public class Book:LibraryItem
+{
+    private readonly string _author;
+    private readonly string _title;
 
-    var borrowvideo = new RealWorld.Borrowable(video);
-    borrowvideo.BorrowItem("Customer #1");
-    borrowvideo.BorrowItem("Customer #2");
-    borrowvideo.Display();
-
-    // Wait for user
-    Console.ReadKey();
-
-    /// <summary>
-    /// 演示了装饰器模式。
-    /// 其中"可借"功能被添加到现有的图书馆项目(书籍和视频)中.
-    /// </summary>
-    public class RealWorld
+    public Book(string author, string title, int numCopies)
     {
-        public abstract class LibraryItem
+        _author = author;
+        _title = title;
+        NumCopies = numCopies;
+    }
+
+    public override void Display()
+    {
+        Console.WriteLine("\nBook ------ ");
+        Console.WriteLine($" Author:{_author}");
+        Console.WriteLine($" Title:{_title}");
+        Console.WriteLine($"# Copies: {NumCopies}");
+    }
+}
+
+public class Video:LibraryItem
+{
+    private readonly string _director;
+    private readonly string _title;
+    private readonly int _playTime;
+
+    public Video(string director, string title, int numCopies, int playTime)
+    {
+        _director=director;
+        _title=title;
+        _playTime=playTime;
+        NumCopies=numCopies;
+    }
+
+    public override void Display()
+    {
+        Console.WriteLine("\nVideo ------ ");
+        Console.WriteLine($" Director: {_director}");
+        Console.WriteLine($" Title: {_title}");
+        Console.WriteLine($" # Copies: {NumCopies}");
+        Console.WriteLine($" Playtime: {_playTime}\n");
+    }
+}
+
+public abstract class Decorator:LibraryItem
+{
+    protected LibraryItem libraryItem;
+
+    protected Decorator(LibraryItem libraryItem)
+    {
+        this.libraryItem = libraryItem;
+    }
+
+    public override void Display()
+    {
+        libraryItem.Display();
+    }
+}
+
+public class Borrowable:Decorator
+{
+    protected readonly List<string> borrowers = new List<string>();
+    public Borrowable(LibraryItem libraryItem) : base(libraryItem)
+    {
+    }
+
+    public void BorrowItem(string name)
+    {
+        borrowers.Add(name);
+        libraryItem.NumCopies--;
+    }
+
+    public void ReturnItem(string name)
+    {
+        borrowers.Remove(name);
+        libraryItem.NumCopies++;
+    }
+
+    public override void Display()
+    {
+        base.Display();
+        foreach (var borrow in borrowers)
         {
-            public int NumCopies { get; set; }
-
-            public abstract void Display();
-        }
-
-        public class Book:LibraryItem
-        {
-            private readonly string _author;
-            private readonly string _title;
-
-            public Book(string author, string title, int numCopies)
-            {
-                _author = author;
-                _title = title;
-                NumCopies = numCopies;
-            }
-
-            public override void Display()
-            {
-                Console.WriteLine("\nBook ------ ");
-                Console.WriteLine($" Author:{_author}");
-                Console.WriteLine($" Title:{_title}");
-                Console.WriteLine($"# Copies: {NumCopies}");
-            }
-        }
-
-        public class Video:LibraryItem
-        {
-            private readonly string _director;
-            private readonly string _title;
-            private readonly int _playTime;
-
-            public Video(string director, string title, int numCopies, int playTime)
-            {
-                _director=director;
-                _title=title;
-                _playTime=playTime;
-                NumCopies=numCopies;
-            }
-
-            public override void Display()
-            {
-                Console.WriteLine("\nVideo ------ ");
-                Console.WriteLine($" Director: {_director}");
-                Console.WriteLine($" Title: {_title}");
-                Console.WriteLine($" # Copies: {NumCopies}");
-                Console.WriteLine($" Playtime: {_playTime}\n");
-            }
-        }
-
-        public abstract class Decorator:LibraryItem
-        {
-            protected LibraryItem libraryItem;
-
-            protected Decorator(LibraryItem libraryItem)
-            {
-                this.libraryItem = libraryItem;
-            }
-
-            public override void Display()
-            {
-                libraryItem.Display();
-            }
-        }
-
-        public class Borrowable:Decorator
-        {
-            protected readonly List<string> borrowers = new List<string>();
-            public Borrowable(LibraryItem libraryItem) : base(libraryItem)
-            {
-            }
-
-            public void BorrowItem(string name)
-            {
-                borrowers.Add(name);
-                libraryItem.NumCopies--;
-            }
-
-            public void ReturnItem(string name)
-            {
-                borrowers.Remove(name);
-                libraryItem.NumCopies++;
-            }
-
-            public override void Display()
-            {
-                base.Display();
-                foreach (var borrow in borrowers)
-                {
-                    Console.WriteLine($" borrower:{borrow}");
-                }
-            }
+            Console.WriteLine($" borrower:{borrow}");
         }
     }
 }

@@ -39,75 +39,81 @@
 
 - 示例
 
+  参与此模式的类和对象包括：
+
+  - Strategy(`SortStrategy`)
+    - 声明所有支持的算法通用的接口。Context使用这个接口调用一个ConcreteStrategy定义的算法。
+
+  - ConcreteStrategy(`QuickSort`,`ShellSort`,`MergeSort`)
+    - 使用Strategy接口实现算法。
+
+  - Context(`SortedList`)
+    - 配置有一个ConcreteStrategy对象。
+    - 维护对Strategy对象的引用。
+    - 可以定义一个让Strategy访问其数据的接口。
+
 :::: code-group
 ::: code-group-item Strutural code
 
 ```cs
-namespace Design_Pattern.Strategy
+// 此代码演示了以对象形式封装功能的策略模式。
+// 这允许客户端动态更改算法策略。
+
+Context context;
+
+context = new Context(new ConcreteStrategyA());
+context.ContextInterface();
+
+context = new Context(new ConcreteStrategyB());
+context.ContextInterface();
+
+context = new Context(new ConcreteStrategyC());
+context.ContextInterface();
+
+// Wait for user
+Console.ReadKey();
+
+public abstract class Strategy
 {
-    Structural.Context context;
+    public abstract void AlgorithmInterface();
+}
 
-    context = new Structural.Context(new Structural.ConcreteStrategyA());
-    context.ContextInterface();
-
-    context = new Structural.Context(new Structural.ConcreteStrategyB());
-    context.ContextInterface();
-
-    context = new Structural.Context(new Structural.ConcreteStrategyC());
-    context.ContextInterface();
-
-    // Wait for user
-    Console.ReadKey();
-
-    /// <summary>
-    /// 此代码演示了以对象形式封装功能的策略模式。
-    /// 这允许客户端动态更改算法策略。
-    /// </summary>
-    public class Structural
+public class ConcreteStrategyA : Strategy
+{
+    public override void AlgorithmInterface()
     {
-        public abstract class Strategy
-        {
-            public abstract void AlgorithmInterface();
-        }
+        Console.WriteLine("Called ConcreteStrategyA.AlgorithmInterface()");
+    }
+}
 
-        public class ConcreteStrategyA : Strategy
-        {
-            public override void AlgorithmInterface()
-            {
-                Console.WriteLine("Called ConcreteStrategyA.AlgorithmInterface()");
-            }
-        }
+public class ConcreteStrategyB : Strategy
+{
+    public override void AlgorithmInterface()
+    {
+        Console.WriteLine("Called ConcreteStrategyB.AlgorithmInterface()");
+    }
+}
 
-        public class ConcreteStrategyB : Strategy
-        {
-            public override void AlgorithmInterface()
-            {
-                Console.WriteLine("Called ConcreteStrategyB.AlgorithmInterface()");
-            }
-        }
+public class ConcreteStrategyC:Strategy
+{
+    public override void AlgorithmInterface()
+    {
+        Console.WriteLine("Called ConcreteStrategyC.AlgorithmInterface()");
+    }
+}
 
-        public class ConcreteStrategyC:Strategy
-        {
-            public override void AlgorithmInterface()
-            {
-                Console.WriteLine("Called ConcreteStrategyC.AlgorithmInterface()");
-            }
-        }
+public class Context
+{
+    private readonly Strategy _strategy;
 
-        public class Context
-        {
-            private readonly Strategy _strategy;
+    public Context(Strategy strategy)
+    {
+        this._strategy = strategy;
+    }
 
-            public Context(Strategy strategy)
-            {
-                this._strategy = strategy;
-            }
-
-            public void ContextInterface()
-            {
-                _AlgorithmInterface();
-            }
-        }
+    public void ContextInterface()
+    {
+        _AlgorithmInterface();
     }
 }
 ```
@@ -116,89 +122,82 @@ namespace Design_Pattern.Strategy
 ::: code-group-item Real-World code
 
 ```cs
-namespace Design_Pattern.Strategy
+// 展示了以排序对象的形式封装排序算法的策略模式。
+// 这允许客户端动态更改排序策略，包括Quicksort、Shellsort和Mergesort。
+
+var studentRecords = new SortedList();
+studentRecords.Add("Samual");
+studentRecords.Add("Jimmy");
+studentRecords.Add("Sandra");
+studentRecords.Add("Vivek");
+studentRecords.Add("Anna");
+
+studentRecords.SetSortStrategy(new QuickSort());
+studentRecords.Sort();
+
+studentRecords.SetSortStrategy(new ShellSort());
+studentRecords.Sort();
+
+studentRecords.SetSortStrategy(new MergeSort());
+studentRecords.Sort();
+
+// Wait for user
+Console.ReadKey();
+
+public  abstract class SortStrategy
 {
-    var studentRecords = new RealWorld.SortedList();
-    studentRecords.Add("Samual");
-    studentRecords.Add("Jimmy");
-    studentRecords.Add("Sandra");
-    studentRecords.Add("Vivek");
-    studentRecords.Add("Anna");
+    public abstract void Sort(List<string> list);
+}
 
-    studentRecords.SetSortStrategy(new RealWorld.QuickSort());
-    studentRecords.Sort();
-
-    studentRecords.SetSortStrategy(new RealWorld.ShellSort());
-    studentRecords.Sort();
-
-    studentRecords.SetSortStrategy(new RealWorld.MergeSort());
-    studentRecords.Sort();
-
-    // Wait for user
-    Console.ReadKey();
-
-    /// <summary>
-    /// 展示了以排序对象的形式封装排序算法的策略模式。
-    /// 这允许客户端动态更改排序策略，包括Quicksort、Shellsort和Mergesort。
-    /// </summary>
-    public class RealWorld
+public class QuickSort:SortStrategy
+{
+    public override void Sort(List<string> list)
     {
-        public  abstract class SortStrategy
+        list.Sort();//Default is Quicksort
+        Console.WriteLine("QuickSorted list ");
+    }
+}
+
+public class ShellSort : SortStrategy
+{
+    public override void Sort(List<string> list)
+    {
+        //list.ShellSort();not-implemented
+        Console.WriteLine("ShellSorted list ");
+    }
+}
+
+public class MergeSort : SortStrategy
+{
+    public override void Sort(List<string> list)
+    {
+        //list.MergeSort();not-implemented
+        Console.WriteLine("MergeSorted list ");
+    }
+}
+
+public class SortedList
+{
+    private List<string> list=new List<string>();
+    private SortStrategy sortStrategy;
+
+    public void SetSortStrategy(SortStrategy sortStrategy)
+    {
+        this.sortStrategy= sortStrategy;
+    }
+
+    public void Add(string name)
+    {
+        list.Add(name);
+    }
+
+    public void Sort()
+    {
+        sortSort(list);
+
+        foreach (var name in list)
         {
-            public abstract void Sort(List<string> list);
-        }
-
-        public class QuickSort:SortStrategy
-        {
-            public override void Sort(List<string> list)
-            {
-                list.Sort();//Default is Quicksort
-                Console.WriteLine("QuickSorted list ");
-            }
-        }
-
-        public class ShellSort : SortStrategy
-        {
-            public override void Sort(List<string> list)
-            {
-                //list.ShellSort();not-implemented
-                Console.WriteLine("ShellSorted list ");
-            }
-        }
-
-        public class MergeSort : SortStrategy
-        {
-            public override void Sort(List<string> list)
-            {
-                //list.MergeSort();not-implemented
-               Console.WriteLine("MergeSorted list ");
-            }
-        }
-
-        public class SortedList
-        {
-            private List<string> list=new List<string>();
-            private SortStrategy sortStrategy;
-
-            public void SetSortStrategy(SortStrategy sortStrategy)
-            {
-                this.sortStrategy= sortStrategy;
-            }
-
-            public void Add(string name)
-            {
-                list.Add(name);
-            }
-
-            public void Sort()
-            {
-                sortSort(list);
-
-                foreach (var name in list)
-                {
-                    Console.WriteLine(" "+name);
-                }
-            }
+            Console.WriteLine(" "+name);
         }
     }
 }

@@ -9,6 +9,7 @@ docs/.vuepress/public/images/
 #VuePress files
 .vuepress
 .yarn
+.yarnrc
 docs/.vuepress/.temp/
 docs/.vuepress/.cache/
 docs/.vuepress/dist/

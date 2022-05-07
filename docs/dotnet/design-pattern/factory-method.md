@@ -43,16 +43,17 @@
 
   参与此模式的类和对象包括：
 
-  - Product(Page)
+  - Product(`Page`)
     - 定义工厂方法创建的对象的接口。
 
-  - ConcreteProduct(SkillsPage,EducationPage,ExperiencePage)
+  - ConcreteProduct(`SkillsPage`,`EducationPage`,`ExperiencePage`)
     - 实现产品接口。
 
-  - Creator(Document)
+  - Creator(`Document`)
     - 声明工厂方法，它返回一共Product类型的对象。Creator还可以定义返回默认ConcreteProduct对象的工厂方法的默认实现。
     - 可以调用工厂方法来创建Product对象。
-  - ConcreteCreator(Report,Resume)
+
+  - ConcreteCreator(R`eport`,Resume`)
 
     - 重写工厂方法已放灰ConcreteProduct的实例。
 
@@ -60,62 +61,55 @@
 ::: code-group-item Structural code
 
 ```cs
-namespace Design_Pattern.FactoryMethod
+// 演示了Factory方法，它在创建不同对象方面提供了极大的灵活性。
+// Abstract类可以提供一个默认对象，但每个子类都可以实例化该对象的扩展版本。
+
+var creators = new Creator[2];
+creators[0] = new ConcreteCreatorA();
+creators[1] = new ConcreteCreatorB();
+
+foreach (var creator in creators)
 {
-    var creators = new Structural.Creator[2];
-    creators[0] = new Structural.ConcreteCreatorA();
-    creators[1] = new Structural.ConcreteCreatorB();
+    var product = creator.FactoryMethod();
+    Console.WriteLine($"Created {product.GetType().Name}");
+}
 
-    foreach (var creator in creators)
+// Wait for user
+Console.ReadKey();
+
+public abstract class Product
+{
+
+}
+
+public class ConcreteProductA:Product
+{
+    
+}
+
+public class ConcreteProductB:Product
+{
+    
+}
+
+public abstract class Creator
+{
+    public abstract Product FactoryMethod();
+}
+
+public class ConcreteCreatorA:Creator
+{
+    public override Product FactoryMethod()
     {
-        var product = creator.FactoryMethod();
-        Console.WriteLine($"Created {product.GetType().Name}");
+        return new ConcreteProductA();
     }
+}
 
-    // Wait for user
-    Console.ReadKey();
-
-    /// <summary>
-    /// 演示了Factory方法，它在创建不同对象方面提供了极大的灵活性。
-    /// Abstract类可以提供一个默认对象，但每个子类都可以实例化该对象的扩展版本。
-    /// </summary>
-    public class Structural
+public class ConcreteCreatorB : Creator
+{
+    public override Product FactoryMethod()
     {
-        public abstract class Product
-        {
-
-        }
-
-        public class ConcreteProductA:Product
-        {
-            
-        }
-
-        public class ConcreteProductB:Product
-        {
-            
-        }
-
-        public abstract class Creator
-        {
-            public abstract Product FactoryMethod();
-        }
-
-        public class ConcreteCreatorA:Creator
-        {
-            public override Product FactoryMethod()
-            {
-                return new ConcreteProductA();
-            }
-        }
-
-        public class ConcreteCreatorB : Creator
-        {
-            public override Product FactoryMethod()
-            {
-                return new ConcreteProductB();
-            }
-        }
+        return new ConcreteProductB();
     }
 }
 ```
@@ -124,113 +118,106 @@ namespace Design_Pattern.FactoryMethod
 ::: code-group-item Real-World code
 
 ```cs
-namespace Design_Pattern.FactoryMethod
-{
-    var documents = new RealWorld.Document[2];
-    documents[0] = new RealWorld.Resume();
-    documents[1] = new RealWorld.Report();
+// 演示了工厂方法，它在创建不同的文档时提供了灵活性。
+// 派生的Document类Report和Resume实例化Document类的扩展版本。
+// 这里，工厂方法在Document基类的构造函数中被调用。
 
-    foreach (var document in documents)
+var documents = new Document[2];
+documents[0] = new Resume();
+documents[1] = new Report();
+
+foreach (var document in documents)
+{
+    Console.WriteLine($"\n{document.GetType().Name}--");
+    foreach (var page in document.Pages)
     {
-        Console.WriteLine($"\n{document.GetType().Name}--");
-        foreach (var page in document.Pages)
-        {
-            Console.WriteLine($" {page.GetType().Name}");
-        }
+        Console.WriteLine($" {page.GetType().Name}");
+    }
+}
+
+// Wait for user
+Console.ReadKey();
+
+public abstract class Page
+{
+    
+}
+
+public class SkillsPage:Page
+{
+    
+}
+
+public class EducationPage:Page
+{
+
+}
+
+public class ExperiencePage:Page
+{
+}
+
+public class IntroductionPage:Page
+{
+    
+}
+
+public class ResultPage:Page
+{
+    
+}
+
+public class ConclusionPage:Page
+{
+    
+}
+
+public class SummaryPage:Page
+{
+    
+}
+
+public class BibliographyPage:Page
+{
+    
+}
+
+public abstract class Document
+{
+    private readonly List<Page> _pages=new List<Page>();
+
+    protected Document()
+    {
+        this.CreatePages();
     }
 
-    // Wait for user
-    Console.ReadKey();
-
-    /// <summary>
-    /// 演示了工厂方法，它在创建不同的文档时提供了灵活性。
-    /// 派生的Document类Report和Resume实例化Document类的扩展版本。
-    /// 这里，工厂方法在Document基类的构造函数中被调用。
-    /// </summary>
-    public class RealWorld
+    public List<Page> Pages
     {
-        public abstract class Page
-        {
-            
-        }
+        get { return _pages; }
+    }
 
-        public class SkillsPage:Page
-        {
-            
-        }
+    public abstract void CreatePages();
+}
 
-        public class EducationPage:Page
-        {
+public class Resume:Document
+{
+    public override void CreatePages()
+    {
+        Pages.Add(new SkillsPage());
+        Pages.Add(new EducationPage());
+        Pages.Add(new ExperiencePage());
+    }
+}
 
-        }
-
-        public class ExperiencePage:Page
-        {
-        }
-
-        public class IntroductionPage:Page
-        {
-            
-        }
-
-        public class ResultPage:Page
-        {
-            
-        }
-
-        public class ConclusionPage:Page
-        {
-            
-        }
-
-        public class SummaryPage:Page
-        {
-            
-        }
-
-        public class BibliographyPage:Page
-        {
-            
-        }
-
-        public abstract class Document
-        {
-            private readonly List<Page> _pages=new List<Page>();
-
-            protected Document()
-            {
-                this.CreatePages();
-            }
-
-            public List<Page> Pages
-            {
-                get { return _pages; }
-            }
-
-            public abstract void CreatePages();
-        }
-
-        public class Resume:Document
-        {
-            public override void CreatePages()
-            {
-                Pages.Add(new SkillsPage());
-                Pages.Add(new EducationPage());
-                Pages.Add(new ExperiencePage());
-            }
-        }
-
-        public class Report:Document
-        {
-            public override void CreatePages()
-            {
-                Pages.Add(new IntroductionPage());
-                Pages.Add(new ResultPage());
-                Pages.Add(new ConclusionPage());
-                Pages.Add(new SummaryPage());
-                Pages.Add(new BibliographyPage());
-            }
-        }
+public class Report:Document
+{
+    public override void CreatePages()
+    {
+        Pages.Add(new IntroductionPage());
+        Pages.Add(new ResultPage());
+        Pages.Add(new ConclusionPage());
+        Pages.Add(new SummaryPage());
+        Pages.Add(new BibliographyPage());
     }
 }
 ```

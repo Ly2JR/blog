@@ -8,91 +8,98 @@
 
 - 示例
 
+  参与此模式的类和对象包括：
+
+  - Handler(`Approver`)
+    - 定义处理请求的接口。
+    - （可选）实现后继链接。
+
+  - ConcreteHandler(`Director`,`VicePresident`,`President`)
+    - 处理它负责的请求。
+    - 可以访问其继任者。
+    - 如果ConcreteHandler可以处理请求，它回这样做；否则它将请求转发给它的继承者。
+
+  - Client(`ChainApp`)
+    - 向链上的ConcreteHandler对象发起请求。
+
 :::: code-group
 ::: code-group-item Structural code
 
 ```cs
-namespace Design_Pattern.Chain
+// 演示了责任链模式。
+// 其中为多个链接对象(链)提供了响应请求或将其交给下一个对象的机会
+
+var h1 = new ConcreteHandler1();
+var h2 = new ConcreteHandler2();
+var h3 = new ConcreteHandler3();
+
+h1.SetSuccessor(h2);
+h2.SetSuccessor(h3);
+
+int[] requests = { 2, 5, 14, 22, 18, 3, 27, 20 };
+foreach (var request in requests)
 {
-    var h1 = new Structural.ConcreteHandler1();
-    var h2 = new Structural.ConcreteHandler2();
-    var h3 = new Structural.ConcreteHandler3();
+    h1.HandleRequest(request);
+}
 
-    h1.SetSuccessor(h2);
-    h2.SetSuccessor(h3);
+// Wait for user
+Console.ReadKey();
 
-    int[] requests = { 2, 5, 14, 22, 18, 3, 27, 20 };
-    foreach (var request in requests)
+public abstract class Handler
+{
+    protected Handler successor;
+
+    public void SetSuccessor(Handler successor)
     {
-        h1.HandleRequest(request);
+        this.successor = successor;
     }
 
-    // Wait for user
-    Console.ReadKey();
+    public abstract void HandleRequest(int request);
+}
 
-    /// <summary>
-    /// 演示了责任链模式。
-    /// 其中为多个链接对象(链)提供了响应请求或将其交给下一个对象的机会
-    /// </summary>
-    public class Structural
+public class ConcreteHandler1 : Handler
+{
+    public override void HandleRequest(int request)
     {
-        public abstract class Handler
+        if (request is >= 0 and < 10)
         {
-            protected Handler successor;
+            Console.WriteLine($"{this.GetType().Name} handled request {request}");
 
-            public void SetSuccessor(Handler successor)
-            {
-                this.successor = successor;
-            }
-
-            public abstract void HandleRequest(int request);
+        }else if (successor != null)
+        {
+            successor.HandleRequest(request);
         }
+    }
+}
 
-        public class ConcreteHandler1 : Handler
+public class ConcreteHandler2 : Handler
+{
+    public override void HandleRequest(int request)
+    {
+        if (request is >= 10 and < 20)
         {
-            public override void HandleRequest(int request)
-            {
-                if (request is >= 0 and < 10)
-                {
-                    Console.WriteLine($"{this.GetType().Name} handled request {request}");
+            Console.WriteLine($"{this.GetType().Name} handled request {request}");
 
-                }else if (successor != null)
-                {
-                    successor.HandleRequest(request);
-                }
-            }
         }
-
-        public class ConcreteHandler2 : Handler
+        else if (successor != null)
         {
-            public override void HandleRequest(int request)
-            {
-                if (request is >= 10 and < 20)
-                {
-                    Console.WriteLine($"{this.GetType().Name} handled request {request}");
-
-                }
-                else if (successor != null)
-                {
-                    successor.HandleRequest(request);
-                }
-            }
+            successor.HandleRequest(request);
         }
+    }
+}
 
-        public class ConcreteHandler3 : Handler
+public class ConcreteHandler3 : Handler
+{
+    public override void HandleRequest(int request)
+    {
+        if (request is >= 20 and < 30)
         {
-            public override void HandleRequest(int request)
-            {
-                if (request is >= 20 and < 30)
-                {
-                    Console.WriteLine($"{this.GetType().Name} handled request {request}");
+            Console.WriteLine($"{this.GetType().Name} handled request {request}");
 
-                }
-                else if (successor != null)
-                {
-                    successor.HandleRequest(request);
-                }
-            }
+        }
+        else if (successor != null)
+        {
+            successor.HandleRequest(request);
         }
     }
 }
@@ -102,106 +109,100 @@ namespace Design_Pattern.Chain
 ::: code-group-item Real-World code
 
 ```cs
-namespace Design_Pattern.Chain
+// 演示了责任链模式，在该模式中，多个相关的经理和高管可以响应采购请求或将其交给上级。
+// 每个职位都可以有自己的一套规则，他们可以批准这些订单。
+
+var larry = new Director();
+var sam = new VicePresident();
+var tammy = new President();
+
+larry.SetSuccessor(sam);
+sam.SetSuccessor(tammy);
+
+var p = new Purchase(2034, 450, "Supplies");
+larry.ProcessRequest(p);
+
+p = new Purchase(2035, 32590.10, "Project X");
+larry.ProcessRequest(p);
+
+p = new Purchase(2036, 122100.00, "Project Y");
+larry.ProcessRequest(p);
+
+// Wait for user
+Console.ReadKey();
+
+public abstract class Approver
 {
-    var larry = new RealWorld.Director();
-    var sam = new RealWorld.Director.VicePresident();
-    var tammy = new RealWorld.Director.President();
+    protected Approver successor;
 
-    larry.SetSuccessor(sam);
-    sam.SetSuccessor(tammy);
-
-    var p = new RealWorld.Purchase(2034, 450, "Supplies");
-    larry.ProcessRequest(p);
-
-    p = new RealWorld.Purchase(2035, 32590.10, "Project X");
-    larry.ProcessRequest(p);
-
-    p = new RealWorld.Purchase(2036, 122100.00, "Project Y");
-    larry.ProcessRequest(p);
-
-    // Wait for user
-    Console.ReadKey();
-
-    /// <summary>
-    /// 演示了责任链模式，在该模式中，多个相关的经理和高管可以响应采购请求或将其交给上级。
-    /// 每个职位都可以有自己的一套规则，他们可以批准这些订单。
-    /// </summary>
-    public class RealWorld
+    public void SetSuccessor(Approver successor)
     {
-        public abstract class Approver
+        this.successor = successor;
+    }
+
+    public abstract void ProcessRequest(Purchase purchase);
+}
+
+public class Director:Approver
+{
+    public override void ProcessRequest(Purchase purchase)
+    {
+        if (purchase.Amount < 10000)
         {
-            protected Approver successor;
-
-            public void SetSuccessor(Approver successor)
-            {
-                this.successor = successor;
-            }
-
-            public abstract void ProcessRequest(Purchase purchase);
+            Console.WriteLine($"{this.GetType().Name} approved request# {purchase.Number}");
         }
-
-        public class Director:Approver
+        else if (successor != null)
         {
-            public override void ProcessRequest(Purchase purchase)
-            {
-                if (purchase.Amount < 10000)
-                {
-                    Console.WriteLine($"{this.GetType().Name} approved request# {purchase.Number}");
-                }
-                else if (successor != null)
-                {
-                    successor.ProcessRequest(purchase);
-                }
-            }
-
-            public class VicePresident : Approver
-            {
-                public override void ProcessRequest(Purchase purchase)
-                {
-                    if (purchase.Amount < 25000.0)
-                    {
-                        Console.WriteLine($"{this.GetType().Name} approved request# {purchase.Number}");
-                    }
-                    else if (successor != null)
-                    {
-                        successor.ProcessRequest(purchase);
-                    }
-                }
-            }
-
-            public class President : Approver
-            {
-                public override void ProcessRequest(Purchase purchase)
-                {
-                    if (purchase.Amount < 100000.0)
-                    {
-                        Console.WriteLine($"{this.GetType().Name} approved request# {purchase.Number}");
-                    }
-                    else
-                    {
-                        Console.WriteLine($"Request#{purchase.Number} requires an executive meeting!");
-                    }
-                }
-            }
-        }
-
-        public class Purchase
-        {
-            public Purchase(int number,double amount,string purpose)
-            {
-                Number = number;
-                Amount = amount;
-                Purpose = purpose;
-            }
-
-            public int Number { get; set; }
-
-            public double Amount { get; set; }
-
-            public string Purpose { get; set; }
+            successor.ProcessRequest(purchase);
         }
     }
+}
+
+
+public class VicePresident : Approver
+{
+    public override void ProcessRequest(Purchase purchase)
+    {
+        if (purchase.Amount < 25000.0)
+        {
+            Console.WriteLine($"{this.GetType().Name} approved request# {purchase.Number}");
+        }
+        else if (successor != null)
+        {
+            successor.ProcessRequest(purchase);
+        }
+    }
+}
+
+public class President : Approver
+{
+    public override void ProcessRequest(Purchase purchase)
+    {
+        if (purchase.Amount < 100000.0)
+        {
+            Console.WriteLine($"{this.GetType().Name} approved request# {purchase.Number}");
+        }
+        else
+        {
+            Console.WriteLine($"Request#{purchase.Number} requires an executive meeting!");
+        }
+    }
+}
+
+public class Purchase
+{
+    public Purchase(int number,double amount,string purpose)
+    {
+        Number = number;
+        Amount = amount;
+        Purpose = purpose;
+    }
+
+    public int Number { get; set; }
+
+    public double Amount { get; set; }
+
+    public string Purpose { get; set; }
 }
 ```
 

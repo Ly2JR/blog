@@ -30,72 +30,82 @@ UML结构图
 
 - 示例
 
-典型的享元模式的例子为文书处理器中以图形结构来表示字符。一个做法是，每个字形有其字型外观，字模metrics，和其他格式资讯，但这会使每个字符就好用上千字节。取而代之的是，每个字符参照到一个共享字形物件，此物件会被其他共同特质的字符所分享；只有每个字符(文件中或页面中)的位置才需要另外存储。
+  参与此模式的类和对象包括：
+
+  - Flyweight(`Character`)
+    - 声明一共接口，享元可以通过该接口接收外部状态并对其进行操作。
+
+  - ConcreteFlyweight(`CharacterA`,`CharacterB`,`...`,`CharacterZ`)
+    - 实现享元接口并为内在状态添加存储(如果由)。ConcreteFlyweight对象必须是可共享的。它存储的任何状态都必须是内在的，也就是说，它必须独立于ConcreteFlyweight对象的上下文。
+
+  - UnsharedConcreteFlyweight(`not used`)
+    - 并非所有享元子类都需要共享。Flyweight接口支持共享，但不强制执行。UnsharedConcreteFlyweight对象通常在享元对象结构中的某个级别将ConcreteFlyweight对象作为子对象(如Row和Column类所具有的)。
+
+  - FlyweightFactory(`CharacterFactory`)
+    - 创建和管理享元对象。
+    - 确保享元被正确共享。当客户端请求享元时，FlyweightFactory对象资产现有实例或创建一个(如果不存在)。
+
+  - Client(`FlyweightApp`)
+    - 维护对享元的引用。
+    - 计算或存储享元的外在状态。
 
 :::: code-group
 ::: code-group-item Structural code
 
 ```cs
-namespace Design_Pattern.Flyweight
+// 演示了享元模式。
+// 其中相对少量的对象被不同的客户端多次共享。
+
+int extrinsicstate = 22;
+var factory = new FlyweightFactory();
+
+var fx = factory.GetFlyweight("X");
+fx.Operation(--extrinsicstate);
+
+var fy = factory.GetFlyweight("Y");
+fy.Operation(--extrinsicstate);
+
+var fz = factory.GetFlyweight("Z");
+fz.Operation(--extrinsicstate);
+
+// Wait for user
+Console.ReadKey();
+
+public class FlyweightFactory
 {
-    int extrinsicstate = 22;
-    var factory = new Structural.FlyweightFactory();
+    private Dictionary<string, Flyweight> Flyweights { get; } = new Dictionary<string, Flyweight>();
 
-    var fx = factory.GetFlyweight("X");
-    fx.Operation(--extrinsicstate);
-
-    var fy = factory.GetFlyweight("Y");
-    fy.Operation(--extrinsicstate);
-
-    var fz = factory.GetFlyweight("Z");
-    fz.Operation(--extrinsicstate);
-
-    // Wait for user
-    Console.ReadKey();
-
-    /// <summary>
-    /// 演示了享元模式。
-    /// 其中相对少量的对象被不同的客户端多次共享。
-    /// </summary>
-    public class Structural
+    public FlyweightFactory()
     {
-        public class FlyweightFactory
-        {
-            private Dictionary<string, Flyweight> Flyweights { get; } = new Dictionary<string, Flyweight>();
+        Flyweights.Add("X", new ConcreteFlyweight());
+        Flyweights.Add("Y", new ConcreteFlyweight());
+        Flyweights.Add("Z", new ConcreteFlyweight());
+    }
 
-            public FlyweightFactory()
-            {
-                Flyweights.Add("X", new ConcreteFlyweight());
-                Flyweights.Add("Y", new ConcreteFlyweight());
-                Flyweights.Add("Z", new ConcreteFlyweight());
-            }
+    public Flyweight GetFlyweight(string key)
+    {
+        return Flyweights[key];
+    }
+}
 
-            public Flyweight GetFlyweight(string key)
-            {
-                return Flyweights[key];
-            }
-        }
+public abstract class Flyweight
+{
+    public abstract void Operation(int extrinsicstate);
+}
 
-        public abstract class Flyweight
-        {
-            public abstract void Operation(int extrinsicstate);
-        }
+public class ConcreteFlyweight : Flyweight
+{
+    public override void Operation(int extrinsicstate)
+    {
+        Console.WriteLine($"ConcreteFlyweight:{extrinsicstate}");
+    }
+}
 
-        public class ConcreteFlyweight : Flyweight
-        {
-            public override void Operation(int extrinsicstate)
-            {
-                Console.WriteLine($"ConcreteFlyweight:{extrinsicstate}");
-            }
-        }
-
-        public class UnsharedConcreteFlyweight : Flyweight
-        {
-            public override void Operation(int extrinsicstate)
-            {
-                Console.WriteLine($"UnsharedConcreteFlyweight:{extrinsicstate}");
-            }
-        }
+public class UnsharedConcreteFlyweight : Flyweight
+{
+    public override void Operation(int extrinsicstate)
+    {
+        Console.WriteLine($"UnsharedConcreteFlyweight:{extrinsicstate}");
     }
 }
 ```
@@ -104,126 +114,118 @@ namespace Design_Pattern.Flyweight
 ::: code-group-item Real-World code
 
 ```cs
-namespace Design_Pattern.Flyweight
+// 演示了享元模式。
+// 其中相对少量的Character对象由可能具有许多字符的文档多次共享。
+
+var fu = new UnsharedConcreteFlyweight();
+fu.Operation(--extrinsicstate);
+
+string document = "AAZZBBZB";
+var chars = document.ToCharArray();
+
+var factory2 = new CharacterFactory();
+
+int pointSize = 10;
+
+foreach (var c in chars)
 {
+    pointSize++;
+    var character = factory2.GetCharacter(c);
+    character.Display(pointSize);
+}
 
-    var fu = new Structural.UnsharedConcreteFlyweight();
-    fu.Operation(--extrinsicstate);
+// Wait for user
+Console.ReadKey();
 
-    string document = "AAZZBBZB";
-    var chars = document.ToCharArray();
+public class CharacterFactory
+{
+    private readonly Dictionary<char, Character> _characters = new Dictionary<char, Character>();
 
-    var factory2 = new RealWorld.CharacterFactory();
-
-    int pointSize = 10;
-
-    foreach (var c in chars)
+    public Character GetCharacter(char key)
     {
-        pointSize++;
-        var character = factory2.GetCharacter(c);
-        character.Display(pointSize);
+        Character character = null;
+        if (_characters.ContainsKey(key))
+        {
+            character = _characters[key];
+        }
+        else
+        {
+            switch (key)
+            {
+                case 'A': character = new CharacterA(); break;
+                case 'B': character = new CharacterB(); break;
+                case 'Z': character = new CharacterZ(); break;
+            }
+            _characters.Add(key, character);
+        }
+
+        return character;
+    }
+}
+
+public abstract class Character
+{
+    protected char Symbol;
+    protected int Width;
+    protected int Height;
+    protected int Ascent;
+    protected int Descent;
+    protected int PointSize;
+
+    public abstract void Display(int pointSize);
+}
+
+public class CharacterA : Character
+{
+    public CharacterA()
+    {
+        Symbol = 'A';
+        Height = 100;
+        Width = 120;
+        Ascent = 70;
+        Descent = 0;
     }
 
-    // Wait for user
-    Console.ReadKey();
-
-    /// <summary>
-    /// 演示了享元模式。
-    /// 其中相对少量的Character对象由可能具有许多字符的文档多次共享。
-    /// </summary>
-    public class RealWorld
+    public override void Display(int pointSize)
     {
-        public class CharacterFactory
-        {
-            private readonly Dictionary<char, Character> _characters = new Dictionary<char, Character>();
+        this.PointSize = pointSize;
+        Console.WriteLine($"{Symbol} (pointSize {pointSize})");
+    }
+}
 
-            public Character GetCharacter(char key)
-            {
-                Character character = null;
-                if (_characters.ContainsKey(key))
-                {
-                    character = _characters[key];
-                }
-                else
-                {
-                    switch (key)
-                    {
-                        case 'A': character = new CharacterA(); break;
-                        case 'B': character = new CharacterB(); break;
-                        case 'Z': character = new CharacterZ(); break;
-                    }
-                    _characters.Add(key, character);
-                }
+public class CharacterB : Character
+{
+    public CharacterB()
+    {
+        Symbol = 'B';
+        Height = 100;
+        Width = 140;
+        Ascent = 72;
+        Descent = 0;
+    }
 
-                return character;
-            }
-        }
+    public override void Display(int pointSize)
+    {
+        this.PointSize = pointSize;
+        Console.WriteLine($"{Symbol} (pointSize {pointSize})");
+    }
+}
 
-        public abstract class Character
-        {
-            protected char Symbol;
-            protected int Width;
-            protected int Height;
-            protected int Ascent;
-            protected int Descent;
-            protected int PointSize;
+public class CharacterZ : Character
+{
+    public CharacterZ()
+    {
+        Symbol = 'Z';
+        Height = 100;
+        Width = 100;
+        Ascent = 68;
+        Descent = 0;
+    }
 
-            public abstract void Display(int pointSize);
-        }
-
-        public class CharacterA : Character
-        {
-            public CharacterA()
-            {
-                Symbol = 'A';
-                Height = 100;
-                Width = 120;
-                Ascent = 70;
-                Descent = 0;
-            }
-
-            public override void Display(int pointSize)
-            {
-                this.PointSize = pointSize;
-                Console.WriteLine($"{Symbol} (pointSize {pointSize})");
-            }
-        }
-
-        public class CharacterB : Character
-        {
-            public CharacterB()
-            {
-                Symbol = 'B';
-                Height = 100;
-                Width = 140;
-                Ascent = 72;
-                Descent = 0;
-            }
-
-            public override void Display(int pointSize)
-            {
-                this.PointSize = pointSize;
-                Console.WriteLine($"{Symbol} (pointSize {pointSize})");
-            }
-        }
-
-        public class CharacterZ : Character
-        {
-            public CharacterZ()
-            {
-                Symbol = 'Z';
-                Height = 100;
-                Width = 100;
-                Ascent = 68;
-                Descent = 0;
-            }
-
-            public override void Display(int pointSize)
-            {
-                this.PointSize = pointSize;
-                Console.WriteLine($"{Symbol} (pointSize {pointSize})");
-            }
-        }
+    public override void Display(int pointSize)
+    {
+        this.PointSize = pointSize;
+        Console.WriteLine($"{Symbol} (pointSize {pointSize})");
     }
 }
 ```

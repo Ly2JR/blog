@@ -41,48 +41,58 @@
 
 - 示例
 
+  参与此模式的类和对象包括：
+
+  - Proxy(`MathProxy`)
+    - 维护一个让代理访问真实主题的引用。如果RealSubject和Subject接口相同，Proxy可以引用Subject。
+    - 提供与Subject相同的接口，以便可以用代理代替真实的主题。
+    - 控制对真实主题的访问，并可能负责创建和删除它。
+    - 其他职责取决于代理的类型：
+      - 远程代理负责对请求机器参数进行编码，并将编码后的请求发送到不同地址空间中的真实主体。
+      - 虚拟代理可以换成有关真实主题的附加信息，以便它们可以推迟访问它。例如，来自Motivation的ImageProxy缓存了真实图像的范围。
+      - 保护代理检测调用者是否具有执行请求所需的访问权限。
+
+  - Subject(`IMath`)
+    - 定义RealSubject和proxy的公共接口，以便在任何需要RealSubject的地方都可以使用Proxy。
+
+  - RealSubject(`Math`)
+    - 定义代理所代表的真实对象。
+
 :::: code-group
 ::: code-group-item Structural code
 
 ```cs
-namespace Design_Pattern.Proxy
+// 演示了代理模式，它提供了一个代表对象(代理)来控制对另一个类似对象的访问。
+
+var proxy = new Proxy();
+proxy.Request();
+
+// Wait for user
+Console.ReadKey();
+
+public abstract class Subject
 {
-    var proxy = new Structural.Proxy();
-    proxy.Request();
+    public abstract void Request();
+}
 
-    // Wait for user
-    Console.ReadKey();
-
-    /// <summary>
-    /// 演示了代理模式，它提供了一个代表对象(代理)来控制对另一个类似对象的访问。
-    /// </summary>
-    public class Structural
+public class RealSubject : Subject
+{
+    public override void Request()
     {
-        public abstract class Subject
-        {
-            public abstract void Request();
-        }
+        Console.WriteLine("Called RealSubject.Request()");
+    }
+}
 
-        public class RealSubject : Subject
+public class Proxy : Subject
+{
+    private RealSubject _realSubject;
+    public override void Request()
+    {
+        if (_realSubject == null)
         {
-            public override void Request()
-            {
-                Console.WriteLine("Called RealSubject.Request()");
-            }
+            _realSubject = new RealSubject();
         }
-
-        public class Proxy : Subject
-        {
-            private RealSubject _realSubject;
-            public override void Request()
-            {
-                if (_realSubject == null)
-                {
-                    _realSubject = new RealSubject();
-                }
-                _realSubject.Request();
-            }
-        }
+        _realSubject.Request();
     }
 }
 ```
@@ -91,77 +101,70 @@ namespace Design_Pattern.Proxy
 ::: code-group-item Real-World code
 
 ```cs
-namespace Design_Pattern.Proxy
+// 演示了由MathProxy对象表示的Math对象的代理模式。
+
+var proxy2 = new MathProxy();
+Console.WriteLine($"4 + 2 = {proxy2.Add(4, 2)}");
+Console.WriteLine($"4 - 2 = {proxy2.Sub(4, 2)}");
+Console.WriteLine($"4 * 2 = {proxy2.Mul(4, 2)}");
+Console.WriteLine($"4 / 2 = {proxy2.Div(4, 2)}");
+
+// Wait for user
+Console.ReadKey();
+
+public interface IMath
 {
-    var proxy2 = new Proxy.RealWorld.MathProxy();
-    Console.WriteLine($"4 + 2 = {proxy2.Add(4, 2)}");
-    Console.WriteLine($"4 - 2 = {proxy2.Sub(4, 2)}");
-    Console.WriteLine($"4 * 2 = {proxy2.Mul(4, 2)}");
-    Console.WriteLine($"4 / 2 = {proxy2.Div(4, 2)}");
+    double Add(double x, double y);
+    double Sub(double x, double y);
+    double Mul(double x, double y);
+    double Div(double x, double y);
+}
 
-    // Wait for user
-    Console.ReadKey();
-
-    /// <summary>
-    /// 演示了由MathProxy对象表示的Math对象的代理模式。
-    /// </summary>
-    public class RealWorld
+public class Math : IMath
+{
+    public double Add(double x, double y)
     {
-        public interface IMath
-        {
-            double Add(double x, double y);
-            double Sub(double x, double y);
-            double Mul(double x, double y);
-            double Div(double x, double y);
-        }
+        return x + y;
+    }
 
-        public class Math : IMath
-        {
-            public double Add(double x, double y)
-            {
-                return x + y;
-            }
+    public double Sub(double x, double y)
+    {
+        return x - y;
+    }
 
-            public double Sub(double x, double y)
-            {
-                return x - y;
-            }
+    public double Mul(double x, double y)
+    {
+        return x * y;
+    }
 
-            public double Mul(double x, double y)
-            {
-                return x * y;
-            }
+    public double Div(double x, double y)
+    {
+        return x / y;
+    }
+}
 
-            public double Div(double x, double y)
-            {
-                return x / y;
-            }
-        }
+public class MathProxy : IMath
+{
+    private readonly Math _math = new Math();
 
-        public class MathProxy : IMath
-        {
-            private readonly Math _math = new Math();
+    public double Add(double x, double y)
+    {
+        return _math.Add(x, y);
+    }
 
-            public double Add(double x, double y)
-            {
-                return _math.Add(x, y);
-            }
+    public double Div(double x, double y)
+    {
+        return _math.Div(x, y);
+    }
 
-            public double Div(double x, double y)
-            {
-                return _math.Div(x, y);
-            }
+    public double Mul(double x, double y)
+    {
+        return _math.Mul(x, y);
+    }
 
-            public double Mul(double x, double y)
-            {
-                return _math.Mul(x, y);
-            }
-
-            public double Sub(double x, double y)
-            {
-                return _math.Sub(x, y);
-            }
-        }
+    public double Sub(double x, double y)
+    {
+        return _math.Sub(x, y);
     }
 }
 ```

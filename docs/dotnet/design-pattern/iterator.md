@@ -50,107 +50,115 @@ ConcreteIterator跟踪聚合中的当前对象，并能够计算除待遍历的�
 
 - 示例
 
+  参与此模式的类和对象包括：
+
+  - Iterator(`AbstractIterator`)
+    - 定义了访问的遍历元素的接口。
+
+  - ConcreteLterator(`Iterator`)
+    - 实现迭代器接口
+    - 在聚合的遍历中跟踪当前位置。
+
+  - Aggregate(`AbstractCollection`)
+    - 定义了一个用于创建Iterator对象的接口。
+
+  - ConcreteAggregate(`Collection`)
+    - 实现Iterator创建接口以返回正确的ConcreteIterator的实例。
+
 :::: code-group
 ::: code-group-item Structural code
 
 ```cs
-namespace Design_Pattern
+// 演示了迭代器模式。
+// 该模式提供了一种遍历(迭代)项目集合的方法，而无需详细说明集合的底层结构。
+
+var aggregate = new ConcreteAggregate
 {
-    var aggregate = new Structural.ConcreteAggregate
-    {
-        [0] = "Item A",
-        [1] = "Item B",
-        [2] = "Item C",
-        [3] = "Item D"
-    };
+    [0] = "Item A",
+    [1] = "Item B",
+    [2] = "Item C",
+    [3] = "Item D"
+};
 
-    var iterator = aggregate.CreateIterator();
-    Console.WriteLine("Iterating over collection:");
+var iterator = aggregate.CreateIterator();
+Console.WriteLine("Iterating over collection:");
 
-    object? item = First();
-    while (item != null)
+object? item = First();
+while (item != null)
+{
+    Console.WriteLine(item);
+    item = Next();
+}
+
+// Wait for user
+Console.ReadKey();
+
+public abstract class Aggregate
+{
+    public abstract Iterator CreateIterator();
+}
+
+public class ConcreteAggregate : Aggregate
+{
+    private readonly List<object> _items = new();
+
+    public override Iterator CreateIterator()
     {
-        Console.WriteLine(item);
-        item = Next();
+        return new ConcreteIterator(this);
     }
 
-    // Wait for user
-    Console.ReadKey();
+    public int Count => _items.Count;
 
-    /// <summary>
-    /// 演示了迭代器模式。
-    /// 该模式提供了一种遍历(迭代)项目集合的方法，而无需详细说明集合的底层结构。
-    /// </summary>
-    public class IteratorPattern
+    public object this[int index]
     {
-        public abstract class Aggregate
+        get => _items[index];
+        set => _items.Insert(index,value);
+    }
+}
+
+public abstract class Iterator
+{
+    public abstract object? First();
+    public abstract object? Next();
+
+    public abstract bool IsDone();
+
+    public abstract object CurrentItem();
+}
+
+public class ConcreteIterator : Iterator
+{
+    private readonly ConcreteAggregate _aggregate;
+    private int _current;
+
+    public ConcreteIterator(ConcreteAggregate aggregate)
+    {
+        _aggregate=aggregate;
+    }
+
+    public override object? First()
+    {
+        return _aggregate[0];
+    }
+
+    public override object? Next()
+    {
+        object? ret = null;
+        if (_current < _aggregate.Count - 1)
         {
-            public abstract Iterator CreateIterator();
+            ret=_aggregate[++_current];
         }
+        return ret;
+    }
 
-        public class ConcreteAggregate : Aggregate
-        {
-            private readonly List<object> _items = new();
+    public override bool IsDone()
+    {
+        return _current >= _aggregate.Count;
+    }
 
-            public override Iterator CreateIterator()
-            {
-                return new ConcreteIterator(this);
-            }
-
-            public int Count => _items.Count;
-
-            public object this[int index]
-            {
-                get => _items[index];
-                set => _items.Insert(index,value);
-            }
-        }
-
-        public abstract class Iterator
-        {
-            public abstract object? First();
-            public abstract object? Next();
-
-            public abstract bool IsDone();
-
-            public abstract object CurrentItem();
-        }
-
-        public class ConcreteIterator : Iterator
-        {
-            private readonly ConcreteAggregate _aggregate;
-            private int _current;
-
-            public ConcreteIterator(ConcreteAggregate aggregate)
-            {
-                _aggregate=aggregate;
-            }
-
-            public override object? First()
-            {
-                return _aggregate[0];
-            }
-
-            public override object? Next()
-            {
-                object? ret = null;
-                if (_current < _aggregate.Count - 1)
-                {
-                    ret=_aggregate[++_current];
-                }
-                return ret;
-            }
-
-            public override bool IsDone()
-            {
-                return _current >= _aggregate.Count;
-            }
-
-            public override object CurrentItem()
-            {
-                return _aggregate[_current];
-            }
-        }
+    public override object CurrentItem()
+    {
+        return _aggregate[_current];
     }
 }
 ```
@@ -159,116 +167,109 @@ namespace Design_Pattern
 ::: code-group-item Real-World code
 
 ```cs
-namespace Design_Pattern
+// 演示了迭代器模式。
+// 该模式用于迭代项目集合并在每次迭代时跳过特定数量的项目
+
+var collection = new Collection
 {
-    var collection = new RealWorld.Collection
+    [0] = new("Item 0"),
+    [1] = new("Item 1"),
+    [2] = new("Item 2"),
+    [3] = new("Item 3"),
+    [4] = new("Item 4"),
+    [5] = new("Item 5"),
+    [6] = new("Item 6"),
+    [7] = new("Item 7"),
+    [8] = new("Item 8"),
+};
+
+var iterator2 = collection.CreateIterator();
+iterator2.Step = 2;
+
+Console.WriteLine("Iterating over collection:");
+
+for (var item2 = iterator2.First(); !iterator2.IsDone; item2 = iterator2.Next())
+{
+    if (item2 != null) Console.WriteLine(item2.Name);
+}
+
+// Wait for user
+Console.ReadKey();
+
+public class Item
+{
+    public Item(string name)
     {
-        [0] = new("Item 0"),
-        [1] = new("Item 1"),
-        [2] = new("Item 2"),
-        [3] = new("Item 3"),
-        [4] = new("Item 4"),
-        [5] = new("Item 5"),
-        [6] = new("Item 6"),
-        [7] = new("Item 7"),
-        [8] = new("Item 8"),
-    };
-
-    var iterator2 = collection.CreateIterator();
-    iterator2.Step = 2;
-
-    Console.WriteLine("Iterating over collection:");
-
-    for (var item2 = iterator2.First(); !iterator2.IsDone; item2 = iterator2.Next())
-    {
-        if (item2 != null) Console.WriteLine(item2.Name);
+        Name=name;
     }
 
-    // Wait for user
-    Console.ReadKey();
+    public string Name { get; }
+}
 
-    /// <summary>
-    /// 演示了迭代器模式。
-    /// 该模式用于迭代项目集合并在每次迭代时跳过特定数量的项目
-    /// </summary>
-    public class IteratorPattern
+public interface IAbstractCollection
+{
+    Iterator CreateIterator();
+}
+
+public class Collection : IAbstractCollection
+{
+    readonly List<Item> _items=new();
+
+    public Iterator CreateIterator()
     {
-        public class Item
-        {
-            public Item(string name)
-            {
-                Name=name;
-            }
-
-            public string Name { get; }
-        }
-
-        public interface IAbstractCollection
-        {
-            Iterator CreateIterator();
-        }
-
-        public class Collection : IAbstractCollection
-        {
-            readonly List<Item> _items=new();
-
-            public Iterator CreateIterator()
-            {
-                return new Iterator(this);
-            }
-
-            public int Count => _items.Count;
-
-            public Item this[int index]
-            {
-                get => _items[index];
-                set => _items.Add(value);
-            }
-        }
-
-        public interface IAbstractIterator
-        {
-            Item First();
-            Item? Next();
-            bool IsDone { get; }
-
-            Item CurrentItem { get; }
-        }
-
-        public class Iterator : IAbstractIterator
-        {
-            private readonly Collection _collection;
-
-            private int _current;
-            private int _step = 1;
-
-            public Iterator(Collection collection)
-            {
-                _collection=collection;
-            }
-
-            public Item First()
-            {
-                _current = 0;
-                return _collection[_current];
-            }
-
-            public Item? Next()
-            {
-                _current += _step;
-                if (!IsDone) return _collection[_current];
-                return null;
-            }
-            public int Step
-            {
-                get => _step;
-                set=> _step = value;
-            }
-
-            public bool IsDone => _current >= _collection.Count;
-            public Item CurrentItem => _collection[_current];
-        }
+        return new Iterator(this);
     }
+
+    public int Count => _items.Count;
+
+    public Item this[int index]
+    {
+        get => _items[index];
+        set => _items.Add(value);
+    }
+}
+
+public interface IAbstractIterator
+{
+    Item First();
+    Item? Next();
+    bool IsDone { get; }
+
+    Item CurrentItem { get; }
+}
+
+public class Iterator : IAbstractIterator
+{
+    private readonly Collection _collection;
+
+    private int _current;
+    private int _step = 1;
+
+    public Iterator(Collection collection)
+    {
+        _collection=collection;
+    }
+
+    public Item First()
+    {
+        _current = 0;
+        return _collection[_current];
+    }
+
+    public Item? Next()
+    {
+        _current += _step;
+        if (!IsDone) return _collection[_current];
+        return null;
+    }
+    public int Step
+    {
+        get => _step;
+        set=> _step = value;
+    }
+
+    public bool IsDone => _current >= _collection.Count;
+    public Item CurrentItem => _collection[_current];
 }
 ```
 

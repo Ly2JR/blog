@@ -72,61 +72,54 @@
 
   参与此模式的类和对象包括：
 
-  - Target(ChemicalCompound)
+  - Target(`ChemicalCompound`)
     - 定义客户端使用的特定于域的接口。
 
-  - Adapter(Compund)
+  - Adapter(`Compund`)
     - 使接口适配器适应目标接口。
 
-  - Adaptee(ChemicalDatabank)
+  - Adaptee(`ChemicalDatabank`)
   - 定义需要调整的现有接口。
 
-  - Client(AdapterApp)
+  - Client(`AdapterApp`)
     - 与符合"目标"接口的对象协作。
 
 :::: code-group
 ::: code-group-item Structural code
 
 ```cs
-namespace Design_Pattern.Adapter
+// 演示了适配器模式，该模式将一个类的接口映射到另一个类，以便它们可以一起工作。
+// 这些不兼容的类可能来自不同的库或框架。
+
+var target = new Adapter();
+target.Request();
+
+// Wait for user
+Console.ReadKey();
+
+public class Target
 {
-    var target = new Structural.Adapter();
-    target.Request();
-
-    // Wait for user
-    Console.ReadKey();
-
-    /// <summary>
-    /// 演示了适配器模式，该模式将一个类的接口映射到另一个类，以便它们可以一起工作。
-    /// 这些不兼容的类可能来自不同的库或框架。
-    /// </summary>
-    public class Structural
+    public virtual void Request()
     {
-        public class Target
-        {
-            public virtual void Request()
-            {
-                Console.WriteLine("Called Target Request()");
-            }
-        }
+        Console.WriteLine("Called Target Request()");
+    }
+}
 
-        public class Adapter:Target
-        {
-            private readonly Adaptee _adapter = new Adaptee();
+public class Adapter:Target
+{
+    private readonly Adaptee _adapter = new Adaptee();
 
-            public override void Request()
-            {
-                _adapter.SpecificRequest();
-            }
-        }
+    public override void Request()
+    {
+        _adapter.SpecificRequest();
+    }
+}
 
-        public class Adaptee
-        {
-            public void SpecificRequest()
-            {
-                Console.WriteLine("Called SpecificRequest()");
-            }
-        }
+public class Adaptee
+{
+    public void SpecificRequest()
+    {
+        Console.WriteLine("Called SpecificRequest()");
     }
 }
 ```
@@ -135,54 +128,47 @@ namespace Design_Pattern.Adapter
 ::: code-group-item Real-World code
 
 ```cs
-namespace Design_Pattern.Adapter
+/// 演示了适配器模式，该模式将一个类的接口映射到另一个类，以便它们可以一起工作。
+/// 这些不兼容的类可能来自不同的库或框架。
+
+var unknown = new Compound();
+unknown.Display();
+
+var water = new RichCompound("Water");
+water.Display();
+
+var benzene = new RichCompound("Benzene");
+benzene.Display();
+
+var ethanol = new RichCompound("Ethanol");
+ethanol.Display();
+
+// Wait for user
+Console.ReadKey();
+
+public class Target
 {
-    var unknown = new RealWorld.Compound();
-    unknown.Display();
-
-    var water = new RealWorld.RichCompound("Water");
-    water.Display();
-
-    var benzene = new RealWorld.RichCompound("Benzene");
-    benzene.Display();
-
-    var ethanol = new RealWorld.RichCompound("Ethanol");
-    ethanol.Display();
-
-    // Wait for user
-    Console.ReadKey();
-
-    /// <summary>
-    /// 演示了适配器模式，该模式将一个类的接口映射到另一个类，以便它们可以一起工作。
-    /// 这些不兼容的类可能来自不同的库或框架。
-    /// </summary>
-    public class Structural
+    public virtual void Request()
     {
-        public class Target
-        {
-            public virtual void Request()
-            {
-                Console.WriteLine("Called Target Request()");
-            }
-        }
+        Console.WriteLine("Called Target Request()");
+    }
+}
 
-        public class Adapter:Target
-        {
-            private readonly Adaptee _adapter = new Adaptee();
+public class Adapter:Target
+{
+    private readonly Adaptee _adapter = new Adaptee();
 
-            public override void Request()
-            {
-                _adapter.SpecificRequest();
-            }
-        }
+    public override void Request()
+    {
+        _adapter.SpecificRequest();
+    }
+}
 
-        public class Adaptee
-        {
-            public void SpecificRequest()
-            {
-                Console.WriteLine("Called SpecificRequest()");
-            }
-        }
+public class Adaptee
+{
+    public void SpecificRequest()
+    {
+        Console.WriteLine("Called SpecificRequest()");
     }
 }
 ```
