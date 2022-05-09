@@ -4,8 +4,8 @@ import { defaultTheme } from '@vuepress/theme-default';
 import { searchPlugin } from '@vuepress/plugin-search';
 import { pwaPlugin } from '@vuepress/plugin-pwa';
 import { pwaPopupPlugin } from '@vuepress/plugin-pwa-popup';
-import { path } from '@vuepress/utils';
 import { navbar, sidebar } from './configs';
+import { prismjsPlugin } from '@vuepress/plugin-prismjs'
 
 const isProd = process.env.NODE_ENV === 'production';
 
@@ -197,16 +197,12 @@ export default defineUserConfig({
           buttonText: 'Refresh'
         },
       }
+    }),
+    //语法高亮
+    prismjsPlugin({
+        preloadLanguages:['markdown','jsdoc','yaml','cs','vb']
     })
   ],
-  // markdown: {
-  //   importCode: {
-  //     handleImportPath: (str) =>
-  //       str.replace(
-  //         /^@vuepress/, path.resolve(__dirname, '../../packages/@vuepress')
-  //       )
-  //   }
-  // },
   
   /**
    * markdown扩展
