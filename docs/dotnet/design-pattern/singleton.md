@@ -15,7 +15,7 @@ Public 保证了它的全局可见性，静态方法保证了不会创建出多�
   参与此模式的类和对象包括：
 
   - Singleton(`LoadBalancer`)
-    - 定义一个Instance操作，允许客户端访问其唯一的实例。实例是一共类操作。
+    - 定义一个Instance操作，允许客户端访问其唯一的实例。实例是一个类操作。
     - 负责创建和维护自己的唯一实例。
 
 :::: code-group
@@ -87,7 +87,7 @@ Console.ReadKey();
 
 public class LoadBalancer
 {
-    private static LoadBalancer _instance = null!;
+    private static LoadBalancer _instance = null;
     private readonly List<string> _servers = new();
     readonly Random _random = new();
 
