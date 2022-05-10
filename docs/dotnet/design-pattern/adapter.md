@@ -58,7 +58,7 @@
 
 - 模式解析
 
-你想适用一个已经存在的适配器模式，而他的接口不符合你的需求。你想创建一个可以复用的类，该类可以与其他不相关的类或不可预见的类协同工作。你想适用一些已经存在的子类，但是不可能对每一个都进行子类化一一匹配他们的接口，对象适配器可以适配他的父类接口。适配器如同一个常见的变压器，也如同电脑的变压器和插线板之间的电源连接线，它们虽然都是3相的，但是电脑后面的插孔却不能之间插到插线板上。作者曾经遇到过一个ASP编程的难题，字段名字是bh,每个编号是唯一的，但却不是主键，表中适用一个自动增长的id作为主键。在产品的详情页中适用传过来的参数id查询产品，而在另外一个系统中也有一个同样的表，需要访问详情页(已经由另外一个程序员设计好，并且地面晦涩难懂)，由于字段值是自动增长的，两个表的主键并不对应(在其中一个系统中进行删除添加都会引起id的增长)，在具体的实现中，本人在有详情页的系统中添加了一个页面(adapter)，接受传过来的产品编号bh,然后根据编号查找数据库得到相应产品的主键id,最后让页面跳转到详情页面并传递一个id,在另外的系统中只要得到产品的编号bh,并把bh作为参数传递到添加的页面(adapter)便可以得到正确的结果。
+你想适用一个已经存在的适配器模式，而他的接口不符合你的需求。你想创建一个可以复用的类，该类可以与其他不相关的类或不可预见的类协同工作。你想适用一些已经存在的子类，但是不可能对每一个都进行子类化一一匹配他们的接口，对象适配器可以适配他的父类接口。适配器如同一个常见的变压器，也如同电脑的变压器和插线板之间的电源连接线，它们虽然都是3相的，但是电脑后面的插孔却不能之间插到插线板上。
 
 - 总结
 
@@ -128,47 +128,113 @@ public class Adaptee
 ::: code-group-item Real-World code
 
 ```cs
-/// 演示了适配器模式，该模式将一个类的接口映射到另一个类，以便它们可以一起工作。
-/// 这些不兼容的类可能来自不同的库或框架。
+// 演示了传统化学数据库的使用。
+// 化合物对象通过适配器接口访问数据库。
 
-var unknown = new Compound();
+var unknown = new Adapter.RealWorld.Compound();
 unknown.Display();
 
-var water = new RichCompound("Water");
+var water = new Adapter.RealWorld.RichCompound("Water");
 water.Display();
 
-var benzene = new RichCompound("Benzene");
+var benzene = new Adapter.RealWorld.RichCompound("Benzene");
 benzene.Display();
 
-var ethanol = new RichCompound("Ethanol");
+var ethanol = new Adapter.RealWorld.RichCompound("Ethanol");
 ethanol.Display();
 
 // Wait for user
 Console.ReadKey();
 
-public class Target
+public class RealWorld
 {
-    public virtual void Request()
+    public class Compound
     {
-        Console.WriteLine("Called Target Request()");
+        protected float BoilingPoint;
+        protected float MeltingPoint;
+        protected double MolecularWeight;
+        protected string MolecularFormula = null!;
+
+        public virtual void Display()
+        {
+            Console.WriteLine("\nCompound:Unknown ------ ");
+        }
     }
-}
 
-public class Adapter:Target
-{
-    private readonly Adaptee _adapter = new Adaptee();
-
-    public override void Request()
+    public class RichCompound : Compound
     {
-        _adapter.SpecificRequest();
+        private readonly string _chemical;
+        private ChemicalDatabank _bank = null!;
+
+        public RichCompound(string chemical)
+        {
+            _chemical=chemical;
+        }
+
+        public override void Display()
+        {
+            _bank=new ChemicalDatabank();
+
+            BoilingPoint = _bank.GetCriticalPoint(_chemical, "B");
+            MeltingPoint = _bank.GetCriticalPoint(_chemical, "M");
+            MolecularWeight = _bank.GetMolecularWeight(_chemical);
+            MolecularFormula = _bank.GetMolecularStructure(_chemical);
+
+            Console.WriteLine($"\nCompound:{_chemical} ------ ");
+            Console.WriteLine($" Formula:{MolecularFormula}");
+            Console.WriteLine($" Weight:{MolecularWeight}");
+            Console.WriteLine($" Melting Pt:{MeltingPoint}");
+            Console.WriteLine($" Boiling Pt:{BoilingPoint}");
+        }
     }
-}
 
-public class Adaptee
-{
-    public void SpecificRequest()
+    public class ChemicalDatabank
     {
-        Console.WriteLine("Called SpecificRequest()");
+        public float GetCriticalPoint(string compound, string point)
+        {
+            if (point == "M")
+            {
+                switch (compound.ToLower())
+                {
+                    case "water": return 0.0f;
+                    case "benzene": return 5.5f;
+                    case "ethanol": return -114.1f;
+                    default: return 0f;
+                }
+            }
+            else
+            {
+                switch (compound.ToLower()) 
+                {
+                    case "water": return 100.0f;
+                    case "benzene": return 80.1f;
+                    case "ethanol": return 78.3f;
+                    default: return 0f;
+                }
+            }
+        }
+
+        public string GetMolecularStructure(string compound)
+        {
+            switch (compound.ToLower())
+            {
+                case "water": return "H20";
+                case "benzene": return "C6H6";
+                case "ethanol": return "C2H50H";
+                default: return "";
+            }
+        }
+
+        public double GetMolecularWeight(string compound)
+        {
+            switch (compound.ToLower())
+            {
+                case "water": return 18.015;
+                case "benzene": return 78.1134;
+                case "ethanol": return 446.0688;
+                default: return 0d;
+            }
+        }
     }
 }
 ```
