@@ -6,14 +6,15 @@
 
   1. Facade
 
-    这个外观类为子系统提供一个共同的对外接口
+     这个外观类为子系统提供一个共同的对外接口。
+
   2. Clients
 
-    这个对象通过一个外观接口读写子系统中各接口的数据资源。
+     这个对象通过一个外观接口读写子系统中各接口的数据资源。
 
 - 适用场景
 
-在以下情况下可以考虑适用外观模式：
+  在以下情况下可以考虑适用外观模式：
 
   1. 设计初期阶段，应该有意识的将不同层分离，层与层之间建立外观模式。
   2. 开发阶段，子系统越来越复杂，增加外观模式提供一个简单的调用接口。
@@ -50,6 +51,15 @@ facade.MethodB();
 
 // Wait for user
 Console.ReadKey();
+
+// MethodA() ----
+//  SubSystemOne Method
+//  SubSystemTwo Method
+//  SubSystemFour Method
+
+// MethodB() ----
+//  SubSystemTwo Method
+//  SubSystemThree Method
 
 public class SubSystemOne
 {
@@ -129,6 +139,14 @@ Console.WriteLine($"\n{customer.Name} has been {(eligible?"Approved":"Rejected")
 
 // Wait for user
 Console.ReadKey();
+
+// Ann McKinsey applies for ￥125,000.00 loan
+
+// Check bank for Ann McKinsey
+// Check loans for Ann McKinsey
+// Check credit for Ann McKinsey
+
+// Ann McKinsey has been Approved
 
 public class Bank
 {

@@ -4,7 +4,7 @@
 
 - 定义
 
-一种设计模式。把可以响应请求的对象组织成一条链，并在这条链上传递请求，从而保证多个对象都有处理请求并可以避免请求方和响应方的紧密耦合。
+  一种设计模式。把可以响应请求的对象组织成一条链，并在这条链上传递请求，从而保证多个对象都有处理请求并可以避免请求方和响应方的紧密耦合。
 
 - 示例
 
@@ -44,6 +44,15 @@ foreach (var request in requests)
 
 // Wait for user
 Console.ReadKey();
+
+// ConcreteHandler1 handled request 2
+// ConcreteHandler1 handled request 5
+// ConcreteHandler2 handled request 14
+// ConcreteHandler3 handled request 22
+// ConcreteHandler2 handled request 18
+// ConcreteHandler1 handled request 3
+// ConcreteHandler3 handled request 27
+// ConcreteHandler3 handled request 20
 
 public abstract class Handler
 {
@@ -130,6 +139,10 @@ larry.ProcessRequest(p);
 
 // Wait for user
 Console.ReadKey();
+
+// Director approved request# 2034
+// President approved request# 2035
+// Request#2036 requires an executive meeting!
 
 public abstract class Approver
 {

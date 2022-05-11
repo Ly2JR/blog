@@ -4,7 +4,7 @@
 
 - 定义
 
-一种设计模式。定义了一个解释器，来接收给定语言和文法的句子。其实质是把语言中的每个符号定义成一个(对象)类，从而把每个程序转换成一个具体的对象树。
+  一种设计模式。定义了一个解释器，来接收给定语言和文法的句子。其实质是把语言中的每个符号定义成一个(对象)类，从而把每个程序转换成一个具体的对象树。
 
 - 示例
 
@@ -52,6 +52,11 @@ foreach (var expression in list)
 
 // Wait for user
 Console.ReadKey();
+
+// Called Terminal.Interpret()
+// Called nonterminal.Interpret()
+// Called Terminal.Interpret()
+// Called Terminal.Interpret()
 
 public class Context
 {
@@ -106,6 +111,8 @@ Console.WriteLine($"{roman} = {realWorldContext.Output}");
 
 // Wait for user
 Console.ReadKey();
+
+// MCMXXVIII = 1928
 
 public class Context
 {

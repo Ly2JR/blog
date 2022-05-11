@@ -38,6 +38,12 @@ aB.TemplateMethod();
 // Wait for user
 Console.ReadKey();
 
+// ConcreteClassA.PrimitiveOperation1()
+// ConcreteClassA.PrimitiveOperation2()
+
+// ConcreteClassB.PrimitiveOperation1()
+// ConcreteClassB.PrimitiveOperation2()
+
 public abstract class AbstractClass
 {
     public abstract void PrimitiveOperation1();
@@ -91,6 +97,18 @@ products.Run(3);
 
 // Wait for user
 Console.ReadKey();
+
+// Categories ---
+// Red
+// Green
+// Blue
+// Yellow
+// Purple
+
+// Products ---
+// Car
+// Bike
+// Boat
 
 public abstract class DataAccessor
 {

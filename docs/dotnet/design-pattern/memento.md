@@ -4,7 +4,7 @@
 
 - 基本介绍
 
-    备忘录模式(Memoento Pattern)又叫做快照模式(Snapshot Pattern)或Token模式，是GoF的23种设计模式之一，属于行为模式。
+  备忘录模式(Memoento Pattern)又叫做快照模式(Snapshot Pattern)或Token模式，是GoF的23种设计模式之一，属于行为模式。
 
   - 定义
 
@@ -66,6 +66,11 @@ o.SetMemento(c.Memento);
 
 // Wait for user
 Console.ReadKey();
+
+// State = On
+// State = Off
+// Restoring state...
+// State = On
 
 public class Originator
 {
@@ -135,6 +140,22 @@ s.RestoreMemento(m.Memento);
 
 // Wait for user
 Console.ReadKey();
+
+// Name: Noel van Halen
+// Phone: (412) 256-0990
+// Budget: 25000
+
+// Saving state --
+
+// Name: Leo Welch
+// Phone: (310) 209-7111
+// Budget: 1000000
+
+// Restoring state --
+
+// Name: Noel van Halen
+// Phone: (412) 256-0990
+// Budget: 25000
 
 public class SaleProspect
 {

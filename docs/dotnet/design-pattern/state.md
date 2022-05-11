@@ -4,17 +4,17 @@
 
 - 状态模式
 
-(State Pattern)是设计模式的一种，属于行为模式。
+  (State Pattern)是设计模式的一种，属于行为模式。
 
 - 定义
 
-(源于Design Pattern):当一个对象的内在状态改变时允许改变其行为，这个对象看起来想是改变了其类。
+  (源于Design Pattern):当一个对象的内在状态改变时允许改变其行为，这个对象看起来想是改变了其类。
 
-状态模式主要解决的是当控制一个对象状态的条件表达式过于复杂的情况。把状态的判断逻辑转移到表示不同状态的一些列类中，可以把复杂的判断逻辑简化。
+  状态模式主要解决的是当控制一个对象状态的条件表达式过于复杂的情况。把状态的判断逻辑转移到表示不同状态的一些列类中，可以把复杂的判断逻辑简化。
 
 - 意图
 
-允许一个对象在其内部状态改变时改变它的行为
+  允许一个对象在其内部状态改变时改变它的行为
 
 - 适用场景
 
@@ -51,6 +51,12 @@ context.Request();
 
 // Wait for user
 Console.ReadKey();
+
+// State:ConcreteStateB
+// State:ConcreteStateA
+// State:ConcreteStateB
+// State:ConcreteStateA
+// State:ConcreteStateB
 
 public abstract class State
 {
@@ -118,6 +124,31 @@ account.Withdraw(1100.00);
 
 // Wait for user
 Console.ReadKey();
+
+// Deposited ￥500.00 ---
+//  Balance = ￥500.00
+//  Status = SilverState
+
+// Deposited ￥300.00 ---
+//  Balance = ￥800.00
+//  Status = SilverState
+
+// Deposited ￥550.00 ---
+//  Balance = ￥1,350.00
+//  Status = GoldState
+
+// Interest Paid ---
+//  Balance = ￥1,417.50
+//  Status = GoldState
+
+// Withdraw ￥2,000.00 ---
+//  Balance = ￥-582.50
+//  Status = RedState
+
+// No founds available for withdrawal!
+// Withdraw ￥1,100.00 ---
+//  Balance = ￥-582.50
+//  Status = RedState
 
 public abstract class State
 {

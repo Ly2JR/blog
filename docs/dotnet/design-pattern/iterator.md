@@ -4,49 +4,49 @@
 
 - 简介
 
-在面向对象编程里，迭代器模式是一种设计模式，是一种最简单也最常见的设计模式。它可以让用户透过特定的接口巡防容器中的每一个元素而不用了解底层实现。
+  在面向对象编程里，迭代器模式是一种设计模式，是一种最简单也最常见的设计模式。它可以让用户透过特定的接口巡防容器中的每一个元素而不用了解底层实现。
 
-此外，也可以实现特定目的版本的迭代器。
+  此外，也可以实现特定目的版本的迭代器。
 
 - 意图
 
-提供一种方法顺序访问一个聚合对象中各个元素，而又不需暴露该对象的内部表示。
+  提供一种方法顺序访问一个聚合对象中各个元素，而又不需暴露该对象的内部表示。
 
 - 适用性
 
-1. 访问一个聚合对象的内容而无需暴露它的内部表示
-2. 支持对聚合对象的多种变量
-3. 为遍历不同的聚合结构提供一个统一的接口
+  1. 访问一个聚合对象的内容而无需暴露它的内部表示
+  2. 支持对聚合对象的多种变量
+  3. 为遍历不同的聚合结构提供一个统一的接口
 
 - 参与者
 
-1. Iterator(迭代器)
+  1. Iterator(迭代器)
 
-    迭代器定义访问和遍历元素的接口
+     迭代器定义访问和遍历元素的接口
 
-2. ConcreteIterator(具体迭代器)
+  2. ConcreteIterator(具体迭代器)
 
-    具体迭代器实现迭代器接口
+     具体迭代器实现迭代器接口
 
-    对该聚合遍历时跟踪当前位置
+     对该聚合遍历时跟踪当前位置
 
-3. Aggregate(聚合)
+  3. Aggregate(聚合)
 
-    聚合定义创建相应迭代器对象的接口
+     聚合定义创建相应迭代器对象的接口
 
-4. ConcreteAggregate(具体聚合)
+  4. ConcreteAggregate(具体聚合)
 
-    具体聚合实现创建相应迭代器的接口，该操作返回ConcreteIterator的一个适当实例
+     具体聚合实现创建相应迭代器的接口，该操作返回ConcreteIterator的一个适当实例
 
 - 协作
 
-ConcreteIterator跟踪聚合中的当前对象，并能够计算除待遍历的后续对象。
+  ConcreteIterator跟踪聚合中的当前对象，并能够计算除待遍历的后续对象。
 
 - 效果
 
-1. 它支持以不同的方式遍历一个聚合
-2. 迭代器简化了聚合的接口
-3. 在同一个聚合上可以有多个遍历
+  1. 它支持以不同的方式遍历一个聚合
+  2. 迭代器简化了聚合的接口
+  3. 在同一个聚合上可以有多个遍历
 
 - 示例
 
@@ -92,6 +92,12 @@ while (item != null)
 
 // Wait for user
 Console.ReadKey();
+
+// Iterating over collection:
+// Item A
+// Item B
+// Item C
+// Item D
 
 public abstract class Aggregate
 {
@@ -195,6 +201,13 @@ for (var item2 = iterator2.First(); !iterator2.IsDone; item2 = iterator2.Next())
 
 // Wait for user
 Console.ReadKey();
+
+// Iterating over collection:
+// Item 0
+// Item 2
+// Item 4
+// Item 6
+// Item 8
 
 public class Item
 {

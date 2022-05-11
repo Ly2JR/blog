@@ -23,7 +23,6 @@ Public 保证了它的全局可见性，静态方法保证了不会创建出多�
 
 ```cs
 // 演示了单例模式，该模式确保只能创建类的单个实例(单例)
-
 var s1 = Singleton.Instance();
 var s2 = Singleton.Instance();
 
@@ -35,6 +34,9 @@ if (s1==s2)
 
 // Wait for user
 Console.ReadKey();
+
+//Output
+//Objects are the same instance
 
 public class Singleton
 {
@@ -84,6 +86,25 @@ for (var i = 0; i < 15; i++)
 
 // Wait for user
 Console.ReadKey();
+
+//Output
+// Same instance
+
+// Dispatch Request to:ServerIV
+// Dispatch Request to:ServerV
+// Dispatch Request to:ServerI
+// Dispatch Request to:ServerV
+// Dispatch Request to:ServerV
+// Dispatch Request to:ServerV
+// Dispatch Request to:ServerV
+// Dispatch Request to:ServerII
+// Dispatch Request to:ServerI
+// Dispatch Request to:ServerII
+// Dispatch Request to:ServerII
+// Dispatch Request to:ServerII
+// Dispatch Request to:ServerII
+// Dispatch Request to:ServerII
+// Dispatch Request to:ServerV
 
 public class LoadBalancer
 {

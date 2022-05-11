@@ -4,13 +4,13 @@
 
 - 简介
 
-策略模式作为一种软件涉及模式，指对象有某一行为，但是再不同的场景中，该行为有不同的实现算法。
+  策略模式作为一种软件涉及模式，指对象有某一行为，但是再不同的场景中，该行为有不同的实现算法。
 
-策略模式：
+  策略模式：
 
-1. 定义了一组算法(业务规则);
-2. 封装了每个算法；
-3. 这族的算法可互换代替(interchangeable)。
+  1. 定义了一组算法(业务规则);
+  2. 封装了每个算法；
+  3. 这族的算法可互换代替(interchangeable)。
 
 - 组成
 
@@ -72,6 +72,10 @@ context.ContextInterface();
 
 // Wait for user
 Console.ReadKey();
+
+// Called ConcreteStrategyA.AlgorithmInterface()
+// Called ConcreteStrategyB.AlgorithmInterface()
+// Called ConcreteStrategyC.AlgorithmInterface()
 
 public abstract class Strategy
 {
@@ -143,6 +147,25 @@ studentRecords.Sort();
 
 // Wait for user
 Console.ReadKey();
+
+// QuickSorted list
+//  Anna
+//  Jimmy
+//  Samual
+//  Sandra
+//  Vivek
+// ShellSorted list
+//  Anna
+//  Jimmy
+//  Samual
+//  Sandra
+//  Vivek
+// MergeSorted list
+//  Anna
+//  Jimmy
+//  Samual
+//  Sandra
+//  Vivek
 
 public  abstract class SortStrategy
 {

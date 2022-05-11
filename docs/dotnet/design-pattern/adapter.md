@@ -41,32 +41,32 @@
 
 - 适用情况
 
-1. 接口中规定了所有要实现的方法。
-2. 但一个要实现此接口的具体类，只用到了其中的几个方法，而其它的方法都是没有用。
+  1. 接口中规定了所有要实现的方法。
+  2. 但一个要实现此接口的具体类，只用到了其中的几个方法，而其它的方法都是没有用。
 
 - 实现方法
 
-1. 用一个抽象类实现已有的接口，并实现接口中所规定的所有方法，这些方法的实现可以都是“平庸”实现----空方法；但此类中的方法是具体的方法，而不是抽象方法，否则的话，在具体的子类中仍要实现所有的方法，这就失去了适配器本来的作用。
-2. 原本要实现接口的子类，只实现其中的抽象类即可，并在其内部实现时，只对其感兴趣的方法进行实现。
+  1. 用一个抽象类实现已有的接口，并实现接口中所规定的所有方法，这些方法的实现可以都是“平庸”实现----空方法；但此类中的方法是具体的方法，而不是抽象方法，否则的话，在具体的子类中仍要实现所有的方法，这就失去了适配器本来的作用。
+  2. 原本要实现接口的子类，只实现其中的抽象类即可，并在其内部实现时，只对其感兴趣的方法进行实现。
 
 - 注意事项
 
-1. 充当适配器角色的类就是：实现已有接口的抽象类
-2. 为什么要用抽象类:
+  1. 充当适配器角色的类就是：实现已有接口的抽象类
+  2. 为什么要用抽象类:
 
     此类是不要被实例化的。而只充当适配器的角色，也就为其子类提供了一个共同的接口，但其子类有可以将精力只集中在其感兴趣的地方。
 
 - 模式解析
 
-你想适用一个已经存在的适配器模式，而他的接口不符合你的需求。你想创建一个可以复用的类，该类可以与其他不相关的类或不可预见的类协同工作。你想适用一些已经存在的子类，但是不可能对每一个都进行子类化一一匹配他们的接口，对象适配器可以适配他的父类接口。适配器如同一个常见的变压器，也如同电脑的变压器和插线板之间的电源连接线，它们虽然都是3相的，但是电脑后面的插孔却不能之间插到插线板上。
+  你想适用一个已经存在的适配器模式，而他的接口不符合你的需求。你想创建一个可以复用的类，该类可以与其他不相关的类或不可预见的类协同工作。你想适用一些已经存在的子类，但是不可能对每一个都进行子类化一一匹配他们的接口，对象适配器可以适配他的父类接口。适配器如同一个常见的变压器，也如同电脑的变压器和插线板之间的电源连接线，它们虽然都是3相的，但是电脑后面的插孔却不能之间插到插线板上。
 
 - 总结
 
-如何做到一个类不被实例化或者不被轻易实例化？
+  如何做到一个类不被实例化或者不被轻易实例化？
 
-1. 把一个类定义为抽象类；
-2. 把一个类的构造方法设置为：private类型的,这样在客户端就不能通过new ClassName()方法来轻易将一个类实例化，而要生成此类的实例就必须通过一个特殊的方法，这样在一个系统中，对此类的使用就能得到合理的控制(如：单例模式/多例模式/简单工厂方法等模式)。
-3. 对于两个独立的系统，要满足OCP原则，则适配器模式会有一定的局限性。
+  1. 把一个类定义为抽象类；
+  2. 把一个类的构造方法设置为：private类型的,这样在客户端就不能通过new ClassName()方法来轻易将一个类实例化，而要生成此类的实例就必须通过一个特殊的方法，这样在一个系统中，对此类的使用就能得到合理的控制(如：单例模式/多例模式/简单工厂方法等模式)。
+  3. 对于两个独立的系统，要满足OCP原则，则适配器模式会有一定的局限性。
 
 - 示例
 
@@ -96,6 +96,8 @@ target.Request();
 
 // Wait for user
 Console.ReadKey();
+
+// Called SpecificRequest()
 
 public class Target
 {
@@ -131,109 +133,126 @@ public class Adaptee
 // 演示了传统化学数据库的使用。
 // 化合物对象通过适配器接口访问数据库。
 
-var unknown = new Adapter.RealWorld.Compound();
+var unknown = new Compound();
 unknown.Display();
 
-var water = new Adapter.RealWorld.RichCompound("Water");
+var water = new RichCompound("Water");
 water.Display();
 
-var benzene = new Adapter.RealWorld.RichCompound("Benzene");
+var benzene = new RichCompound("Benzene");
 benzene.Display();
 
-var ethanol = new Adapter.RealWorld.RichCompound("Ethanol");
+var ethanol = new RichCompound("Ethanol");
 ethanol.Display();
 
 // Wait for user
 Console.ReadKey();
 
-public class RealWorld
+// Compound:Unknown ------
+
+// Compound:Water ------
+//  Formula:H20
+//  Weight:18.015
+//  Melting Pt:0
+//  Boiling Pt:100
+
+// Compound:Benzene ------
+//  Formula:C6H6
+//  Weight:78.1134
+//  Melting Pt:5.5
+//  Boiling Pt:80.1
+
+// Compound:Ethanol ------
+//  Formula:C2H50H
+//  Weight:446.0688
+//  Melting Pt:-114.1
+//  Boiling Pt:78.3
+
+public class Compound
 {
-    public class Compound
-    {
-        protected float BoilingPoint;
-        protected float MeltingPoint;
-        protected double MolecularWeight;
-        protected string MolecularFormula = null!;
+    protected float BoilingPoint;
+    protected float MeltingPoint;
+    protected double MolecularWeight;
+    protected string MolecularFormula = null;
 
-        public virtual void Display()
-        {
-            Console.WriteLine("\nCompound:Unknown ------ ");
-        }
+    public virtual void Display()
+    {
+        Console.WriteLine("\nCompound:Unknown ------ ");
+    }
+}
+
+public class RichCompound : Compound
+{
+    private readonly string _chemical;
+    private ChemicalDatabank _bank = null;
+
+    public RichCompound(string chemical)
+    {
+        _chemical=chemical;
     }
 
-    public class RichCompound : Compound
+    public override void Display()
     {
-        private readonly string _chemical;
-        private ChemicalDatabank _bank = null!;
+        _bank=new ChemicalDatabank();
 
-        public RichCompound(string chemical)
-        {
-            _chemical=chemical;
-        }
+        BoilingPoint = _bank.GetCriticalPoint(_chemical, "B");
+        MeltingPoint = _bank.GetCriticalPoint(_chemical, "M");
+        MolecularWeight = _bank.GetMolecularWeight(_chemical);
+        MolecularFormula = _bank.GetMolecularStructure(_chemical);
 
-        public override void Display()
-        {
-            _bank=new ChemicalDatabank();
-
-            BoilingPoint = _bank.GetCriticalPoint(_chemical, "B");
-            MeltingPoint = _bank.GetCriticalPoint(_chemical, "M");
-            MolecularWeight = _bank.GetMolecularWeight(_chemical);
-            MolecularFormula = _bank.GetMolecularStructure(_chemical);
-
-            Console.WriteLine($"\nCompound:{_chemical} ------ ");
-            Console.WriteLine($" Formula:{MolecularFormula}");
-            Console.WriteLine($" Weight:{MolecularWeight}");
-            Console.WriteLine($" Melting Pt:{MeltingPoint}");
-            Console.WriteLine($" Boiling Pt:{BoilingPoint}");
-        }
+        Console.WriteLine($"\nCompound:{_chemical} ------ ");
+        Console.WriteLine($" Formula:{MolecularFormula}");
+        Console.WriteLine($" Weight:{MolecularWeight}");
+        Console.WriteLine($" Melting Pt:{MeltingPoint}");
+        Console.WriteLine($" Boiling Pt:{BoilingPoint}");
     }
+}
 
-    public class ChemicalDatabank
+public class ChemicalDatabank
+{
+    public float GetCriticalPoint(string compound, string point)
     {
-        public float GetCriticalPoint(string compound, string point)
-        {
-            if (point == "M")
-            {
-                switch (compound.ToLower())
-                {
-                    case "water": return 0.0f;
-                    case "benzene": return 5.5f;
-                    case "ethanol": return -114.1f;
-                    default: return 0f;
-                }
-            }
-            else
-            {
-                switch (compound.ToLower()) 
-                {
-                    case "water": return 100.0f;
-                    case "benzene": return 80.1f;
-                    case "ethanol": return 78.3f;
-                    default: return 0f;
-                }
-            }
-        }
-
-        public string GetMolecularStructure(string compound)
+        if (point == "M")
         {
             switch (compound.ToLower())
             {
-                case "water": return "H20";
-                case "benzene": return "C6H6";
-                case "ethanol": return "C2H50H";
-                default: return "";
+                case "water": return 0.0f;
+                case "benzene": return 5.5f;
+                case "ethanol": return -114.1f;
+                default: return 0f;
             }
         }
-
-        public double GetMolecularWeight(string compound)
+        else
         {
-            switch (compound.ToLower())
+            switch (compound.ToLower()) 
             {
-                case "water": return 18.015;
-                case "benzene": return 78.1134;
-                case "ethanol": return 446.0688;
-                default: return 0d;
+                case "water": return 100.0f;
+                case "benzene": return 80.1f;
+                case "ethanol": return 78.3f;
+                default: return 0f;
             }
+        }
+    }
+
+    public string GetMolecularStructure(string compound)
+    {
+        switch (compound.ToLower())
+        {
+            case "water": return "H20";
+            case "benzene": return "C6H6";
+            case "ethanol": return "C2H50H";
+            default: return "";
+        }
+    }
+
+    public double GetMolecularWeight(string compound)
+    {
+        switch (compound.ToLower())
+        {
+            case "water": return 18.015;
+            case "benzene": return 78.1134;
+            case "ethanol": return 446.0688;
+            default: return 0d;
         }
     }
 }

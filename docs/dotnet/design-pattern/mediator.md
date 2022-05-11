@@ -4,7 +4,7 @@
 
 - 定义
 
-一种设计模式。用一个中介对象来封装一系列的交互，从而把一批原来可能是交互关系复杂的对象换成一组松散耦合的中间对象，以有利于维护和修改。
+  一种设计模式。用一个中介对象来封装一系列的交互，从而把一批原来可能是交互关系复杂的对象换成一组松散耦合的中间对象，以有利于维护和修改。
 
 - 示例
 
@@ -41,6 +41,9 @@ c2.Send("Fine,thanks");
 
 // Wait for user
 Console.ReadKey();
+
+// Colleague2 gets message:How are you?
+// Colleague1 gets message:Fine,thanks
 
 public abstract class Mediator
 {
@@ -149,6 +152,12 @@ john.Send("Yoko","My sweet love");
 
 // Wait for user
 Console.ReadKey();
+
+// To a Beatle: Yoko to John:'Hi John!'
+// To a Beatle: Paul to Ringo:'All you need is love'
+// To a Beatle: Ringo to George:'My sweet Lord'
+// To a Beatle: Paul to John:'Can't buy me love'
+// To a non-Beatle: John to Yoko:'My sweet love'
 
 public abstract class AbstractChatRoom
 {

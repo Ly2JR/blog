@@ -7,7 +7,7 @@
 
 - 解决问题
 
-它主要面对的问题是:"某些结构复杂的对象"的创建工作；由于需求的变化，这些对象经常面临着剧烈的变化，但是它们却拥有比较
+  它主要面对的问题是:"某些结构复杂的对象"的创建工作；由于需求的变化，这些对象经常面临着剧烈的变化，但是它们却拥有比较
 稳定一致的接口。
 
 - 示例
@@ -39,6 +39,9 @@ Console.WriteLine($"Cloned:{c2.Id}");
 
 // Wait for user
 Console.ReadKey();
+
+// Cloned:I
+// Cloned:II
 
 public abstract class Prototype
 {
@@ -107,6 +110,10 @@ var color3= colorManager["flame"].Clone() as Color;
 
 // Wait for user
 Console.ReadKey();
+
+// Cloning color RGB:255,  0,  0
+// Cloning color RGB:128,211,128
+// Cloning color RGB:211, 34, 20
 
 public abstract class ColorPrototype
 {
