@@ -6,13 +6,13 @@
 
   享元模式,运用共享技术有效的支持大量细粒度的对象。
 
-  典型的享元模式的例子为文书处理器中以图形结构来表示字符。一个做法是，每个字形有其字型外观，字模metrics，和其它格式咨询，但这会使每个字符就耗用上千字节。取而代之的是，每个字符参照到一个共享字形物件，此物件会被其它有共同特质的字符所分享；只有每个字符(文件中或页面中)的位置才需要另外存储。
+  典型的享元模式的例子为文书处理器中以图形结构来表示字符。一个做法是，每个字形有其字型外观，字模metrics，和其它格式咨讯，但这会使每个字符就耗用上千字节。取而代之的是，每个字符参照到一个共享字形物件，此物件会被其它有共同特质的字符所分享；只有每个字符(文件中或页面中)的位置才需要另外存储。
 
 - 结构
 
   两个状态
 
-  1. 内蕴状态存储再享元内部，不会随环境的改变而有所不同，是可以共享的。
+  1. 内蕴状态存储在享元内部，不会随环境的改变而有所不同，是可以共享的。
   2. 外蕴状态是不可以共享的，它随环境的改变而改变的，因此外蕴状态是由客户端来保持(因为环境的变化是由客户端引起的)。
 
   UML结构图
@@ -33,10 +33,10 @@
   参与此模式的类和对象包括：
 
   - Flyweight(`Character`)
-    - 声明一共接口，享元可以通过该接口接收外部状态并对其进行操作。
+    - 声明一个接口，享元可以通过该接口接收外部状态并对其进行操作。
 
   - ConcreteFlyweight(`CharacterA`,`CharacterB`,`...`,`CharacterZ`)
-    - 实现享元接口并为内在状态添加存储(如果由)。ConcreteFlyweight对象必须是可共享的。它存储的任何状态都必须是内在的，也就是说，它必须独立于ConcreteFlyweight对象的上下文。
+    - 实现享元接口并为内在状态添加存储(如果有)。ConcreteFlyweight对象必须是可共享的。它存储的任何状态都必须是内在的，也就是说，它必须独立于ConcreteFlyweight对象的上下文。
 
   - UnsharedConcreteFlyweight(`not used`)
     - 并非所有享元子类都需要共享。Flyweight接口支持共享，但不强制执行。UnsharedConcreteFlyweight对象通常在享元对象结构中的某个级别将ConcreteFlyweight对象作为子对象(如Row和Column类所具有的)。
@@ -120,9 +120,6 @@ public class UnsharedConcreteFlyweight : Flyweight
 ```cs
 // 演示了享元模式。
 // 其中相对少量的Character对象由可能具有许多字符的文档多次共享。
-
-var fu = new UnsharedConcreteFlyweight();
-fu.Operation(--extrinsicstate);
 
 string document = "AAZZBBZB";
 var chars = document.ToCharArray();
