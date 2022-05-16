@@ -55,7 +55,7 @@
   - Iterator(`AbstractIterator`)
     - 定义了访问的遍历元素的接口。
 
-  - ConcreteLterator(`Iterator`)
+  - ConcreteIterator(`Iterator`)
     - 实现迭代器接口
     - 在聚合的遍历中跟踪当前位置。
 
@@ -87,7 +87,7 @@ object? item = First();
 while (item != null)
 {
     Console.WriteLine(item);
-    item = Next();
+    item = item.Next();
 }
 
 // Wait for user
@@ -189,14 +189,14 @@ var collection = new Collection
     [8] = new("Item 8"),
 };
 
-var iterator2 = collection.CreateIterator();
-iterator2.Step = 2;
+var iterator = collection.CreateIterator();
+iterator.Step = 2;
 
 Console.WriteLine("Iterating over collection:");
 
-for (var item2 = iterator2.First(); !iterator2.IsDone; item2 = iterator2.Next())
+for (var item = iterator.First(); !iterator.IsDone; item = iterator2.Next())
 {
-    if (item2 != null) Console.WriteLine(item2.Name);
+    if (item != null) Console.WriteLine(item.Name);
 }
 
 // Wait for user

@@ -20,7 +20,7 @@
 
   - 备忘录模式的优点
 
-    1. 有时一些发起人对象的内部信息必须保存在发起人对象以外的地方，但是必须要由发起人对象自己读取，这是，使用备忘录模式可以把复杂的发起人内部信息对其他的对象屏蔽起来，从而可以恰当地保持封装的边界。
+    1. 有时一些发起人对象的内部信息必须保存在发起人对象以外的地方，但是必须要由发起人对象自己读取，这时，使用备忘录模式可以把复杂的发起人内部信息对其他的对象屏蔽起来，从而可以恰当地保持封装的边界。
     2. 本模式简化了发起人类。发起人不再需要管理和保存其内部状态的一个个版本，客户端可以自行管理他们所需要的这些状态的版本。
     3. 当发起人角色的状态改变的时候，有可能这个状态无效，这时候就可以使用暂时存储起来的备忘录将状态复原。
 
@@ -35,16 +35,16 @@
   参与此模式的类和对象包括：
 
   - Memento(`Memento`)
-    - 存储Originator对象的内部状态。纪念品可以更具其发起者的判断，尽可能多地或京可能少地存储发起者的内部状态。
-    - 防止发起者以外的对象访问。Mementos实际上有两个接口。Caretaker看到了Memento的狭窄接口---它只能将memento传递给其他对象。相比之下，originator看到了一个广泛的界面，它可以访问所有必要的数据以将自己恢复到之前的状态。理想情况下，只有产生备忘录的始发者才被允许访问备忘录的内部状态。
+    - 存储Originator对象的内部状态。Memento可以根据其发起者的判断，尽可能多地或尽可能少地存储发起者的内部状态。
+    - 防止发起者以外的对象访问。Mementos实际上有两个接口。Caretaker看到了Memento的狭窄接口---它只能将Memento传递给其他对象。相比之下，originator看到了一个广泛的界面，它可以访问所有必要的数据以将自己恢复到之前的状态。理想情况下，只有产生备忘录的始发者才被允许访问备忘录的内部状态。
 
   - Originator(`SalesProspect`)
-    - 创建一个包含其当前内部状态快照的纪念品。
-    - 使用纪念品恢复其内部状态。
+    - 创建一个包含其当前内部状态快照的Memento。
+    - 使用Memento恢复其内部状态。
 
   - Caretaker(`Caretaker`)
-    - 负责纪念品的保管。
-    - 从不操作或检测纪念品的内容。
+    - 负责Memento的保管。
+    - 从不操作或检测Memento的内容。
 
 :::: code-group
 ::: code-group-item Structureal code
@@ -74,9 +74,9 @@ Console.ReadKey();
 
 public class Originator
 {
-    private string? _state;
+    private string _state;
 
-    public string? State
+    public string State
     {
         get => _state;
         set
@@ -94,7 +94,7 @@ public class Originator
     public void SetMemento(Memento memento)
     {
         Console.WriteLine("Restoring state...");
-        State=State;
+        State=memento.State;
     }
 }
 
@@ -110,7 +110,7 @@ public class Memento
 
 public class Caretaker
 {
-    public Memento Memento { get; set; } = null!;
+    public Memento Memento { get; set; } = null;
 }
 ```
 
@@ -202,15 +202,16 @@ public class SaleProspect
     public void RestoreMemento(Memento memento)
     {
         Console.WriteLine("\nRestoring state --\n");
-        Name=Name;
-        Phone=Phone;
-        Budget=Budget;
+        Name=memento.Name;
+        Phone=memento.Phone;
+        Budget=memento.Budget;
     }
 }
 
 public class Memento
 {
     public string Name { get; set; }
+
     public string Phone { get; set; }
 
     public double Budget { get; set; }

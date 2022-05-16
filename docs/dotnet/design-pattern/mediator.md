@@ -127,7 +127,8 @@ public class ConcreteColleague2 : Colleague
 ::: code-group-item Real-World code
 
 ```cs
-// 演示了中介者模式，促进了在聊天室注册的不同参与者之间的松散耦合通信。聊天室是进行所有交流的中心枢纽。
+// 演示了中介者模式，促进了在聊天室注册的不同参与者之间的松散耦合通信。
+// 聊天室是进行所有交流的中心枢纽。
 // 此时聊天室中仅实现了一对一的通信，但更改为一对多将是微不足道的。
 
 var chartRoom = new ChatRoom();

@@ -22,11 +22,11 @@
 
   - Invoker:
 
-    要求命令对象执行请求，通常会持有命令对象，可以持有很多的命令对象。这个是客户端真正触发命令并要求命令执行相应操作的地方，也减少说相当于使用命令对象的入口。
+    要求命令对象执行请求，通常会持有命令对象，可以持有很多的命令对象。这个是客户端真正触发命令并要求命令执行相应操作的地方，也就是说相当于使用命令对象的入口。
 
   - Client:
 
-    创建具体的命令对象，并且设置命令对象的接收者。注意这个不是我们常规意义上的客户端，二手在组装命令对象和接收者，或许，把这个Client称为装配者会更好理解，因为真正使用命令的客户端是从Invoker来触发执行。
+    创建具体的命令对象，并且设置命令对象的接收者。注意这个不是我们常规意义上的客户端，而是在组装命令对象和接收者，或许，把这个Client称为装配者会更好理解，因为真正使用命令的客户端是从Invoker来触发执行。
 
 - 模式协作
 
@@ -38,7 +38,7 @@
 - 模式分析
 
   1. 命令模式的本质是对命令进行封装，将发出命令的责任和执行命令的责任分隔开。
-  2. 每一个命令都是一个操作：请求的一方发出请求，要求执一个操作；接收的一方收到请求，并执行操作。
+  2. 每一个命令都是一个操作：请求的一方发出请求，要求执行一个操作；接收的一方收到请求，并执行操作。
   3. 命令模式允许请求的一方和接收的一方独立开来，使得请求的一方不必知道接收请求的一方的接口，更不必知道请求是怎么被接收，以及操作是否被执行、何时被执行，以及是怎么被执行的。
   4. 命令模式使请求本身成为一个对象，这个对象和其他对象意义被存储和传递。
   5. 命令模式的关键在于引入了抽象命令接口，且发送者针对抽象命令接口编程，只有实现了抽象命令接口的具体命令才能与接收者关联。
@@ -47,12 +47,12 @@
 
   1. 降低对象之间的耦合度。
   2. 新的命令可以很容易地加入到系统中。
-  3. 可以毕竟容易地设计一个组合命令。
+  3. 可以比较容易地设计一个组合命令。
   4. 调用同一方法实现不同的功能。
 
 - 模式缺点
   
-  使用命令模式可能会导致某些系统有过多的具体命令类。因为针对每一个命令都需要设计一个具体命令类，因此某些系统可能需要大量具体命令类恶，者将影响命令模式的使用。
+  使用命令模式可能会导致某些系统有过多的具体命令类。因为针对每一个命令都需要设计一个具体命令类，因此某些系统可能需要大量具体命令类，这将影响命令模式的使用。
 
 - 适用环境
 
@@ -66,7 +66,7 @@
   参与此模式的类和对象包括：
 
   - Command(`Command`)
-    - 声明一个粤语执行操作的接口
+    - 声明一个用于执行操作的接口
 
   - ConcreteCommand(`CalculatorCommand`)
     - 定义Receiver对象和动作之间的绑定
@@ -143,7 +143,7 @@ public class Invoker
 
     public void ExecuteCommand()
     {
-        _Execute();
+        _command.Execute();
     }
 }
 ```
@@ -245,9 +245,9 @@ public class Calculator
 
 public class User
 {
-    readonly Calculator _calculator = new();
-    readonly List<Command> _commands = new();
-    int _current;
+    private readonly Calculator _calculator = new();
+    private readonly List<Command> _commands = new();
+    private int _current;
 
     public void Redo(int levels)
     {
@@ -257,7 +257,7 @@ public class User
             if (_current < _commands.Count - 1)
             {
                 var command = _commands[_current++];
-                Execute();
+                command.Execute();
             }
         }
     }
@@ -271,7 +271,7 @@ public class User
             if (_current > 0)
             {
                 var command = _commands[--_current];
-                UnExecute();
+                command.UnExecute();
             }
         }
     }
@@ -279,7 +279,7 @@ public class User
     public void Compute(char @operator, int operand)
     {
         var command = new CalculatorCommand(_calculator, @operator, operand);
-        Execute();
+        command.Execute();
 
         _commands.Add(command);
         _current++;

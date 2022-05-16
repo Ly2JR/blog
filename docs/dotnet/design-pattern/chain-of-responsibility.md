@@ -17,7 +17,7 @@
   - ConcreteHandler(`Director`,`VicePresident`,`President`)
     - 处理它负责的请求。
     - 可以访问其继任者。
-    - 如果ConcreteHandler可以处理请求，它回这样做；否则它将请求转发给它的继承者。
+    - 如果ConcreteHandler可以处理请求，它会这样做；否则它将请求转发给它的继承者。
 
   - Client(`ChainApp`)
     - 向链上的ConcreteHandler对象发起请求。

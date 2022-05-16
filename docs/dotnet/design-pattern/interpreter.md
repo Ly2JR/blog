@@ -79,7 +79,7 @@ public class NonterminalExpression : AbstractExpression
 {
     public override void Interpret(Context context)
     {
-        Console.WriteLine("Called nonterminal.Interpret()");
+        Console.WriteLine("Called Nonterminal.Interpret()");
     }
 }
 ```
