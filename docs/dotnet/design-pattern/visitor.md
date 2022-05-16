@@ -121,7 +121,7 @@ public class ConcreteElementA:Element
 {
     public override void Accept(Visitor visitor)
     {
-        VisitConcreteElementA(this);
+        visitor.VisitConcreteElementA(this);
     }
 
     public void OperationA()
@@ -134,7 +134,7 @@ public class ConcreteElementB:Element
 {
     public override void Accept(Visitor visitor)
     {
-        VisitConcreteElementB(this);
+        visitor.VisitConcreteElementB(this);
     }
 
     public void OperationB()
