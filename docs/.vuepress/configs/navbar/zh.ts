@@ -26,8 +26,8 @@ export const zh: NavbarConfig = [
     text: '编程',
     children: [
       {
-        text: '.NET',
-        link: '/dotnet/README.md'
+        text: 'C# Design Patterns',
+        link: '/dotnet/design-pattern/README.md'
       },
       {
         text: '客户端',

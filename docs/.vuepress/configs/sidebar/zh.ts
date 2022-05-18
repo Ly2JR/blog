@@ -99,6 +99,7 @@ export const zh: SidebarConfig = {
         {
             text: 'Design Pattern',
             children: [
+                '/dotnet/design-pattern/README.md',
                 {
                     text:'创建型',
                     children:[
