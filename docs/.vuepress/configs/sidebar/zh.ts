@@ -95,57 +95,53 @@ export const zh: SidebarConfig = {
             ]
         }
     ],
-    '/dotnet/': [
+    '/dotnet/design-pattern/': [
+        '/dotnet/design-pattern/README.md',
         {
-            text: 'Design Pattern',
-            children: [
-                '/dotnet/design-pattern/README.md',
-                {
-                    text:'创建型',
-                    children:[
-                        '/dotnet/design-pattern/singleton.md',
-                        '/dotnet/design-pattern/abstract-factory.md',
-                        '/dotnet/design-pattern/builder.md',
-                        '/dotnet/design-pattern/factory-method.md',
-                        '/dotnet/design-pattern/prototype.md',
-                    ]
-                },
-                {
-                    text:'结构型',
-                    children:[
-                        '/dotnet/design-pattern/adapter.md',
-                        '/dotnet/design-pattern/bridge.md',
-                        '/dotnet/design-pattern/decorator.md',
-                        '/dotnet/design-pattern/composite.md',
-                        '/dotnet/design-pattern/facade.md',
-                        '/dotnet/design-pattern/flyweight.md',
-                        '/dotnet/design-pattern/proxy.md',
-                    ]
-                }, {
-                    text:'行为型',
-                    children:[
-                        '/dotnet/design-pattern/template-method.md',
-                        '/dotnet/design-pattern/command.md',
-                        '/dotnet/design-pattern/iterator.md',
-                        '/dotnet/design-pattern/observer.md',
-                        '/dotnet/design-pattern/interpreter.md',
-                        '/dotnet/design-pattern/mediator.md',
-                        '/dotnet/design-pattern/chain-of-responsibility.md',
-                        '/dotnet/design-pattern/memento.md',
-                        '/dotnet/design-pattern/strategy.md',
-                        '/dotnet/design-pattern/visitor.md',
-                        '/dotnet/design-pattern/state.md',
-                    ]
-                }
-            ],
+            text:'创建型',
+            children:[
+                '/dotnet/design-pattern/singleton.md',
+                '/dotnet/design-pattern/abstract-factory.md',
+                '/dotnet/design-pattern/builder.md',
+                '/dotnet/design-pattern/factory-method.md',
+                '/dotnet/design-pattern/prototype.md',
+            ]
         },
         {
-            text: 'ABP.vNext',
-            children: [
-                '/dotnet/abp.vnext/README.md',
-                '/dotnet/abp.vnext/data-dictionary.md',
-            ],
-        },
+            text:'结构型',
+            children:[
+                '/dotnet/design-pattern/adapter.md',
+                '/dotnet/design-pattern/bridge.md',
+                '/dotnet/design-pattern/decorator.md',
+                '/dotnet/design-pattern/composite.md',
+                '/dotnet/design-pattern/facade.md',
+                '/dotnet/design-pattern/flyweight.md',
+                '/dotnet/design-pattern/proxy.md',
+            ]
+        }, {
+            text:'行为型',
+            children:[
+                '/dotnet/design-pattern/template-method.md',
+                '/dotnet/design-pattern/command.md',
+                '/dotnet/design-pattern/iterator.md',
+                '/dotnet/design-pattern/observer.md',
+                '/dotnet/design-pattern/interpreter.md',
+                '/dotnet/design-pattern/mediator.md',
+                '/dotnet/design-pattern/chain-of-responsibility.md',
+                '/dotnet/design-pattern/memento.md',
+                '/dotnet/design-pattern/strategy.md',
+                '/dotnet/design-pattern/visitor.md',
+                '/dotnet/design-pattern/state.md',
+            ]
+        }
+    ],
+    '/dotnet/abp.zero/':[
+        '/dotnet/abp.zero/README.md',
+        '/dotnet/abp.zero/deploy.md'
+    ],
+    '/dotnet/xamarin.forms/':[
+        '/dotnet/xamarin.forms/README.md',
+        '/dotnet/xamarin.forms/deploy.md'
     ],
     '/dotnet/wpf/': [
         {

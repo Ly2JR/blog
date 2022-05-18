@@ -30,13 +30,16 @@ export const zh: NavbarConfig = [
         link: '/dotnet/design-pattern/README.md'
       },
       {
-        text: '客户端',
-        children: [
-          {
-            text: 'WPF',
-            link: '/dotnet/wpf/README.md'
-          }
-        ]
+        text: 'Abp.Zero',
+        link: '/dotnet/abp.zero/README.md'
+      },
+      {
+        text: 'Xamarin.Forms',
+        link: '/dotnet/xamarin.forms/README.md'
+      },
+      {
+        text: 'WPF',
+        link: '/dotnet/wpf/README.md'
       },
       {
         text: 'Web端',
