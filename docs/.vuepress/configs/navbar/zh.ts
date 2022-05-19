@@ -57,6 +57,10 @@ export const zh: NavbarConfig = [
           {
             text: 'SQL Server',
             link: '/database/sqlserver/README.md'
+          },
+          {
+            text: 'Oracle',
+            link: '/database/oracle/installer.md'
           }
         ]
       }

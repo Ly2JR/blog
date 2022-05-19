@@ -40,7 +40,7 @@ NOT NULL约束强制字段始终包含值。意味着，如果不向字段添加
 
 - 语法
 
-```SQL
+```sql
 ALTER TABLE table_name ALTER COLUMN column_name data_type(size) constraint_name;
 ```
 

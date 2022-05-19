@@ -1,11 +1,12 @@
 import { viteBundler } from '@vuepress/bundler-vite';
 import { defineUserConfig } from '@vuepress/cli'
-import { defaultTheme } from '@vuepress/theme-default';
+import { defaultTheme, } from '@vuepress/theme-default';
 import { searchPlugin } from '@vuepress/plugin-search';
 import { pwaPlugin } from '@vuepress/plugin-pwa';
 import { pwaPopupPlugin } from '@vuepress/plugin-pwa-popup';
 import { navbar, sidebar } from './configs';
-import { prismjsPlugin } from '@vuepress/plugin-prismjs'
+//import { path } from '@vuepress/utils';
+import { shikiPlugin } from '@vuepress/plugin-shiki'
 
 const isProd = process.env.NODE_ENV === 'production';
 
@@ -172,6 +173,12 @@ export default defineUserConfig({
       prismjs: !isProd,
     },
   }),
+  // markdown: {
+  //   importCode: {
+  //     handleImportPath: (str) =>
+  //       str.replace(/^@vuepress/, path.resolve(__dirname, '../../packages/@vuepress'))
+  //   }
+  // },
   plugins: [
     searchPlugin({
       locales: {
@@ -198,12 +205,10 @@ export default defineUserConfig({
         },
       }
     }),
-    //语法高亮
-    prismjsPlugin({
-        preloadLanguages:['markdown','jsdoc','yaml','cs','vb']
-    })
+    // only enable shiki plugin in production mode
+    isProd ? shikiPlugin({ theme: 'dark-plus' }) : [],
   ],
-  
+
   /**
    * markdown扩展
    * @param md 
@@ -222,10 +227,10 @@ export default defineUserConfig({
   /**
   * 打包配置
   */
-  bundler:viteBundler({
-    vuePluginOptions:{
-      template:{
-        compilerOptions:{
+  bundler: viteBundler({
+    vuePluginOptions: {
+      template: {
+        compilerOptions: {
           isCustomElement: tag => tag.startsWith("mjx-")
         }
       }

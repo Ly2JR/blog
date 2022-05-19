@@ -25,21 +25,21 @@ export const zh: SidebarConfig = {
             ]
         }
     ],
-    '/life/literature/':[
+    '/life/literature/': [
         {
-            text:'Markdown',
-            children:[
+            text: 'Markdown',
+            children: [
                 {
-                    text:'概述',
-                    children:[
+                    text: '概述',
+                    children: [
                         '/life/literature/markdown/overview/philosophy.md',
                         '/life/literature/markdown/overview/inline-html.md',
                         '/life/literature/markdown/overview/automatic-escaping-for-special-characters.md',
                     ]
-                    
+
                 }, {
-                    text:'块元素',
-                    children:[
+                    text: '块元素',
+                    children: [
                         '/life/literature/markdown/block elements/paragraphs-and-line-breaks.md',
                         '/life/literature/markdown/block elements/headers.md',
                         '/life/literature/markdown/block elements/blockquotes.md',
@@ -47,44 +47,44 @@ export const zh: SidebarConfig = {
                         '/life/literature/markdown/block elements/code-blocks.md',
                         '/life/literature/markdown/block elements/horizontal-rules.md',
                     ]
-                    
+
                 }
                 , {
-                    text:'跨度元素',
-                    children:[
+                    text: '跨度元素',
+                    children: [
                         '/life/literature/markdown/span elements/links.md',
                         '/life/literature/markdown/span elements/emphasis.md',
                         '/life/literature/markdown/span elements/code.md',
                         '/life/literature/markdown/span elements/images.md',
                     ]
-                    
+
                 }
                 , {
-                    text:'各种各样的',
-                    children:[
+                    text: '各种各样的',
+                    children: [
                         '/life/literature/markdown/miscellaneous/backslash-escapes.md',
                         '/life/literature/markdown/miscellaneous/automatic-links.md',
                     ]
-                    
+
                 }
                 , {
-                    text:'扩展语法',
-                    children:[
+                    text: '扩展语法',
+                    children: [
                         '/life/literature/markdown/extension/table.md',
                         '/life/literature/markdown/extension/task-lists.md',
                         '/life/literature/markdown/extension/emoji.md',
                         '/life/literature/markdown/extension/others.md'
                     ]
-                    
+
                 }
             ]
-        },{
-            text:'Latex',
-            children:[
+        }, {
+            text: 'Latex',
+            children: [
                 '/life/literature/latex/README.md',
                 '/life/literature/latex/latex-course1.md',
             ]
-                
+
         }
     ],
     '/life/music/': [
@@ -98,8 +98,8 @@ export const zh: SidebarConfig = {
     '/dotnet/design-pattern/': [
         '/dotnet/design-pattern/README.md',
         {
-            text:'创建型',
-            children:[
+            text: '创建型',
+            children: [
                 '/dotnet/design-pattern/singleton.md',
                 '/dotnet/design-pattern/abstract-factory.md',
                 '/dotnet/design-pattern/builder.md',
@@ -108,8 +108,8 @@ export const zh: SidebarConfig = {
             ]
         },
         {
-            text:'结构型',
-            children:[
+            text: '结构型',
+            children: [
                 '/dotnet/design-pattern/adapter.md',
                 '/dotnet/design-pattern/bridge.md',
                 '/dotnet/design-pattern/decorator.md',
@@ -119,8 +119,8 @@ export const zh: SidebarConfig = {
                 '/dotnet/design-pattern/proxy.md',
             ]
         }, {
-            text:'行为型',
-            children:[
+            text: '行为型',
+            children: [
                 '/dotnet/design-pattern/template-method.md',
                 '/dotnet/design-pattern/command.md',
                 '/dotnet/design-pattern/iterator.md',
@@ -135,13 +135,13 @@ export const zh: SidebarConfig = {
             ]
         }
     ],
-    '/dotnet/abp.zero/':[
+    '/dotnet/abp.zero/': [
         '/dotnet/abp.zero/README.md',
         '/dotnet/abp.zero/getting-started.md',
         '/dotnet/abp.zero/overview.md',
         '/dotnet/abp.zero/deploy.md'
     ],
-    '/dotnet/xamarin.forms/':[
+    '/dotnet/xamarin.forms/': [
         '/dotnet/xamarin.forms/README.md',
         '/dotnet/xamarin.forms/deploy.md'
     ],
@@ -153,8 +153,8 @@ export const zh: SidebarConfig = {
             ],
         },
         {
-            text:'刘铁猛 -《深入浅出WPF》',
-            children:[
+            text: '刘铁猛 -《深入浅出WPF》',
+            children: [
                 '/dotnet/wpf/course1.md',
                 '/dotnet/wpf/course2.md',
                 '/dotnet/wpf/course3.md',
@@ -182,7 +182,7 @@ export const zh: SidebarConfig = {
             ]
         }
     ],
-    '/web/jquery':[
+    '/web/jquery': [
         {
             text: 'JQuery',
             children: [
@@ -192,49 +192,50 @@ export const zh: SidebarConfig = {
         }
     ],
     '/database/sqlserver/': [
+        '/database/sqlserver/select.md',
+        '/database/sqlserver/where.md',
+        '/database/sqlserver/order-by.md',
+        '/database/sqlserver/insert-into.md',
+        '/database/sqlserver/update.md',
+        '/database/sqlserver/delete.md',
+        '/database/sqlserver/join.md',
+        '/database/sqlserver/union.md',
         {
-            text: 'SQL Server',
+            text: '高级语法',
             children: [
-                '/database/sqlserver/select.md',
-                '/database/sqlserver/where.md',
-                '/database/sqlserver/order-by.md',
-                '/database/sqlserver/insert-into.md',
-                '/database/sqlserver/update.md',
-                '/database/sqlserver/delete.md',
-                '/database/sqlserver/join.md',
-                '/database/sqlserver/union.md',
-                {
-                    text:'高级语法',
-                    children:[
-                        '/database/sqlserver/create-database.md',
-                        '/database/sqlserver/create-table.md',
-                        '/database/sqlserver/constranints.md',
-                        '/database/sqlserver/create-index.md',
-                        '/database/sqlserver/drop.md',
-                        '/database/sqlserver/alter-table.md',
-                        '/database/sqlserver/auto-increment.md',
-                        '/database/sqlserver/view.md',
-                        '/database/sqlserver/date.md',
-                        '/database/sqlserver/null.md',
-                    ]
-                    
-                },{
-                    text:'函数',
-                    children:[
-                        '/database/sqlserver/aggregate.md',
-                        '/database/sqlserver/scalar.md',
-                        '/database/sqlserver/group-by.md',
-                        '/database/sqlserver/having.md',
-                        '/database/sqlserver/exists.md',
-                        '/database/sqlserver/format.md',
-                    ]
-                },
-                '/database/sqlserver/sqlserver-sync-to-mysql.md',
-                '/database/sqlserver/sqlserver-sync-to-oracle.md',
-                '/database/sqlserver/tips.md',
-                '/database/sqlserver/reference.md',
+                '/database/sqlserver/create-database.md',
+                '/database/sqlserver/create-table.md',
+                '/database/sqlserver/constranints.md',
+                '/database/sqlserver/create-index.md',
+                '/database/sqlserver/drop.md',
+                '/database/sqlserver/alter-table.md',
+                '/database/sqlserver/auto-increment.md',
+                '/database/sqlserver/view.md',
+                '/database/sqlserver/date.md',
+                '/database/sqlserver/null.md',
             ]
-        }
+
+        }, {
+            text: '函数',
+            children: [
+                '/database/sqlserver/aggregate.md',
+                '/database/sqlserver/scalar.md',
+                '/database/sqlserver/group-by.md',
+                '/database/sqlserver/having.md',
+                '/database/sqlserver/exists.md',
+                '/database/sqlserver/format.md',
+            ]
+        },
+        '/database/sqlserver/sqlserver-sync-to-mysql.md',
+        '/database/sqlserver/sqlserver-sync-to-oracle.md',
+        '/database/sqlserver/tips.md',
+        '/database/sqlserver/reference.md',
+    ],
+    '/database/oracle/':[
+        '/database/oracle/installer.md',
+        '/database/oracle/user.md',
+        '/database/oracle/assistant.md',
+        '/database/oracle/grant.md',
     ],
     '/varietystore/erp/yonyou/': [
         {
@@ -343,8 +344,8 @@ export const zh: SidebarConfig = {
         {
             text: '公式指导手册',
             children: [
-                   '/varietystore/markdown/latex/README.md',
-                   '/varietystore/markdown/latex/latex-course1.md',
+                '/varietystore/markdown/latex/README.md',
+                '/varietystore/markdown/latex/latex-course1.md',
             ]
         }
     ],
