@@ -137,6 +137,8 @@ export const zh: SidebarConfig = {
     ],
     '/dotnet/abp.zero/':[
         '/dotnet/abp.zero/README.md',
+        '/dotnet/abp.zero/getting-started.md',
+        '/dotnet/abp.zero/overview.md',
         '/dotnet/abp.zero/deploy.md'
     ],
     '/dotnet/xamarin.forms/':[
