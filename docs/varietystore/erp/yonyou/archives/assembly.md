@@ -37,8 +37,8 @@ assembly
 
 - 示例
 
-::::code-group
-:::code-group-item请求
+:::: code-group
+::: code-group-item 请求
 
 ```json
 {
@@ -72,6 +72,6 @@ assembly
 :::
 ::::
 
-:::details查看演示
+::: details 查看演示
 [进入传送门](/images/erp/gif/assembly.gif)
 :::

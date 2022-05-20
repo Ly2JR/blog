@@ -2,9 +2,9 @@
 
 [Oracle Database 19c](https://www.oracle.com/database/technologies/oracle-database-software-downloads.html)
 
-:::: tip
+::: tip
 Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=127.0.0.1) (PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=ORCL)));User Id=C##user_name; Password=user_password;
-::::
+:::
 
 ## 创建用户
 

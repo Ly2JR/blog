@@ -76,9 +76,9 @@ SELECT LOWER(name) site_title FROM WebSites;
 
 SUBSTRING()函数用于返回SQL Server中字符、二进制文本、文本或图像表达式的一部分。
 
-:::: warning
+::: warning
 start:指定返回字符的起始位置的整数或 bigint 表达式 。 （编号从 1 开始，意味着表达式中的第一个字符为 1）。 如果 start 小于 1，则返回的表达式的起始位置为表达式中指定的第一个字符 。 在这种情况下，返回的字符数是起始长度为-1 或0的总和的最大值。 如果 start 大于值表达式中的字符数，将返回一个零长度的表达式 。
-::::
+:::
 
 - 语法
 

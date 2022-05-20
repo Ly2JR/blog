@@ -8,7 +8,7 @@ Constraints约束用于规定表中的数据规则。
 
 - 语法
 
-:::: tip
+::: tip
 
 NOT NULL - 指示某列不能存储`NULL`值
 
@@ -21,7 +21,7 @@ FOREIGN KEY - 保证一个表中的数据匹配另一个表中的值的参照完
 CHECK - 保证列中的值符合指定的条件
 
 DEFAULT - 规定没有给列赋值时的默认值
-::::
+:::
 
 ```sql
 CREATE TABLE table_name
@@ -120,11 +120,11 @@ UNIQUE和PRIMARY KEY约束均为列或列集合提供了唯一性的保证
 
 PRIMARY KEY 约束拥有自动定义UNIQUE约束
 
-:::: warning
+::: warning
 UNIQUE 允许存在`NULL`值，而PRIMARY KEY **不**允许存在`NULL`值
 
 每个表可以有多个UNIQUE约束，但是只能有一个PRIMARY KEY约束
-::::
+:::
 
 - 语法
 

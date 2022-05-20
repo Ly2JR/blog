@@ -1,8 +1,8 @@
 # 下载
 
-:::: tip
+::: tip
 [源代码地址](https://github.com/Ly2JR/wpf-samples/tree/master)
-::::
+:::
 
 - 开发环境
 

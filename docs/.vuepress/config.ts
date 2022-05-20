@@ -4,82 +4,16 @@ import { defaultTheme, } from '@vuepress/theme-default';
 import { searchPlugin } from '@vuepress/plugin-search';
 import { pwaPlugin } from '@vuepress/plugin-pwa';
 import { pwaPopupPlugin } from '@vuepress/plugin-pwa-popup';
-import { navbar, sidebar } from './configs';
-//import { path } from '@vuepress/utils';
-import { shikiPlugin } from '@vuepress/plugin-shiki'
+import { nvabarZh,nvarbarEn, sidebarZh,sidebarEn,head } from './configs';
+import { path } from '@vuepress/utils';
+import { shikiPlugin } from '@vuepress/plugin-shiki';
 
 const isProd = process.env.NODE_ENV === 'production';
 
 export default defineUserConfig({
   base: '/',
-  head: [
-    [
-      'link', {
-        rel: 'icon',
-        type: 'image/png',
-        sizes: '16x16',
-        href: `/images/icons/favicon-16x16.png`
-      }
-    ],
-    [
-      'link', {
-        rel: 'icon',
-        type: 'image/png',
-        sizes: '32x32',
-        href: `/images/icons/favicon-32x32.png`
-      }
-    ],
-    [
-      'link', {
-        rel: 'manifest',
-        href: '/manifest.webmanifest'
-      }
-    ],
-    [
-      'meta', {
-        name: 'application-name',
-        content: 'Blog'
-      }
-    ],
-    [
-      'meta', {
-        name: 'apple-mobile-web-app-title',
-        content: 'Blog'
-      }
-    ],
-    [
-      'meta', {
-        name: 'apple-mobile-web-app-status-bar-style',
-        content: 'black'
-      }
-    ],
-    [
-      'link', {
-        rel: 'apple-touch-icon',
-        href: `/images/icons/apple-touch-icon.png`,
-      }
-    ],
-    [
-      'link', {
-        rel: 'mask-icon',
-        href: '/images/icons/safari-pinned-tab.svg',
-        color: '#3eaf7c'
-      }
-    ],
-    [
-      'meta', {
-        name: 'msapplication-TileColor',
-        content: '#3eaf7c'
-      }
-    ],
-    [
-      'meta', {
-        name: 'theme-color',
-        content: '#3eaf7c'
-      }
-    ]
-  ],
-
+  // extra tags in `<head>`
+  head:head,
   //站点层级语言环境配置
   locales: {
     '/': {
@@ -109,7 +43,7 @@ export default defineUserConfig({
         /**
          * 菜单
          */
-        navbar: navbar.zh,
+        navbar: nvabarZh,
 
         /**
          * 多语navbar
@@ -121,7 +55,7 @@ export default defineUserConfig({
         /**
          * 边注栏
          */
-        sidebar: sidebar.zh,
+        sidebar: sidebarZh,
 
         editLinkText: '在GitHub上编辑此页',
         lastUpdatedText: '上次更新',
@@ -154,13 +88,13 @@ export default defineUserConfig({
       // 英语资源
       '/en/': {
 
-        navbar: navbar.en,
+        navbar: nvarbarEn,
 
         selectLanguageName: 'English',
         selectLanguageAriaLabel: "Languages",
         selectLanguageText: 'Languages',
 
-        sidebar: sidebar.en,
+        sidebar: sidebarEn,
 
         repo: 'https://github.com/Ly2JR/blog',
         repoLabel: 'Github'
@@ -173,12 +107,12 @@ export default defineUserConfig({
       prismjs: !isProd,
     },
   }),
-  // markdown: {
-  //   importCode: {
-  //     handleImportPath: (str) =>
-  //       str.replace(/^@vuepress/, path.resolve(__dirname, '../../packages/@vuepress'))
-  //   }
-  // },
+  markdown: {
+    importCode: {
+      handleImportPath: (str) =>
+        str.replace(/^@vuepress/, path.resolve(__dirname, '../../packages/@vuepress'))
+    }
+  },
   plugins: [
     searchPlugin({
       locales: {

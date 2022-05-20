@@ -32,9 +32,9 @@
 
 ![aspnet-core-host-solution-4](/images/aspnetzero/aspnet-core-host-solution-4.png)
 
-::::tip
+::: tip
 如果你只想用Xamrain项目工作，打开 **\*.Mobile.sln** 解决方案。如果你想用Xamarin和Web项目一起工作，打开 **\*.All.sln** 解决方案。
-::::
+:::
 
 右击 **.Web.Host** 项目并选择 **"设为启动项目"**,然后 **生成** 解决方案。在第一次生成期间需要很长的时间，因为要将所有的 **nuget** 依赖包恢复进来。
 
@@ -118,7 +118,7 @@ npm start
 
 一旦应用编译完成，你可以在你的浏览器中浏览[http://localhost:4200](http://localhost:4200)。ASPNET Zero也有 **HMR** (热模块替换)启动。你可以在开发时使用如下命令来启用 HMR(代替 NPM start):
 
-```bash
+``` bash
 npm run hmr
 ```
 

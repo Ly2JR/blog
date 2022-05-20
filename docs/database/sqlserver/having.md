@@ -3,11 +3,11 @@
 在SQL中增加HAVING子句原因是，WHERE关键字无法与聚合函数一起使用。
 HAVING子句可以让筛选分组后的各组数据
 
-:::: tip
+::: tip
 WHERE在Group By前，Having在Group by之后。
 
 聚合函数(avg、sum、max、min、count),不能作为条件放在Where之后，但可以放在Having之后。
-::::
+:::
 
 - 语法
 

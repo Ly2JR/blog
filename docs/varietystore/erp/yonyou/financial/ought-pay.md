@@ -6,13 +6,13 @@
   
 - 操作符
 
-  - **create** <Badge type="tip" text="v1" vertical="top" />
+  - create <Badge type="tip" text="v1" vertical="top" />
 
-  - **load** <Badge type="tip" text="v2" vertical="top" />
+  - load <Badge type="tip" text="v2" vertical="top" />
 
-  - **edit** <Badge type="tip" text="v2" vertical="top" />
+  - edit <Badge type="tip" text="v2" vertical="top" />
 
-  - **delete** <Badge type="tip" text="v2" vertical="top" />
+  - delete <Badge type="tip" text="v2" vertical="top" />
 
 - 请求参数说明
 

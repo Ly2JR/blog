@@ -2,7 +2,7 @@
 
 块引用可以包含其他Markdown格式的元素。并非所有元素都可以使用，你需要进行实验以查看哪些元素有效。
 
-```markdown
+``` markdown
 > # The quarterly results look great!
 >
 > - Revenue was off the chart.

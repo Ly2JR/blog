@@ -1,15 +1,15 @@
 # 基本语法
 
-  :::: tip
-  最新版[Sql Server 2019](https://www.microsoft.com/zh-cn/sql-server/sql-server-downloads)
-  ::::
+::: tip
+最新版[Sql Server 2019](https://www.microsoft.com/zh-cn/sql-server/sql-server-downloads)
+:::
 
 ## [SELECT](https://docs.microsoft.com/zh-cn/sql/t-sql/queries/select-transact-sql?view=sql-server-ver15)
 
 SELECT语句用于从数据库中选取数据。
 结果被存储在一个结果表中，称为结果集。
 
-:::: tip
+::: tip
 SELECT 语句的处理顺序
 以下步骤显示 SELECT 语句的处理顺序。
 
@@ -35,7 +35,7 @@ SELECT 语句的处理顺序
 
 11. TOP
 
-::::
+:::
 
 - 语法
 
@@ -255,9 +255,9 @@ SELECT name AS c,country AS c FROM WebSites;
 
 WHERE子句用于过滤记录。用于提取那些满足指定条件的记录。
 
-:::: tip
+::: tip
 查询条件,文本值需要加单引号`'`,数值不需要
-::::
+:::
 
 - 语法
 
@@ -396,9 +396,9 @@ WHERE name IN ('google','facebook')
 
 BETWEEN操作符用于选取介于两个值之间的数据范围内的值。这些值可以是数值、文本或日期。
 
-::::warning
+::: warning
 BETWEEN AND 在不同版本的数据库中边界问题可能不同，需要自己检测。
-::::
+:::
 
 - 语法
 
@@ -711,7 +711,7 @@ SELECT * FROM WebSites ORDER BY country,alexa;
 
 INSERT INTO 语句用于向表中插入新记录。
 
-:::: tip
+::: tip
 
 INSERT INTO SELECT：
 
@@ -725,7 +725,7 @@ SELECT INTO FROM：
 
 示例：SELECT name,url,country INTO temp FROM Websites;
 
-::::
+:::
 
 - 语法
 
@@ -827,9 +827,9 @@ SELECT name,url,country FROM Apps;
 
 UPDATE语句用于更新表中的记录。
 
-:::: warning
+::: warning
 WHERE子句规定哪条记录或者哪些记录需要更新。如果忽略了WHERE子句，所有的记录将被更新
-::::
+:::
 
 - 语法
 
@@ -870,9 +870,9 @@ WHERE name='google';
 
 DELETE语句用于删除表中的记录
 
-:::: warning
+::: warning
 WHERE子句规定哪条记录或者哪些记录需要删除。如果忽略了WHERE子句，所有的记录将被删除
-::::
+:::
 
 - 语法
 
@@ -942,9 +942,9 @@ JOIN用于把来自两个或者多个表的记录集合记录。
 
 - CROSS JOIN
 
-  :::: warning
+  ::: warning
   交叉联接查询中缺少`ON`子句。
-  ::::
+  :::
 
   指定两个表的叉积。返回相同的行。
 
@@ -1192,9 +1192,9 @@ ORDER BY Access_Log.Count desc;
 
 UNION操作符合并两个或多个SELECT语句的结果集
 
-::::warning
+::: warning
 UNION 内部的每个SELECT语句必须拥有相同数据的列。列也必须拥有相似的数据类型。同时，每个SELECT语句中的列的顺序必须相同
-::::
+:::
 
 - 语法
 

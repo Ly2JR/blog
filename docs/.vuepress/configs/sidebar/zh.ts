@@ -1,6 +1,6 @@
-import type { SidebarConfig } from '@vuepress/theme-default'
+import type { SidebarConfig } from '@vuepress/theme-default';
 
-export const zh: SidebarConfig = {
+export const sidebarZh: SidebarConfig = {
     '/guide/': [
         '/guide/README.md',
     ],
@@ -233,9 +233,7 @@ export const zh: SidebarConfig = {
     ],
     '/database/oracle/':[
         '/database/oracle/installer.md',
-        '/database/oracle/user.md',
         '/database/oracle/assistant.md',
-        '/database/oracle/grant.md',
     ],
     '/varietystore/erp/yonyou/': [
         {

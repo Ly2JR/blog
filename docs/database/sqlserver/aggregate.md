@@ -6,7 +6,7 @@ AVG() 函数返回数值列的平均值
 
 - 语法
 
-```sql
+``` sql
 SELECT AVG(column_name) FROM table_name;
 ```
 
@@ -23,7 +23,7 @@ SELECT AVG(column_name) FROM table_name;
 
 下面的SQL语句从”access_log“表的”count“列获取平均值
 
-```sql
+``` sql
 SELECT AVG(count) from access_log;
 ```
 
@@ -35,7 +35,7 @@ COUNT() 函数返回匹配指定条件的行数(NULL不计入)。
 
 - 语法
 
-```sql
+``` sql
 SELECT COUNT(column_name) FROM table_name;
 ```
 
@@ -52,7 +52,7 @@ SELECT COUNT(column_name) FROM table_name;
 
 下面的SQL语句从”access_log“表的”site_id“列等于1的总数
 
-```sql
+``` sql
 SELECT COUNT(count) from access_log WHERE site_id=1;
 ```
 
@@ -60,7 +60,7 @@ SELECT COUNT(count) from access_log WHERE site_id=1;
 
 下面的SQL语句从”access_log“表的”site_id“列不相同的总数
 
-```sql
+``` sql
 SELECT COUNT(DISTINCT site_id) from access_log WHERE site_id=1;
 ```
 
@@ -72,7 +72,7 @@ MAX() 函数返回指定列的最大值。
 
 - 语法
 
-```sql
+``` sql
 SELECT MAX(column_name) FROM table_name;
 ```
 
@@ -90,7 +90,7 @@ SELECT MAX(column_name) FROM table_name;
 
 下面的SQL语句从”Websites“表的”alexa“列最大的值。
 
-```sql
+``` sql
 SELECT MAX(alexa) from Websites;
 ```
 
@@ -102,7 +102,7 @@ MIN() 函数返回指定列的最小值。
 
 - 语法
 
-```sql
+``` sql
 SELECT MIN(column_name) FROM table_name;
 ```
 
@@ -120,7 +120,7 @@ SELECT MIN(column_name) FROM table_name;
 
 下面的SQL语句从”Websites“表的”alexa“列最小的值。
 
-```sql
+``` sql
 SELECT MIN(alexa) from Websites;
 ```
 
@@ -132,7 +132,7 @@ SUM() 函数返回指定列的总数。
 
 - 语法
 
-```sql
+``` sql
 SELECT SUM(column_name) FROM table_name;
 ```
 
@@ -149,7 +149,7 @@ SELECT SUM(column_name) FROM table_name;
 
 下面的SQL语句从”Websites“表的”count“列总数。
 
-```sql
+``` sql
 SELECT SUM(count) from access_log;
 ```
 

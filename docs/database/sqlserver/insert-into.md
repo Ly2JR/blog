@@ -2,7 +2,7 @@
 
 INSERT INTO 语句用于向表中插入新记录。
 
-:::: tip
+::: tip
 
 INSERT INTO SELECT：
 
@@ -16,7 +16,7 @@ SELECT INTO FROM：
 
 示例：SELECT name,url,country INTO temp FROM Websites;
 
-::::
+:::
 
 - 语法
 

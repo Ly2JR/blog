@@ -1,6 +1,6 @@
 import { NavbarConfig } from "@vuepress/theme-default";
 
-export const zh: NavbarConfig = [
+export const nvabarZh: NavbarConfig = [
   {
     text: '指南',
     link: '/guide/readme.md',
