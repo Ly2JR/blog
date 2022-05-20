@@ -7,7 +7,6 @@ docs/.vuepress/public/备案图标.png
 docs/.vuepress/public/images/
 
 #VuePress files
-.vuepress
 .yarn
 .yarnrc
 docs/.vuepress/.temp/
