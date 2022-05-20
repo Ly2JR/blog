@@ -5,7 +5,7 @@ import { searchPlugin } from '@vuepress/plugin-search';
 import { pwaPlugin } from '@vuepress/plugin-pwa';
 import { pwaPopupPlugin } from '@vuepress/plugin-pwa-popup';
 import { nvabarZh,nvarbarEn, sidebarZh,sidebarEn,head } from './configs';
-import { path } from '@vuepress/utils';
+//import { path } from '@vuepress/utils';
 import { shikiPlugin } from '@vuepress/plugin-shiki';
 
 const isProd = process.env.NODE_ENV === 'production';
@@ -107,12 +107,12 @@ export default defineUserConfig({
       prismjs: !isProd,
     },
   }),
-  markdown: {
-    importCode: {
-      handleImportPath: (str) =>
-        str.replace(/^@vuepress/, path.resolve(__dirname, '../../packages/@vuepress'))
-    }
-  },
+  // markdown: {
+  //   importCode: {
+  //     handleImportPath: (str) =>
+  //       str.replace(/^@vuepress/, path.resolve(__dirname, '../../packages/@vuepress'))
+  //   }
+  // },
   plugins: [
     searchPlugin({
       locales: {

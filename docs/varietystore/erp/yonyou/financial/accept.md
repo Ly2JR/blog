@@ -93,12 +93,12 @@
 
 - 返回参数说明
 
-|参数   |类型     |描述 |
-|:-     |:-       |:-  |
-|errcode|string   |状态码(0:成功) |
-|errmsg |string   |错误描述       |
-|id     |string   |     |
-|tradeid|string   |     |
+|参数|类型|描述|
+|:-|:-|:-|
+|errcode|string|状态码(0:成功)|
+|errmsg|string|错误描述|
+|id|string||
+|tradeid|string||
 
 - 示例
 
@@ -135,7 +135,6 @@
 ```
 
 :::
-
 ::: code-group-item 响应
 
 ```json
@@ -148,10 +147,8 @@
 ```
 
 :::
-
-:::
 ::::
 
 ::: details 查看演示
-[进入传送门](http://47.117.141.19/gif/accept.gif)
+[进入传送门](/images/erp/gif/accept.gif)
 :::

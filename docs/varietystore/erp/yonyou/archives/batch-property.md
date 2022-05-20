@@ -65,7 +65,6 @@ batchproperty
 ```
 
 :::
-
 ::: code-group-item 响应
 
 ```json
@@ -76,8 +75,6 @@ batchproperty
     "tradeid":"3eb76146-c94b-4b4b-87ef-40ac1087f9ba"
 }
 ```
-
-:::
 
 :::
 ::::

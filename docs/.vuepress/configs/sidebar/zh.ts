@@ -139,6 +139,25 @@ export const sidebarZh: SidebarConfig = {
         '/dotnet/abp.zero/README.md',
         '/dotnet/abp.zero/getting-started.md',
         '/dotnet/abp.zero/overview.md',
+        {
+            text:"Web",
+            children:[
+                {
+                    text:'功能',
+                    children:[
+                        {
+                            text:'登录',
+                            children:[
+                                '/dotnet/abp.zero/web/features/login/social&external-logins.md',
+                                '/dotnet/abp.zero/web/features/login/two-factor-authentication.md',
+                                '/dotnet/abp.zero/web/features/login/forgot-password.md',
+                                '/dotnet/abp.zero/web/features/login/token-based-authentication.md',
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
         '/dotnet/abp.zero/deploy.md'
     ],
     '/dotnet/xamarin.forms/': [

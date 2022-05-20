@@ -42,32 +42,29 @@ assembly
 
 ```json
 {
-"assembly":{
-"assemblycode":"01019002063",
-"fittingcode":"01019002065",
-"fittingquantity":"1",
-"fittingnumber":"1",
-"fittingcost":"1",
-"fittingprice":"1",
-"cAComunitCode":""
-}
+  "assembly": {
+    "assemblycode": "01019002063",
+    "fittingcode": "01019002065",
+    "fittingquantity": "1",
+    "fittingnumber": "1",
+    "fittingcost": "1",
+    "fittingprice": "1",
+    "cAComunitCode": ""
+  }
 }
 ```
 
 :::
-
 :::code-group-item响应
 
 ```json
 {
-"errcode":"0",
-"errmsg":"",
-"id":"",
-"tradeid":"3eb76146-c94b-4b4b-87ef-40ac1087f9ba"
+  "errcode": "0",
+  "errmsg": "",
+  "id": "",
+  "tradeid": "3eb76146-c94b-4b4b-87ef-40ac1087f9ba"
 }
 ```
-
-:::
 
 :::
 ::::

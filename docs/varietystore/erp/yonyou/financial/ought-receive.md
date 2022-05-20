@@ -129,7 +129,6 @@
 ```
 
 :::
-
 ::: code-group-item 响应
 
 ```json
@@ -142,10 +141,8 @@
 ```
 
 :::
-
-:::
 ::::
 
 ::: details 查看演示
-[进入传送门](http://47.117.141.19/gif/oughreceive.gif)
+[进入传送门](/images/erp/gif/oughreceive.gif)
 :::

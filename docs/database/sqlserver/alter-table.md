@@ -31,6 +31,7 @@ DROP COLUMN column_name;
 - 示例
 
 “WebSites”表数据
+
 |id|name|url|alexa|country|
 |:-|:-|:-|:-|:-|
 |1|Google|<https://www.google.com/>|1|USA|
