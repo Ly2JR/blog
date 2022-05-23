@@ -144,9 +144,11 @@ export const sidebarZh: SidebarConfig = {
             children:[
                 {
                     text:'功能',
+                    link:'/dotnet/abp.zero/web/features/README.md',
                     children:[
                         {
                             text:'登录',
+                            link:'/dotnet/abp.zero/web/features/login/README.md',
                             children:[
                                 '/dotnet/abp.zero/web/features/login/social&external-logins.md',
                                 '/dotnet/abp.zero/web/features/login/two-factor-authentication.md',
