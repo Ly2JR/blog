@@ -95,3 +95,23 @@ ASP.NET Zero也包括集成ADFS登录。它是配置的,可以在`appsettings.js
   "MetaDataAddress": ""
 }
 ```
+
+## JwtBearer
+
+ASP.NET Zero默认使用JwtBearer验证。建议在你的生产环境中更改`appsettings.json`文件配置的密钥信息。
+
+## 外部登录管理接口
+
+当你登录外部登录渠道时，ASP.NET Zero允许从声明处获取自定义的用户名称，姓名和姓氏。有两个默认的继承IExternalLoginInfoManager的实现，它们是 **DefaultExternalLoginInfoManager** 和 **WsFederationExternalLoginInfoManager**。
+
+你可以为任何外部登录管理器实现这个类，并在 **ExternalLoginInfoManagerFactory.cs**里返回你想要的外部登录提供应用。之后，在为外部登录用户创建一个本地的用户记录时,ASP.NET Zero将会使用你实现的类去获取用户名，姓名和姓氏。
+
+## Angular部分
+
+以上所有的部分都与ASP.NET Zero的服务端部分有关。在Angular端社交和登录部分是在login/ **login.service.ts**里处理的。注意，目前只有 **Facebook** , **Google** , **OpenID Connect** 和 **ADFS**验证是在Angular应用里是实现好的。Microsoft 和 Twitter登录在规划路线中。
+
+当你在登录页面中点击社交登录或者外部登录图标时，有两个主要的流程。Facebook,Google和ADFS选项打开一个弹出窗体要求用户登录。在这种情况下，将立刻调用所选择的提供者的回调函数。
+
+但是，针对OpenID Connect，点击图标将会重定你到外部网站并且你将会在外部网站登录。之后，你将会被重定向回ASP.NET Zero的网站上(在**login.component.ts** ).然后,OpenID Connection的回调函数将会被调用。
+
+所有的回调函数会发送一个请求到服务端应用，来验证从外部或社交登录提供的信息。如果这个信息是有效的，一个本地用户记录将会被创建(只在第一次),并这个用户将会在ASP.NET Zero网站上登录。
