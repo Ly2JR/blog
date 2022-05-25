@@ -1,4 +1,4 @@
-# 双因子验证
+# [双因子验证](https://docs.aspnetzero.com/en/aspnet-core-angular/latest/Features-Angular-Two-Factor-Authentication)
 
 ASP.NET Zero已准备好提供双因子登录，但是它默认是禁用的。你可以很容易的在主机设置页面(安全选项卡)启用它。
 
@@ -46,4 +46,4 @@ Configuration.ReplaceService<ISmsSender,CustomSmsSender>();
 Configuration.ReplaceService<ISmsSender,TwilioSmsSender>();
 ```
 
-你可以需要在`appsetting.json`文件里配置 **AccountSid** , **AuthToken** 和 **SenderNumber**。
+如果你有需要也可以在`appsetting.json`文件里配置 **AccountSid** , **AuthToken** 和 **SenderNumber**。

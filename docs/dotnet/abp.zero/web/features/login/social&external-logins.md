@@ -1,4 +1,4 @@
-# 社交与外部登录
+# [社交与外部登录](https://docs.aspnetzero.com/en/aspnet-core-angular/latest/Features-Angular-Social-Logins)
 
 ASP.NET Zero也支持社交多媒体登录和外部登录。为了启动它们之一，我们应该在**appsettings.json**文件里更改以下配置。
 

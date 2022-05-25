@@ -155,6 +155,17 @@ export const sidebarZh: SidebarConfig = {
                                 '/dotnet/abp.zero/web/features/login/forgot-password.md',
                                 '/dotnet/abp.zero/web/features/login/token-based-authentication.md',
                             ]
+                        },
+                        {
+                            text:'登记',
+                            link:'/dotnet/abp.zero/web/features/sign-up/README.md',
+                            children:[
+                                '/dotnet/abp.zero/web/features/sign-up/email-activation.md',
+                            ]
+                        },
+                        {
+                            text:'租户登记',
+                            link:'/dotnet/abp.zero/web/features/tenant-sign-up.md'
                         }
                     ]
                 }
