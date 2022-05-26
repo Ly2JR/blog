@@ -166,7 +166,22 @@ export const sidebarZh: SidebarConfig = {
                         {
                             text:'租户登记',
                             link:'/dotnet/abp.zero/web/features/tenant-sign-up.md'
-                        }
+                        },
+                        {
+                            text:'主要菜单和布局',
+                            link:'/dotnet/abp.zero/web/features/main-menu-and-layout/README.md',
+                            children:[
+                                '/dotnet/abp.zero/web/features/main-menu-and-layout/quick-navigation.md'
+                            ]
+                        },
+                        {
+                            text:'版本管理',
+                            link:'/dotnet/abp.zero/web/features/edition-management.md'
+                        },
+                        {
+                            text:'租户管理',
+                            link:'/dotnet/abp.zero/web/features/tenant-management.md'
+                        },
                     ]
                 }
             ]
