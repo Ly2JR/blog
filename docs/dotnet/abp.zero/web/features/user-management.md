@@ -28,6 +28,6 @@
 
 用户列表能够做为一个Excel文件下载。除此之外,新用户能够从Excel文件里导入进来。为了从Excel文件里导入用户，ASP.BET Zero需要一个特定的Excel文件格式。你可以通过点击"Excel 操作"下拉框按钮下的"点击这"连接下载一个导入示例模板。
 
-![user-list-excel-operations-import-template-link](/images.aspnetzero/user-list-excel-operations-import-template-link.png)
+![user-list-excel-operations-import-template-link](/images/aspnetzero/user-list-excel-operations-import-template-link.png)
 
 当你从Excel里导入用户,如果在导入用户到ASP.NET Zero的数据库中出现错误时，无效的用户和原因(验证错误信息或异常信息)将会保留在Excel文件里并且用户导入操作将会被ASP.NET Zero的通知系统进行通知。所以，用户能够点击通知并且看见Excel文件结果，修复验证错误并再次导入失败的用户。
