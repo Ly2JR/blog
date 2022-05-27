@@ -140,16 +140,16 @@ export const sidebarZh: SidebarConfig = {
         '/dotnet/abp.zero/getting-started.md',
         '/dotnet/abp.zero/overview.md',
         {
-            text:"Web",
-            children:[
+            text: "Web",
+            children: [
                 {
-                    text:'功能',
-                    link:'/dotnet/abp.zero/web/features/README.md',
-                    children:[
+                    text: '功能',
+                    link: '/dotnet/abp.zero/web/features/README.md',
+                    children: [
                         {
-                            text:'登录',
-                            link:'/dotnet/abp.zero/web/features/login/README.md',
-                            children:[
+                            text: '登录',
+                            link: '/dotnet/abp.zero/web/features/login/README.md',
+                            children: [
                                 '/dotnet/abp.zero/web/features/login/social&external-logins.md',
                                 '/dotnet/abp.zero/web/features/login/two-factor-authentication.md',
                                 '/dotnet/abp.zero/web/features/login/forgot-password.md',
@@ -157,30 +157,46 @@ export const sidebarZh: SidebarConfig = {
                             ]
                         },
                         {
-                            text:'登记',
-                            link:'/dotnet/abp.zero/web/features/sign-up/README.md',
-                            children:[
+                            text: '登记',
+                            link: '/dotnet/abp.zero/web/features/sign-up/README.md',
+                            children: [
                                 '/dotnet/abp.zero/web/features/sign-up/email-activation.md',
                             ]
                         },
                         {
-                            text:'租户登记',
-                            link:'/dotnet/abp.zero/web/features/tenant-sign-up.md'
+                            text: '租户登记',
+                            link: '/dotnet/abp.zero/web/features/tenant-sign-up.md'
                         },
                         {
-                            text:'主要菜单和布局',
-                            link:'/dotnet/abp.zero/web/features/main-menu-and-layout/README.md',
-                            children:[
+                            text: '主要菜单和布局',
+                            link: '/dotnet/abp.zero/web/features/main-menu-and-layout/README.md',
+                            children: [
                                 '/dotnet/abp.zero/web/features/main-menu-and-layout/quick-navigation.md'
                             ]
                         },
                         {
-                            text:'版本管理',
-                            link:'/dotnet/abp.zero/web/features/edition-management.md'
+                            text: '版本管理',
+                            link: '/dotnet/abp.zero/web/features/edition-management.md'
                         },
                         {
-                            text:'租户管理',
-                            link:'/dotnet/abp.zero/web/features/tenant-management.md'
+                            text: '租户管理',
+                            link: '/dotnet/abp.zero/web/features/tenant-management.md'
+                        },
+                        {
+                            text: '主机仪表板',
+                            link: '/dotnet/abp.zero/web/features/host-dashboard.md'
+                        },
+                        {
+                            text: '组织单位',
+                            link: '/dotnet/abp.zero/web/features/organization-units.md'
+                        },
+                        {
+                            text: '角色管理',
+                            link: '/dotnet/abp.zero/web/features/role-management.md'
+                        },
+                        {
+                            text: '用户管理',
+                            link: '/dotnet/abp.zero/web/features/user-management.md'
                         },
                     ]
                 }
@@ -278,7 +294,7 @@ export const sidebarZh: SidebarConfig = {
         '/database/sqlserver/tips.md',
         '/database/sqlserver/reference.md',
     ],
-    '/database/oracle/':[
+    '/database/oracle/': [
         '/database/oracle/installer.md',
         '/database/oracle/assistant.md',
     ],

@@ -23,3 +23,12 @@
 一个 **版本**可以 **被分配** 到一个租户(在创建或者编辑时)。租户将会集成分配版本的所有的特征，但是我们也能为一个租户重新这些特征和值。点击 **actions/change features**为租户来 **定制化** 它的特征：
 
 ![tenant-features-core-1](/images/aspnetzero/tenant-features-core-1.png)
+
+## 租户用户模拟
+
+做为一个主机用户，我们可能想代表租户来来执行操作。在这种情况下，我们可以在操作中点击**作为租户登录** 按钮。当我们点击了它，我们看见**一个模式来选择租户的用户**。我们可以选择任意用户并行执行那个用户授权的操作。更多信息请参考用户管理文档的[用户模拟](https://docs.aspnetzero.com/en/aspnet-core-angular/latest/Features-Angular-User-Management#user-impersonation)章节。
+
+## 用租户名作为子域名
+
+一个多租户应用通常使用子域名来当作当前租户的身份。**tenant1**.mydomain.com,**tentant2**.mydomain.com等等。ASP.NET Zero自动从子域名上识别并获取租户的名称。参考概述文档的[多租户](https://docs.aspnetzero.com/en/aspnet-core-angular/latest/Overview-Angular#multi-tenancy)和[配置](https://docs.aspnetzero.com/en/aspnet-core-angular/latest/Overview-Angular#configuration)章节。
+
