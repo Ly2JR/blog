@@ -2,17 +2,11 @@
 
 - 资源符
 
-  **oughtpay**
+  `oughtpay`
   
 - 操作符
 
-  - create <Badge type="tip" text="v1" vertical="top" />
-
-  - load <Badge type="tip" text="v2" vertical="top" />
-
-  - edit <Badge type="tip" text="v2" vertical="top" />
-
-  - delete <Badge type="tip" text="v2" vertical="top" />
+  `create`
 
 - 请求参数说明
 
@@ -83,7 +77,7 @@
 |define36|string|entry|否|表体自定义项15|
 |define37|string|entry|否|表体自定义项16|
 
--返回参数说明
+- 返回参数说明
 
 |参数|类型|描述|
 |:-|:-|:-|
@@ -92,10 +86,10 @@
 |id|string||
 |tradeid|string||
 
-- 示例
+- 请求示例
 
 :::: code-group
-::: code-group-item 请求
+::: code-group-item 新增
 
 ```json
 {
@@ -131,7 +125,9 @@
 ```
 
 :::
-::: code-group-item 响应
+::::
+
+- 响应
 
 ```json
 {
@@ -141,9 +137,6 @@
     "tradeid": "3eb76146-c94b-4b4b-87ef-40ac1087f9ba"
 }
 ```
-
-:::
-::::
 
 ::: details 查看演示
 [进入传送门](/images/erp/gif/oughtpay.gif)

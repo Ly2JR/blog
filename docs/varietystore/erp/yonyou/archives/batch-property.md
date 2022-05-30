@@ -2,17 +2,11 @@
 
 - 资源符
 
-batchproperty
+  `batchproperty`
 
 - 操作符
 
-  - create <Badge type="tip" text="v1" vertical="top"/>
-
-  -load <Badge type="tip" text="v2" vertical="top"/>
-
-  -edit <Badge type="tip" text="v2" vertical="top"/>
-
-  -delete <Badge type="tip" text="v2" vertical="top"/>
+  `create`
 
 - 请求参数说明
 
@@ -50,10 +44,10 @@ batchproperty
 |id|string||
 |tradeid|string||
 
-- 示例
+- 请求示例
 
 :::: code-group
-::: code-group-item 请求
+::: code-group-item 新增
 
 ```json
 {
@@ -65,7 +59,9 @@ batchproperty
 ```
 
 :::
-::: code-group-item 响应
+::::
+
+- 响应
 
 ```json
 {
@@ -75,9 +71,6 @@ batchproperty
     "tradeid":"3eb76146-c94b-4b4b-87ef-40ac1087f9ba"
 }
 ```
-
-:::
-::::
 
 ::: details 查看演示
 [进入传送门](/images/erp/gif/aa_bank.gif)
