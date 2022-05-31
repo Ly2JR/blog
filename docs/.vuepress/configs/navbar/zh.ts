@@ -102,7 +102,7 @@ export const nvabarZh: NavbarConfig = [
         text: 'ERP',
         children: [{
           text: '用友U8+',
-          link: '/varietystore/erp/yonyou/README.md'
+          link: '/varietystore/yonyou/README.md'
         }]
       }
     ]
