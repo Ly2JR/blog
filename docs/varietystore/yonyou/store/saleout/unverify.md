@@ -2,7 +2,7 @@
 
 - 资源符
 
-  `productin`
+  `saleout`
   
 - 操作符
 
@@ -35,7 +35,7 @@ const string Address="127.0.0.1";
 //账套号
 const string Account="999";
 //资源
-const string resource="productin/unverify";
+const string resource="saleout/unverify";
 //单据ID
 var id=1000000001;
 //唯一号
@@ -60,7 +60,7 @@ private const Address as String="127.0.0.1"
 '账套号
 private const Account as String="999"
 '资源
-private const resource as String="productin/unverify"
+private const resource as String="saleout/unverify"
 '单据ID
 dim id as Long
 id=1000000001
@@ -91,5 +91,5 @@ Msgbox sRet
 ```
 
 ::: details 查看演示
-[弃审单据](/images/yonyou/gif/productin/unverify.gif)
+[弃审单据](/images/yonyou/gif/saleout/unverify.gif)
 :::

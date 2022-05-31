@@ -356,5 +356,5 @@
 ```
 
 ::: details 查看演示
-[新增单据](/images/erp/gif/purchasein/create.gif)
+[新增单据](/images/yonyou/gif/purchasein/create.gif)
 :::

@@ -48,7 +48,6 @@ Console.WriteLine(result);
 ```
 
 :::
-
 ::: code-group-item vb
 
 ```vb
@@ -78,7 +77,6 @@ Msgbox sRet
 ```
 
 :::
-
 ::::
 
 - 响应

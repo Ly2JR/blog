@@ -1,12 +1,16 @@
-# 弃审
+# 发货单推单
+
+::: tip
+将发货单整单推式生成销售出库单
+:::
 
 - 资源符
 
-  `productin`
+  `saleout`
   
 - 操作符
 
-  `unverify`
+  `pulldispatch`
 
 - 返回参数说明
 
@@ -35,7 +39,7 @@ const string Address="127.0.0.1";
 //账套号
 const string Account="999";
 //资源
-const string resource="productin/unverify";
+const string resource="saleout/pulldispatch";
 //单据ID
 var id=1000000001;
 //唯一号
@@ -60,7 +64,7 @@ private const Address as String="127.0.0.1"
 '账套号
 private const Account as String="999"
 '资源
-private const resource as String="productin/unverify"
+private const resource as String="saleout/pulldispatch"
 '单据ID
 dim id as Long
 id=1000000001
@@ -91,5 +95,5 @@ Msgbox sRet
 ```
 
 ::: details 查看演示
-[弃审单据](/images/yonyou/gif/productin/unverify.gif)
+[新增单据](/images/yonyou/gif/transvouch/create.gif)
 :::

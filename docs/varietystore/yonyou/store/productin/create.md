@@ -272,5 +272,5 @@
 ```
 
 ::: details 查看演示
-[新增单据](/images/erp/gif/materialout/create.gif)
+[新增单据](/images/yonyou/gif/materialout/create.gif)
 :::

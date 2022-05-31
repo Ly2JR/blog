@@ -388,6 +388,20 @@ export const sidebarZh: SidebarConfig = {
                                 '/varietystore/yonyou/store/productin/verify.md',
                                 '/varietystore/yonyou/store/productin/unverify.md',
                             ]
+                        },{
+                            text:'调拨单',
+                            children:[
+                                '/varietystore/yonyou/store/transvouch/create.md',
+                                '/varietystore/yonyou/store/transvouch/verify.md',
+                                '/varietystore/yonyou/store/transvouch/unverify.md',
+                            ]
+                        },{
+                            text:'销售出库单',
+                            children:[
+                                '/varietystore/yonyou/store/saleout/pulldispatch.md',
+                                '/varietystore/yonyou/store/saleout/verify.md',
+                                '/varietystore/yonyou/store/saleout/unverify.md',
+                            ]
                         }
                     ]
                 }, {
