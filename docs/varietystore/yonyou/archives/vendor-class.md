@@ -14,10 +14,10 @@
 |:-|:-|:-|:-|:-|
 |code|string||是|供应商分类编码|
 |name|string||是|供应商分类名称|
-|rank|number||是|供应商分类编码级次|
-|end_rank_flag|boolean||是|末级标志|
+|rank|string||是|供应商分类编码级次|
+|end_rank_flag|string||否|末级标志|
 
--返回参数说明
+- 返回参数说明
 
 |参数|类型|描述|
 |:-|:-|:-|

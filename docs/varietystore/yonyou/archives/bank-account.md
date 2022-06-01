@@ -12,16 +12,16 @@
 
 |参数|类型|参数路径|是否必填|描述|
 |:-|:-|:-|:-|:-|
-|date|string||是|银行对账单日期|
-|subjectcode|string||是|科目编码|
-|balancetype|string||是|结算方式|
-|balanceno|string||是|结算号|
-|debitorcredit|string||是|方向|
-|money|string||是|金额|
-|balance|string||是|余额|
-|flag|string||是|对帐标志|
-|beginflag|string||是|期初标志|
-|bdelete|string||是|是否核销|
+|date|string||否|银行对账单日期|
+|subjectcode|string||否|科目编码|
+|balancetype|string||否|结算方式|
+|balanceno|string||否|结算号|
+|debitorcredit|string||否|方向|
+|money|string||否|金额|
+|balance|string||否|余额|
+|flag|string||否|对帐标志|
+|beginflag|string||否|期初标志|
+|bdelete|string||否|是否核销|
 
 - 返回参数说明
 

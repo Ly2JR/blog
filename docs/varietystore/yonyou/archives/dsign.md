@@ -12,9 +12,11 @@
 
 |参数|类型|参数路径|是否必填|描述|
 |:-|:-|:-|:-|:-|
-|type|string||是|凭证类别字|
-|order_code|string||是|凭证类别排序号|
-|type_name|string||是|凭证类别名称|
+|i_id|string||否|唯一标识|
+|type|string||否|凭证类别字|
+|order_code|string||否|凭证类别排序号|
+|type_name|string||否|凭证类别名称|
+|other_use_flag|string||否|其它系统是否使用|
 
 - 返回参数说明
 

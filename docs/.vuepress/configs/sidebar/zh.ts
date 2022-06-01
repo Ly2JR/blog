@@ -398,9 +398,10 @@ export const sidebarZh: SidebarConfig = {
                         },{
                             text:'销售出库单',
                             children:[
-                                '/varietystore/yonyou/store/saleout/pulldispatch.md',
+                                '/varietystore/yonyou/store/saleout/create.md',
                                 '/varietystore/yonyou/store/saleout/verify.md',
                                 '/varietystore/yonyou/store/saleout/unverify.md',
+                                '/varietystore/yonyou/store/saleout/pulldispatch.md',
                             ]
                         }
                     ]

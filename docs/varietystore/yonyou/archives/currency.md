@@ -12,11 +12,13 @@
 
 |参数|类型|参数路径|是否必填|描述|
 |:-|:-|:-|:-|:-|
-|code|string||是|币种编码|
-|name|string||是|币种名称|
-|caltype|number||是|折算方式(1:固定;2:浮动)|
-|precision|string||是|小数位数|
-|error|number||是|最大误差|
+|id|string||否|自动编号|
+|code|string||否|币种编码|
+|name|string||否|币种名称|
+|caltype|string||否|折算方式|
+|precision|string||否|小数位数|
+|error|string||否|最大误差|
+|otherused|string||否|其它系统是否使用|
 
 - 返回参数说明
 

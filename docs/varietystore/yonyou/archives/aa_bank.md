@@ -14,12 +14,13 @@
 |:-|:-|:-|:-|:-|
 |code|string||是|银行编码|
 |name|string||是|银行名称|
-|bindfixlen|string||是|个人账号是否定长|
-|iindaccnolen|string||是|个人账号长度|
-|iindautoinputlen|string||是|自动带出的个人账号长度|
-|cindunitcode|string||是|单位编码|
-|bcomdfixlen|string||是|企业账号是否定长|
-|icomaccnolen|string||是|企业账号长度|
+|bindfixlen|string||否|个人账号是否定长|
+|iindaccnolen|string||否|个人账号长度|
+|iindautoinputlen|string||否|自动带出的个人账号长度|
+|cindunitcode|string||否|单位编码|
+|bcomdfixlen|string||否|企业账号是否定长|
+|icomaccnolen|string||否|企业账号长度|
+|i_id|string||否|银行标识|
 
 - 返回参数说明
 

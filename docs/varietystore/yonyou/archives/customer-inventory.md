@@ -14,8 +14,8 @@
 |:-|:-|:-|:-|:-|
 |ccuscode|string||是|客户编码|
 |cinvcode|string||是|存货编码|
-|ccusinvcode|string||否|客户存货编码|
-|ccusinvname|string||否|客户存货名称|
+|ccusinvcode|string||是|客户存货编码|
+|ccusinvname|string||是|客户存货名称|
 |iteststyle|string||否|检验方式|
 |idtmethod|string||否|抽检方案|
 |fdtrate|string||否|抽检率|

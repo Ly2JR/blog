@@ -302,7 +302,7 @@
 - 请求示例
 
 :::: code-group
-::: code-group-item 请求
+::: code-group-item 默认
 
 ```json
 {
@@ -337,6 +337,43 @@
                 "irowno": "2"
             }
         ]
+    }
+}
+```
+
+:::
+::: code-group-item 参照到货单
+
+```json
+{
+    "purchasein": {
+        "brdflag": "1",
+        "cvouchtype": "01",
+        "cbustype": "普通采购",
+        "csource": "采购到货单",
+        "cwhcode": "09",
+        "cwhname": "备件库",
+        "cdepcode": "0401",
+        "cdepname": "采购部",
+        "cvencode": "03006",
+        "cvenabbname": "迈拓科技",
+        "carvcode": "0000000018",
+        "cdefine1": "傅奇",
+        "iexchrate": "1",
+        "itaxrate": "17",
+        "cexch_name": "人民币",
+        "cordercode": "0000000019",
+        "darvdate": "2015-01-01",
+        "ipurarriveid": "1000000023",
+        "entry": {
+            "cinvcode": "09004",
+            "iquantity": "1.0000000000",
+            "iarrsid": "1000000034",
+            "iposid": "1000000043",
+            "cpoid": "0000000019",
+            "cbarvcode": "0000000018",
+            "irowno": "1"
+        }
     }
 }
 ```

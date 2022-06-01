@@ -14,9 +14,11 @@
 |:-|:-|:-|:-|:-|
 |code|string||是|收发类别编码|
 |name|string||是|收发类别名称|
-|sort|string||是|编码级次|
+|sort|string||否|编码级次|
 |rsflag|string||是|收发标志|
-|endend_flagflag|string||是|是否末级|
+|end_flag|string||否|是否末级|
+|oppsubject_code|string||否|对方科目编码|
+|bRetail|string||否|适用零售|
 
 - 返回参数说明
 

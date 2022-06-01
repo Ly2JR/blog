@@ -13,11 +13,30 @@
 |参数|类型|参数路径|是否必填|描述|
 |:-|:-|:-|:-|:-|
 |code|string||是|部门编码|
+|endflag|string||否|是否末级|
 |name|string||是|部门名称|
+|cdepnameen|string||否|英文名称|
+|cdepleader|string||否|分管领导|
 |rank|string||是|编码级次|
-|endflag|string||是|是否末级|
-|ddepbegindate|string||是|成立日期|
-|...|...||...|...|
+|manager|string||是|负责人|
+|prop|string||否|部门属性|
+|phone|string||否|电话|
+|address|string||否|地址|
+|remark|string||否|备注|
+|creditline|string||否|信用额度|
+|creditgrade|string||是|信用等级|
+|creditdate|string||否|信用天数|
+|ddepbegindate|string||否|成立日期|
+|ddependdate|string||否|撤销日期|
+|vauthorizedoc|string||否|批准文号|
+|vauthorizeunit|string||否|批准单位|
+|cdepfax|string||否|传真|
+|cdeppostcode|string||否|邮政编码|
+|cdepemail|string||否|电子邮件|
+|cdeptype|string||否|部门类型|
+|bim|string||是|是否启用UTU|
+|bretail|string||是|适用零售|
+|cdepnameen|string||是|英文名称|
 
 - 返回参数说明
 

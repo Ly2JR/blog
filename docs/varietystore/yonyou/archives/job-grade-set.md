@@ -14,8 +14,8 @@
 |:-|:-|:-|:-|:-|
 |jobgradecode|string||是|职等编码|
 |jobgradename|string||是|职等名称|
-|maxpaypoint|string||是|薪点上限|
-|minpaypoint|string||是|薪点下限|
+|maxpaypoint|string||否|薪点上限|
+|minpaypoint|string||否|薪点下限|
 
 - 返回参数说明
 

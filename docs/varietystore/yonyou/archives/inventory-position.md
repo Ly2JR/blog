@@ -14,7 +14,7 @@
 |:-|:-|:-|:-|:-|
 |cinvcode|string||是|存货编码|
 |cposcode|string||是|货位编码|
-|iprior|string||是|优先顺序|
+|iprior|string||否|优先顺序|
 
 - 返回参数说明
 

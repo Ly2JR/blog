@@ -14,21 +14,21 @@
 |:-|:-|:-|:-|:-|
 |assettypeno|string||是|资产类别编码|
 |assettypename|string||是|资产类别名称|
-|deprmethodnum|string||是|折旧方法编码|
-|deprtype|string||是|计提属性编码|
-|dblbvrate|string||是|净残值率|
-|unit|string||是|计量单位|
-|life|string||是|使用年限|
-|modelid|string||是|卡片样式|
-|assetsubjectnum|string||是|固定资产入账科目|
-|deprtotalsubjectnum|string||是|累计折旧入账科目|
-|decpresubjectnum|string||是|减值准备入账科目|
-|bnotcanretdecvalue|string||是|不允许转回减值准备|
-|cleanupsubjectnum|string||是|资产清理入账科目|
-|bnewassetdepr|string||是|新增当月计提折旧|
-|deprsubjectbytype|string||是|按资产类别默认折旧科目|
+|deprmethodnum|string||否|折旧方法编码|
+|deprtype|string||否|计提属性编码|
+|dblbvrate|float||否|净残值率|
+|unit|float||否|计量单位|
+|life|float||否|使用年限|
+|modelid|float||否|卡片样式|
+|assetsubjectnum|float||否|固定资产入账科目|
+|deprtotalsubjectnum|float||否|累计折旧入账科目|
+|decpresubjectnum|float||否|减值准备入账科目|
+|bnotcanretdecvalue|bool||是|不允许转回减值准备|
+|cleanupsubjectnum|bool||否|资产清理入账科目|
+|bnewassetdepr|bool||否|新增当月计提折旧|
+|deprsubjectbytype|bool||否|按资产类别默认折旧科目|
 
--返回参数说明
+- 返回参数说明
 
 |参数|类型|描述|
 |:-|:-|:-|

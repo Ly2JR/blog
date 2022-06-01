@@ -77,7 +77,7 @@ const string ADDRESS="127.0.0.1";
 const string ACCOUNT="999";
 // 资源符/操作符
 const string RESOURCE="XXX/XXX";
-//单据ID
+//审核，弃审，删除需要的单据ID
 var id=1000000001;
 //新增，修改需要提交的数据
 var jsonData="XXX";
@@ -105,7 +105,7 @@ private const ADDRESS as String="127.0.0.1"
 private const ACCOUNT as String="999"
 '资源符/操作符
 private const RESOURCE as String="XXX/XXX"
-'单据ID
+'审核，弃审，删除需要的单据ID
 dim id as Long
 id=1000000001
 '新增，修改需要提交的数据

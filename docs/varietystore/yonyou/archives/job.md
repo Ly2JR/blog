@@ -15,19 +15,19 @@
 |jobcode|string||是|职位编码|
 |jobname|string||是|职位名称|
 |depcode|string||是|所属部门|
-|suporior|string||是|直接上级|
-|builddate|string||是|成立日期|
-|abortdate|string||是|撤销日期|
+|suporior|string||否|直接上级|
+|builddate|string||否|成立日期|
+|abortdate|string||否|撤销日期|
 |jobseries|string||是|职位序列|
 |jobrank|string||是|职位等级|
 |worksumm|string||是|工作概要|
 |jobrankclasscode|string||是|职级分类|
 |jobrankbegin|string||是|职级范围起|
 |jobrankend|string||是|职级范围止|
-|jobrankend|string||是|职等范围起|
+|jobgradebegin|string||是|职等范围起|
 |jobgradeend|string||是|职等范围止|
 
--返回参数说明
+- 返回参数说明
 
 |参数|类型|描述|
 |:-|:-|:-|

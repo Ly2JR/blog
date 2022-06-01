@@ -15,9 +15,9 @@
 |code|string||是|地区编码|
 |name|string||是|地区名称|
 |sort|string||是|编码级次|
-|endflag|string||是|是否末级|
+|endflag|string||否|是否末级|
 
--返回参数说明
+- 返回参数说明
 
 |参数|类型|描述|
 |:-|:-|:-|

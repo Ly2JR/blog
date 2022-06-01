@@ -13,27 +13,27 @@
 |参数|类型|参数路径|是否必填|描述|
 |:-|:-|:-|:-|:-|
 |cinvcode|string||是|存货编码|
-|cbatch|string||是|批号|
-|cfree1|string||是|自由项1|
-|cfree2|string||是|自由项2|
-|cfree3|string||是|自由项|
-|cfree4|string||是|自由项|
-|cfree5|string||否|自由项|
-|cfree6|string||否|自由项|
-|cfree7|string||否|自由项|
-|cfree8|string||否|自由项|
-|cfree9|string||否|自由项|
-|cfree10|string||否|自由项|
-|cbatchproperty1|string||否|批次属性1|
-|cbatchproperty2|string||否|批次属性2|
-|cbatchproperty3|string||否|批次属性3|
-|cbatchproperty4|string||否|批次属性4|
-|cbatchproperty5|string||否|批次属性5|
-|cbatchproperty6|string||否|批次属性6|
-|cbatchproperty7|string||否|批次属性7|
-|cbatchproperty8|string||否|批次属性8|
-|cbatchproperty9|string||否|批次属性9|
-|cbatchproperty10|string||否|批次属性10|
+|cbatch|string||否|批号 |
+|cfree1|string||否|自由项1|
+|cfree2|string||否|自由项2|
+|cfree3|string||否|自由项3|
+|cfree4|string||否|自由项4|
+|cfree5|string||否|自由项5|
+|cfree6|string||否|自由项6|
+|cfree7|string||否|自由项7|
+|cfree8|string||否|自由项8|
+|cfree9|string||否|自由项9|
+|cfree10|string||否|自由项10|
+|cbatchproperty1|string||否|属性1|
+|cbatchproperty2|string||否|属性2|
+|cbatchproperty3|string||否|属性3|
+|cbatchproperty4|string||否|属性4|
+|cbatchproperty5|string||否|属性5|
+|cbatchproperty6|string||否|属性6|
+|cbatchproperty7|string||否|属性7|
+|cbatchproperty8|string||否|属性8|
+|cbatchproperty9|string||否|属性9|
+|cbatchproperty10|string||否|属性10|
 
 - 返回参数说明
 

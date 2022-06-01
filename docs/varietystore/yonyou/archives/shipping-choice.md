@@ -14,7 +14,7 @@
 |:-|:-|:-|:-|:-|
 |code|string||是|发运方式编码|
 |name|string||是|发运方式名称|
-|cscenname|string||是|发运方式英文名称|
+|cscenname|string||否|发运方式英文名称|
 
 - 返回参数说明
 

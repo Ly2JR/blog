@@ -15,7 +15,8 @@
 |code|string||是|销售类型编码|
 |name|string||是|销售类型名称|
 |rstype_code|string||是|出库类别|
-|bdefau|string||是|是否默认值|
+|bdefau|string||否|是否默认值|
+|bstmps_mrp|string||否|是否列入MPS/MRP计划|
 
 - 返回参数说明
 

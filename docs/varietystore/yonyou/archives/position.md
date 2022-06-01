@@ -13,9 +13,9 @@
 |参数|类型|参数路径|是否必填|描述|
 |:-|:-|:-|:-|:-|
 |code|string||是|货位编码|
-|name|string||是|货位名称|
+|name|string||否|货位名称|
 |grade|string||是|编码级次|
-|end_flag|string||是|是否末级|
+|end_flag|string||否|是否末级|
 |warehouse_code|string||是|仓库编码|
 |maxcubage|string||否|最大体积|
 |maxweight|string||否|最大重量|

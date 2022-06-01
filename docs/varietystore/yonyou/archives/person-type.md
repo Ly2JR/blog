@@ -12,16 +12,18 @@
 
 |参数|类型|参数路径|是否必填|描述|
 |:-|:-|:-|:-|:-|
-|code|string||是|档案编码|
-|name|string||是|档案名称|
-|simplename|string||是|档案简称|
-|simplespell|string||是|档案简拼|
-|levels|string||是|档案级别|
-|pcodeid|string||是|上级代码|
-|hideflag|string||是|是否显示|
+|code|string||是|代码|
+|name|string||是|代码名称|
+|simplename|string||是|简称|
+|simplespell|string||否|简拼|
+|levels|string||否|代码级别|
+|pcodeid|string||否|上级代码|
+|sysflag|string||是|系统/自定义标志|
+|childflag|string||是|是否有下级代码|
+|hideflag|string||是|显示/隐藏|
 |memo|string||是|备注|
 
--返回参数说明
+- 返回参数说明
 
 |参数|类型|描述|
 |:-|:-|:-|

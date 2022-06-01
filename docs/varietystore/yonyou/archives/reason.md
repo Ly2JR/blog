@@ -12,10 +12,10 @@
 
 |参数|类型|参数路径|是否必填|描述|
 |:-|:-|:-|:-|:-|
-|code|string||是|编码|
-|name|string||是|名称|
-|Reasontype|string||是|所属类型|
-|ReasonMemo|string||是|说明|
+|code|string||否|编码|
+|name|string||否|名称|
+|Reasontype|string||否|所属类型|
+|ReasonMemo|string||否|说明|
 
 - 返回参数说明
 

@@ -13,10 +13,10 @@
 |参数|类型|参数路径|是否必填|描述|
 |:-|:-|:-|:-|:-|
 |cinvcode|string||是|存货编码|
-|cudid|string||是|自由项ID|
-|cudvalue|string||是|自由项值|
+|cudid|string||否|自由项ID|
+|cudvalue|string||否|自由项值|
 
--返回参数说明
+- 返回参数说明
 
 |参数|类型|描述|
 |:-|:-|:-|

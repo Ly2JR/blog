@@ -12,9 +12,10 @@
 
 |参数|类型|参数路径|是否必填|描述|
 |:-|:-|:-|:-|:-|
-|code|string||是|常用摘要编码|
-|text|string||是|常用摘要正文|
-|subjectcode|string||是|相关科目编码|
+|id|string||否|自动编号|
+|code|string||否|常用摘要编码|
+|text|string||否|常用摘要正文|
+|subjectcode|string||否|相关科目编码|
 
 - 返回参数说明
 

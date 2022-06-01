@@ -12,11 +12,12 @@
 
 |参数|类型|参数路径|是否必填|描述|
 |:-|:-|:-|:-|:-|
-|code|string||是|销售类型编码|
-|name|string||是|销售类型名称|
-|rstype_code|string||是|出库类别|
-|bdefau|string||是|是否默认值|
-|bpfdefault|string||是|是否委外默认值|
+|code|string||是|采购类型编码|
+|name|string||是|采购类型名称|
+|rstype_code|string||是|入库类别编码|
+|bdefau|string||否|是否默认值|
+|bpfdefault|string||否|是否委外默认值|
+|bptmps_mrp|string||否|是否列入MPS/MRP计划|
 
 - 返回参数说明
 

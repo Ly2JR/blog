@@ -14,8 +14,9 @@
 |:-|:-|:-|:-|:-|
 |code|string||是|计量单位组编码|
 |name|string||是|计量单位组名称|
-|type|string||是|组类别(0:固定；1：浮动)|
+|type|string||是|组类别|
 |cgrprelinvcode|string||否|对应存货编码|
+|bdefaultgroup|string||否|是否默认组|
 
 - 返回参数说明
 

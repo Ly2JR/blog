@@ -14,9 +14,9 @@
 |:-|:-|:-|:-|:-|
 |code|string||是|费用项目分类编码|
 |name|string||是|费用项目分类名称|
-|rank|string||是|编码级次|
-|end_rank_flag|string||是|末级标志|
 |memo|string||否|备注|
+|rank|string||否|编码级次|
+|end_rank_flag|string||否|末级标志|
 
 - 返回参数说明
 

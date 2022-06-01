@@ -14,10 +14,12 @@
 |:-|:-|:-|:-|:-|
 |code|string||是|结算方式编码|
 |name|string||是|结算方式名称|
-|flag|string||是|是否票据管理|
-|code_rank|string||是|编码级次|
-|end_rank_flag|string||是|是否末级|
-|issbilltype|string||是|对应票据类型|
+|flag|bool||是|是否票据管理|
+|code_rank|bool||否|编码级次|
+|end_rank_flag|bool||否|是否末级|
+|issbilltype|bool||否|对应票据类型|
+|bPortalSettle|bool||否|允许门户结算|
+|iNEInBillType|bool||是|对应网报支付方式|
 
 - 返回参数说明
 

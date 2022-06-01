@@ -14,9 +14,9 @@
 |:-|:-|:-|:-|:-|
 |dutycode|string||是|职务编码|
 |dutyname|string||是|职务名称|
-|dutysumm|string||是|职务概要|
 |series|string||是|职务类别|
-|dutylev|string||是|职务级别|
+|dutysumm|string||否|职务概要|
+|dutylev|string||否|职务级别|
 |begindate|string||是|设立日期|
 |enddate|string||是|撤销日期|
 

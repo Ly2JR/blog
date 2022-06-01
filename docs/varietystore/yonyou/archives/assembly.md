@@ -13,12 +13,12 @@
 |参数|类型|参数路径|是否必填|描述|
 |:-|:-|:-|:-|:-|
 |assemblycode|string||是|套装件编码|
-|fittingcode|string||是|单件编码|
-|fittingquantity|string||是|单件数量|
-|fittingnumber|string||是|单件件数|
-|fittingcost|string||是|单件成本|
-|fittingprice|string||是|单件单价|
-|cAComunitCode|string||否|辅计量单位编码|
+|fittingcode|string||否|单件编码|
+|fittingquantity|float||否|单件数量|
+|fittingnumber|float||否|单件件数|
+|fittingcost|float||否|单件成本|
+|fittingprice|float||否|单件单价|
+|cAComunitCode|float||否|辅计量单位编码|
 
 - 返回参数说明
 

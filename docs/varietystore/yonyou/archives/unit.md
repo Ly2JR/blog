@@ -15,9 +15,9 @@
 |code|string||是|计量单位编码|
 |name|string||是|计量单位名称|
 |group_code|string||是|计量单位组编码|
-|main_flag|string||是|主计量单位标志|
-|changerate|string||是|换算率|
 |barcode|string||否|对应条形码中的编码|
+|main_flag|string||否|主计量单位标志|
+|changerate|string||否|换算率|
 |portion|string||否|合理浮动比例|
 |SerialNum|string||否|辅计量单位序号|
 |censingular|string||否|英文名称单数|

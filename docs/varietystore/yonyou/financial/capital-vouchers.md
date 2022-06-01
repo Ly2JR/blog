@@ -33,8 +33,16 @@
 |relativeprojectno|string|deptscale|是|对应项目编码|
 |relativeprojectname|string|deptscale|是|对应项目名称|
 |relativecItemclsId|string|deptscale|是|项目大类|
-|sourceno|string|sourcescale|是|对应折旧科目编码|
-|sourcescale|string|sourcescale|是|对应折旧科目编码|
+|assetno|string|entry\deptscale|是||
+|deptno|string|entry\deptscale|是||
+|deptscale|string|entry\deptscale|是||
+|depreciationitemno|string|entry\deptscale|是||
+|depreciationitemname|string|entry\deptscale|是||
+|relativeprojectno|string|entry\deptscale|是||
+|relativeprojectname|string|entry\deptscale|是||
+|relativecItemclsId|string|entry\deptscale|是||
+|sourceno|string|entry\sourcescale|是|对应折旧科目编码|
+|sourcescale|string|entry\sourcescale|是|对应折旧科目编码|
 
 - 返回参数说明
 

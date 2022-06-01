@@ -14,11 +14,17 @@
 |:-|:-|:-|:-|:-|
 |code|string||是|费用项目编号|
 |name|string||是|费用项目名称|
-|cexpccode|string||是|费用项目分类编码|
-|iexptaxrate|string||是|税率(%)|
-|iexpprofititem|string||是|盈亏项目|
-|ccode|string||是|科目|
 |memo|string||否|备注|
+|cexpccode|string||否|费用项目分类编码|
+|iexptaxrate|string||否|税率(%)|
+|iexpprofititem|string||否|盈亏项目|
+|ccode|string||否|科目|
+|direction|string||否|方向|
+|budgetitemcode|string||否|项目费用编码|
+|budgetitemname|string||否|项目费用|
+|operationtypecode|string||否|业务类型编码|
+|operationtypename|string||否|业务类型名称|
+|issubsidy|string||否|是否补助|
 
 - 返回参数说明
 

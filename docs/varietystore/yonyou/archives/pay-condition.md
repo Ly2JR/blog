@@ -15,17 +15,17 @@
 |code|string||是|付款条件编码|
 |name|string||是|付款条件名称|
 |creditdays|string||是|信用天数|
-|discountdays1|string||是|优惠天数1|
-|discountrate1|string||是|优惠率1|
-|discountdays2|string||是|优惠天数2|
-|discountrate2|string||是|优惠率2|
-|discountdays3|string||是|优惠天数3|
-|discountrate3|string||是|优惠率3|
-|discountdays4|string||是|优惠天数4|
-|discountrate4|string||是|优惠天数4|
-|maxdiscountdays|string||是|最多优惠天数|
+|discountdays1|string||否|优惠天数1|
+|discountrate1|string||否|优惠率1|
+|discountdays2|string||否|优惠天数2|
+|discountrate2|string||否|优惠率2|
+|discountdays3|string||否|优惠天数3|
+|discountrate3|string||否|优惠率3|
+|discountdays4|string||否|优惠天数4|
+|discountrate4|string||否|优惠率4|
+|maxdiscountdays|string||否|最多优惠天数|
 
--返回参数说明
+- 返回参数说明
 
 |参数|类型|描述|
 |:-|:-|:-|

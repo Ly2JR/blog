@@ -14,12 +14,12 @@
 |:-|:-|:-|:-|:-|
 |cvencode|string||是|供应商编码|
 |cinvcode|string||是|存货编码|
-|cquanlity|string||是|供货品质|
-|fquota|string||是|配额|
-|fadvdate|string||是|提前期|
-|cdepcode|string||是|部门编码|
+|cquanlity|string||否|供货品质|
+|fquota|string||否|配额|
+|fadvdate|string||否|提前期|
+|cdepcode|string||否|部门编码|
 |cpersoncode|string||否|采购员|
-|cveninvcode|string||否|供应商存货编码|
+|cveninvcode|string||是|供应商存货编码|
 |iteststyle|string||否|检验方式|
 |idtmethod|string||否|抽检方案|
 |fdtrate|string||否|抽检率|
@@ -30,7 +30,7 @@
 |isuppproperty|string||否|供应类型|
 |fmaxsuppnum|string||否|最大交货量|
 |fminsuppnum|string||否|最小交货量|
-|cveninvname|string||否|供应商存货名称|
+|cveninvname|string||是|供应商存货名称|
 |idtlevel|string||否|检验水平|
 |cdtaql|string||否|AQL|
 |fsupplybatch|string||否|供应批量|

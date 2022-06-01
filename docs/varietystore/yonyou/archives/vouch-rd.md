@@ -12,11 +12,11 @@
 
 |参数|类型|参数路径|是否必填|描述|
 |:-|:-|:-|:-|:-|
-|cvbtid|string||是|单据业务类型|
-|cvrrcode|string||是|收类别编码|
-|cvrscode|string||是|发类别编码|
+|cvbtid|string||否|单据业务类型|
+|cvrrcode|string||否|收类别编码|
+|cvrscode|string||否|发类别编码|
 
--返回参数说明
+- 返回参数说明
 
 |参数|类型|描述|
 |:-|:-|:-|
