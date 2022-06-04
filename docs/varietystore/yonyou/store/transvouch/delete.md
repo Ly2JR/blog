@@ -1,12 +1,12 @@
-# 审核
+# 删除
 
 - 资源符
 
-  `saleout`
+  `transvouch`
   
 - 操作符
 
-  `verify`
+  `delete`
 
 - 返回参数说明
 
@@ -35,7 +35,7 @@ const string Address="127.0.0.1";
 //账套号
 const string Account="999";
 //资源
-const string resource="saleout/verify";
+const string resource="transvouch/delete";
 //单据ID
 var id=1000000001;
 //唯一号
@@ -60,7 +60,7 @@ private const Address as String="127.0.0.1"
 '账套号
 private const Account as String="999"
 '资源
-private const resource as String="saleout/verify"
+private const resource as String="transvouch/delete"
 '单据ID
 dim id as Long
 id=1000000001
@@ -91,5 +91,5 @@ Msgbox sRet
 ```
 
 <!-- ::: details 查看演示
-[审核单据](/images/yonyou/gif/saleout/verify.gif)
+[删除单据](/images/yonyou/gif/transvouch/delete.gif)
 ::: -->

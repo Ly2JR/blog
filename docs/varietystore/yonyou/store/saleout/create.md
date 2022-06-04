@@ -360,6 +360,6 @@
 }
 ```
 
-::: details 查看演示
+<!-- ::: details 查看演示
 [新增单据](/images/yonyou/gif/saleout/create.gif)
-:::
+::: -->

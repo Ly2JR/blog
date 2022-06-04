@@ -373,6 +373,7 @@ export const sidebarZh: SidebarConfig = {
                                 '/varietystore/yonyou/store/purchasein/create.md',
                                 '/varietystore/yonyou/store/purchasein/verify.md',
                                 '/varietystore/yonyou/store/purchasein/unverify.md',
+                                '/varietystore/yonyou/store/purchasein/delete.md',
                             ]
                         },{
                             text:'材料出库单',
@@ -380,6 +381,7 @@ export const sidebarZh: SidebarConfig = {
                                 '/varietystore/yonyou/store/materialout/create.md',
                                 '/varietystore/yonyou/store/materialout/verify.md',
                                 '/varietystore/yonyou/store/materialout/unverify.md',
+                                '/varietystore/yonyou/store/materialout/delete.md',
                             ]
                         },{
                             text:'产成品入库单',
@@ -387,6 +389,7 @@ export const sidebarZh: SidebarConfig = {
                                 '/varietystore/yonyou/store/productin/create.md',
                                 '/varietystore/yonyou/store/productin/verify.md',
                                 '/varietystore/yonyou/store/productin/unverify.md',
+                                '/varietystore/yonyou/store/materialout/delete.md',
                             ]
                         },{
                             text:'调拨单',
@@ -394,6 +397,7 @@ export const sidebarZh: SidebarConfig = {
                                 '/varietystore/yonyou/store/transvouch/create.md',
                                 '/varietystore/yonyou/store/transvouch/verify.md',
                                 '/varietystore/yonyou/store/transvouch/unverify.md',
+                                '/varietystore/yonyou/store/transvouch/delete.md',
                             ]
                         },{
                             text:'销售出库单',
@@ -402,6 +406,7 @@ export const sidebarZh: SidebarConfig = {
                                 '/varietystore/yonyou/store/saleout/verify.md',
                                 '/varietystore/yonyou/store/saleout/unverify.md',
                                 '/varietystore/yonyou/store/saleout/pulldispatch.md',
+                                '/varietystore/yonyou/store/saleout/delete.md',
                             ]
                         }
                     ]

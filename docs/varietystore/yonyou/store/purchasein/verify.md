@@ -90,6 +90,6 @@ Msgbox sRet
 }
 ```
 
-::: details 查看演示
+<!-- ::: details 查看演示
 [审核单据](/images/yonyou/gif/purchasein/verify.gif)
-:::
+::: -->
