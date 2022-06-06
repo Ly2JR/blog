@@ -6,7 +6,7 @@
 
 ## 定制开发
 
-  支持yonyou U8 10.1及以上
+  支持yonyou U8 10.1及以上版本
 
 ## JSON数据基本结构
 
@@ -70,7 +70,7 @@ using NPK;
 //服务码
 const string CROPCODE="XXX";
 //授权码
-const string CROPLINCESE="XXX";
+const string CROPLICENSE="XXX";
 //服务器IP地址
 const string ADDRESS="127.0.0.1";
 //账套号
@@ -86,7 +86,7 @@ var tradeid=Guid.NewGuid().ToString("N");
 //声明客户端
 var client=new NPClient();
 //本地调用
-var result=client.InvokeLocal(CROPCODE,CROPLINCESE,RESOURCE,tradeid,jsonData,id,"",ADDRESS,ACCOUNT);
+var result=client.InvokeLocal(CROPCODE,CROPLICENSE,RESOURCE,tradeid,jsonData,id,"",ADDRESS,ACCOUNT);
 Console.WriteLine(result);
 ```
 
@@ -98,7 +98,7 @@ Console.WriteLine(result);
 '服务码
 private const CROPCODE as String="XXX"
 '授权码
-private const CROPLINCESE as String="XXX"
+private const CROPLICENSE as String="XXX"
 '服务器IP地址
 private const ADDRESS as String="127.0.0.1"
 '账套号
@@ -119,7 +119,7 @@ dim client as Object
 set client=CreateObject("NPK.NPClient");
 '本地调用
 dim sRet as String
-sRet=client.InvokeLocal(CROPCODE,CROPLINCESE,RESOURCE,tradeid,jsonData,id,"",ADDRESS,ACCOUNT);
+sRet=client.InvokeLocal(CROPCODE,CROPLICENSE,RESOURCE,tradeid,jsonData,id,"",ADDRESS,ACCOUNT);
 Msgbox sRet
 ```
 

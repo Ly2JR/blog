@@ -27,15 +27,15 @@
 using NPK;
 
 //服务码
-const string CROP="XXX";
+const string CROPCODE="XXX";
 //授权码
-const string CROPSECRET="XXX";
+const string CROPLICENSE="XXX";
 //服务器IP地址
-const string Address="127.0.0.1";
+const string ADDRESS="127.0.0.1";
 //账套号
-const string Account="999";
+const string ACCOUNT="999";
 //资源
-const string resource="purchasein/unverify";
+const string RESOURCE="purchasein/unverify";
 //单据ID
 var id=1000000001;
 //唯一号
@@ -43,7 +43,7 @@ var tradeid=Guid.NewGuid().ToString("N");
 //声明客户端
 var client=new NPClient();
 //本地调用
-var result=client.InvokeLocal(CROP,CORPSECRET,resource,tradeid,"",id,"",Address,Account);
+var result=client.InvokeLocal(CROPCODE,CROPLICENSE,RESOURCE,tradeid,"",id,"",ADDRESS,ACCOUNT);
 Console.WriteLine(result);
 ```
 
@@ -52,15 +52,15 @@ Console.WriteLine(result);
 
 ```vb
 '服务码
-private const CROP as String="XXX"
+private const CROPCODE as String="XXX"
 '授权码
-private const CROPSECRET as String="XXX"
+private const CROPLICENSE as String="XXX"
 '服务器IP地址
-private const Address as String="127.0.0.1"
+private const ADDRESS as String="127.0.0.1"
 '账套号
-private const Account as String="999"
+private const ACCOUNT as String="999"
 '资源
-private const resource as String="purchasein/unverify"
+private const RESOURCE as String="purchasein/unverify"
 '单据ID
 dim id as Long
 id=1000000001
@@ -72,7 +72,7 @@ dim client as Object
 set client=CreateObject("NPK.NPClient");
 '本地调用
 dim sRet as String
-sRet=client.InvokeLocal(CROP,CORPSECRET,resource,tradeid,"",id,"",Address,Account);
+sRet=client.InvokeLocal(CROPCODE,CROPLICENSE,RESOURCE,tradeid,"",id,"",ADDRESS,ACCOUNT);
 Msgbox sRet
 ```
 
