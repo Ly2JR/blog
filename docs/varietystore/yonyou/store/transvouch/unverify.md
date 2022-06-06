@@ -27,9 +27,10 @@
 using NPK;
 
 //服务码
-const string CROPCODE="XXX";
+const string CORPCODE
+="XXX";
 //授权码
-const string CROPLICENSE="XXX";
+const string CORPLICENSE="XXX";
 //服务器IP地址
 const string ADDRESS="127.0.0.1";
 //账套号
@@ -43,7 +44,8 @@ var tradeid=Guid.NewGuid().ToString("N");
 //声明客户端
 var client=new NPClient();
 //本地调用
-var result=client.InvokeLocal(CROPCODE,CROPLICENSE,RESOURCE,tradeid,"",id,"",ADDRESS,ACCOUNT);
+var result=client.InvokeLocal(CORPCODE
+,CORPLICENSE,RESOURCE,tradeid,"",id,"",ADDRESS,ACCOUNT);
 Console.WriteLine(result);
 ```
 
@@ -52,9 +54,9 @@ Console.WriteLine(result);
 
 ```vb
 '服务码
-private const CROPCODE as String="XXX"
+private const CORPCODeE as String="XXX"
 '授权码
-private const CROPLICENSE as String="XXX"
+private const CORPLICENSE as String="XXX"
 '服务器IP地址
 private const ADDRESS as String="127.0.0.1"
 '账套号
@@ -72,7 +74,7 @@ dim client as Object
 set client=CreateObject("NPK.NPClient");
 '本地调用
 dim sRet as String
-sRet=client.InvokeLocal(CROP,CORPSECRET,resource,tradeid,"",id,"",Address,Account);
+sRet=client.InvokeLocal(CORPCODeE,CORPLICENSE,resource,tradeid,"",id,"",Address,Account);
 Msgbox sRet
 ```
 
