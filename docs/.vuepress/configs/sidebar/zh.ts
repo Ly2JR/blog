@@ -196,6 +196,18 @@ export const sidebarZh: SidebarConfig = {
                             text: '用户管理',
                             link: '/dotnet/abp.zero/web/features/user-management.md'
                         },
+                        {
+                            text: '语言管理',
+                            link: '/dotnet/abp.zero/web/features/language-management.md'
+                        },
+                        {
+                            text: '审计日志',
+                            link: '/dotnet/abp.zero/web/features/audit-logs.md'
+                        },
+                        {
+                            text: '实体历史',
+                            link: '/dotnet/abp.zero/web/features/entity-history.md'
+                        },
                     ]
                 }
             ]
