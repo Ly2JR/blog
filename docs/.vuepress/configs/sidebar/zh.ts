@@ -208,6 +208,14 @@ export const sidebarZh: SidebarConfig = {
                             text: '实体历史',
                             link: '/dotnet/abp.zero/web/features/entity-history.md'
                         },
+                        {
+                            text: '订阅',
+                            link: '/dotnet/abp.zero/web/features/subscription/README.md',
+                            children:[
+                                '/dotnet/abp.zero/web/features/subscription/paypal-integration.md',
+                                '/dotnet/abp.zero/web/features/subscription/stripe-integration.md',
+                            ]
+                        },
                     ]
                 }
             ]
