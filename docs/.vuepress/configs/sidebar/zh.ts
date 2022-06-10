@@ -153,67 +153,63 @@ export const sidebarZh: SidebarConfig = {
                                 '/dotnet/abp.zero/web/features/login/forgot-password.md',
                                 '/dotnet/abp.zero/web/features/login/token-based-authentication.md',
                             ]
-                        },
-                        {
+                        }, {
                             text: '登记',
                             link: '/dotnet/abp.zero/web/features/sign-up/README.md',
                             children: [
                                 '/dotnet/abp.zero/web/features/sign-up/email-activation.md',
                             ]
-                        },
-                        {
+                        }, {
                             text: '租户登记',
                             link: '/dotnet/abp.zero/web/features/tenant-sign-up.md'
-                        },
-                        {
+                        }, {
                             text: '主要菜单和布局',
                             link: '/dotnet/abp.zero/web/features/main-menu-and-layout/README.md',
                             children: [
                                 '/dotnet/abp.zero/web/features/main-menu-and-layout/quick-navigation.md'
                             ]
-                        },
-                        {
+                        }, {
                             text: '版本管理',
                             link: '/dotnet/abp.zero/web/features/edition-management.md'
-                        },
-                        {
+                        }, {
                             text: '租户管理',
                             link: '/dotnet/abp.zero/web/features/tenant-management.md'
-                        },
-                        {
+                        }, {
                             text: '主机仪表板',
                             link: '/dotnet/abp.zero/web/features/host-dashboard.md'
-                        },
-                        {
+                        }, {
                             text: '组织单位',
                             link: '/dotnet/abp.zero/web/features/organization-units.md'
-                        },
-                        {
+                        }, {
                             text: '角色管理',
                             link: '/dotnet/abp.zero/web/features/role-management.md'
-                        },
-                        {
+                        }, {
                             text: '用户管理',
                             link: '/dotnet/abp.zero/web/features/user-management.md'
-                        },
-                        {
+                        }, {
                             text: '语言管理',
                             link: '/dotnet/abp.zero/web/features/language-management.md'
-                        },
-                        {
+                        }, {
                             text: '审计日志',
                             link: '/dotnet/abp.zero/web/features/audit-logs.md'
-                        },
-                        {
+                        }, {
                             text: '实体历史',
                             link: '/dotnet/abp.zero/web/features/entity-history.md'
-                        },
-                        {
+                        }, {
                             text: '订阅',
                             link: '/dotnet/abp.zero/web/features/subscription/README.md',
-                            children:[
+                            children: [
                                 '/dotnet/abp.zero/web/features/subscription/paypal-integration.md',
                                 '/dotnet/abp.zero/web/features/subscription/stripe-integration.md',
+                            ]
+                        }, {
+                            text: '视觉设置',
+                            link: '/dotnet/abp.zero/web/features/visual-settings.md'
+                        }, {
+                            text: '主机设置',
+                            link: '/dotnet/abp.zero/web/features/host-settings/README.md',
+                            children: [
+                                '/dotnet/abp.zero/web/features/host-settings/google-authenticator.md',
                             ]
                         },
                     ]
@@ -230,8 +226,7 @@ export const sidebarZh: SidebarConfig = {
         {
             text: 'WPF',
             link: '/dotnet/wpf/README.md'
-        },
-        {
+        }, {
             text: '刘铁猛 -《深入浅出WPF》',
             children: [
                 '/dotnet/wpf/course1.md',
@@ -239,21 +234,18 @@ export const sidebarZh: SidebarConfig = {
                 '/dotnet/wpf/course3.md',
                 '/dotnet/wpf/download.md'
             ]
-        },
-        {
+        }, {
             text: 'IHome.UI',
             children: [
                 '/dotnet/wpf/Controls/README.md',
                 '/dotnet/wpf/Controls/button.md',
             ],
-        },
-        {
+        }, {
             text: '自定义控件',
             children: [
                 '/dotnet/wpf/controls/button.md',
             ],
-        },
-        {
+        }, {
             text: 'Prism',
             link: '/dotnet/wpf/prism/README.md',
             children: [
@@ -383,45 +375,44 @@ export const sidebarZh: SidebarConfig = {
                         '/varietystore/yonyou/financial/ought-receive.md',
                         '/varietystore/yonyou/financial/voucher.md',
                     ]
-                },
-                {
+                }, {
                     text: '库存模块',
                     children: [
                         {
-                            text:'采购入库单',
-                            children:[
+                            text: '采购入库单',
+                            children: [
                                 '/varietystore/yonyou/store/purchasein/create.md',
                                 '/varietystore/yonyou/store/purchasein/verify.md',
                                 '/varietystore/yonyou/store/purchasein/unverify.md',
                                 '/varietystore/yonyou/store/purchasein/delete.md',
                             ]
-                        },{
-                            text:'材料出库单',
-                            children:[
+                        }, {
+                            text: '材料出库单',
+                            children: [
                                 '/varietystore/yonyou/store/materialout/create.md',
                                 '/varietystore/yonyou/store/materialout/verify.md',
                                 '/varietystore/yonyou/store/materialout/unverify.md',
                                 '/varietystore/yonyou/store/materialout/delete.md',
                             ]
-                        },{
-                            text:'产成品入库单',
-                            children:[
+                        }, {
+                            text: '产成品入库单',
+                            children: [
                                 '/varietystore/yonyou/store/productin/create.md',
                                 '/varietystore/yonyou/store/productin/verify.md',
                                 '/varietystore/yonyou/store/productin/unverify.md',
                                 '/varietystore/yonyou/store/materialout/delete.md',
                             ]
-                        },{
-                            text:'调拨单',
-                            children:[
+                        }, {
+                            text: '调拨单',
+                            children: [
                                 '/varietystore/yonyou/store/transvouch/create.md',
                                 '/varietystore/yonyou/store/transvouch/verify.md',
                                 '/varietystore/yonyou/store/transvouch/unverify.md',
                                 '/varietystore/yonyou/store/transvouch/delete.md',
                             ]
-                        },{
-                            text:'销售出库单',
-                            children:[
+                        }, {
+                            text: '销售出库单',
+                            children: [
                                 '/varietystore/yonyou/store/saleout/create.md',
                                 '/varietystore/yonyou/store/saleout/verify.md',
                                 '/varietystore/yonyou/store/saleout/unverify.md',
