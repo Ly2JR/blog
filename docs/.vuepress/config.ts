@@ -19,12 +19,12 @@ export default defineUserConfig({
     '/': {
       lang: 'zh-CN',
       title: '乌龙茶有点甜·博客',
-      description: '写写记记...',
+      description: '写写记记📚...',
     },
     '/en/': {
       lang: 'en-US',
       title: 'Ly2JR·Blog',
-      description: 'note...',
+      description: 'Read&Write📚...',
     }
   },
 

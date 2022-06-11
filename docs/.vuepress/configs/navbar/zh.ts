@@ -1,10 +1,10 @@
 import { NavbarConfig } from "@vuepress/theme-default";
 
 export const nvabarZh: NavbarConfig = [
-  {
-    text: '指南',
-    link: '/guide/readme.md',
-  },
+  // {
+  //   text: '指南',
+  //   link: '/guide/readme.md',
+  // },
   {
     text: '生活',
     children: [
