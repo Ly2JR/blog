@@ -468,6 +468,7 @@ export const sidebarZh: SidebarConfig = {
                 '/varietystore/office/excel/macro-sample1.md',
                 '/varietystore/office/excel/macro-sample2.md',
                 '/varietystore/office/excel/macro-sample3.md',
+                '/varietystore/office/excel/macro-sample4.md',
                 '/varietystore/office/excel/read-from-excel.md',
                 '/varietystore/office/excel/write-to-excel.md',
             ]
