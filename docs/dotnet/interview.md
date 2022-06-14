@@ -204,3 +204,88 @@ NET重要技术和基础之一的CTS(Common Type System)。CTS是为了实现在
 `String`类是一种传统的修改字符串的方式，它确实可以把一个字符串添加到另一个字符串上，但在.NET框架下，通过删除创建新的String对象，有额外的系统开销。
 
 `StringBuilder`提供`Append`方法，对原有对象的原地址进行字符串的修改。
+
+- 请叙述属性与索引器的区别
+
+`属性`:可以为静态成员或实列成员；通过名称访问；`get`访问器没有参数；`get`访问器包含隐式的value参数。
+`索引器`:必须为实列成员；通过元素访问;`get`访问器具有与索引器相同的形参；`get`访问器除了隐式的value参数还有与索引器相同的形参。
+
+- 请解释ASP.NET中的Web页面与其隐藏类之间的关系？
+
+一个ASP.NET页面对应一个隐藏类。示例：`<%@ Page language="c#" Codebehind="Login.aspx.cs" AutoEventWireup="false" Inherits="Web.Login"%>`。`Codebehind="Login.aspx.cs"`表明编译页面时使用的哪个代码文件。`Inherits="Web.Login"`表明运行时使用哪个隐藏类。ASP页面会编译成一个类，这个类从隐藏类继承。
+
+- 在什么情况下会用到虚方法(`virtual`)?它与接口有什么不同？
+
+子类重新定义父类的方法时，父类必须将方法定义为`virtual`;
+
+接口中不能有方法体，但是虚方法可以;
+
+子类可以重定义或者不重定义父类虚方法，但是接口，必须实现;
+
+- 传入某个属性的set方法的隐含参数的名称是什么?
+
+`value`:它的类型和属性所声明的类型相同;
+
+- C#支持多重继承吗？
+
+类之间不支持，接口支持；
+
+- C#中所有对象的共同基类是什么?
+
+`System.Object`
+
+- 通过超链接怎么传递中文参数？
+
+进行转码,使用`UrlEncode`编码,`UrlDecode`解码；
+
+- string,String;int,Int32;Boolean,bool的区别？
+
+`String`：是Framework中的类;需要Using System;不是关键字，可以作为类、结构、字段、枚举、变量、方法、属性的名称。
+
+`string`：是C#中的类，是System.String在.NET中的别名；使用`string`编译器会把它编译成`String`；推荐使用`string`,符合规范,`string`始终代表`System.String(1.x)`或`::System.String(2.0)`;不需要Using System;是关键字，不能作为类、结构、字段、枚举、变量、方法、属性的名称。
+
+- Server.Transfer和Response.Redirect的区别是什么？
+
+`Server.Transfer`是服务器中控制权的转向，直接访问目标地址，把URL响应内容读取出来，发送给浏览器，在客户端不会显示转向后地址；这个过程中浏览器和web服务器经过一次交互；因此，不可以转向外部网站；
+
+`Response.Redirect`是完全跳转，浏览器会得到跳转的地址，并重新发送请求链接，浏览器可以看到跳转后的地址;这个过程中浏览器和web服务器经过两次交互。可以转向外部网站。
+
+- 字符串是不可变的吗？`string s="abc";s="123"`不就是变了吗?
+
+STRING是不可变的，在这个代码中，s一开始指向string对象，内容是"abc"，当赋值"123"时,s对象并没有改变，只是s这个引用变量改变了。
+
+- 是否可以从一个static方法内部发出对非static方法的调用?
+
+不可以。因为非static方法需要与对象关联在一起，在创建对象之后才可以访问，而static不需要创建对象便直接调用。
+
+- post和get的区别
+
+`get`参数显示在浏览器地址栏中;get的页面可以被搜索引擎抓取;get提交的数据量很小(2k),受网页地址的长度限制。get不可以提交文件
+
+`post`参数不会显示在浏览器地址栏中;使用post提交的页面在点击"刷新"时，一般会提示是否重新提交;post的页面不会被搜索引擎抓取;post提交的数据量很大；post可以进行文件的提交；
+
+- WebService和Restful的区别?
+
+`WebService`：解决三个问题，接口的自我描述；采用http协议等常规协议，不用写原始的Socker;基于Web服务器，不占用80端口之外的端口。`UDDI`用来自动发现WebService的协议;`WSDL`是对WebService上的方法名、参数进行描述的协议(接口自描述).`SOAP`是对参数，返回值以什么样的格式进行传递进行描述的协议。WebService是跨平台、跨语言调用的，可以跨防火墙。缺点是效率低。使用两个非内部系统的通讯。
+
+- SOAP和HTTP的关系?
+
+SOAP基于Http西医，和普通网页不同的是网页返回HTML,SOAP则是符合SOAP协议的XML数据;
+
+- .NET、ASP.NET、C#、VisualStudio之间的关系？
+
+`.NET`一般指`.NET Framework`，提供了基础的.NET类，这些类可以 被任何一种.net编程语言调用,还提供了CLR、JIT、GC等功能。
+
+`ASP.NET`是.NET中用来进行Web开发的一种技术,ASP.NET的页面部分写在aspx文件中，逻辑代码通常通过Code-behind方法用C#，VB.NET等支持.NET的语言编写。
+
+`C#`是使用最广泛的支持.NET的编程语言。除了C#还有VB.NET等。
+
+`VisualStudio`是微软提供用来进行.NET开发的集成开发环境(IDE)。
+
+- AJAX解决什么问题？如何使用AJAX？AJAX有什么问题需要注意？哪里用到了AJAX？
+
+AJAX解决了"无刷新更新页面"的问题，用传统的HTML表单进行页面更新是，每次请求都会提交到服务器，服务器返回在重绘页面，这样页面经历了提交->变白->重新显示这个过程,体验较差，而AJAX则不会。
+
+AJAX本质是实现在JavaScript中使用XMLHttpRequest进行Http请求，开发通常使用UpdatePanel，JQuery方式简化AJAX开发。UpdatePanel的方式是实现AJAX最简单方式，但数据量较大。
+
+AJAX最重要的问题是无法跨域请求(www.localhost.com->www.bing.com)，也就是无法在页面中向和当前域名不同的页面发送请求，可以使用在当前页面所在的域的服务端做代理页面的方式解决。
