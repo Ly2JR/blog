@@ -236,7 +236,7 @@ NET重要技术和基础之一的CTS(Common Type System)。CTS是为了实现在
 
 - 通过超链接怎么传递中文参数？
 
-进行转码,使用`UrlEncode`编码,`UrlDecode`解码；
+进行转码,使用`encodeURI`编码,`decodeURI`解码；`window.location.search`获取URL参数；
 
 - string,String;int,Int32;Boolean,bool的区别？
 

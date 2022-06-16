@@ -141,7 +141,7 @@ export const sidebarZh: SidebarConfig = {
             text: "Web",
             children: [
                 {
-                    text: '功能',
+                    text: '特征',
                     link: '/dotnet/abp.zero/web/features/README.md',
                     children: [
                         {
@@ -211,7 +211,37 @@ export const sidebarZh: SidebarConfig = {
                             children: [
                                 '/dotnet/abp.zero/web/features/host-settings/google-authenticator.md',
                             ]
-                        },
+                        }, {
+                            text: '租户设置',
+                            link: '/dotnet/abp.zero/web/features/tenant-settings/README.md',
+                            children: [
+                                '/dotnet/abp.zero/web/features/tenant-settings/active-directory.md',
+                            ]
+                        }, {
+                            text: '维护',
+                            link: '/dotnet/abp.zero/web/features/maintenance.md'
+                        }, {
+                            text: '租户仪表板',
+                            link: '/dotnet/abp.zero/web/features/tenant-dashboard.md'
+                        }, {
+                            text: '通知',
+                            link: '/dotnet/abp.zero/web/features/notifications.md'
+                        }, {
+                            text: '聊天',
+                            link: '/dotnet/abp.zero/web/features/chat.md'
+                        }, {
+                            text: '用户菜单',
+                            link: '/dotnet/abp.zero/web/features/user-menu.md'
+                        }, {
+                            text: '启动页',
+                            link: '/dotnet/abp.zero/web/features/setup-page.md'
+                        }, {
+                            text: '控制台迁移应用',
+                            link: '/dotnet/abp.zero/web/features/migrator-console-application.md'
+                        }, {
+                            text: '公共网站',
+                            link: '/dotnet/abp.zero/web/features/public-web-site.md'
+                        }
                     ]
                 }
             ]
@@ -515,6 +545,7 @@ export const sidebarZh: SidebarConfig = {
                 '/varietystore/ladder/google-recaptcha.md',
                 '/varietystore/ladder/encryption/README.md',
                 '/varietystore/ladder/transform/README.md',
+                '/varietystore/ladder/summary1.md',
             ]
         },
     ],

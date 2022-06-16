@@ -19,4 +19,10 @@
 
 ![login-page-google-auth](/images/aspnetzero/login-page-google-auth.png)
 
-- 选择 **谷歌sheng'f**
+- 选择 **谷歌身份验证**并在你的移动端上打开谷歌身份验证移动app。
+
+![google-auth-mobile-screenshot](/images/aspnetzero/google-auth-mobile-screenshot.jpeg)
+
+- 输入你在谷歌身份验证APP上看到的验证码：
+
+![google-auth-verify-security-code](/images/aspnetzero/google-auth-verify-security-code.png)
