@@ -241,6 +241,15 @@ export const sidebarZh: SidebarConfig = {
                         }, {
                             text: '公共网站',
                             link: '/dotnet/abp.zero/web/features/public-web-site.md'
+                        }, {
+                            text: 'GraphQL',
+                            link: '/dotnet/abp.zero/web/features/graphql.md'
+                        }, {
+                            text: 'Swagger UI',
+                            link: '/dotnet/abp.zero/web/features/swagger-ui.md'
+                        }, {
+                            text: '健康检测',
+                            link: '/dotnet/abp.zero/web/features/health-checks.md'
                         }
                     ]
                 }
