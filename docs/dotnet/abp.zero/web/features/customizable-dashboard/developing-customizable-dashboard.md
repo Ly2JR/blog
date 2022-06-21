@@ -382,7 +382,7 @@ export class AppCommonModule {
 
 之后，你将会看到你的部件位于页面上如期望的那样工作。
 
-![customizable-dashboard-widget-hello-world](/imagesa/aspnetzero/customizable-dashboard-widget-hello-world.png)
+![customizable-dashboard-widget-hello-world](/images/aspnetzero/customizable-dashboard-widget-hello-world.png)
 
 由于hello world widget需要hello world filter(我们在DashboardConfiguration定义它)hello world filter将会加载到页面。为了使用它。点击 **Edit Mode** 按钮旁边的filter按钮。它将会打开过滤模态。
 
