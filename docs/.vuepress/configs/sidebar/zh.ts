@@ -250,6 +250,19 @@ export const sidebarZh: SidebarConfig = {
                         }, {
                             text: '健康检测',
                             link: '/dotnet/abp.zero/web/features/health-checks.md'
+                        }, {
+                            text: '定制化仪表板',
+                            link: '/dotnet/abp.zero/web/features/customizable-dashboard/customizable-dashboard-feature.md',
+                            children: [
+                                '/dotnet/abp.zero/web/features/customizable-dashboard/customizable-dashboard-feature.md',
+                                '/dotnet/abp.zero/web/features/customizable-dashboard/developing-customizable-dashboard.md',
+                            ]
+                        }, {
+                            text: 'webhooks',
+                            link: '/dotnet/abp.zero/web/features/webhooks.md'
+                        }, {
+                            text: '用户委派',
+                            link: '/dotnet/abp.zero/web/features/user-delegation.md'
                         }
                     ]
                 }
