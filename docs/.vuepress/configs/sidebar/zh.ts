@@ -141,7 +141,7 @@ export const sidebarZh: SidebarConfig = {
             text: "Web",
             children: [
                 {
-                    text: '特征',
+                    text: '特点',
                     link: '/dotnet/abp.zero/web/features/README.md',
                     children: [
                         {
@@ -263,7 +263,25 @@ export const sidebarZh: SidebarConfig = {
                         }, {
                             text: '用户委派',
                             link: '/dotnet/abp.zero/web/features/user-delegation.md'
-                        }
+                        }, {
+                            text: '动态属性系统',
+                            link: '/dotnet/abp.zero/web/features/dynamic-property-system/README.md',
+                            children: [
+                                '/dotnet/abp.zero/web/features/dynamic-property-system/create-custom-input-types.md',
+                            ]
+                        }, {
+                            text: 'Azure Key Vault配置',
+                            link: '/dotnet/abp.zero/web/features/azure-key-vault-configuration.md'
+                        },
+                    ]
+                },{
+                    text:'部署',
+                    link:'/dotnet/abp.zero/web/deployment/README.md',
+                    children:[
+                        '/dotnet/abp.zero/web/deployment/publishing-to-azure.md',
+                        '/dotnet/abp.zero/web/deployment/publishing-to-iis.md',
+                        '/dotnet/abp.zero/web/deployment/publishing-to-docker.md',
+                        '/dotnet/abp.zero/web/deployment/publishing-angular-application-to-azure-storage.md',
                     ]
                 }
             ]
