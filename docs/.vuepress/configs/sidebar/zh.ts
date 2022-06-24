@@ -141,7 +141,7 @@ export const sidebarZh: SidebarConfig = {
             text: "Web",
             children: [
                 {
-                    text: '特点',
+                    text: '功能',
                     link: '/dotnet/abp.zero/web/features/README.md',
                     children: [
                         {
@@ -175,7 +175,7 @@ export const sidebarZh: SidebarConfig = {
                             text: '租户管理',
                             link: '/dotnet/abp.zero/web/features/tenant-management.md'
                         }, {
-                            text: '主机仪表板',
+                            text: 'Host仪表板',
                             link: '/dotnet/abp.zero/web/features/host-dashboard.md'
                         }, {
                             text: '组织单位',
@@ -206,7 +206,7 @@ export const sidebarZh: SidebarConfig = {
                             text: '视觉设置',
                             link: '/dotnet/abp.zero/web/features/visual-settings.md'
                         }, {
-                            text: '主机设置',
+                            text: 'Host设置',
                             link: '/dotnet/abp.zero/web/features/host-settings/README.md',
                             children: [
                                 '/dotnet/abp.zero/web/features/host-settings/google-authenticator.md',
@@ -274,19 +274,30 @@ export const sidebarZh: SidebarConfig = {
                             link: '/dotnet/abp.zero/web/features/azure-key-vault-configuration.md'
                         },
                     ]
-                },{
-                    text:'部署',
-                    link:'/dotnet/abp.zero/web/deployment/README.md',
-                    children:[
+                }, {
+                    text: '部署',
+                    link: '/dotnet/abp.zero/web/deployment/README.md',
+                    children: [
                         '/dotnet/abp.zero/web/deployment/publishing-to-azure.md',
                         '/dotnet/abp.zero/web/deployment/publishing-to-iis.md',
                         '/dotnet/abp.zero/web/deployment/publishing-to-docker.md',
                         '/dotnet/abp.zero/web/deployment/publishing-angular-application-to-azure-storage.md',
                     ]
+                }, {
+                    text: '杂项',
+                    children: [
+                        {
+                            text: '定制化',
+                            link:'/dotnet/abp.zero/web/miscellaneous/customization/README.md',
+                            children:[
+                                '/dotnet/abp.zero/web/miscellaneous/customization/adding-a-new-metronic-theme.md',
+                                '/dotnet/abp.zero/web/miscellaneous/customization/deleting-an-existing-metronic-theme.md',
+                            ]
+                        }
+                    ]
                 }
             ]
         },
-        '/dotnet/abp.zero/deploy.md'
     ],
     '/dotnet/xamarin.forms/': [
         '/dotnet/xamarin.forms/README.md',
