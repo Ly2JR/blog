@@ -297,7 +297,13 @@ export const sidebarZh: SidebarConfig = {
                     ]
                 }
             ]
-        },
+        },{
+            text:"Mobile(Xamarin)",
+            link:'/dotnet/abp.zero/mobile(xamarin)/README.md',
+            children:[
+                '/dotnet/abp.zero/mobile(xamarin)/development-guide.md'
+            ]
+        }
     ],
     '/dotnet/xamarin.forms/': [
         '/dotnet/xamarin.forms/README.md',
