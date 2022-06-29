@@ -63,6 +63,14 @@ export const nvabarZh: NavbarConfig = [
             link: '/database/oracle/installer.md'
           }
         ]
+      }, {
+        text: '其他',
+        children: [
+          {
+            text: 'MqttNet',
+            link: '/dotnet/lot/mqtt/home/README.md'
+          }
+        ]
       }
     ],
   },
@@ -70,8 +78,8 @@ export const nvabarZh: NavbarConfig = [
     text: '杂货铺',
     children: [
       {
-        text:'C#面试宝典',
-        link:'/dotnet/interview.md'
+        text: 'C#面试宝典',
+        link: '/dotnet/interview.md'
       },
       {
         text: '梯云纵',

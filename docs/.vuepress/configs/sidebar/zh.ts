@@ -288,8 +288,8 @@ export const sidebarZh: SidebarConfig = {
                     children: [
                         {
                             text: '定制化',
-                            link:'/dotnet/abp.zero/web/miscellaneous/customization/README.md',
-                            children:[
+                            link: '/dotnet/abp.zero/web/miscellaneous/customization/README.md',
+                            children: [
                                 '/dotnet/abp.zero/web/miscellaneous/customization/adding-a-new-metronic-theme.md',
                                 '/dotnet/abp.zero/web/miscellaneous/customization/deleting-an-existing-metronic-theme.md',
                             ]
@@ -297,10 +297,10 @@ export const sidebarZh: SidebarConfig = {
                     ]
                 }
             ]
-        },{
-            text:"Mobile(Xamarin)",
-            link:'/dotnet/abp.zero/mobile(xamarin)/README.md',
-            children:[
+        }, {
+            text: "Mobile(Xamarin)",
+            link: '/dotnet/abp.zero/mobile(xamarin)/README.md',
+            children: [
                 '/dotnet/abp.zero/mobile(xamarin)/development-guide.md'
             ]
         }
@@ -606,4 +606,19 @@ export const sidebarZh: SidebarConfig = {
             ]
         },
     ],
+    '/dotnet/lot/mqtt/': [
+        {
+            text: 'MqttNet',
+            link: '/dotnet/lot/mqtt/home/README.md',
+            children: [
+                {
+                    text: '构建',
+                    link: '/dotnet/lot/mqtt/build/README.md'
+                },  {
+                    text: '客户端',
+                    link: '/dotnet/lot/mqtt/client/README.md'
+                }
+            ]
+        }
+    ]
 };
