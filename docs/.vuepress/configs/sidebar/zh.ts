@@ -393,6 +393,9 @@ export const sidebarZh: SidebarConfig = {
         '/database/oracle/installer.md',
         '/database/oracle/assistant.md',
     ],
+    '/database/mysql/':[
+        '/database/mysql/README.md'
+    ],
     '/varietystore/yonyou/': [
         {
             text: '用友U8+',
