@@ -393,7 +393,7 @@ export const sidebarZh: SidebarConfig = {
         '/database/oracle/installer.md',
         '/database/oracle/assistant.md',
     ],
-    '/database/mysql/':[
+    '/database/mysql/': [
         '/database/mysql/README.md'
     ],
     '/varietystore/yonyou/': [
@@ -617,9 +617,18 @@ export const sidebarZh: SidebarConfig = {
                 {
                     text: '构建',
                     link: '/dotnet/lot/mqtt/build/README.md'
-                },  {
+                }, {
                     text: '客户端',
                     link: '/dotnet/lot/mqtt/client/README.md'
+                }, {
+                    text: '示例',
+                    link: '/dotnet/lot/mqtt/examples/README.md'
+                }, {
+                    text: '托管客户端',
+                    link: '/dotnet/lot/mqtt/managedclient/README.md'
+                }, {
+                    text: 'MQTT主题',
+                    link: '/dotnet/lot/mqtt/mqtt-topics/README.md'
                 }
             ]
         }

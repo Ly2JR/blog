@@ -284,5 +284,99 @@ mqttClient.subscribe("MQTTnet.RPC/+/do_somthing");
 //otherwise rpc will not work
 //So method names can be separated using an _ or.but no +,# or /.
 //If it is required to distinguish between devices
-//
+//own rules can be defined like the following:
+mqttClient.subscribe(""MQTTnet.RPC/+/deviceA.ping);
+mqttClient.subscribe(""MQTTnet.RPC/+/deviceB.ping);
+mqttClient.subscribe(""MQTTnet.RPC/+/deviceC.getTimeperature);
+
+//Within the callback of the MQTT client the topic must be checked
+//if it belongs to MQTTnet RPC. The following code shows one
+//possible way of doing this.
+void mqtt_Callback(char *topic,byte *payload,unsigned int payloadLength){
+    String topicString=String(topic);
+    if(topicString.startsWith("MQTTnet.RPC/")){
+        String responseTopic=topicString+String("/response");
+
+        if(topicString.endsWith("/deviceA.ping")){
+            mqtt_publish(responseTopc,"pong",false);
+            return;
+        }
+    }
+}
+
+//Important notes:
+//! Do not send response message with the _retain_ flag set to true.
+//! All required data for a RPC call and the result must be placed into the payload.
 ```
+
+## 连接Amazon AWS
+
+### Websockets
+
+由于.NET的WebSocket实现存在一个已知问题。可能不支持使用MQTTnet连接到Amazon AWS，因为WebSockets依赖.NET的实现。
+
+但是这里有一个可用示例用来演示如何使用不同的传输层实现。
+
+<https://github.com/aws-samples/aws-iot-core-dotnet-app-mqtt-over-websockets-sigv4>
+
+### 使用证书的TCP
+
+1. 移除Amazion根证书并且按以下格式`.pfx`传递客户端证书
+
+```cs
+List<X509Certificate> certs=new List<X509Certificate>
+{
+    new X509Certificate2("ClientCertPath","ClientCertPass",X509KeyStorageFlags.Exportable)
+};
+```
+
+2. 使用以下客户都代码:
+
+```cs
+var clientOptions=new MqttClientOptionsBuilder()
+    .WithTcpServer(endpoint,port)
+    .WithKeepAlivePeriod(new TimeSpan(0,0,0,300))
+    .WithTls(new MqttClientOptionsBuilderTlsParameters
+    {
+        UseTls=true,
+        #pragma warning disable CS0618 //Type of member is obsolete
+        CertificateValidationCallback=(X509Certificate x,X509Chain y,System.Net.Security.SslPolicyErrors z,IMqttOptions o)={
+            return true;
+        },
+        #pragma warning disable CS0618 //Type of member is obsolete
+        AllowUntrustedCertificates=false,
+        IgnoreCertificateChainErrors=false,
+        IgnoreCertificateRevocationErrors=false,
+        Certificates=certs
+    })
+    .WithProtocolVersion(MqttProtocolVersion.V311)
+    .Build();
+```
+
+### 故障排除
+
+在挖掘证书之前，请确保
+
+- 你拥有正确的URL。从"Interact"章节的"thing"复制它。
+- 你能使用openssl连接URL：
+
+```bash
+openssl s_client -CAfile awsca.pem -cert xxx.pem.crt -key xxx.pem.key -connect yyy.iot.region.amazonaws.com:8883
+```
+
+- 附加到thing的证书被激活
+- 你已经附加一个(或多个)策略用来允许thing来连接、订阅、发布和接收。
+- 你没有使用不支持的功能(保留消息，will messages,不支持的Qos 2).
+
+如果你确保以上是正确，请开始对证书排除。
+
+### 一些小片段
+
+- Net Framework:<https://gist.github.com/jkoplo/16f25875f7aca9503a7520fcda99005f>
+- NetCore<https://gist.github.com/jkoplo/bd60cfe1a02c6e13b0a2d753289ae00f>
+
+## 使用ASP.NET Core客户端
+
+当在.Net Framework,.Net Core或者ASP.NET Core使用客户端时，它们没有什么不同。以上配置适用。使用依赖注入客户端不可用。
+
+这里有一些可用的示例 [mqtt-client-dotnet-core](https://github.com/rafiulgits/mqtt-client-dotnet-core)
