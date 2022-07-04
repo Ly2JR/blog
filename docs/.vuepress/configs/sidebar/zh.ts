@@ -511,32 +511,6 @@ export const sidebarZh: SidebarConfig = {
                             ]
                         }
                     ]
-                }, {
-                    text: '二次开发',
-                    children: [
-                        {
-                            text: '门户集成',
-                            link: '/varietystore/yonyou/develop/portal/README.md',
-                        }, {
-                            text: '按钮',
-                            link: '/varietystore/yonyou/develop/buttons/README.md',
-                        }, {
-                            text: '业务单据',
-                            link: '/varietystore/yonyou/develop/vouchers/README.md',
-                        }, {
-                            text: '报表',
-                            link: '/varietystore/yonyou/develop/reports/README.md',
-                        }, {
-                            text: '定时与预警',
-                            children: [
-                                '/varietystore/yonyou/develop/times/README.md',
-                                '/varietystore/yonyou/develop/alarms/README.md',
-                            ]
-                        }, {
-                            text: '打包',
-                            link: '/varietystore/yonyou/develop/package/README.md',
-                        }
-                    ]
                 }
             ]
         },
@@ -629,6 +603,15 @@ export const sidebarZh: SidebarConfig = {
                 }, {
                     text: 'MQTT主题',
                     link: '/dotnet/lot/mqtt/mqtt-topics/README.md'
+                }, {
+                    text: 'MQTT版本5功能',
+                    link: '/dotnet/lot/mqtt/mqtt-version-5-features/README.md'
+                }, {
+                    text: 'MQTT客户端',
+                    link: '/dotnet/lot/mqtt/mqttclient/README.md'
+                }, {
+                    text: '服务端',
+                    link: '/dotnet/lot/mqtt/server/README.md'
                 }
             ]
         }
