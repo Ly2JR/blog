@@ -613,6 +613,14 @@ export const sidebarZh: SidebarConfig = {
                     text: '服务端',
                     link: '/dotnet/lot/mqtt/server/README.md'
                 }
+                , {
+                    text: '服务端和客户端方法文档',
+                    link: '/dotnet/lot/mqtt/server-and-client-method-documentation/README.md'
+                }
+                , {
+                    text: '提示和技巧',
+                    link: '/dotnet/lot/mqtt/tips-and-tricks/README.md'
+                }
             ]
         }
     ]
