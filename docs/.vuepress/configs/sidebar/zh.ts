@@ -612,14 +612,21 @@ export const sidebarZh: SidebarConfig = {
                 }, {
                     text: '服务端',
                     link: '/dotnet/lot/mqtt/server/README.md'
-                }
-                , {
+                }, {
                     text: '服务端和客户端方法文档',
                     link: '/dotnet/lot/mqtt/server-and-client-method-documentation/README.md'
-                }
-                , {
+                }, {
                     text: '提示和技巧',
                     link: '/dotnet/lot/mqtt/tips-and-tricks/README.md'
+                }, {
+                    text: '跟踪',
+                    link: '/dotnet/lot/mqtt/trace/README.md'
+                }, {
+                    text: '升级向导',
+                    link: '/dotnet/lot/mqtt/upgrading-guide/README.md'
+                }, {
+                    text: '在VB.NET中使用MQTT客户端',
+                    link: '/dotnet/lot/using-the-mqtt-client-in-vb.net/README.md'
                 }
             ]
         }
