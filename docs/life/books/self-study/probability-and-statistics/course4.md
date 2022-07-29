@@ -16,7 +16,7 @@
 
   (1) $0\leq f_n(A)\leq 1$
 
-  (2) $f_n(S)-1$
+  (2) $f_n(S)=1$
 
   (3) 若$A_1,A_2,\cdots,A_k$是两两互不相容的事件,则$f_n(A_1\cup A_2\cup\cdots\cup A_k)=f_n(A_1)+f_n(A_2)+\cdots+f_n(A_k)$
 
@@ -54,7 +54,7 @@
 
   $$P(A)=\frac{k}{n}=\frac{A包含的基本事件}{S中基本事件的总数}$$
 
-  该试称为随机事件A的概率,记作$P(A)$.
+  该试验称为随机事件A的概率,记作$P(A)$.
 
   解决古典概型问题的步骤如下:
 
@@ -84,7 +84,7 @@
 
   $A_2$所含的基本事件数=$C_4^3 \qquad \colorbox{orange}{从1,2,4,5中取3个}$
 
-  $P_1=\frac{C_3^2}{C_5^2}=\frac{3}{10}; \qquad P_2=\frac{C_4^3}{C_5^3}=\frac{4}{10}$
+  $P_1=\frac{C_3^2}{C_5^3}=\frac{3}{10}; \qquad P_2=\frac{C_4^3}{C_5^3}=\frac{4}{10}$
 
   $\color{blue}\bf{【题型:】}$
 
@@ -96,9 +96,9 @@
 
   记$A$表示"所取$n$件产品中恰有$k$件次品"
 
-  基本事件总数=$C_n^N$
+  基本事件总数=$C_N^n$
 
-  $A$所含基本事件数=$C_k^D C_{N-D}^{n-k}$
+  $A$所含基本事件数=$C_D^k C_{N-D}^{n-k}$
 
   $\colorbox{orange}{k件次品随机取自D件次品,其余来自正品。}$
 
@@ -106,7 +106,7 @@
 
   $\color{blue}\bf{【题型:】}$
 
-  袋中有$a$个白球与$b$个黑球。每次从中取一共球,取出的求不再放回。把球全部取出，求$\color{blue}{第k次取得白球}$的概率。
+  袋中有$a$个白球与$b$个黑球。每次从中取一个球,取出的球不再放回。把球全部取出，求$\color{blue}{第k次取得白球}$的概率。
 
   $\color{red}\bf{【解析: 排列方法】}$
 
@@ -124,7 +124,7 @@
 
   $\color{blue}\bf{概率的定义}$
 
-  设$E$为随机试验，$S$为$E$的样本空间，对于$E$的每一个事件$A$，赋予一共实数$P(A)$,称作事件$A$发生的概率,其中集合函数$P(.)$满足以下条件:
+  设$E$为随机试验，$S$为$E$的样本空间，对于$E$的每一个事件$A$，赋予一个实数$P(A)$,称作事件$A$发生的概率,其中集合函数$P(.)$满足以下条件:
 
   (1) 对于任意的事件$A,P(A)\geq 0$
 
@@ -154,7 +154,7 @@
 
   若$B_1,B_2,\cdots,B_n$是样本空间$S$的一个划分,即$B_1 \cup B_2\cup\cdots\cup B_n=S$且$B_i B_j=\phi(i\neq j)$,则$P(A)=P(A B_1)+P(A B_2)+\cdots+P(A B_n)$
 
-  $P(A\cup B)=P(A)+P(b)-P(AB)$
+  $P(A\cup B)=P(A)+P(B)-P(AB)$
 
   $P(A\cup B\cup C)=P(A)+P(B)+P(C)-P(AB)-P(BC)-P(AC)+P(ABC)$
 
@@ -172,7 +172,7 @@
 
   $\color{blue}\bf{【题型:】}$
 
-  设$P(A)=\frac{1}{2},P(B)=\frac{1}{3},P(A\cup B)=\frac{7}{12}.$则$P(\overline{AB})$=$\overline{\frac{3}{4}}$
+  设$P(A)=\frac{1}{2},P(B)=\frac{1}{3},P(A\cup B)=\frac{7}{12}.$则$P(\overline{AB})$=$\underline{\frac{3}{4}}$
 
   $\color{red}\bf{【答案:】\frac{3}{4}}$
 
