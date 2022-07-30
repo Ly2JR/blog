@@ -14,7 +14,7 @@ $P\lbrace第k个人抽中签\rbrace=P\lbrace第一个人抽中签\rbrace$
 
   $\color{blue}\bf{【题型:】}$
 
-  设袋中有10个考签,其中4给难签，按甲、乙、丙先后顺序抽签，设A、B、C分布表示甲、乙、丙抽到难签。
+  设袋中有10个考签,其中4个难签，按甲、乙、丙先后顺序抽签，设A、B、C分布表示甲、乙、丙抽到难签。
 
   $\color{red}\bf{【答案:】}$
 
@@ -24,13 +24,13 @@ $P\lbrace第k个人抽中签\rbrace=P\lbrace第一个人抽中签\rbrace$
 
   $\color{red}\bf{【分析:】}$
 
-  (1) $P(A)=\frac{C_4^1}{C_10^1}$
+  (1) $P(A)=\frac{C_4^1}{C_{10}^1}$
 
   (2) $P(B)=\frac{C_3^1}{C_9^1}$
 
   $\color{blue}\bf{定义}$
 
-  设A、B是任何两个事件，$P(A)>0$，则称$\frac{P(AB)}{P(A)}$为A发生的条件下，B发生的条件概率，记作
+  设A、B是任意两个事件，$P(A)>0$，则称$\frac{P(AB)}{P(A)}$为A发生的条件下，B发生的条件概率，记作
 
   $$P(B|A)=\frac{P(AB)}{P(A)}$$
 
@@ -48,7 +48,7 @@ $P\lbrace第k个人抽中签\rbrace=P\lbrace第一个人抽中签\rbrace$
 
   第一种古典概型解法:
 
-  “第一次取白起的情况下”是条件，即n：$C_5^1$
+  “第一次取白球的情况下”是条件，即n：$C_5^1$
 
   "第二次仍取白球的概率"即k：$C_3^1$
 
@@ -62,7 +62,7 @@ $P\lbrace第k个人抽中签\rbrace=P\lbrace第一个人抽中签\rbrace$
 
   $A_1 A_2$所含的基本事件数=4*3=12
 
-  $A_1$所含基本事件数=4*3+4*2=20
+  $A_1$所含基本事件数=4\*3+4\*2=20
 
   则$P(A_2|A_1)=\frac{P(A_2 A_1)}{P(A_1)}=\frac{12}{20}=\frac{3}{5}$
 
@@ -82,7 +82,7 @@ $P\lbrace第k个人抽中签\rbrace=P\lbrace第一个人抽中签\rbrace$
 
   设袋中有10个考签，其中4个难签，按甲、乙、丙先后顺序抽取，求甲乙丙都抽到难签的概率。
 
-  $\color{red}\bf{【答案:】0.03}$
+  $\color{red}\bf{【答案:】0.033}$
 
   $\color{red}\bf{【解析:】}$
 
@@ -110,4 +110,4 @@ $P\lbrace第k个人抽中签\rbrace=P\lbrace第一个人抽中签\rbrace$
 
   $P(\overline{A_3}|A_1 A_2)=\frac{C_t^1}{C_{r+t+2\alpha}^1}=\frac{t}{r+t+2\alpha}$
 
-  $P(A_1 A_2 \overline(A_3))=P(A_1)P(A_2|A_1)P(\overline(A_3)|A_1 A_2)=\frac{t}{r+t+2\alpha}*\frac{r+\alpha}{r+t+\alpha}*\frac{r}{r+t}$
+  $P(A_1 A_2 \overline{A_3})=P(A_1)P(A_2|A_1)P(\overline{A_3}|A_1 A_2)=\frac{t}{r+t+2\alpha}*\frac{r+\alpha}{r+t+\alpha}*\frac{r}{r+t}$
