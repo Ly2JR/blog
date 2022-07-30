@@ -573,6 +573,7 @@ export const sidebarZh: SidebarConfig = {
     '/varietystore/ladder/': [
         {
             text: '梯云纵',
+            link:'/varietystore/ladder/README.md',
             children: [
                 '/varietystore/ladder/machinecode/README.md',
                 '/varietystore/ladder/sounds/README.md',

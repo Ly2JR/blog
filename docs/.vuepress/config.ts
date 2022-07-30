@@ -5,7 +5,7 @@ import { searchPlugin } from '@vuepress/plugin-search';
 import { pwaPlugin } from '@vuepress/plugin-pwa';
 import { pwaPopupPlugin } from '@vuepress/plugin-pwa-popup';
 import { nvabarZh,nvarbarEn, sidebarZh,sidebarEn,head } from './configs';
-//import { path } from '@vuepress/utils';
+import { path } from '@vuepress/utils';
 import { shikiPlugin } from '@vuepress/plugin-shiki';
 
 const isProd = process.env.NODE_ENV === 'production';
@@ -28,6 +28,9 @@ export default defineUserConfig({
     }
   },
 
+  /**
+   * 配置默认主题
+   */
   theme: defaultTheme({
     /**
      * logo
@@ -56,16 +59,22 @@ export default defineUserConfig({
          * 边注栏
          */
         sidebar: sidebarZh,
-
+        /**
+         * 页元数据
+         */
         editLinkText: '在GitHub上编辑此页',
         lastUpdatedText: '上次更新',
         contributors: false,
         contributorsText: '贡献者',
-
+        /**
+         * 自定义容器
+         */
         tip: '提示',
         warning: '注意',
         danger: '警告',
-
+        /**
+         * 404页
+         */
         notFound: [
           '这里什么都没有',
           '我们怎么到这来了？',
@@ -74,9 +83,11 @@ export default defineUserConfig({
         ],
 
         backToHome: '返回首页',
-
+        /**
+         * a11y
+         */
         openInNewWindow: '在新窗口打开',
-        toggleDarkMode: '切换夜间模式',
+        toggleColorMode: '切换颜色模式',
         toggleSidebar: '切换侧边栏',
 
         /**
@@ -142,6 +153,14 @@ export default defineUserConfig({
     // only enable shiki plugin in production mode
     isProd ? shikiPlugin({ theme: 'dark-plus' }) : [],
   ],
+  /**
+   * 配置markdown
+   */
+  markdown:{
+    importCode:{
+      handleImportPath:(str)=>str.replace(/^vuepress/,path.resolve(__dirname,',,/,,/packages/@vuepress'))
+    }
+  },
 
   /**
    * markdown扩展

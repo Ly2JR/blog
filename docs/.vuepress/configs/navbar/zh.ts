@@ -10,13 +10,13 @@ export const nvabarZh: NavbarConfig = [
     children: [
       {
         text: '书籍',
-        link: '/life/books/README.md',
+        link: '/life/books',
       }, {
         text: '写作',
         link: '/life/literature/markdown/overview/philosophy.md'
       }, {
         text: '音乐',
-        link: '/life/music/README.md',
+        link: '/life/music',
       },
     ],
   },
@@ -25,24 +25,24 @@ export const nvabarZh: NavbarConfig = [
     children: [
       {
         text: 'C# Design Patterns',
-        link: '/dotnet/design-pattern/README.md'
+        link: '/dotnet/design-pattern'
       }, {
         text: 'Abp.Zero',
-        link: '/dotnet/abp.zero/README.md'
+        link: '/dotnet/abp.zero'
       }, {
         text: 'Xamarin.Forms',
-        link: '/dotnet/xamarin.forms/README.md'
+        link: '/dotnet/xamarin.forms'
       }, {
         text: 'WPF',
-        link: '/dotnet/wpf/README.md'
+        link: '/dotnet/wpf'
       }, {
         text: 'Web端',
         children: [{
           text: 'Vue',
-          link: '/web/vue3/README.md',
+          link: '/web/vue3',
         }, {
           text: 'JQuery',
-          link: '/web/jquery/README.md'
+          link: '/web/jquery'
         }]
       },
       {
@@ -50,13 +50,13 @@ export const nvabarZh: NavbarConfig = [
         children: [
           {
             text: 'SQL Server',
-            link: '/database/sqlserver/README.md'
+            link: '/database/sqlserver'
           }, {
             text: 'Oracle',
             link: '/database/oracle/installer.md'
           }, {
             text: 'MySql',
-            link: '/database/mysql/README.md'
+            link: '/database/mysql'
           }
         ]
       }, {
@@ -64,7 +64,7 @@ export const nvabarZh: NavbarConfig = [
         children: [
           {
             text: 'MqttNet',
-            link: '/dotnet/lot/mqtt/home/README.md'
+            link: '/dotnet/lot/mqtt/home'
           }
         ]
       }
@@ -78,19 +78,19 @@ export const nvabarZh: NavbarConfig = [
         link: '/dotnet/interview.md'
       }, {
         text: '梯云纵',
-        link: '/varietystore/ladder/README.md'
+        link: '/varietystore/ladder'
       }, {
         text: 'CLI',
-        link: '/varietystore/cli/github/README.md'
+        link: '/varietystore/cli/github'
       }, {
         text: '数据交换格式',
         children: [
           {
             text: 'JSON',
-            link: '/varietystore/data-exchange-format/json/README.md'
+            link: '/varietystore/data-exchange-format/json'
           }, {
             text: 'XML',
-            link: '/varietystore/data-exchange-format/xml/README.md'
+            link: '/varietystore/data-exchange-format/xml'
           }
         ]
       },
@@ -99,14 +99,14 @@ export const nvabarZh: NavbarConfig = [
         children: [
           {
             text: 'Excel',
-            link: '/varietystore/office/excel/README.md'
+            link: '/varietystore/office/excel'
           }]
       },
       {
         text: 'ERP',
         children: [{
           text: '用友U8+',
-          link: '/varietystore/yonyou/README.md'
+          link: '/varietystore/yonyou'
         }]
       }
     ]

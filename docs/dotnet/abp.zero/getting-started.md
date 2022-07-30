@@ -11,7 +11,6 @@
 
 ![angular-solution-folders](/images/aspnetzero/angular-solution-folders.png)
 
-- **angular**文件夹包含Angular UI应用程序，它与angular-cli一起配置工作。
 - **aspnet-core**文件夹包含服务端ASP.NET Core解决方案并与Visual Studio一起配置工作。
 
 ### 合并客户端和服务端解决方案
