@@ -1,4 +1,4 @@
-# [盛炎平-第一章 随机事件与概率(4)](https://www.bilibili.com/video/BV1XJ411173b?p=6)
+# [第一章 随机事件与概率(4)](https://www.bilibili.com/video/BV1XJ411173b?p=6)
 
 ## 条件概率
 
@@ -26,9 +26,9 @@
 
   解：设$A_i(i=0,1,2)$分别表示第二次比赛时，恰好取到i个新球，B表示第三次取的三个球都是新球。
 
-  $P(A_0)=\frac{C_3^3}{C_12^3},\qquad P(A_1)=\frac{C_9^1 C_3^2}{C_12^3},\qquad P(A_2)=\frac{C_9^2 C_3^1}{C_12^3},\qquad P(A_3)=\frac{C_9^3 C_3^0}{C_12^3}$
+  $P(A_0)=\frac{C_3^3}{C_{12}^3},\qquad P(A_1)=\frac{C_9^1 C_3^2}{C_{12}^3},\qquad P(A_2)=\frac{C_9^2 C_3^1}{C_{12}^3},\qquad P(A_3)=\frac{C_9^3 C_3^0}{C_{12}^3}$
 
-  $P(B|A_0)=\frac{C_9^3}{C_12^3},\qquad P(B|A_1)=\frac{C_8^3}{C_12^3},\qquad P(B|A_2)=\frac{C_7^3}{C_12^3},\qquad P(B|A_3)=\frac{C_6^3}{C_12^3}$
+  $P(B|A_0)=\frac{C_9^3}{C_{12}^3},\qquad P(B|A_1)=\frac{C_8^3}{C_{12}^3},\qquad P(B|A_2)=\frac{C_7^3}{C_{12}^3},\qquad P(B|A_3)=\frac{C_6^3}{C_{12}^3}$
 
   $$P(B)=\sum_{i=0}^3 P(A_i)P(B|A_i)=0.1458$$
 
@@ -50,7 +50,7 @@
 
   解:设$B$表示“发出的信号是1”，$A$表示“收到的信号是1”.
 
-  已知$P(B)=\frac{1}{3},P(\overline{B}=frac{2}/{3})$
+  已知$P(B)=\frac{1}{3},P(\overline{B})=\frac{2}{3}$
 
   $P(A|B)=P,P(A|\overline{B})=1-p$
 
@@ -70,7 +70,7 @@
   解:设$B_1、B_2,B_3$分别表示所取零件是1号、2号、3号机床加工的。
   又设$A$表示所取产品为合格品，则依题意
 
-  $P(B_1)=1/4,P(B2)=2/4,P(B3)=1/4,$
+  $P(B_1)=\frac{1}{4},P(B2)=\frac{2}{4},P(B3)=\frac{1}{4},$
 
   $P(A|B_1)=90\% ,P(A|B2)=92\%,P(A|B_3)=94\%,$
 
@@ -80,7 +80,7 @@
 
   (2):
   
-  $\because P(B_1)=1/4,P(A|B_1)=90\%,P(A)=0.92$
+  $\because P(B_1)=\frac{1}{4},P(A|B_1)=90\%,P(A)=0.92$
 
   $\therefore P(B_1|\overline{A})=\frac{P(\overline{A}B_1)}{P(\overline{A})}=\frac{P(B_1)P(\overline{A}|B_1)}{1-P(A)}$
 

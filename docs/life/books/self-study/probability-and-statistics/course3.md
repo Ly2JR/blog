@@ -1,4 +1,4 @@
-# [盛炎平-第一章 随机事件与概率(1)](https://www.bilibili.com/video/BV1XJ411173b?p=3)
+# [第一章 随机事件与概率(1)](https://www.bilibili.com/video/BV1XJ411173b?p=3)
 
 ## 随机事件
 

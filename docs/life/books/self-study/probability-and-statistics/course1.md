@@ -1,4 +1,4 @@
-# [盛炎平-课程导学(一)](https://www.bilibili.com/video/BV1XJ411173b?p=1)
+# [课程导学(一)](https://www.bilibili.com/video/BV1XJ411173b?p=1)
 
 ## 课程介绍
 

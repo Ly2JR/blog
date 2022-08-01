@@ -1,4 +1,4 @@
-# [盛炎平-课程导学(二)](https://www.bilibili.com/video/BV1XJ411173b?p=2)
+# [课程导学(二)](https://www.bilibili.com/video/BV1XJ411173b?p=2)
 
 ## 授课思路
 

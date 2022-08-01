@@ -388,6 +388,7 @@ export const sidebarZh: SidebarConfig = {
         '/database/sqlserver/sqlserver-sync-to-oracle.md',
         '/database/sqlserver/tips.md',
         '/database/sqlserver/reference.md',
+        '/database/sqlserver/logs.md',
     ],
     '/database/oracle/': [
         '/database/oracle/installer.md',
