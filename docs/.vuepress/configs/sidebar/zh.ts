@@ -644,5 +644,17 @@ export const sidebarZh: SidebarConfig = {
                 }
             ]
         }
+    ],
+    '/dotnet/robot/': [
+        {
+            text: '工业机器人',
+            link: '/dotnet/robot/README.md',
+            children: [
+                {
+                    text: 'ABB',
+                    link: '/dotnet/robot/abb/README.md'
+                }
+            ]
+        }
     ]
 };

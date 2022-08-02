@@ -69,6 +69,10 @@ export const nvabarZh: NavbarConfig = [
           {
             text:'PLC',
             link:'/dotnet/plc'
+          },
+          {
+            text:'Robot',
+            link:'/dotnet/robot'
           }
         ]
       }
