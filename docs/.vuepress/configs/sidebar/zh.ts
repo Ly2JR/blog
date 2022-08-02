@@ -574,7 +574,7 @@ export const sidebarZh: SidebarConfig = {
     '/varietystore/ladder/': [
         {
             text: '梯云纵',
-            link:'/varietystore/ladder/README.md',
+            link: '/varietystore/ladder/README.md',
             children: [
                 '/varietystore/ladder/machinecode/README.md',
                 '/varietystore/ladder/sounds/README.md',
@@ -629,6 +629,18 @@ export const sidebarZh: SidebarConfig = {
                 }, {
                     text: '在VB.NET中使用MQTT客户端',
                     link: '/dotnet/lot/using-the-mqtt-client-in-vb.net/README.md'
+                }
+            ]
+        }
+    ],
+    '/dotnet/plc/': [
+        {
+            text: 'PLC通讯',
+            link: '/dotnet/plc/README.md',
+            children: [
+                {
+                    text: '西门子S7系列',
+                    link: '/dotnet/plc/sinamics/README.md'
                 }
             ]
         }

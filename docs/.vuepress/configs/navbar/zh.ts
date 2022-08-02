@@ -65,6 +65,10 @@ export const nvabarZh: NavbarConfig = [
           {
             text: 'MqttNet',
             link: '/dotnet/lot/mqtt/home'
+          },
+          {
+            text:'PLC',
+            link:'/dotnet/plc'
           }
         ]
       }
