@@ -73,7 +73,7 @@
 
   $\color{blue}\bf{单选题}$
 
-  1、设A与B是两个随机事件，则P(A-B)=$\textcolor{red}{\underline D}$
+  1、设A与B是两个随机事件，则P(A-B)=$\textcolor{red}\underline{D}$
 
   A. P(A)
 
