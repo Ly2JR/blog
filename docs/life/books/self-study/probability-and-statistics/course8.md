@@ -257,7 +257,7 @@ $\color{blue}\bf{【例题：】}$
 
 设随机变量X~B(3,0.3),则P{X=2}=$\underline{A}$
 
-$ A. 0.189 \qquad B. 0.21 \qquad C. 0.441 \qquad D. 0.7 $
+$A. 0.189 \qquad B. 0.21 \qquad C. 0.441 \qquad D. 0.7$
 
 $\color{red}\bf{【答案:】A}$
 
@@ -269,7 +269,7 @@ $\color{red}\bf{【解析:】}$
 
 $\color{blue}\bf{【例题：】}$
 
-设X表示某射手在一次射击中命中目标的次数，该射手的命中率为0.9，则P{X=0}=$\underbrace{{0.1}}$
+设X表示某射手在一次射击中命中目标的次数，该射手的命中率为0.9，则P{X=0}=$\underline{{0.1}}$
 
 $\color{red}\bf{【答案:】0.1}$
 
