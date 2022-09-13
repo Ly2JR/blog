@@ -7,6 +7,9 @@ import { pwaPopupPlugin } from '@vuepress/plugin-pwa-popup';
 import { nvabarZh,nvarbarEn, sidebarZh,sidebarEn,head } from './configs';
 import { path } from '@vuepress/utils';
 import { shikiPlugin } from '@vuepress/plugin-shiki';
+import mathjax3 from 'markdown-it-mathjax3';              //支持latex
+import markdownItFootnote from 'markdown-it-footnote';    //支持注脚
+import markdownTaskList from 'markdown-it-task-lists';    //支持任务列表
 
 const isProd = process.env.NODE_ENV === 'production';
 
@@ -167,12 +170,6 @@ export default defineUserConfig({
    * @param md 
    */
   extendsMarkdown: md => {
-    //支持latex
-    let mathjax3 = require('markdown-it-mathjax3');
-    //支持注脚
-    let markdownItFootnote = require('markdown-it-footnote');
-    //支持任务列表
-    let markdownTaskList = require('markdown-it-task-lists');
     md.use(mathjax3);
     md.use(markdownItFootnote);
     md.use(markdownTaskList);
