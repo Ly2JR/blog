@@ -35,7 +35,11 @@ export const nvabarZh: NavbarConfig = [
       }, {
         text: 'WPF',
         link: '/dotnet/wpf'
-      }, {
+      }, 
+      {
+        text: '正则表达式',
+        link: '/dotnet/regular-expressions'
+      },{
         text: 'Web端',
         children: [{
           text: 'Vue',
@@ -68,7 +72,7 @@ export const nvabarZh: NavbarConfig = [
           },
           {
             text:'PLC',
-            link:'/dotnet/plc'
+            link:'/dotnet/plc/sinamics/README.md'
           },
           {
             text:'Robot',

@@ -342,6 +342,15 @@ export const sidebarZh: SidebarConfig = {
             ]
         }
     ],
+    '/dotnet/regular-expressions/': [
+        {
+            text: '正则表达式',
+            link: '/dotnet/regular-expressions/README.md',
+            children:[
+                '/dotnet/regular-expressions/quick-reference.md'
+            ]
+        }
+    ],
     '/web/jquery': [
         {
             text: 'JQuery',
@@ -637,14 +646,8 @@ export const sidebarZh: SidebarConfig = {
     ],
     '/dotnet/plc/': [
         {
-            text: 'PLC通讯',
-            link: '/dotnet/plc/README.md',
-            children: [
-                {
-                    text: '西门子S7系列',
-                    link: '/dotnet/plc/sinamics/README.md'
-                }
-            ]
+            text: '西门子S7系列',
+            link: '/dotnet/plc/sinamics/README.md',
         }
     ],
     '/dotnet/robot/': [
