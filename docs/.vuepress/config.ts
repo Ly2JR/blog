@@ -5,12 +5,13 @@ import { searchPlugin } from '@vuepress/plugin-search';
 import { pwaPlugin } from '@vuepress/plugin-pwa';
 import { pwaPopupPlugin } from '@vuepress/plugin-pwa-popup';
 import { nvabarZh,nvarbarEn, sidebarZh,sidebarEn,head } from './configs';
-import { path } from '@vuepress/utils';
+import { getDirname,path } from '@vuepress/utils';
 import { shikiPlugin } from '@vuepress/plugin-shiki';
 import mathjax3 from 'markdown-it-mathjax3';              //支持latex
 import markdownItFootnote from 'markdown-it-footnote';    //支持注脚
 import markdownTaskList from 'markdown-it-task-lists';    //支持任务列表
 
+const __dirname = getDirname(import.meta.url);
 const isProd = process.env.NODE_ENV === 'production';
 
 export default defineUserConfig({
@@ -121,12 +122,6 @@ export default defineUserConfig({
       prismjs: !isProd,
     },
   }),
-  // markdown: {
-  //   importCode: {
-  //     handleImportPath: (str) =>
-  //       str.replace(/^@vuepress/, path.resolve(__dirname, '../../packages/@vuepress'))
-  //   }
-  // },
   plugins: [
     searchPlugin({
       locales: {
@@ -156,14 +151,13 @@ export default defineUserConfig({
     // only enable shiki plugin in production mode
     isProd ? shikiPlugin({ theme: 'dark-plus' }) : [],
   ],
-  /**
-   * 配置markdown
-   */
-  markdown:{
-    importCode:{
-      handleImportPath:(str)=>str.replace(/^vuepress/,path.resolve(__dirname,',,/,,/packages/@vuepress'))
-    }
-  },
+    // configure markdown
+   markdown: {
+      importCode: {
+        handleImportPath: (str) =>
+          str.replace(/^@vuepress/, path.resolve(__dirname, '../../ecosystem')),
+      },
+    },
 
   /**
    * markdown扩展
