@@ -24,6 +24,8 @@ export const sidebarZh: SidebarConfig = {
                 '/life/books/self-study/probability-and-statistics/course6.md',
                 '/life/books/self-study/probability-and-statistics/course7.md',
                 '/life/books/self-study/probability-and-statistics/course8.md',
+                '/life/books/self-study/probability-and-statistics/course9.md',
+                '/life/books/self-study/probability-and-statistics/course10.md',
             ]
         }
     ],
