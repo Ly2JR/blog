@@ -73,7 +73,7 @@
 
   $\color{blue}\bf{单选题}$
 
-  1、设A与B是两个随机事件，则P(A-B)=$\textcolor{red}\underline{D}$
+  1、设A与B是两个随机事件，则P(A-B)=$\textcolor{red}{\underline{D}}$
 
   A. P(A)
 
@@ -85,7 +85,7 @@
 
   $\color{blue}\bf{填空题}$
 
-  1、设随机事件A,B互不相容，P(A)=0.6,P(B)=0.4,P(AB)=$\textcolor{red}{\underline 0}$
+  1、设随机事件A,B互不相容，P(A)=0.6,P(B)=0.4,P(AB)=$\textcolor{red}{\underline{0}}$
 
   $\color{blue}\bf{计算题}$
 
