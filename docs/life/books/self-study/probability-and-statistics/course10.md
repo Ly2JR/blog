@@ -17,17 +17,17 @@ $$
 1. $$f(x) \geq 0$$
 2. $$\int_{-\infty}^{\infty} f(x)\mathrm{d}x=1$$
 
-注:连续型随机变量在单点处的概率为零:$P\{X=c\}=0$
+    注:连续型随机变量在单点处的概率为零:$P\{X=c\}=0$
 
-证明:
+    证明:
 
-$$
-\begin{array}{lcl}
-0\leq P\{X=c\}\leq P\{c-\Delta x<X\leq c\} \\
-=\lim_{\Delta x \to 0+}\int_{c-\Delta x}^{c} f(x)\mathrm{d}x=0 \\
-\therefore P(X=c)=0\\
-\end{array}
-$$
+    $$
+    \begin{array}{lcl}
+    0\leq P\{X=c\}\leq P\{c-\Delta x<X\leq c\} \\
+    =\lim_{\Delta x \to 0+}\int_{c-\Delta x}^{c} f(x)\mathrm{d}x=0 \\
+    \therefore P(X=c)=0\\
+    \end{array}
+    $$
 
 3. $$P\{a<X<b\}=P\{a<X\leq b\}=\int_{a}^{b} f(x)\mathrm{d}x$$
 
