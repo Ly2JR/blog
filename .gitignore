@@ -6,7 +6,10 @@ docs/.vuepress/public/备案图标.png
 docs/.vuepress/public/images/
 
 #VuePress files
-.yarn
+.yarn/cache
+.yarn/plugins
+.yarn/unplugged
+.yarn/install-state.gz
 docs/.vuepress/.temp/
 docs/.vuepress/.cache/
 docs/.vuepress/dist/
