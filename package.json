@@ -25,7 +25,7 @@
         "cross-env": "^7.0.3",
         "increase-memory-limit": "^1.0.7"
     },
-    "packageManager": "yarn@3.3.0",
+    "packageManager": "yarn@3.3.1",
     "resolutions": {
         "vite": "4.0.1"
     }
