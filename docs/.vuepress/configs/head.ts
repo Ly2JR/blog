@@ -6,7 +6,7 @@ export const head:HeadConfig[]=[
         rel: 'icon',
         type: 'image/png',
         sizes: '16x16',
-        href: `/images/icons/favicon-16x16.png`
+        href: `/icons/favicon-16x16.png`
       }
     ],
     [
@@ -14,7 +14,7 @@ export const head:HeadConfig[]=[
         rel: 'icon',
         type: 'image/png',
         sizes: '32x32',
-        href: `/images/icons/favicon-32x32.png`
+        href: `/icons/favicon-32x32.png`
       }
     ],
     [
@@ -44,13 +44,13 @@ export const head:HeadConfig[]=[
     [
       'link', {
         rel: 'apple-touch-icon',
-        href: `/images/icons/apple-touch-icon.png`,
+        href: `/icons/apple-touch-icon.png`,
       }
     ],
     [
       'link', {
         rel: 'mask-icon',
-        href: '/images/icons/safari-pinned-tab.svg',
+        href: '/icons/safari-pinned-tab.svg',
         color: '#3eaf7c'
       }
     ],

@@ -23,12 +23,12 @@ export default defineUserConfig({
     '/': {
       lang: 'zh-CN',
       title: '乌龙茶有点甜·博客',
-      description: '写写记记📚...',
+      description: 'NAS-Neverland',
     },
     '/en/': {
       lang: 'en-US',
-      title: 'Ly2JR·Blog',
-      description: 'Read&Write📚...',
+      title: 'Neverland',
+      description: 'NAS',
     }
   },
 
@@ -39,7 +39,7 @@ export default defineUserConfig({
     /**
      * logo
      */
-    logo: "/images/favious.png",
+    logo: "favious.png",
 
     docsDir: 'docs',
 
@@ -97,7 +97,7 @@ export default defineUserConfig({
         /**
          * Github
          */
-        repo: 'https://github.com/TgT982474256/blog',
+        repo: 'https://github.com/Ly2JR/blog',
         repoLabel: 'Github'
       },
       // 英语资源
