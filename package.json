@@ -10,7 +10,7 @@
         "markdown-it-footnote": "^3.0.3",
         "markdown-it-mathjax3": "^4.3.2",
         "markdown-it-task-lists": "^2.1.1",
-        "vuepress": "2.0.0-beta.60"
+        "vuepress": "2.0.0-beta.61"
     },
     "scripts": {
         "docs:dev": "vuepress dev docs",
@@ -18,15 +18,15 @@
         "fix-memory-limit": "cross-env LIMIT=8192 increase-memory-limit"
     },
     "devDependencies": {
-        "@vuepress/plugin-pwa": "2.0.0-beta.60",
-        "@vuepress/plugin-pwa-popup": "2.0.0-beta.60",
-        "@vuepress/plugin-search": "2.0.0-beta.60",
-        "@vuepress/plugin-shiki": "2.0.0-beta.60",
+        "@vuepress/plugin-pwa": "2.0.0-beta.61",
+        "@vuepress/plugin-pwa-popup": "2.0.0-beta.61",
+        "@vuepress/plugin-search": "2.0.0-beta.61",
+        "@vuepress/plugin-shiki": "2.0.0-beta.61",
         "cross-env": "^7.0.3",
         "increase-memory-limit": "^1.0.7"
     },
-    "packageManager": "yarn@3.3.1",
+    "packageManager": "yarn@3.4.1",
     "resolutions": {
-        "vite": "4.0.4"
+        "vite": "4.1.2"
     }
 }
