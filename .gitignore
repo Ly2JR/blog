@@ -3,10 +3,12 @@ node_modules
 
 #images
 docs/.vuepress/public/备案图标.png
-docs/.vuepress/public/images/
+docs/.vuepress/ssl
+docs/.vuepress/conf.d
 
 #VuePress files
 .yarn
+.yarnrc.yml
 docs/.vuepress/.temp/
 docs/.vuepress/.cache/
 docs/.vuepress/dist/
