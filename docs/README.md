@@ -3,7 +3,7 @@ home: true
 title: 主页
 actions:
   - text: 快速上手
-    link: /guide/
+    link: /guide/wan.md
     type: primary
 features:
   - title: NAS

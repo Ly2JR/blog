@@ -7,7 +7,7 @@ export const sidebarZh: SidebarConfig = {
             children:[
                 '/guide/README.md',
                 '/guide/wan.md',
-            ]
-        }
+            ],
+        },
     ],
 };
