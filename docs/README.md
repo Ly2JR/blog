@@ -22,5 +22,5 @@ footer: Copyright ©️ 2021-现在 ilyl.life 版权所有 支持IPv6 </br><a hr
 
 <img width="170" height="170" :src="$withBase('reward.png')" alt="reward"/>
 
-[![version](https://badgen.net/github/last-commit/Ly2JR/blog/main)](https://ilyl.life/)
+[![version](https://badgen.net/github/last-commit/Ly2JR/blog/main)](ilyl.life)
 </div>
